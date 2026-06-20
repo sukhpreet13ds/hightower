@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower & Hightower</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="top-header-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:352-629-7777" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 352-629-7777
+                </a>
+                <a href="#" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="navbar-container">
+            <!-- Logo Left (Overlapping Design) -->
+            <a href="#" class="logo-link">
+                <img src="./assets/h&h-logo.svg" alt="Hightower & Hightower Logo" class="logo-img">
+            </a>
+
+            <!-- Bottom Row: Nav Links (Aligned to Logo Center) -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">About Us <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Our Firm</a></li>
+                            <li><a href="#">Meet the Attorneys</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Community Involvement</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">Practice Areas <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Personal Injury</a></li>
+                            <li><a href="#">Car Accidents</a></li>
+                            <li><a href="#">Medical Malpractice</a></li>
+                            <li><a href="#">Wrongful Death</a></li>
+                            <li><a href="#">Product Liability</a></li>
+                            <li><a href="#">Criminal Defense</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link-item">Notable Trial Results & Settlements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link-item">Common Questions</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Burger Menu Trigger for Mobile -->
+            <button class="burger-menu-btn" id="mobile-menu-trigger" aria-label="Open Menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Scroll-Activated Floating Navbar (Capsule / Pill style, No logo or button) -->
+    <div class="floating-header" id="floating-navbar">
+        <nav class="floating-nav-menu">
+            <ul class="floating-nav-list">
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">About Us <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="#">Our Firm</a></li>
+                        <li><a href="#">Meet the Attorneys</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Community Involvement</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">Practice Areas <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="#">Personal Injury</a></li>
+                        <li><a href="#">Car Accidents</a></li>
+                        <li><a href="#">Medical Malpractice</a></li>
+                        <li><a href="#">Wrongful Death</a></li>
+                        <li><a href="#">Product Liability</a></li>
+                        <li><a href="#">Criminal Defense</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="#" class="floating-nav-link-item">Notable Trial Results & Settlements</a>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="#" class="floating-nav-link-item">Common Questions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Mobile Drawer Overlay Menu (Screenshot 2 Design) -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <!-- Header section of drawer -->
+            <div class="mobile-menu-header">
+                <a href="#" class="logo-link">
+                    <img src="./assets/h&h-logo.svg" alt="Logo" class="logo-img-mobile">
+                </a>
+
+                <div class="mobile-menu-actions-tab">
+
+                    <div class="mobile-header-socials">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body section of drawer -->
+            <div class="mobile-menu-body">
+
+                <div class="mobile-nav-list">
+                    <!-- Accordion 1 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>About Us</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="#">Our Firm</a>
+                            <a href="#">Meet the Attorneys</a>
+                            <a href="#">Testimonials</a>
+                            <a href="#">Community Involvement</a>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>Practice Areas</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="#">Personal Injury</a>
+                            <a href="#">Car Accidents</a>
+                            <a href="#">Medical Malpractice</a>
+                            <a href="#">Wrongful Death</a>
+                            <a href="#">Product Liability</a>
+                            <a href="#">Criminal Defense</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="mobile-nav-item-link">Notable Trial Results & Settlements</a>
+                    <a href="#" class="mobile-nav-item-link">Common Questions</a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="#" class="mobile-contact-btn">CONTACT US</a>
+                    <a href="tel:352-629-7777" class="mobile-phone-link">
+                        <i class="fa-solid fa-phone"></i> 352-629-7777
+                    </a>
+                    <div class="mobile-footer-socials">
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- H&H Hero Section -->
+    <main class="main-content">
+        <section class="hh-hero-section" id="hh-hero-section">
+            <div class="hero-container">
+                <!-- Left Column: Branding text and main action triggers -->
+                <div class="hero-left-col">
+                    <h1 class="hero-title">You Were Injured.<br>We'll Fight to <span class="highlight-gold">Make It
+                            Right.</span></h1>
+                    <p class="hero-description">
+                        For nearly 50 years, the Hightower family has stood beside injured Floridians — battling
+                        insurance companies so you can focus on what matters: healing. Your consultation is free, and
+                        you pay nothing unless we make a recovery for you.
+                    </p>
+                    <div class="hero-btn-group">
+                        <a href="#" class="btn-schedule">
+                            <img src="assets/cal.png" alt="Play" class="icon-play"> SCHEDULE CONSULTATION
+                        </a>
+                        <a href="#" class="btn-get-know">
+                            <img src="assets/button-play.png" alt="Play" class="icon-play"> GET TO KNOW US
+                        </a>
+                    </div>
+                    <div class="hero-subtitle-since">On your side since 1976.</div>
+                </div>
+
+                <!-- Middle Column: Attorney Image -->
+                <div class="hero-middle-col">
+                    <img src="assets/hero-man.png" alt="Attorney" class="hero-man-img">
+                </div>
+
+                <!-- Right Column: Case Review Form Card -->
+                <div class="hero-right-col">
+                    <div class="form-card">
+                        <div class="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
+                        <h2 class="form-title">Talk to Hightower & Hightower</h2>
+                        <p class="form-subtitle">We'll review your case and respond within hours.</p>
+
+                        <form class="case-review-form" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">FIRST NAME</label>
+                                    <input type="text" id="first-name" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">LAST NAME</label>
+                                    <input type="text" id="last-name" placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-number">PHONE NUMBER</label>
+                                <input type="tel" id="phone-number" placeholder="(407) 555-1234" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="case-type">CASE TYPE</label>
+                                <select id="case-type" required>
+                                    <option value="" disabled selected>Select your case type</option>
+                                    <option value="personal-injury">Personal Injury</option>
+                                    <option value="car-accident">Car Accident</option>
+                                    <option value="medical-malpractice">Medical Malpractice</option>
+                                    <option value="wrongful-death">Wrongful Death</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="brief-description">BRIEF DESCRIPTION</label>
+                                <textarea id="brief-description" rows="3"
+                                    placeholder="Tell us briefly what happened and when..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
+                        </form>
+
+                        <p class="form-footer-text">
+                            By submitting, you agree to our Privacy Policy. Your information is confidential and
+                            protected by attorney-client privilege.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Gold Banner Bar -->
+            <div class="hero-bottom-banner">
+                <span>One Call <i class="fa-solid fa-phone"></i> That's All – FREE Until We Win!</span>
+            </div>
+        </section>
+
+        <!-- H&H Million Section (Notable Verdicts) -->
+        <section class="hh-million-section" id="hh-million-section">
+            <div class="verdicts-row">
+                <!-- Card 1 -->
+                <div class="verdict-card">
+                    <span class="verdict-label">PERSONAL INJURED</span>
+                    <h3 class="verdict-amount">$<span class="animate-counter" data-target="9.6"
+                            data-decimals="1">0.0</span> Million</h3>
+                    <a href="#" class="verdict-link">Read More</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="verdict-card">
+                    <span class="verdict-label">CAR ACCIDENT</span>
+                    <h3 class="verdict-amount">$<span class="animate-counter" data-target="2.1"
+                            data-decimals="1">0.0</span> Million</h3>
+                    <a href="#" class="verdict-link">Read More</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="verdict-card">
+                    <span class="verdict-label">WORK INJURED</span>
+                    <h3 class="verdict-amount">$<span class="animate-counter" data-target="5.75"
+                            data-decimals="2">0.00</span> Million</h3>
+                    <a href="#" class="verdict-link">Read More</a>
+                </div>
+                <!-- Card 4 -->
+                <div class="verdict-card">
+                    <span class="verdict-label">WRONGFUL DEATH</span>
+                    <h3 class="verdict-amount">$<span class="animate-counter" data-target="2.0"
+                            data-decimals="1">0.0</span> Million</h3>
+                    <a href="#" class="verdict-link">Read More</a>
+                </div>
+                <!-- Card 5 -->
+                <div class="verdict-card">
+                    <span class="verdict-label">MOTORCYCLIST ACCIDENT</span>
+                    <h3 class="verdict-amount">$<span class="animate-counter" data-target="2.5"
+                            data-decimals="1">0.0</span> Million</h3>
+                    <a href="#" class="verdict-link">Read More</a>
+                </div>
+            </div>
+
+            <!-- Centered Overlapping Button -->
+            <div class="verdicts-btn-wrapper">
+                <a href="#" class="btn-all-verdicts">SEE ALL NOTABLE VERDICTS</a>
+            </div>
+        </section>
+
+        <!-- Our Areas of Practice Section -->
+        <section class="hh-practice-section" id="hh-practice-section">
+            <div class="practice-container">
+                <!-- Left Column: Title -->
+                <div class="practice-left-col">
+                    <h2 class="practice-title">
+                        Our Areas
+                        <div class="practice-title-sub">
+                            <span class="title-line"></span>
+                            <span class="highlight-gold">of Practice</span>
+                        </div>
+                    </h2>
+                </div>
+
+                <!-- Right Column: Description & Action Button -->
+                <div class="practice-right-col">
+                    <p class="practice-desc">
+                        Our legal team is honored to stand up for the rights of those who have been severely injured, as
+                        well as their families.
+                    </p>
+                    <a href="#" class="btn-free-consult">FREE CONSULTATION</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- H&H Law Section (Expanding Hover Cards / Mobile Marquee) -->
+        <section class="hh-law-section" id="hh-law-section">
+            <div class="law-cards-container">
+                <!-- Card 1: Personal Injury Law -->
+                <div class="law-card"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law1.jpg');">
+                    <div class="law-card-content">
+                        <h3 class="law-card-title">Personal Injury<br>Law</h3>
+                        <p class="law-card-desc">
+                            Since 1976, <strong style="border-bottom: 2px solid var(--button); color: #fff;">Daniel L.
+                                Hightower</strong> has been standing up for the rights of people against those that
+                            caused them injury. Many times the at-fault party is represented by an insurance company, or
+                            the injured party is seeking benefits from their own insurance company.
+                        </p>
+                        <a href="#" class="btn-law-consult">FREE CONSULTATION</a>
+                    </div>
+                </div>
+                <!-- Card 2: Car Accident Law -->
+                <div class="law-card"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law2.jpg');">
+                    <div class="law-card-content">
+                        <h3 class="law-card-title">Car Accident<br>Law</h3>
+                        <p class="law-card-desc">
+                            Car accidents can result in serious injuries, financial hardship, and emotional stress.
+                            <strong style="border-bottom: 2px solid var(--button); color: #fff;">Daniel L.
+                                Hightower</strong> has decades of experience helping accident victims recover
+                            compensation for medical expenses, lost wages, pain and suffering, and other damages caused
+                            by negligent drivers.
+
+                        </p>
+                        <a href="#" class="btn-law-consult">FREE CONSULTATION</a>
+                    </div>
+                </div>
+                <!-- Card 3: Work Accident Law -->
+                <div class="law-card"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law3.jpg');">
+                    <div class="law-card-content">
+                        <h3 class="law-card-title">Work Accident<br>Law</h3>
+                        <p class="law-card-desc">
+                            Workplace injuries can leave you unable to work and facing mounting medical bills. <strong
+                                style="border-bottom: 2px solid var(--button); color: #fff;">Daniel L.
+                                Hightower</strong> represents injured workers in workers' compensation and workplace
+                            accident claims, helping them pursue the benefits and compensation they deserve.
+                        </p>
+                        <a href="#" class="btn-law-consult">FREE CONSULTATION</a>
+                    </div>
+                </div>
+                <!-- Card 4: Wrongful Death Law -->
+                <div class="law-card"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law4.jpg');">
+                    <div class="law-card-content">
+                        <h3 class="law-card-title">Wrongful<br>Death Law</h3>
+                        <p class="law-card-desc">
+                            The loss of a loved one due to another person's negligence is a heartbreaking experience.
+                            <strong style="border-bottom: 2px solid var(--button); color: #fff;">Daniel L.
+                                Hightower</strong> helps families seek justice through wrongful death claims, pursuing
+                            compensation for financial losses and holding responsible parties accountable.
+
+                        </p>
+                        <a href="#" class="btn-law-consult">FREE CONSULTATION</a>
+                    </div>
+                </div>
+                <!-- Card 5: Social Security Disability -->
+                <div class="law-card"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law5.jpg');">
+                    <div class="law-card-content">
+                        <h3 class="law-card-title">Social Security<br>Disability</h3>
+                        <p class="law-card-desc">
+                            Applying for Social Security Disability benefits can be overwhelming, especially after a
+                            denial. <strong style="border-bottom: 2px solid var(--button); color: #fff;">Daniel L.
+                                Hightower</strong> assists clients throughout the disability claims process, working to
+                            secure the benefits they need to support themselves and their families.
+
+                        </p>
+                        <a href="#" class="btn-law-consult">FREE CONSULTATION</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- H&H Honors & Awards Section -->
+        <section class="hh-honors-section" id="hh-honors-section">
+            <div class="honors-container">
+                <div class="honors-title-wrapper">
+                    <span class="honors-line"></span>
+                    <h2 class="honors-title">HONORS & AWARDS</h2>
+                    <span class="honors-line"></span>
+                </div>
+                <div class="honors-logos-row">
+                    <div class="honors-logos-track">
+                        <div class="honor-logo-item">
+                            <img src="assets/brand1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/brand2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/brand3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/brand4.png" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/brand5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                        <!-- Clones for seamless mobile marquee -->
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/brand1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/brand2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/brand3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/brand4.png" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/brand5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
