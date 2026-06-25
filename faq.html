@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower & Hightower</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Absolute Positioning for Headers on Lawyers Page */
+        .top-header-bar {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 105;
+        }
+
+        .main-header {
+            position: absolute !important;
+            top: 40px;
+            /* Height of the top header bar */
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 100;
+            box-shadow: none !important;
+        }
+
+        /* Lawyer Hero Section styling */
+        .lawyer-hero-section {
+            background-image: url('assets/lawyer-hero.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Push bottom banner to the end */
+            padding-top: 180px;
+            /* Space for overlay headers */
+            overflow: hidden;
+        }
+
+        .lawyer-hero-container {
+            max-width: 1825px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            /* Align form to the right */
+            align-items: flex-end;
+            padding: 0 40px 0px 40px;
+            flex-grow: 1;
+            /* Stretch to take space above bottom banner */
+        }
+
+        .lawyer-hero-right {
+            width: 100%;
+            max-width: 420px;
+            z-index: 15;
+        }
+
+        .nav-list {
+            margin-top: 34px;
+        }
+
+        .form-card {
+            margin-bottom: -22px;
+        }
+
+        /* Mobile responsiveness for lawyer-hero-section */
+        @media (max-width: 1024px) {
+            .lawyer-hero-section {
+                background-image: none !important;
+                background-color: #1D3656 !important;
+                min-height: auto;
+                padding-top: 140px;
+            }
+
+            .lawyer-hero-container {
+                justify-content: center;
+                padding: 0 20px 30px 20px;
+            }
+
+            .lawyer-hero-right {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-header-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:352-629-7777" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 352-629-7777
+                </a>
+                <a href="#" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="./assets/h&h-logo.svg" alt="Hightower & Hightower Logo" class="logo-img">
+            </a>
+
+            <!-- Bottom Row: Nav Links (Aligned to Logo Center) -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">About Us <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu">
+                                <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                        class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                    <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                    <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                    <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                    <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                    <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="community-services.html">Community Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">Practice Areas <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident
+                                    Lawyer</a></li>
+                            <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security
+                                    Disability Law</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="notable-trial-results-settlements.html" class="nav-link-item">Notable Trial Results &
+                            Settlements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link-item">Common Questions</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Burger Menu Trigger for Mobile -->
+            <button class="burger-menu-btn" id="mobile-menu-trigger" aria-label="Open Menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="floating-header" id="floating-navbar">
+        <nav class="floating-nav-menu">
+            <ul class="floating-nav-list">
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">About Us <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                    class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                            <ul class="submenu">
+                                <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="community-services.html">Community Services</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">Practice Areas <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="notable-trial-results-settlements.html" class="floating-nav-link-item">Notable Trial
+                        Results & Settlements</a>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="faq.html" class="floating-nav-link-item">Common Questions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <!-- Header section of drawer -->
+            <div class="mobile-menu-header">
+                <a href="index.html" class="logo-link">
+                    <img src="./assets/h&h-logo.svg" alt="Logo" class="logo-img-mobile">
+                </a>
+
+                <div class="mobile-menu-actions-tab">
+
+                    <div class="mobile-header-socials">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body section of drawer -->
+            <div class="mobile-menu-body">
+
+                <div class="mobile-nav-list">
+                    <!-- Accordion 1 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>About Us</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="mobile-nav-sub-accordion">
+                                <button class="sub-accordion-trigger">
+                                    <span>Lawyers</span> <i class="fa-solid fa-chevron-down sub-arrow"></i>
+                                </button>
+                                <div class="sub-accordion-panel">
+                                    <a href="lawyers.html">Lawyers</a>
+                                    <a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a>
+                                    <a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a>
+                                    <a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a>
+                                    <a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a>
+                                    <a href="lawyers/dave-guiley.html">Dave D. Guiley</a>
+                                    <a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a>
+                                </div>
+                            </div>
+                            <a href="videos.html">Videos</a>
+                            <a href="community-services.html">Community Services</a>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>Practice Areas</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="areas-of-practice.html">Areas of Practice </a>
+                            <a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a>
+                            <a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a>
+                            <a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                            <a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a>
+                            <a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a>
+                            <a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a>
+                            <a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a>
+                        </div>
+                    </div>
+
+                    <a href="notable-trial-results-settlements.html" class="mobile-nav-item-link">Notable Trial Results
+                        & Settlements</a>
+                    <a href="faq.html" class="mobile-nav-item-link">Common Questions</a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="contact-us.html" class="mobile-contact-btn">CONTACT US</a>
+                    <a href="tel:352-629-7777" class="mobile-phone-link">
+                        <i class="fa-solid fa-phone"></i> 352-629-7777
+                    </a>
+                    <div class="mobile-footer-socials">
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <section class="faq-services-hero">
+            <div class="community-hero-container">
+                <div class="community-hero-left">
+                    <h1 class="community-hero-title">FAQ's</h1>
+                </div>
+                <div class="community-hero-right">
+                    <div class="form-card">
+                        <div class="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
+                        <h2 class="form-title">Talk to Hightower & Hightower</h2>
+                        <p class="form-subtitle">We'll review your case and respond within hours.</p>
+
+                        <form class="case-review-form" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">FIRST NAME</label>
+                                    <input type="text" id="first-name" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">LAST NAME</label>
+                                    <input type="text" id="last-name" placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-number">PHONE NUMBER</label>
+                                <input type="tel" id="phone-number" placeholder="(407) 555-1234" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="case-type">CASE TYPE</label>
+                                <select id="case-type" required>
+                                    <option value="" disabled selected>Select your case type</option>
+                                    <option value="personal-injury">Personal Injury</option>
+                                    <option value="car-accident">Car Accident</option>
+                                    <option value="medical-malpractice">Medical Malpractice</option>
+                                    <option value="wrongful-death">Wrongful Death</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="brief-description">BRIEF DESCRIPTION</label>
+                                <textarea id="brief-description" rows="3"
+                                    placeholder="Tell us briefly what happened and when..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
+                        </form>
+
+                        <p class="form-footer-text">
+                            By submitting, you agree to our Privacy Policy. Your information is confidential and
+                            protected by attorney-client privilege.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Gold Banner -->
+            <div class="community-hero-banner">
+                <div class="community-hero-banner-content">
+                    One Call <i class="fa-solid fa-phone"></i> That's All – FREE Until We Win!
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Main Section -->
+        <section class="faq-main-section">
+            <div class="faq-container">
+                <!-- Intro paragraph -->
+                <p class="faq-intro-text">
+                    Our Frequently Asked Questions section has been sorted by topic to help you get the answers you
+                    need. Click on one of the topics below to be taken to that section. As always, feel free to contact
+                    us with any questions you might have.
+                </p>
+
+                <!-- Grid Layout: Sidebar Filter & Content -->
+                <div class="faq-layout-grid">
+                    <!-- Sidebar Filters -->
+                    <aside class="faq-sidebar">
+                        <button class="faq-filter-btn active" data-category="all">• All Topics</button>
+                        <button class="faq-filter-btn" data-category="general">• General Questions</button>
+                        <button class="faq-filter-btn" data-category="auto">• Auto Accident Questions</button>
+                        <button class="faq-filter-btn" data-category="motorcycle">• Motorcycle Accident
+                            Questions</button>
+                        <button class="faq-filter-btn" data-category="trucking">• Trucking Accident Questions</button>
+                        <button class="faq-filter-btn" data-category="work">• Work Accident Questions</button>
+                        <button class="faq-filter-btn" data-category="social-security">• Social Security Disability
+                            Questions</button>
+                    </aside>
+
+                    <!-- FAQ Question Accordions -->
+                    <div class="faq-content-area">
+                        <!-- Group 1: General Questions -->
+                        <div class="faq-category-group" data-category="general">
+                            <h2 class="faq-category-title">General Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 (Expanded by default as requested in mockup screenshot) -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header active">
+                                        <span>How will I pay for my legal fees?</span>
+                                        <span class="faq-icon">−</span>
+                                    </button>
+                                    <div class="faq-accordion-content" style="max-height: none; padding: 25px;">
+                                        <p class="faq-answer-text">
+                                            We take cases on a contingency fee basis. That means that you pay no fees or
+                                            costs unless and until we make a recovery for you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 2 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>How do you decide whether or not you will take my case?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Once we receive initial information from you about your case, you may be
+                                            asked to schedule an appointment with an attorney in our firm to meet and
+                                            further discuss your case. During that free initial consultation we will ask
+                                            you to bring all documentation concerning your accident, such as a police
+                                            report, policies of insurance, photographs and medical records and bills (if
+                                            you have them). We will review the documentation and gather further
+                                            information from you regarding the facts surrounding your accident. We will
+                                            also answer your questions at that time. We review each case on an
+                                            individual basis. Unfortunately, we do not have the resources to take every
+                                            case. However, if after meeting with you and reviewing your case, we feel we
+                                            can be of service to you, we will take your case. If we can not take your
+                                            case, we may be able to refer you to other lawyers we know who can help.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 3 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>How much is my case worth?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The value of each case is different and must be evaluated separately. We
+                                            have over 40 years of experience handling accident and injury cases and take
+                                            a great deal of time to properly evaluate your case. A person who has been
+                                            injured through the negligence of another may recover for past and future
+                                            medical expenses, past and future lost wages, and, in many cases the value
+                                            of your past and future pain, suffering, loss of enjoyment of life and other
+                                            non-economic damages. Additionally, if you have a spouse and/or children,
+                                            they may have a claim in their own right for their loss of your consortium
+                                            (companionship, services, comfort) due to the injuries you suffered.
+                                            However, you must know that there is never any guarantee of any recovery.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 2: Auto Accident Questions -->
+                        <div class="faq-category-group" data-category="auto">
+                            <h2 class="faq-category-title">Auto Accident Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 (Expanded by default) -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header active">
+                                        <span>If I am in an automobile accident, what should I do?</span>
+                                        <span class="faq-icon">−</span>
+                                    </button>
+                                    <div class="faq-accordion-content" style="max-height: none; padding: 25px;">
+                                        <p class="faq-answer-text">
+                                            Florida law requires that you remain at the scene of an accident until the
+                                            police arrives to help in the preparation of an accident report. Report the
+                                            accident to your insurance company as soon as you get home from the scene,
+                                            or as soon as possible. In order to prove your case, you have the burden of
+                                            presenting evidence to establish your claim, therefore, preservation of
+                                            evidence is crucial. Such evidence may consist of documentation of the
+                                            physical evidence at the accident site, of the vehicles involved in the
+                                            accident and of your medical injuries. You may not know the legal
+                                            requirements necessary to prove your case and therefore, we recommend that
+                                            you contact an attorney immediately to be advised of your legal rights.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 2 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>Who will pay to fix the damage to my vehicle?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            That depends on what type of insurance coverage you have or the insurance
+                                            coverage of the person that caused the accident. Call the other driver’s
+                                            insurance company and request that your car be fixed. Only discuss property
+                                            damage issues with them. Do not give any statements or discuss how the
+                                            accident happened or your injuries. Check your policy to see whether you
+                                            have rental car coverage, towing and what deductibles apply. It may be in
+                                            your best interest to retain the services of a lawyer with experience in
+                                            handling auto accident claims as they are familiar with the terms of
+                                            different insurance policies and regularly negotiate the resolution of
+                                            property damage claims with many different insurance companies.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 3 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>Who will pay my medical bills and lost wages?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            There may be many sources from which to get your medical bills paid and,
+                                            depending on the types of insurance, they each take different priority. For
+                                            instance, in Florida, you are required to carry personal injury protection
+                                            (PIP) insurance. This is generally in the amount of $10,000 and may have
+                                            different deductible amounts. This money is available to pay for medical
+                                            bills and/or lost wages. However, unless you instruct your insurance carrier
+                                            to reserve your PIP for your lost wages, they will pay it to the first
+                                            medical bills they receive. There may also be other insurance available to
+                                            pay for your medical bills including medical payments coverage, health
+                                            insurance, Medicare, Medicaid or disability insurance. If you are in an
+                                            automobile accident, you should contact an experienced personal injury
+                                            lawyer to discuss how the relevant state laws and policies of insurance
+                                            apply to recover damages for your injuries.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 4 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>What if the person that caused the accident does not have
+                                            insurance?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Unfortunately, nearly 20% of Florida’s drivers do not have any form of
+                                            automobile insurance. If you purchased Uninsured Motorist Coverage from your
+                                            insurance carrier, you may look to your own insurance company to pay you for
+                                            the damages caused by the negligence of the uninsured motorist carrier. We
+                                            caution you, however, in negotiating your claim with your insurance company
+                                            yourself as, even though they are your insurance company, (to pay the least
+                                            amount of money out on claims) their interest is directly opposite to what
+                                            is in your best interest, (to obtain a just settlement to compensate you
+                                            fairly for all of your damages). We recommend you obtain legal counsel
+                                            before attempting to negotiate your claims directly with your own insurance
+                                            company.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 5 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>The insurance company wants to take my recorded statement, what is
+                                            that?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            We do not recommend that you give a recorded statement to anyone, other than
+                                            your own insurance carrier. Many insurance policies require the insured
+                                            (you) to “cooperate” with their investigation of the accident. This
+                                            recording can and will be used as evidence against you if you pursue a claim
+                                            regarding your accident, therefore, we would advise you obtain legal counsel
+                                            before giving any such statement.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 3: Motorcycle Accident Questions -->
+                        <div class="faq-category-group" data-category="motorcycle">
+                            <h2 class="faq-category-title">Motorcycle Accident Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>When there is a motorcycle accident related injury or death in florida,
+                                            who is allowed to sue?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            If any party other than the motorcycle driver involved in the Florida
+                                            motorcycle accident is at fault, the motorcycle driver and/or that person’s
+                                            surviving family members may pursue a personal injury or wrongful death
+                                            lawsuit seeking damages and compensation.
+                                            If the motorcycle driver is at fault, then anyone else injured or killed in
+                                            the Florida motorcycle accident – including the motorcyclist’s passenger
+                                            and/or people in other vehicles and their surviving family members — may
+                                            pursue a lawsuit against the motorcycle operator. Any other person injured
+                                            by a motorcyclist, such as a pedestrian, can recover damages against the
+                                            motorcycle operator and any other responsible party.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 2 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>When a motorcycle accident happens in florida, which parties involved may
+                                            be held responsible?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Defendants in Florida motorcycle accident cases may include the motorcycle
+                                            driver, other motor vehicle operators, property owners where dangerous
+                                            conditions may exist (on both public and private properties), mechanical
+                                            repair and service shops, as well as motorcycle, tire, and parts
+                                            manufacturers. Any of these parties may be held liable in a Florida court of
+                                            law. A lawsuit seeks to identify and hold responsible any persons or
+                                            entities whose wrongful conduct or negligence may have contributed to injury
+                                            and/or death resulting from a Florida motorcycle accident.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 3 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>Why is it so important for me to have my florida motorcycle accident case
+                                            investigated?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Motorcyclists may sometimes run up against the bias that because they
+                                            operate a motorcycle in Florida, they are the ones who cause accidents and
+                                            they are responsible for their own injuries. The reality is that sometimes
+                                            the motorcyclist did nothing to cause the accident, and the liability lies
+                                            with another driver or other entities whose conduct or negligence
+                                            contributed to the Florida motorcycle accident. A proper examination brings
+                                            forth the true facts of the case including the conditions at the Florida
+                                            motorcycle accident scene; details of how, when, why, what, and who was
+                                            involved in the accident; as well as witness statements and reports from law
+                                            enforcement and other agencies involved in the investigation.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 4 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>How important is it for me to consult a florida motorcycle accident lawyer
+                                            regarding my motorcycle accident case?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            It is very important, particularly if the Florida motorcycle accident you
+                                            were involved in resulted in your own injuries or in serious injury or death
+                                            to other drivers and passengers involved. Motorcyclists often get blamed
+                                            when they are involved in serious motor vehicle accidents — and the opposing
+                                            side will be looking for evidence to support that claim, whether it’s
+                                            entirely true or not. An experienced Florida motorcycle accident attorney
+                                            can investigate your case and compile the necessary legal documentation and
+                                            evidence that will support you in your injury claims.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 4: Trucking Accident Questions -->
+                        <div class="faq-category-group" data-category="trucking">
+                            <h2 class="faq-category-title">Trucking Accident Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>HOW ARE ACCIDENTS INVOLVING COMMERCIAL TRUCKS DIFFERENT FROM CAR
+                                            ACCIDENTS?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The size of tractor trailers puts passenger cars at a serious disadvantage.
+                                            Some tractor trailers can weigh over 80,000 pounds. When something that size
+                                            collides with an automobile, the injuries to the occupants can be
+                                            devastating and deadly.
+                                        </p>
+                                        <p class="faq-answer-text">
+                                            In addition, there are sections of the Vehicle Code applicable to trucking
+                                            companies and commercial truck drivers, as well as training and licensing
+                                            requirements specific for truck drivers making their defense in truck
+                                            accident cases more difficult and, therefore, better for plaintiffs.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 2 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>WHAT IS THE FEDERAL GOVERNMENT DOING ABOUT TRACTOR TRAILERS AND HIGHWAY
+                                            SAFETY?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The Federal Motor Carrier Safety Administration controls specific
+                                            regulations that trucking companies are required to follow . These complex
+                                            regulations were put in place to protect accident victims of their own
+                                            pockets.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            ARE THERE ANY ADDITIONAL SAFETY LAWS RELATED TO TRUCKS AND TRUCK DRIVERS?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Yes. Specific laws and regulations are in place to protect passenger vehicle
+                                            drivers and occupants from the actions of negligent truck drivers and
+                                            trucking companies. State and Federal rules specify, for example, how many
+                                            hours and days truck drivers can stay on the road before taking a break, the
+                                            proper loading of cargo and weight the driver is carrying, and speeds for
+                                            safely traveling and passing other vehicles on the highway.
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WHAT DAMAGES CAN I RECOVER IN A TRUCK ACCIDENT INJURY CASE?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Plaintiffs may be entitled to compensation for past and future wages lost
+                                            and medical expenses. You may also be entitled to compensation for the pain
+                                            and suffering you’ve endured as a result of the truck accident. Punitive
+                                            damages are possible if the conduct of the person at-fault is proven to be
+                                            particularly reckless.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>IF I AM INJURED, HOW WILL I PAY FOR MY MEDICAL BILLS? WHO IS RESPONSIBLE?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The trucking company more than likely will not pay your medical costs right
+                                            away. Your own insurance may cover some of your expenses, including some
+                                            medical bills and funeral costs if a loved one died. We urge you NOT to give
+                                            a statement to your insurance company or to the trucking company, nor to
+                                            sign any release forms, before consulting with an experienced truck accident
+                                            attorney. Your actions could be used against you to limit you are awarded.
+
+
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>WHAT IS THE TIME FRAME TO BRING AN INJURY OR DEATH CASE BASED ON A TRUCK
+                                            ACCIDENT?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            In the state of Florida, a truck accident case must be brought within four
+                                            years of the date of the accident. If someone died, the wrongful death
+                                            lawsuit must be brought within two years of the date of the decedent’s
+                                            death.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 5: Work Accident Questions -->
+                        <div class="faq-category-group" data-category="work">
+                            <h2 class="faq-category-title">Work Accident Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            HOW LONG DO I HAVE IF I HAVE BEEN INJURED AT WORK TO REPORT IT TO MY
+                                            EMPLOYER?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            You should report your work accident or injury to your employer right away.
+                                            Failure to report your injury within 30 days may be used as a defense
+                                            against your claim.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 2 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WILL I BE PAID FOR THE TIME I LOSE FROM WORK BECAUSE OF MY WORK
+                                            INJURY?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Wage replacement benefits will start on the eighth (8) day that the injured
+                                            employee is unable to work. You will not receive wage replacement benefits
+                                            for the first seven (7) days of work missed, unless you are out of work for
+                                            more than 21 days due to the work accident. If your disability requires you
+                                            to miss more than twenty-one (21) days, you are paid from the date of the
+                                            accident.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            HOW MUCH WILL I BE PAID FOR MY LOST WAGES?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            In most cases, the wage-replacement benefits will equal two-thirds (2/3) of
+                                            your pre-injury regular weekly wage (AWW), but the benefit will not be
+                                            higher than Florida’s average weekly wage. Checks are usually paid on a
+                                            bi-weekly basis until you are released to work by your physician. If you
+                                            continue to lose wages after returning to work or being released to work,
+                                            you may be entitled to wage-replacement benefits at a lower rate.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            WHAT IS AWW (AVERAGE WEEKLY WAGE)?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Your Average Weekly Wage is determined by wages you earned in the 13 weeks
+                                            prior to the date of your work accident. To be sure this amount is
+                                            calculated correctly by the employer/insurance carrier so that you are paid
+                                            the correct amount, you may want to contact Daniel L. Hightower, an
+                                            experienced workers’ compensation attorney.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            WILL MY MEDICAL BILLS AND PRESCRIPTIONS BE PAID?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            All reasonable, necessary and authorized medical bills, prescriptions and
+                                            out-of-pocket expenses will be paid by your employer/insurance carrier.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            DO I GET TO CHOOSE THE DOCTOR I TREAT WITH?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            You must see physicians that are authorized by the workers’ compensation
+                                            insurance company. However, you are allowed a one-time change in your
+                                            authorized treating physician.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            HOW MUCH IS MY CASE WORTH?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            To determine how much your case might be worth we analyze multiple factors
+                                            including your age, wages, future expected wages, job type, injury type,
+                                            level of education and training, and future estimated medical care and
+                                            therapy.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            WHAT IF I’M NOT ABLE TO RETURN TO MY CURRENT LINE OF WORK BECAUSE OF MY
+                                            INJURY?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Under the Workers’ Compensation Act, if you are unable to return to
+                                            employment earning wages similar to your pre-injury wages, then you may be
+                                            entitled to retraining at the State’s expense. The retraining program has to
+                                            be approved by the Division of Workers’ Compensation Bureau of
+                                            Rehabilitation and Reemployment Services. Often employees who are approved
+                                            for retraining are also entitled to temporary total disability benefits for
+                                            up to one year while they are pursuing retraining.
+                                        </p>
+                                        <p class="faq-answer-text">
+                                            If retraining is not a viable option and you are unable to obtain any kind
+                                            of employment, then you may be eligible for disability payments. These can
+                                            be temporary, while you are still recovering from your injury, or permanent.
+                                            Your entitlement to disability benefits would depend on the specific facts
+                                            of your case and so the assessment must be made on a case-by-case basis.
+                                        </p>
+                                        <p class="faq-answer-text">
+                                            There are limited options available and each case is different. Please
+                                            contact us to discuss the options available to you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            WHAT DOES TTD (TEMPORARY TOTAL DISABLED) MEAN?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            TTD means an injured worker is totally unable to work during the recovery
+                                            and improvement process. TTD benefits are the wage-loss benefits that are
+                                            provided as a result of your work injury that temporarily prevents you from
+                                            returning to work and you have not reached MMI.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WHAT DOES MMI MEAN?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Maximum Medical Improvement – The point at which you have improved as much
+                                            as the doctors expect you to improve medically.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WHAT DOES TPD (TEMPORARY PARTIAL DISABILITY) MEAN?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            TPD means an injured worker is partially unable to work during the recovery
+                                            and improvement process. TPD benefits are the wage-loss benefits that are
+                                            provided when the doctor releases you to return to work and you have not
+                                            reached MMI and you earn less than 80% of the pre-injury wage. The benefit
+                                            is equal to 80% of the difference between 80% of the pre-injury wage and the
+                                            post-injury wage.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WHAT DOES PTD (PERMANENT TOTAL DISABILITY) MEAN?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            When an injured worker’s recovery has progressed as far as medical treatment
+                                            can take it, the worker is said to have reached MMI. After that, temporary
+                                            benefits are no longer payable, and some workers whose permanent physical
+                                            restrictions prevent them from returning to work may be entitled to PTD
+                                            benefits for loss of wage earning capacity. The requirements for these
+                                            benefits change depending on the year you were injured. If you are PTD you
+                                            may qualify for Social Security benefits, as well. Please read our
+                                            information regarding Social Security Disability claims and contact us.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+
+                                            WHAT IF I AM HAVING PROBLEMS RECEIVING BENEFITS OR GETTING PRESCRIPTIONS
+                                            AUTHORIZED AND PAID FOR? IS YOUR AWW RATE CORRECT?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Contact Daniel L. Hightower for a free consultation to evaluate your case.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 6: Social Security Disability Questions -->
+                        <div class="faq-category-group" data-category="social-security">
+                            <h2 class="faq-category-title">Social Security Disability Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WHEN SHOULD I APPLY FOR SOCIAL SECURITY DISABILITY BENEFITS?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            If you think you may be entitled to disability benefits, you should apply as
+                                            soon as possible. In some instances, Social Security will pay benefits up to
+                                            12 months before your application. If you wait until next month to apply,
+                                            you could lose out on several hundred dollars worth of past benefits.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive FAQ JavaScript Accordion + Filter script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Accordion logic
+                const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+
+                function collapseAccordion(header, content, icon) {
+                    if (!header.classList.contains('active')) return;
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.offsetHeight; // force reflow
+                    content.style.maxHeight = null;
+                    content.style.padding = null;
+                    header.classList.remove('active');
+                    if (icon) icon.textContent = '+';
+                }
+
+                function expandAccordion(header, content, icon) {
+                    if (header.classList.contains('active')) return;
+                    content.style.padding = '25px';
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    header.classList.add('active');
+                    if (icon) icon.textContent = '−';
+
+                    setTimeout(() => {
+                        if (header.classList.contains('active')) {
+                            content.style.maxHeight = 'none';
+                        }
+                    }, 400); // Matches CSS transition duration
+                }
+
+                accordionHeaders.forEach(header => {
+                    header.addEventListener('click', () => {
+                        const content = header.nextElementSibling;
+                        const icon = header.querySelector('.faq-icon');
+                        const isActive = header.classList.contains('active');
+
+                        // Collapse all other accordions
+                        accordionHeaders.forEach(otherHeader => {
+                            if (otherHeader !== header) {
+                                const otherContent = otherHeader.nextElementSibling;
+                                const otherIcon = otherHeader.querySelector('.faq-icon');
+                                collapseAccordion(otherHeader, otherContent, otherIcon);
+                            }
+                        });
+
+                        if (isActive) {
+                            collapseAccordion(header, content, icon);
+                        } else {
+                            expandAccordion(header, content, icon);
+                        }
+                    });
+                });
+
+                // Filter logic
+                const filterBtns = document.querySelectorAll('.faq-filter-btn');
+                const categoryGroups = document.querySelectorAll('.faq-category-group');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Deactivate all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // Activate current button
+                        btn.classList.add('active');
+
+                        const filterCategory = btn.getAttribute('data-category');
+
+                        categoryGroups.forEach(group => {
+                            const groupCategory = group.getAttribute('data-category');
+                            if (filterCategory === 'all' || filterCategory === groupCategory) {
+                                group.style.display = 'block';
+                                // Fade effect
+                                group.style.opacity = '0';
+                                setTimeout(() => {
+                                    group.style.opacity = '1';
+                                    group.style.transition = 'opacity 0.4s ease';
+                                }, 30);
+                            } else {
+                                group.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <!-- H&H Honors & Awards Section -->
+        <section class="hh-honors-section" id="hh-honors-section">
+            <div class="honors-container">
+                <div class="honors-title-wrapper">
+                    <span class="honors-line"></span>
+                    <h2 class="honors-title">HONORS & AWARDS</h2>
+                    <span class="honors-line"></span>
+                </div>
+                <div class="honors-logos-row">
+                    <div class="honors-logos-track">
+                        <div class="honor-logo-item">
+                            <img src="assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                        <!-- Clones for seamless mobile marquee -->
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-text">Only pay if we win. Contact us 24/7.</h2>
+            </div>
+        </section>
+
+        <footer class="footer-section" id="footer-section">
+            <div class="footer-container">
+                <!-- Top Row: Contact, Logo, Socials -->
+                <div class="footer-top-row">
+                    <div class="footer-contact">
+                        <span class="consult-badge">100% Free Consultation</span>
+                        <a href="tel:352-646-3944" class="footer-phone">352-646-3944</a>
+                    </div>
+                    <div class="footer-logo-wrapper">
+                        <img src="assets/footer-logo.svg" alt="H&H Lawyers Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mid Row: Navigation Links -->
+                <div class="footer-nav-row">
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="lawyers.html">Meet Our Attorneys</a></li>
+                            <li><a href="areas-of-practice.html">Practice Areas</a></li>
+                            <li><a href="#">Our Victories</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Bottom Row: Copyright, Disclaimer -->
+                <div class="footer-bottom-row">
+
+                    <div class="footer-disclaimer">
+                        <div class="footer-bottom-meta">
+                            <p class="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.
+                            </p>
+                            <div class="legal-links">
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <span class="legal-divider">|</span>
+                                <a href="#">Site Map</a>
+                            </div>
+                        </div>
+                        <div class="footer-meta-desc">
+
+                            <p style="padding-top: 60px;">The information on this website is for general information
+                                purposes only. Nothing on this site should be taken as legal advice for any individual
+                                case or situation. This information is not intended to create, and receipt or viewing
+                                does not constitute, an attorney-client relationship. The verdicts and settlements
+                                listed on this site are intended to be representative of cases handled by Hightower &
+                                Hightower. These listings are not a guarantee or prediction of the outcome of any other
+                                claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower & Hightower</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Absolute Positioning for Headers on Lawyers Page */
+        .top-header-bar {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 105;
+        }
+
+        .main-header {
+            position: absolute !important;
+            top: 40px;
+            /* Height of the top header bar */
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 100;
+            box-shadow: none !important;
+        }
+
+        /* Lawyer Hero Section styling */
+        .lawyer-hero-section {
+            background-image: url('assets/lawyer-hero.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Push bottom banner to the end */
+            padding-top: 180px;
+            /* Space for overlay headers */
+            overflow: hidden;
+        }
+
+        .lawyer-hero-container {
+            max-width: 1825px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            /* Align form to the right */
+            align-items: flex-end;
+            padding: 0 40px 0px 40px;
+            flex-grow: 1;
+            /* Stretch to take space above bottom banner */
+        }
+
+        .lawyer-hero-right {
+            width: 100%;
+            max-width: 420px;
+            z-index: 15;
+        }
+
+        .nav-list {
+            margin-top: 34px;
+        }
+
+        .form-card {
+            margin-bottom: -22px;
+        }
+
+        /* Mobile responsiveness for lawyer-hero-section */
+        @media (max-width: 1024px) {
+            .lawyer-hero-section {
+                background-image: none !important;
+                background-color: #1D3656 !important;
+                min-height: auto;
+                padding-top: 140px;
+            }
+
+            .lawyer-hero-container {
+                justify-content: center;
+                padding: 0 20px 30px 20px;
+            }
+
+            .lawyer-hero-right {
+                max-width: 100%;
+            }
+        }
+
+        /* Make navbar items black without changing other things */
+        .top-header-bar .social-icons a,
+        .top-header-bar .phone-link,
+        .top-header-bar .phone-link i,
+        .main-header .nav-link-item,
+        .main-header .dropdown-arrow {
+            color: #000000 !important;
+        }
+
+        .main-header .burger-bar {
+            background-color: #000000 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-header-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:352-629-7777" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 352-629-7777
+                </a>
+                <a href="#" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="./assets/footer-logo.svg" alt="Hightower & Hightower Logo" class="logo-img">
+            </a>
+
+            <!-- Bottom Row: Nav Links (Aligned to Logo Center) -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">About Us <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu">
+                                <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                        class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                    <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                    <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                    <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                    <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                    <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="community-services.html">Community Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">Practice Areas <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="notable-trial-results-settlements.html" class="nav-link-item">Notable Trial Results &
+                            Settlements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link-item">Common Questions</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Burger Menu Trigger for Mobile -->
+            <button class="burger-menu-btn" id="mobile-menu-trigger" aria-label="Open Menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="floating-header" id="floating-navbar">
+        <nav class="floating-nav-menu">
+            <ul class="floating-nav-list">
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">About Us <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                    class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                            <ul class="submenu">
+                                <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="community-services.html">Community Services</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">Practice Areas <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="notable-trial-results-settlements.html" class="floating-nav-link-item">Notable Trial
+                        Results & Settlements</a>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="faq.html" class="floating-nav-link-item">Common Questions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <!-- Header section of drawer -->
+            <div class="mobile-menu-header">
+                <a href="index.html" class="logo-link">
+                    <img src="./assets/h&h-logo.svg" alt="Logo" class="logo-img-mobile">
+                </a>
+
+                <div class="mobile-menu-actions-tab">
+
+                    <div class="mobile-header-socials">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body section of drawer -->
+            <div class="mobile-menu-body">
+
+                <div class="mobile-nav-list">
+                    <!-- Accordion 1 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>About Us</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="mobile-nav-sub-accordion">
+                                <button class="sub-accordion-trigger">
+                                    <span>Lawyers</span> <i class="fa-solid fa-chevron-down sub-arrow"></i>
+                                </button>
+                                <div class="sub-accordion-panel">
+                                    <a href="lawyers.html">Lawyers</a>
+                                    <a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a>
+                                    <a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a>
+                                    <a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a>
+                                    <a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a>
+                                    <a href="lawyers/dave-guiley.html">Dave D. Guiley</a>
+                                    <a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a>
+                                </div>
+                            </div>
+                            <a href="videos.html">Videos</a>
+                            <a href="community-services.html">Community Services</a>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>Practice Areas</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="areas-of-practice.html">Areas of Practice </a>
+                            <a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a>
+                            <a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a>
+                            <a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                            <a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a>
+                            <a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a>
+                            <a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a>
+                            <a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a>
+                        </div>
+                    </div>
+
+                    <a href="notable-trial-results-settlements.html" class="mobile-nav-item-link">Notable Trial Results
+                        & Settlements</a>
+                    <a href="faq.html" class="mobile-nav-item-link">Common Questions</a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="#" class="mobile-contact-btn">CONTACT US</a>
+                    <a href="tel:352-629-7777" class="mobile-phone-link">
+                        <i class="fa-solid fa-phone"></i> 352-629-7777
+                    </a>
+                    <div class="mobile-footer-socials">
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <!-- Videos Showcase Section -->
+        <section class="videos-showcase-section">
+            <div class="videos-container">
+                <!-- SVG Watermark background -->
+                <div class="videos-bg-svg-wrapper">
+                    <img src="./assets/hero-bg.svg" alt="H&H Background Logo" class="videos-bg-svg">
+                </div>
+
+                <div class="videos-title-area">
+                    <h1 class="blog-title-main">How Long Do Personal Injury Cases Typically Take?</h1>
+                </div>
+
+                <div class="blog-full-detail">
+                    <!-- Main Blog Image -->
+                    <div class="blog-main-image-wrapper">
+                        <img src="./assets/blog-detail.jpg" alt="How Long Do Personal Injury Cases Typically Take?"
+                            class="blog-main-image">
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class="blog-article-content">
+                        <p>On average, a personal injury case takes 6 to 18 months to resolve, but some cases can take
+                            several years to settle. How long your specific case takes will depend on the facts of the
+                            case, including the severity of the injury, the total losses experienced, and the pain and
+                            suffering caused by the accident. A lawyer can help you determine the best approach to take
+                            for your case, and can give you insight into what to expect along the way.</p>
+
+                        <h2>Key Takeaways</h2>
+                        <ul class="blog-bullets">
+                            <li>Most personal injury cases take 6 to 18 months to resolve.</li>
+                            <li>Settling too early can leave future medical costs and ongoing losses uncompensated.</li>
+                            <li>Florida has the highest personal injury filing rate in the nation, which means courts
+                                are busy and having a knowledgeable local attorney matters to your case.</li>
+                        </ul>
+
+                        <h2>What Is a Personal Injury Case?</h2>
+                        <p>Personal injury law covers cases where someone is hurt due to another's wrongdoing or
+                            recklessness, also called negligence. This harm can be emotional, physical, or financial and
+                            often affects the injured person's quality of life. Common types of personal injury cases
+                            include:</p>
+                        <ul class="blog-bullets">
+                            <li>Motorcycle accidents</li>
+                            <li>Car accidents</li>
+                            <li>Tractor-trailer accidents</li>
+                            <li>Slip-and-falls</li>
+                            <li>Pedestrian accidents</li>
+                            <li>Bicycle accidents</li>
+                            <li>Workplace accidents</li>
+                            <li>Product liability claims</li>
+                        </ul>
+                        <p>These accidents can cause long-lasting physical changes, pain, and discomfort. They can also
+                            lead to medical expenses, lost income, property loss, and lifelong changes for the injured
+                            person.</p>
+
+                        <h2>Auto-Related Claims Lead Florida Personal Injury Filings</h2>
+                        <p>Florida personal injury cases cover a wide range of claims, but the numbers show that
+                            auto-related cases make up the largest share by far, accounting for 41.1% of statewide
+                            circuit civil filings.</p>
+
+                        <!-- Mid Graphic (table.jpg) -->
+                        <div class="blog-mid-image-wrapper">
+                            <img src="./assets/table.jpg" alt="Florida Personal Injury-Related Case Types Graphic"
+                                class="blog-mid-image">
+                        </div>
+
+                        <p>Once it's determined what type of case you may have, the next question most people ask is how
+                            long the process takes in Florida.</p>
+
+                        <h2>How Long Do Personal Injury Cases Take in Florida?</h2>
+                        <p>Florida court statistics do not provide an exact average timeline for every type of personal
+                            injury case. However, Florida's civil case time standards generally aim for most non-jury
+                            civil cases to resolve within 12 months, most jury civil cases within 18 months, and complex
+                            civil cases within 30 months. In practice, many personal injury cases resolve through
+                            settlement before trial, while cases involving serious injuries, disputed liability,
+                            multiple parties, or complex damages can or may take longer.</p>
+
+                        <!-- Custom Styled Table -->
+                        <div class="blog-table-container">
+                            <table class="blog-time-table">
+                                <thead>
+                                    <tr>
+                                        <th>Case Track</th>
+                                        <th>Florida Time Standard</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Non-jury civil cases</td>
+                                        <td>12 months</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jury civil cases</td>
+                                        <td>18 months</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complex civil cases</td>
+                                        <td>30 months</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2>What Affects Your Injury Case Timeline?</h2>
+                        <p>One of the biggest factors that controls when a case can settle is something called Maximum
+                            Medical Improvement, or MMI. MMI is considered a milestone in a personal injury case because
+                            it signifies that either (1) the condition has stabilized to a point where future medical
+                            treatment is unnecessary or (2) the injured person has recovered from the injury as much as
+                            possible.</p>
+                        <p>This milestone provides a foundation for calculating how much the case may be worth. If the
+                            case is settled too soon, before the full extent of the injuries is known, the injured
+                            person may miss the opportunity to be compensated for future medical bills, ongoing care, or
+                            losses that continue to build if the injury gets worse.</p>
+                        <p>Beyond MMI, other variables include the severity of your injuries, whether liability is
+                            disputed, the number of parties involved, and how cooperative the insurance company is.
+                            Court scheduling itself can also be a factor, as Florida handles thousands of cases per
+                            year, and criminal cases are given priority over civil trials.</p>
+                        <p>Even when both sides are ready to move forward, the pace of the court system can add time to
+                            the process. Patience is part of navigating a personal injury case, and understanding that
+                            delays are often outside anyone's control can help set realistic expectations.</p>
+
+                        <h2>The Stages of a Personal Injury Case</h2>
+                        <p>Every case is different to some degree. For example, a product liability case is treated
+                            differently than a car accident claim, but they do have a commonality: they are capable of
+                            being settled at any point throughout the process. However, settlement should not happen
+                            before the full extent of the injury is understood.</p>
+
+                        <p class="blog-intro-strong"><strong>The stages of a personal injury case include:</strong></p>
+                        <ol class="blog-ordered-list">
+                            <li><strong>Medical Treatment and Recovery:</strong> After the accident, the injured person
+                                usually begins medical treatment. This is important because it creates records of the
+                                injury, the treatment needed, and how the injury affects their daily life.</li>
+                            <li><strong>Investigation and Evidence Gathering:</strong> An attorney reviews the facts of
+                                the accident, gathers evidence, speaks with witnesses, reviews medical records, and
+                                determines who may be legally responsible.</li>
+                            <li><strong>Maximum Medical Improvement:</strong> A case typically cannot be fully valued
+                                until the injured person reaches Maximum Medical Improvement, or MMI.</li>
+                            <li><strong>Calculating Damages:</strong> Once the full extent of the injuries is known, the
+                                attorney can calculate damages.</li>
+                            <li><strong>Demand and Negotiation:</strong> The attorney may send a demand to the insurance
+                                company or responsible party. From there, both sides may negotiate to try to reach a
+                                fair settlement.</li>
+                            <li><strong>Filing a Lawsuit:</strong> If the case cannot be resolved through a settlement,
+                                a lawsuit may be filed. This does not always mean the case will go to trial, but it does
+                                move the case into the court system.</li>
+                            <li><strong>Discovery and Mediation:</strong> During discovery, both sides exchange
+                                information, documents, and evidence. Many cases also go through mediation, where both
+                                sides try to resolve the case before trial.</li>
+                            <li><strong>Trial or Settlement:</strong> Most personal injury cases settle before trial.
+                                However, if both sides cannot agree, the case may go before a judge or jury, who will
+                                decide the outcome.</li>
+                        </ol>
+
+                        <p>For a closer look at how civil cases move through the local system, the Florida Rules of
+                            Civil Procedure outline the formal process used in Florida courts. These rules help explain
+                            the steps that may happen after a personal injury claim is filed, including discovery,
+                            mediation, settlement procedures, and trial.</p>
+                        <p><a href="#" class="blog-inline-link">Florida Rules of Civil Procedure, The Florida Bar,
+                                effective April 1, 2026 | New Window | Opens PDF</a></p>
+
+                        <h3>The insurance company offered me a settlement. Should I take it?</h3>
+                        <p>Not always. A quick settlement may not account for the full impact of an injury. Insurance
+                            companies also have claims adjusters that will work to try and undervalue your claim. This
+                            is why we advise to never make any statement on record, as it could potentially be used
+                            against you later. Before you agree to anything, it's important to understand what your case
+                            is worth by sitting down with an <a href="#" class="blog-inline-link">experienced personal
+                                injury lawyer</a>.</p>
+
+                        <!-- Quote Callout Block -->
+                        <div class="blog-quote-callout">
+                            Remember: A fast settlement is not always a fair settlement.
+                        </div>
+
+                        <h2>Not sure where you are in the personal injury process?</h2>
+                        <p>A personal injury case can take time, especially if your injuries are still developing.
+                            Before you settle, make sure that the settlement accounts for the full extent of injuries,
+                            losses, future medical needs, and the pain and suffering caused by the accident. A local
+                            attorney like Hightower & Hightower can help you understand exactly where you stand and what
+                            your case may be worth. <a href="#" class="blog-inline-link">Contact Hightower & Hightower,
+                                P.A. today</a> to schedule a consultation and get guidance on your next step.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- H&H Honors & Awards Section -->
+        <section class="hh-honors-section" id="hh-honors-section">
+            <div class="honors-container">
+                <div class="honors-title-wrapper">
+                    <span class="honors-line"></span>
+                    <h2 class="honors-title">HONORS & AWARDS</h2>
+                    <span class="honors-line"></span>
+                </div>
+                <div class="honors-logos-row">
+                    <div class="honors-logos-track">
+                        <div class="honor-logo-item">
+                            <img src="./assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="./assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="./assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="./assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="./assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                        <!-- Clones for seamless mobile marquee -->
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="./assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="./assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="./assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="./assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="./assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-text">Only pay if we win. Contact us 24/7.</h2>
+            </div>
+        </section>
+
+        <footer class="footer-section" id="footer-section">
+            <div class="footer-container">
+                <!-- Top Row: Contact, Logo, Socials -->
+                <div class="footer-top-row">
+                    <div class="footer-contact">
+                        <span class="consult-badge">100% Free Consultation</span>
+                        <a href="tel:352-646-3944" class="footer-phone">352-646-3944</a>
+                    </div>
+                    <div class="footer-logo-wrapper">
+                        <img src="assets/footer-logo.svg" alt="H&H Lawyers Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mid Row: Navigation Links -->
+                <div class="footer-nav-row">
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="lawyers.html">Meet Our Attorneys</a></li>
+                            <li><a href="areas-of-practice.html">Practice Areas</a></li>
+                            <li><a href="#">Our Victories</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Bottom Row: Copyright, Disclaimer -->
+                <div class="footer-bottom-row">
+
+                    <div class="footer-disclaimer">
+                        <div class="footer-bottom-meta">
+                            <p class="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.
+                            </p>
+                            <div class="legal-links">
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <span class="legal-divider">|</span>
+                                <a href="#">Site Map</a>
+                            </div>
+                        </div>
+                        <div class="footer-meta-desc">
+
+                            <p style="padding-top: 60px;">The information on this website is for general information
+                                purposes only. Nothing on this site should be taken as legal advice for any individual
+                                case or situation. This information is not intended to create, and receipt or viewing
+                                does not constitute, an attorney-client relationship. The verdicts and settlements
+                                listed on this site are intended to be representative of cases handled by Hightower &
+                                Hightower. These listings are not a guarantee or prediction of the outcome of any other
+                                claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+
+
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

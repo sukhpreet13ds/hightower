@@ -264,4 +264,90 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         observer.observe(questionSection);
     }
+
+    // 9. Infinite Timeline Scroll Interactivity
+    const timelineContainer = document.querySelector('.timeline-scroll-container');
+    if (timelineContainer) {
+        let isPaused = false;
+        let isDragging = false;
+        let startX, scrollLeftVal;
+        let speed = 0.5; // slow, smooth scrolling speed (pixels per frame)
+
+        function scrollTimeline() {
+            if (!isPaused && !isDragging) {
+                timelineContainer.scrollLeft += speed;
+                const maxScroll = timelineContainer.scrollWidth - timelineContainer.clientWidth;
+                // Once reached the end, reset to the start
+                if (timelineContainer.scrollLeft >= maxScroll - 1) {
+                    timelineContainer.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(scrollTimeline);
+        }
+        
+        // Start the infinite scrolling loop
+        requestAnimationFrame(scrollTimeline);
+
+        // Pause on hover
+        timelineContainer.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+
+        // Resume on mouse leave
+        timelineContainer.addEventListener('mouseleave', () => {
+            if (!isDragging) {
+                isPaused = false;
+            }
+        });
+
+        // Drag to scroll functionality
+        timelineContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            isPaused = true;
+            startX = e.pageX - timelineContainer.offsetLeft;
+            scrollLeftVal = timelineContainer.scrollLeft;
+            timelineContainer.style.cursor = 'grabbing';
+            timelineContainer.style.userSelect = 'none';
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                timelineContainer.style.cursor = 'grab';
+                timelineContainer.style.userSelect = 'auto';
+                setTimeout(() => {
+                    if (!timelineContainer.matches(':hover')) {
+                        isPaused = false;
+                    }
+                }, 200);
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - timelineContainer.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            timelineContainer.scrollLeft = scrollLeftVal - walk;
+        });
+
+        // Touch support for mobile devices
+        timelineContainer.addEventListener('touchstart', (e) => {
+            isPaused = true;
+            startX = e.touches[0].pageX - timelineContainer.offsetLeft;
+            scrollLeftVal = timelineContainer.scrollLeft;
+        });
+
+        timelineContainer.addEventListener('touchend', () => {
+            setTimeout(() => {
+                isPaused = false;
+            }, 1000);
+        });
+
+        timelineContainer.addEventListener('touchmove', (e) => {
+            const x = e.touches[0].pageX - timelineContainer.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            timelineContainer.scrollLeft = scrollLeftVal - walk;
+        });
+    }
 });
