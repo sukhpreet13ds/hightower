@@ -23,11 +23,13 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar:horizontal {
+    display: none;
+}
+
 body {
     font-family: var(--family-sans);
     overflow-x: hidden;
-     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE & Edge */
 }
 
 /* Global scrollbar */
@@ -103,7 +105,7 @@ body {
 }
 
 .logo-img {
-    height: 200px;
+    height: 172px;
     width: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -757,7 +759,7 @@ body {
 }
 
 .hero-subtitle-since {
-    font-size: 60px;
+    font-size: 46px;
     font-weight: 700;
     color: var(--button);
     margin-top: 10px;
@@ -773,7 +775,7 @@ body {
 }
 
 .hero-man-img {
-    max-height: 740px;
+    max-height: 650px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -1595,7 +1597,7 @@ body {
     color: #000;
     line-height: 1.6;
     font-style: italic;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     flex-grow: 1;
     display: -webkit-box;
     line-clamp: 6;
@@ -4660,7 +4662,7 @@ body {
     }
 }
 
-/* Community Services Hero */
+/* Community Service Hero */
 .community-services-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), url('../assets/commercial-hero.jpg');
     background-size: cover;
@@ -4685,6 +4687,181 @@ body {
     width: 100%;
     height: auto;
     min-height: 650px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.personal-injury-law-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/personal-law-hero.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.car-law-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/car-law-hero-bg.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.moto-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/moto-hero.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.truck-accident-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/truck-hero-acc.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.work-acc-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/work-bg-hero.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.death-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/death-hero.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 180px;
+    overflow: hidden;
+}
+
+.social-dis-services-hero {
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.45) 15%,
+            rgba(0, 0, 0, 0.15) 35%,
+            rgba(0, 0, 0, 0) 55%),
+        linear-gradient(rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)),
+        url('../assets/soc-hero-bg.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 650px;
+    height: auto;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -5170,7 +5347,7 @@ body {
     }
 
     .area-services-laws-bottom-row .area-services-laws-item {
-        flex: 0 0 300px;
+        flex: 0 0 350px;
         scroll-snap-align: start;
         height: 480px;
     }
@@ -5335,20 +5512,20 @@ body {
     }
 
     .notable-card {
-        padding: 20px;
+        padding: 10px;
     }
 
     .notable-card-title {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .notable-card-paragraph {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.7;
     }
 
     .notable-intro-text {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.7;
     }
 }
@@ -5783,7 +5960,7 @@ body {
     }
 
     .contact-card-section {
-        margin-top: -100px;
+        margin-top: -410px;
     }
 }
 
@@ -6130,4 +6307,165 @@ body {
         font-size: 18px;
         padding: 20px;
     }
+}
+
+
+.consultation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10050;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.consultation-modal.active {
+    display: flex;
+}
+
+.consult-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 28, 45, 0.85);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+
+.consult-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    background: #f1f1f1;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    z-index: 10051;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 4px solid var(--button);
+}
+
+.consult-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.consult-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.consult-modal-content::-webkit-scrollbar-thumb {
+    background: var(--background-primary);
+    border-radius: 3px;
+}
+
+.consultation-modal.active .consult-modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.consult-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    color: #333;
+    font-size: 28px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10052;
+}
+
+.consult-modal-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+@media (max-width: 576px) {
+    .consultation-modal {
+        padding: 10px;
+    }
+
+    .consult-modal-content {
+        max-height: 95vh;
+    }
+
+    .consult-modal-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .community-hero-banner-content {
+        font-size: 17px;
+    }
+
+    .area-services-laws-description {
+        font-size: 18px;
+    }
+
+    .area-services-laws-button {
+        font-size: 18px;
+    }
+
+    .area-services-laws-title {
+
+        font-size: 30px;
+    }
+
+    .faq-category-group {
+        padding: 16px;
+    }
+
+    .map-wrapper {
+        min-height: auto;
+    }
+
+    .privacy-section p {
+        font-size: 18px;
+    }
+
+    .privacy-hero p {
+
+        font-size: 20px;
+    }
+
+    .lawyer-profile-bio-text p,
+    .ranch-text,
+    .award-showcase-caption {
+
+        font-size: 18px;
+    }
+
+    .lawyer-award-showcase-container,
+    .lawyer-ranch-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-card-right {
+        padding: 16px;
+    }
+}
+
+.inline-partner-link {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--button);
+    transition: color 0.3s;
 }

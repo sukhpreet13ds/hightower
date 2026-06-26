@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower & Hightower</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/hh-fav.webp">
+    <link rel="icon" sizes="192x192" href="assets/hh-fav.webp">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Absolute Positioning for Headers on Lawyers Page */
+        .top-header-bar {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 105;
+        }
+
+        .main-header {
+            position: absolute !important;
+            top: 40px;
+            /* Height of the top header bar */
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 100;
+            box-shadow: none !important;
+        }
+
+        /* Lawyer Hero Section styling */
+        .lawyer-hero-section {
+            background-image: url('assets/lawyer-hero.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Push bottom banner to the end */
+            padding-top: 180px;
+            /* Space for overlay headers */
+            overflow: hidden;
+        }
+
+        .lawyer-hero-container {
+            max-width: 1825px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            /* Align form to the right */
+            align-items: flex-end;
+            padding: 0 40px 0px 40px;
+            flex-grow: 1;
+            /* Stretch to take space above bottom banner */
+        }
+
+        .lawyer-hero-right {
+            width: 100%;
+            max-width: 420px;
+            z-index: 15;
+        }
+
+        .nav-list {
+            margin-top: 34px;
+        }
+
+        .form-card {
+            margin-bottom: -22px;
+        }
+
+        /* Mobile responsiveness for lawyer-hero-section */
+        @media (max-width: 1024px) {
+            .lawyer-hero-section {
+                background-image: none !important;
+                background-color: #1D3656 !important;
+                min-height: auto;
+                padding-top: 140px;
+            }
+
+            .lawyer-hero-container {
+                justify-content: center;
+                padding: 0 20px 30px 20px;
+            }
+
+            .lawyer-hero-right {
+                max-width: 100%;
+            }
+        }
+
+        /* Make navbar items black without changing other things */
+        .top-header-bar .social-icons a,
+        .top-header-bar .phone-link,
+        .top-header-bar .phone-link i,
+        .main-header .nav-link-item,
+        .main-header .dropdown-arrow {
+            color: #000000 !important;
+        }
+
+        .main-header .burger-bar {
+            background-color: #000000 !important;
+        }
+
+        /* Testimonials Page styles */
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .testimonials-header h1 {
+            font-size: 64px;
+            font-family: var(--family-editor), Georgia, serif;
+            color: #1d3656;
+            margin: 0 0 20px 0;
+            font-weight: normal;
+        }
+
+        .testimonials-header p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .testimonials-section-view .review-card {
+            width: 100% !important;
+            height: 410px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eaeaea;
+            box-sizing: border-box;
+            background-color: var(--white);
+        }
+
+        .testimonials-section-view .video-card {
+            background-color: #000;
+            border: none;
+        }
+
+        @media (max-width: 1200px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-header h1 {
+                font-size: 44px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .testimonials-section-view .review-card {
+                max-width: 420px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Expanded card and read-more button styling */
+        .testimonials-section-view .review-card.expanded {
+            height: auto !important;
+            min-height: 410px;
+        }
+
+        .testimonials-section-view .review-card.expanded .review-text {
+            display: block !important;
+            overflow: visible !important;
+            line-clamp: none !important;
+            -webkit-line-clamp: none !important;
+            -webkit-box-orient: horizontal !important;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #B4975A;
+            font-family: var(--family-sans);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            margin-top: 10px;
+            text-align: left;
+            font-size: 14px;
+            transition: color 0.2s ease;
+            position: relative;
+            z-index: 15;
+            display: inline-block;
+        }
+
+        .read-more-btn:hover {
+            color: #1d3656;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-header-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn"
+                    target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube"
+                    target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:352-629-7777" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 352-629-7777
+                </a>
+                <a href="contact-us.html" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="./assets/footer-logo.svg" alt="Hightower & Hightower Logo" class="logo-img">
+            </a>
+
+            <!-- Bottom Row: Nav Links (Aligned to Logo Center) -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">About Us <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu">
+                                <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                        class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                    <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                    <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                    <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                    <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                    <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="community-services.html">Community Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">Practice Areas <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident
+                                    Lawyer</a></li>
+                            <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security
+                                    Disability Law</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="notable-trial-results-settlements.html" class="nav-link-item">Notable Trial Results &
+                            Settlements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link-item">Common Questions</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Burger Menu Trigger for Mobile -->
+            <button class="burger-menu-btn" id="mobile-menu-trigger" aria-label="Open Menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="floating-header" id="floating-navbar">
+        <nav class="floating-nav-menu">
+            <ul class="floating-nav-list">
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">About Us <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                    class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                            <ul class="submenu">
+                                <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                <li><a href="lawyers.html#alison">Alison L. Hightower</a></li>
+                                <li><a href="lawyers.html#daniel">Mark N. Tipton</a></li>
+                                <li><a href="lawyers.html#alison">Barbara L. Richard</a></li>
+                                <li><a href="lawyers.html#daniel">Dave D. Guiley</a></li>
+                                <li><a href="lawyers.html#alison">Shawn E. Clark</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="community-services.html">Community Service</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">Practice Areas <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                        <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                        <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                        <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                        </li>
+                        <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                        <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                        <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                        <li><a href="./areas-of-practice/social-security-disability-law.html">Social
+                                Security Disability Law</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="notable-trial-results-settlements.html" class="floating-nav-link-item">Notable Trial
+                        Results & Settlements</a>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="faq.html" class="floating-nav-link-item">Common Questions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <!-- Header section of drawer -->
+            <div class="mobile-menu-header">
+                <a href="index.html" class="logo-link">
+                    <img src="./assets/h&h-logo.svg" alt="Logo" class="logo-img-mobile">
+                </a>
+
+                <div class="mobile-menu-actions-tab">
+
+                    <div class="mobile-header-socials">
+                        <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body section of drawer -->
+            <div class="mobile-menu-body">
+
+                <div class="mobile-nav-list">
+                    <!-- Accordion 1 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>About Us</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="mobile-nav-sub-accordion">
+                                <button class="sub-accordion-trigger">
+                                    <span>Lawyers</span> <i class="fa-solid fa-chevron-down sub-arrow"></i>
+                                </button>
+                                <div class="sub-accordion-panel">
+                                    <a href="lawyers.html">Lawyers</a>
+                                    <a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a>
+                                    <a href="lawyers.html#alison">Alison L. Hightower</a>
+                                    <a href="lawyers.html#daniel">Mark N. Tipton</a>
+                                    <a href="lawyers.html#alison">Barbara L. Richard</a>
+                                    <a href="lawyers.html#daniel">Dave D. Guiley</a>
+                                    <a href="lawyers.html#alison">Shawn E. Clark</a>
+                                </div>
+                            </div>
+                            <a href="videos.html">Videos</a>
+                            <a href="community-services.html">Community Service</a>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>Practice Areas</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="areas-of-practice.html">Areas of Practice </a>
+                            <a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a>
+                            <a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a>
+                            <a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                            <a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a>
+                            <a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a>
+                            <a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a>
+                            <a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability
+                                Law</a>
+                        </div>
+                    </div>
+
+                    <a href="notable-trial-results-settlements.html" class="mobile-nav-item-link">Notable Trial Results
+                        & Settlements</a>
+                    <a href="faq.html" class="mobile-nav-item-link">Common Questions</a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="contact-us.html" class="mobile-contact-btn">CONTACT US</a>
+                    <a href="tel:352-629-7777" class="mobile-phone-link">
+                        <i class="fa-solid fa-phone"></i> 352-629-7777
+                    </a>
+                    <div class="mobile-footer-socials">
+                        <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="lawyer-profile-hero-section">
+            <div class="lawyer-profile-container">
+                <!-- SVG Watermark background -->
+                <div class="lawyer-profile-bg-svg-wrapper">
+                    <img src="assets/hero-bg.svg" alt="H&H Background Logo" class="lawyer-profile-bg-svg">
+                </div>
+
+                <div class="testimonials-section-view">
+                    <div class="testimonials-header">
+                        <h1>Client Testimonials</h1>
+                        <p>At Hightower & Hightower, we fight relentlessly for our clients. Read and watch their
+                            personal experiences working with our legal team.</p>
+                    </div>
+
+                    <div class="testimonials-grid">
+                        <!-- Card 1: Text Review -->
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">"I did a lot of research before choosing Hightower & Hightower, spoke
+                                to other attorneys in the field. The compliments to this firm were consistently
+                                positive. My experience with every member of the team was stellar, the level of
+                                professionalism ever constant.
+
+                                Mr. Hightower welcomes you to the firm, which is the first indication to me that I
+                                mattered. My attorney, Barbara, Richardson and legal assistant, Angela VanRyn guided me
+                                through the process and were always open to my questions and concerns. Other staff
+                                helped periodically and showed the same professionalism and welcoming attitude that
+                                their colleagues provided.
+
+                                To see my attorney and her assistance navigate the workers comp process was truly
+                                inspiring. They were quick to educate me on the various facets that we faced. They were
+                                calm and caring over the years as my case took their time. Just calm advocacy was ever
+                                present, it prepared me well and reduced any fears I had. I feel very blessed to have
+                                had them on my team. Mr. Hightower met with me to provide the finishing touches and my
+                                settlement. It ended as as it began… With grace, respect and confidence."</p>
+                            <div class="review-footer">
+                                <span class="review-author">- LAURA K.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Video Review -->
+                        <div class="review-card video-card" data-video-src="assets/client-v-1.mp4">
+                            <div class="video-thumbnail-container">
+                                <video src="assets/client-v-1.mp4" muted loop playsinline
+                                    class="card-video-element"></video>
+                                <div class="play-btn-overlay">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Text Review -->
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“My husband was rear-ended by an underinsured motorist. This
+                                collision seriously aggravated a previously existing condition, which subsequently
+                                resulted in requiring a hip replacement operation. We consulted one local lawyer who
+                                said we had no case. Fortunately an acquaintance who works at a medical practice in
+                                Ocala sent us to Dan Hightower. Mr. Hightower assured us at our first meeting that we
+                                had a strong case. He proved to be correct. After a year of unsuccessful back-and-forth
+                                with the insurance company, Dan filed suit. This resulted in mediation and we ultimately
+                                received a generous six figure award for pain and suffering as well as reduced ability
+                                to function and enjoy life. Dan and his staff are thorough, detail oriented and
+                                completely committed to success. They are also very personable and a pleasure to work
+                                with. We highly recommend Daniel Hightower, his firm and his staff.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Pat M.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Video Review -->
+                        <div class="review-card video-card" data-video-src="assets/client-v-2.mp4">
+                            <div class="video-thumbnail-container">
+                                <video src="assets/client-v-2.mp4" muted loop playsinline
+                                    class="card-video-element"></video>
+                                <div class="play-btn-overlay">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Text Review -->
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“If you’ve been in an accident. You need a lawyer. I was told to go
+                                to Daniel Hightower. “He’s a fighter” they said. I am so glad I did. Professional,
+                                organized, amazing staff and support, excellent advice and oversight. I was able to turn
+                                my case over to capable hands and focus on healing. Thank You Allison Hightower, for the
+                                caring and thorough way you handled my case. Thank you Angie, for your relentless
+                                attention to detail. And thank you Daniel Hightower for fighting for me. I will pass on
+                                the best advice I’ve gotten. Go see Daniel Hightower.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Johanna L.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“My husband and I were in a head on collision. Being fairly new to
+                                Ocala, we were not sure of the insurance here or the process to receive reimbursement of
+                                our expenses. Meeting Mr. Hightower was the best person we could have found. We were
+                                both in pain and overwhelmed with what to do next. Mr. Hightower is very knowledgeable
+                                and through going over the details, making us feel very comfortable. He saw me through
+                                my recovery and settlement. We are very pleased with him and his office staff. Our
+                                contact with his legal assistant (Jennifer), who was always available for telephone
+                                calls or returned them promptly. They were always caring and went above our
+                                expectations. I would highly recommend Mr. Hightower for any injury claims.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Margaret H.
+                                </span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“Mr. Hightower and his exceptional staff, went above and beyond my
+                                expectations to help me resolve my issues. Mr. Hightower personally met with me and
+                                always made me feel that he believed in me and my case. I received the best possible
+                                results of my case and they fought for me to the end! I will always be grateful for all
+                                their hard work they did representing Me! Thank you so much, Mr Hightower!”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Tricia D.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“Mr. Hightower, Alison & team have been amazing at helping my parents
+                                through a very difficult time in our lives after my dad was involved in a horrible car
+                                accident! They made sure to keep my parents informed through every step of the case and
+                                offer convenient Spanish translation services in their office. We are so grateful for
+                                the compassion and understanding we felt from Mr. Hightower and his team, Thank you!”
+                            </p>
+                            <div class="review-footer">
+                                <span class="review-author">- Millie B.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“Absolutely the best! I cannot express how much I value Mr. Hightower
+                                and Candy Homan! They are a rarity in this world because I have found them both to be
+                                completely honest and caring.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Ana S.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“On my initial visit with Mr. Hightower, he, along with Mrs.
+                                Matthews, explained everything to me. They took the time to go over every piece of
+                                paper, took pictures, and answered every question I asked. They didn’t make me feel
+                                stupid or unwanted. They are both great! Mr. Hightower was true to his word. He knows
+                                exactly what he’s talking about. I was constantly updated on everything that was going
+                                on. Everything that he said would happen – happened! I tell everyone that I know about
+                                his practice! He truly cares about his clients.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Cathy D.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“From beginning to end Mr. Hightower and his staff were always
+                                available. Mr. Hightower and his staff worked all the way up to the end for my
+                                settlement. I will be using them for my attorney needs in the future.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- LuAnn F.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card text-card">
+                            <img src="assets/coma.png" alt="Quote" class="quote-icon">
+                            <p class="review-text">“The law firm is excellent. I am satisfied because thanks to them,
+                                the benefits are being fulfilled.”</p>
+                            <div class="review-footer">
+                                <span class="review-author">- Eliot V.</span>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- H&H Honors & Awards Section -->
+        <section class="hh-honors-section" id="hh-honors-section">
+            <div class="honors-container">
+                <div class="honors-title-wrapper">
+                    <span class="honors-line"></span>
+                    <h2 class="honors-title">HONORS & AWARDS</h2>
+                    <span class="honors-line"></span>
+                </div>
+                <div class="honors-logos-row">
+                    <div class="honors-logos-track">
+                        <div class="honor-logo-item">
+                            <img src="assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                        <!-- Clones for seamless mobile marquee -->
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-text">Only pay if we win. Contact us 24/7.</h2>
+            </div>
+        </section>
+
+        <footer class="footer-section" id="footer-section">
+            <div class="footer-container">
+                <!-- Top Row: Contact, Logo, Socials -->
+                <div class="footer-top-row">
+                    <div class="footer-contact">
+                        <span class="consult-badge">100% Free Consultation</span>
+                        <a href="tel:352-646-3944" class="footer-phone">352-646-3944</a>
+                    </div>
+                    <div class="footer-logo-wrapper">
+                        <img src="assets/footer-logo.svg" alt="H&H Lawyers Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube"
+                            target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn"
+                            target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mid Row: Navigation Links -->
+                <div class="footer-nav-row">
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="lawyers.html">Meet Our Attorneys</a></li>
+                            <li><a href="areas-of-practice.html">Practice Areas</a></li>
+                            <li><a href="#">Our Victories</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Bottom Row: Copyright, Disclaimer -->
+                <div class="footer-bottom-row">
+
+                    <div class="footer-disclaimer">
+                        <div class="footer-bottom-meta">
+                            <p class="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.
+                            </p>
+                            <div class="legal-links">
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <span class="legal-divider">|</span>
+                                <a href="#">Site Map</a>
+                            </div>
+                        </div>
+                        <div class="footer-meta-desc">
+
+                            <p style="padding-top: 60px;">The information on this website is for general information
+                                purposes only. Nothing on this site should be taken as legal advice for any individual
+                                case or situation. This information is not intended to create, and receipt or viewing
+                                does not constitute, an attorney-client relationship. The verdicts and settlements
+                                listed on this site are intended to be representative of cases handled by Hightower &
+                                Hightower. These listings are not a guarantee or prediction of the outcome of any other
+                                claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+
+
+
+    <!-- Video Popout Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close video">&times;</button>
+            <div class="video-wrapper">
+                <video id="modal-video" src="" controls autoplay></video>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const textCards = document.querySelectorAll('.testimonials-section-view .text-card');
+                textCards.forEach(card => {
+                    const textEl = card.querySelector('.review-text');
+                    if (textEl) {
+                        if (textEl.scrollHeight > textEl.clientHeight) {
+                            const readMoreBtn = document.createElement('button');
+                            readMoreBtn.className = 'read-more-btn';
+                            readMoreBtn.innerText = 'Read More';
+                            textEl.after(readMoreBtn);
+
+                            readMoreBtn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                card.classList.toggle('expanded');
+                                if (card.classList.contains('expanded')) {
+                                    readMoreBtn.innerText = 'Read Less';
+                                } else {
+                                    readMoreBtn.innerText = 'Read More';
+                                }
+                            });
+                        }
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

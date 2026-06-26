@@ -127,45 +127,145 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Run the animation loop
-    function runOdometerLoop() {
+    // Run the animation once
+    function runOdometerOnce() {
         const activeColumns = document.querySelectorAll('.counter__column:not(.is-static)');
+        activeColumns.forEach((col, index) => {
+            const items = parseInt(col.style.getPropertyValue('--items'));
+            // Stagger column animation slightly for odometer visual feel
+            const delay = index * 80;
 
-        function animateToTarget() {
-            activeColumns.forEach((col, index) => {
-                const items = parseInt(col.style.getPropertyValue('--items'));
-                // Stagger column animation slightly for odometer visual feel
-                const delay = index * 80;
-
-                setTimeout(() => {
-                    col.style.transition = 'transform 1.8s cubic-bezier(0.25, -0.1, 0.25, 1.1)';
-                    col.style.transform = `translateY(calc(-${items - 1} * 1.15em))`;
-                }, delay);
-            });
-
-            // Hold at target value for 2.2 seconds (1.8s animation + 2.2s hold = 4s)
-            setTimeout(resetToStart, 4000);
-        }
-
-        function resetToStart() {
-            activeColumns.forEach(col => {
-                // Roll back to 0 smoothly
-                col.style.transition = 'transform 0.6s ease-in-out';
-                col.style.transform = 'translateY(0)';
-            });
-
-            // Pause for 1 second at 0 before starting next roll
-            setTimeout(animateToTarget, 1200);
-        }
-
-        animateToTarget();
+            setTimeout(() => {
+                col.style.transition = 'transform 1.8s cubic-bezier(0.25, -0.1, 0.25, 1.1)';
+                col.style.transform = `translateY(calc(-${items - 1} * 1.15em))`;
+            }, delay);
+        });
     }
 
-    // Start loop if counters exist
+    // Start counter if exist
     if (counters.length > 0) {
         // Initial tiny delay to let CSS load properly
-        setTimeout(runOdometerLoop, 200);
+        setTimeout(runOdometerOnce, 200);
     }
+
+    // Draggable and Swipable Marquee with Auto Scroll
+    function initDraggableMarquee() {
+        const wrapper = document.querySelector('.client-marquee-wrapper');
+        const track = document.querySelector('.client-marquee-track');
+        if (!wrapper || !track) return;
+
+        wrapper.style.overflowX = 'auto';
+        wrapper.style.scrollbarWidth = 'none'; 
+        wrapper.style.msOverflowStyle = 'none';  
+        wrapper.style.cursor = 'grab';
+
+        const style = document.createElement('style');
+        style.textContent = '.client-marquee-wrapper::-webkit-scrollbar { display: none; }';
+        document.head.appendChild(style);
+
+        track.style.animation = 'none';
+
+        let isDown = false;
+        let startX;
+        let scrollLeftVal;
+        let autoScrollSpeed = 1; 
+        let isAutoScrolling = true;
+        let autoScrollTimer = null;
+
+        const wrapPoint = track.scrollWidth / 2;
+
+        function animate() {
+            if (isAutoScrolling && !isDown) {
+                wrapper.scrollLeft += autoScrollSpeed;
+                if (wrapper.scrollLeft >= wrapPoint) {
+                    wrapper.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        wrapper.addEventListener('mousedown', (e) => {
+            isDown = true;
+            wrapper.style.cursor = 'grabbing';
+            isAutoScrolling = false;
+            startX = e.pageX - wrapper.offsetLeft;
+            scrollLeftVal = wrapper.scrollLeft;
+            clearTimeout(autoScrollTimer);
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            if (isDown) {
+                isDown = false;
+                wrapper.style.cursor = 'grab';
+                resumeAutoScroll();
+            }
+        });
+
+        wrapper.addEventListener('mouseup', () => {
+            isDown = false;
+            wrapper.style.cursor = 'grab';
+            resumeAutoScroll();
+        });
+
+        wrapper.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - wrapper.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            wrapper.scrollLeft = scrollLeftVal - walk;
+
+            if (wrapper.scrollLeft >= wrapPoint) {
+                wrapper.scrollLeft -= wrapPoint;
+                startX = e.pageX - wrapper.offsetLeft;
+                scrollLeftVal = wrapper.scrollLeft;
+            } else if (wrapper.scrollLeft <= 0) {
+                wrapper.scrollLeft += wrapPoint;
+                startX = e.pageX - wrapper.offsetLeft;
+                scrollLeftVal = wrapper.scrollLeft;
+            }
+        });
+
+        wrapper.addEventListener('touchstart', (e) => {
+            isDown = true;
+            isAutoScrolling = false;
+            startX = e.touches[0].pageX - wrapper.offsetLeft;
+            scrollLeftVal = wrapper.scrollLeft;
+            clearTimeout(autoScrollTimer);
+        });
+
+        wrapper.addEventListener('touchend', () => {
+            isDown = false;
+            resumeAutoScroll();
+        });
+
+        wrapper.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - wrapper.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            wrapper.scrollLeft = scrollLeftVal - walk;
+
+            if (wrapper.scrollLeft >= wrapPoint) {
+                wrapper.scrollLeft -= wrapPoint;
+                startX = e.touches[0].pageX - wrapper.offsetLeft;
+                scrollLeftVal = wrapper.scrollLeft;
+            } else if (wrapper.scrollLeft <= 0) {
+                wrapper.scrollLeft += wrapPoint;
+                startX = e.touches[0].pageX - wrapper.offsetLeft;
+                scrollLeftVal = wrapper.scrollLeft;
+            }
+        });
+
+        function resumeAutoScroll() {
+            clearTimeout(autoScrollTimer);
+            autoScrollTimer = setTimeout(() => {
+                isAutoScrolling = true;
+            }, 1000);
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    initDraggableMarquee();
 
     // 5. Swipe Scroll helper for horizontal containers (Manual swipe/drag only)
     function initDragScroll(selector) {
@@ -351,3 +451,121 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+ // Expose open/close functions globally so they can be called directly (e.g., via onclick)
+        window.openConsultationModal = (e) => {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('consultation-modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+            }
+        };
+
+        window.closeConsultationModal = () => {
+            const modal = document.getElementById('consultation-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('consult-modal-overlay');
+            const closeBtn = document.getElementById('consult-modal-close');
+
+            if (closeBtn) closeBtn.addEventListener('click', window.closeConsultationModal);
+            if (overlay) overlay.addEventListener('click', window.closeConsultationModal);
+
+            window.addEventListener('keydown', (e) => {
+                const modal = document.getElementById('consultation-modal');
+                if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                    window.closeConsultationModal();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+                // Accordion logic
+                const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+
+                function collapseAccordion(header, content, icon) {
+                    if (!header.classList.contains('active')) return;
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.offsetHeight; // force reflow
+                    content.style.maxHeight = null;
+                    content.style.padding = null;
+                    header.classList.remove('active');
+                    if (icon) icon.textContent = '+';
+                }
+
+                function expandAccordion(header, content, icon) {
+                    if (header.classList.contains('active')) return;
+                    content.style.padding = '25px';
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    header.classList.add('active');
+                    if (icon) icon.textContent = '−';
+
+                    setTimeout(() => {
+                        if (header.classList.contains('active')) {
+                            content.style.maxHeight = 'none';
+                        }
+                    }, 400); // Matches CSS transition duration
+                }
+
+                accordionHeaders.forEach(header => {
+                    header.addEventListener('click', () => {
+                        const content = header.nextElementSibling;
+                        const icon = header.querySelector('.faq-icon');
+                        const isActive = header.classList.contains('active');
+
+                        // Collapse all other accordions
+                        accordionHeaders.forEach(otherHeader => {
+                            if (otherHeader !== header) {
+                                const otherContent = otherHeader.nextElementSibling;
+                                const otherIcon = otherHeader.querySelector('.faq-icon');
+                                collapseAccordion(otherHeader, otherContent, otherIcon);
+                            }
+                        });
+
+                        if (isActive) {
+                            collapseAccordion(header, content, icon);
+                        } else {
+                            expandAccordion(header, content, icon);
+                        }
+                    });
+                });
+
+                // Filter logic
+                const filterBtns = document.querySelectorAll('.faq-filter-btn');
+                const categoryGroups = document.querySelectorAll('.faq-category-group');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Deactivate all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // Activate current button
+                        btn.classList.add('active');
+
+                        const filterCategory = btn.getAttribute('data-category');
+
+                        categoryGroups.forEach(group => {
+                            const groupCategory = group.getAttribute('data-category');
+                            if (filterCategory === 'all' || filterCategory === groupCategory) {
+                                group.style.display = 'block';
+                                // Fade effect
+                                group.style.opacity = '0';
+                                setTimeout(() => {
+                                    group.style.opacity = '1';
+                                    group.style.transition = 'opacity 0.4s ease';
+                                }, 30);
+                            } else {
+                                group.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
