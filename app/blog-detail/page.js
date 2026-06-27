@@ -124,6 +124,11 @@ export default async function Page({ searchParams }) {
         .main-header .burger-bar {
             background-color: #000000 !important;
         }
+
+        /* white logo -> black on this white-background page */
+        .main-header .logo-img {
+            filter: brightness(0) !important;
+        }
       ` }} />
 
       {/* Videos Showcase Section */}

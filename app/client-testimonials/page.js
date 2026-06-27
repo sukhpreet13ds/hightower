@@ -104,6 +104,11 @@ export default function Page() {
             background-color: #000000 !important;
         }
 
+        /* white logo -> black on this white-background page */
+        .main-header .logo-img {
+            filter: brightness(0) !important;
+        }
+
         /* Testimonials Page styles */
         .testimonials-header {
             text-align: center;

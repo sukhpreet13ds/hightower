@@ -49,6 +49,7 @@ export default async function Page({ searchParams }) {
             color: #000000 !important;
         }
         .main-header .burger-bar { background-color: #000000 !important; }
+        .main-header .logo-img { filter: brightness(0) !important; }
       ` }} />
 
       <section className="videos-showcase-section">
