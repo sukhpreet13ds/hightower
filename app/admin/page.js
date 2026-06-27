@@ -31,6 +31,7 @@ export default function AdminPage() {
               Submissions <span id="unread-badge" className="badge hidden">0</span>
             </button>
             <button className="nav-item" data-tab="blogs">Blogs</button>
+            <button className="nav-item" data-tab="news">News</button>
           </nav>
           <button id="logout-btn" className="logout">Log out</button>
         </aside>
@@ -63,6 +64,16 @@ export default function AdminPage() {
             </div>
             <div id="blogs-list" className="cards"></div>
             <p id="blogs-empty" className="empty hidden">No blogs yet. Create your first post.</p>
+          </section>
+
+          {/* NEWS TAB */}
+          <section id="tab-news" className="tab hidden">
+            <div className="content-head">
+              <h2>News Posts</h2>
+              <button id="new-news-btn" className="btn-primary">+ New News</button>
+            </div>
+            <div id="news-list" className="cards"></div>
+            <p id="news-empty" className="empty hidden">No news yet. Create your first news post.</p>
           </section>
         </main>
       </div>
@@ -139,6 +150,39 @@ export default function AdminPage() {
               <button type="submit" className="btn-primary">Save Blog</button>
             </div>
             <p id="blog-error" className="form-error"></p>
+          </form>
+        </div>
+      </div>
+
+      {/* SUBMISSION EDIT MODAL */}
+      <div id="sub-modal" className="modal hidden">
+        <div className="modal-box">
+          <button className="modal-x" id="sub-modal-close">&times;</button>
+          <h3>Edit Submission</h3>
+          <form id="sub-form">
+            <input type="hidden" id="sub-id" />
+            <label>Name
+              <input type="text" id="sub-name" />
+            </label>
+            <div className="grid-2">
+              <label>Email
+                <input type="text" id="sub-email" />
+              </label>
+              <label>Phone
+                <input type="text" id="sub-phone" />
+              </label>
+            </div>
+            <label>Case type
+              <input type="text" id="sub-case-type" />
+            </label>
+            <label>Message
+              <textarea id="sub-message" rows="4"></textarea>
+            </label>
+            <div className="modal-actions">
+              <button type="button" className="btn-ghost" id="sub-cancel">Cancel</button>
+              <button type="submit" className="btn-primary">Save Changes</button>
+            </div>
+            <p id="sub-error" className="form-error"></p>
           </form>
         </div>
       </div>

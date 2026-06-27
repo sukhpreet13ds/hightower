@@ -61,7 +61,10 @@ document.querySelectorAll('.nav-item').forEach(btn => {
         const tab = btn.dataset.tab;
         $('tab-submissions').classList.toggle('hidden', tab !== 'submissions');
         $('tab-blogs').classList.toggle('hidden', tab !== 'blogs');
-        if (tab === 'submissions') loadSubmissions(); else loadBlogs();
+        $('tab-news').classList.toggle('hidden', tab !== 'news');
+        if (tab === 'submissions') loadSubmissions();
+        else if (tab === 'blogs') loadBlogs();
+        else loadNews();
     });
 });
 
@@ -96,6 +99,7 @@ async function loadSubmissions() {
             <div class="time">${esc(when)}</div>
             <div class="actions">
                 ${s.is_read ? '' : `<button class="link-btn" data-read="${s.id}">Mark read</button>`}
+                <button class="link-btn" data-edit-sub="${s.id}">Edit</button>
                 <button class="del-btn" data-del="${s.id}">Delete</button>
             </div>
         </div>`;
@@ -106,6 +110,8 @@ async function loadSubmissions() {
             await api('admin/submissions/' + b.dataset.read + '/read', { method: 'POST' });
             loadSubmissions();
         }));
+    list.querySelectorAll('[data-edit-sub]').forEach(b =>
+        b.addEventListener('click', () => openSubModal(submissions.find(x => x.id == b.dataset.editSub))));
     list.querySelectorAll('[data-del]').forEach(b =>
         b.addEventListener('click', async () => {
             if (!confirm('Delete this submission?')) return;
@@ -114,6 +120,41 @@ async function loadSubmissions() {
             loadSubmissions();
         }));
 }
+
+/* ---- Submission edit modal ---- */
+function openSubModal(s) {
+    if (!s) return;
+    $('sub-error').textContent = '';
+    $('sub-id').value = s.id;
+    $('sub-name').value = s.name || '';
+    $('sub-email').value = s.email || '';
+    $('sub-phone').value = s.phone || '';
+    $('sub-case-type').value = s.case_type || '';
+    $('sub-message').value = s.message || '';
+    $('sub-modal').classList.remove('hidden');
+}
+function closeSubModal() { $('sub-modal').classList.add('hidden'); }
+$('sub-modal-close').addEventListener('click', closeSubModal);
+$('sub-cancel').addEventListener('click', closeSubModal);
+$('sub-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('sub-error').textContent = '';
+    const id = $('sub-id').value;
+    const r = await api('admin/submissions/' + id, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: $('sub-name').value,
+            email: $('sub-email').value,
+            phone: $('sub-phone').value,
+            case_type: $('sub-case-type').value,
+            message: $('sub-message').value,
+        }),
+    });
+    const data = await r.json();
+    if (r.ok) { closeSubModal(); toast('Submission updated'); loadSubmissions(); }
+    else { $('sub-error').textContent = data.error || 'Save failed'; }
+});
 
 /* ---------------- Blogs ---------------- */
 async function loadBlogs() {
@@ -148,6 +189,42 @@ async function loadBlogs() {
             await api('admin/blogs/' + btn.dataset.del, { method: 'DELETE' });
             toast('Blog deleted');
             loadBlogs();
+        }));
+}
+
+/* ---------------- News (reuses the blog editor modal) ---------------- */
+async function loadNews() {
+    const r = await api('admin/news');
+    if (!r.ok) return showLogin();
+    const items = await r.json();
+    const list = $('news-list');
+    $('news-empty').classList.toggle('hidden', items.length > 0);
+    list.innerHTML = items.map(b => `
+        <div class="blog-card-admin">
+            <div class="thumb" style="background-image:url('${b.image ? esc(b.image) : 'assets/hh-blog1.jpg'}')"></div>
+            <div class="body">
+                <h4>${esc(b.title)}</h4>
+                <p class="excerpt">${esc(b.excerpt || (b.content || '').replace(/<[^>]*>/g, ' ').slice(0, 120))}</p>
+                <div class="meta">
+                    <span class="status-pill ${b.published ? 'pub' : 'draft'}">${b.published ? 'Published' : 'Draft'}</span>
+                    &nbsp; ${esc(new Date(b.created_at).toLocaleDateString())}
+                    ${b.author ? ' · ' + esc(b.author) : ''}
+                </div>
+                <div class="actions">
+                    <button class="link-btn" data-edit="${b.id}">Edit</button>
+                    <button class="del-btn" data-del="${b.id}">Delete</button>
+                </div>
+            </div>
+        </div>`).join('');
+
+    list.querySelectorAll('[data-edit]').forEach(btn =>
+        btn.addEventListener('click', () => openBlogModal(items.find(x => x.id == btn.dataset.edit), 'news')));
+    list.querySelectorAll('[data-del]').forEach(btn =>
+        btn.addEventListener('click', async () => {
+            if (!confirm('Delete this news post?')) return;
+            await api('admin/news/' + btn.dataset.del, { method: 'DELETE' });
+            toast('News deleted');
+            loadNews();
         }));
 }
 
@@ -215,14 +292,20 @@ $('tb-image-input').addEventListener('change', async (e) => {
     e.target.value = '';
 });
 
-/* ---- Blog editor modal ---- */
-function openBlogModal(blog) {
+/* ---- Blog / News editor modal (shared) ---- */
+let currentType = 'blogs'; // 'blogs' | 'news'
+const saveBtn = document.querySelector('#blog-form button[type="submit"]');
+
+function openBlogModal(blog, type = 'blogs') {
+    currentType = type;
+    const label = type === 'news' ? 'News' : 'Blog';
+    if (saveBtn) saveBtn.textContent = 'Save ' + label;
     $('blog-error').textContent = '';
     $('blog-form').reset();
     $('blog-image').value = '';
     $('blog-logo').value = '';
     if (blog) {
-        $('blog-modal-title').textContent = 'Edit Blog';
+        $('blog-modal-title').textContent = 'Edit ' + label;
         $('blog-id').value = blog.id;
         $('blog-title').value = blog.title || '';
         $('blog-excerpt').value = blog.excerpt || '';
@@ -233,7 +316,7 @@ function openBlogModal(blog) {
         togglePreview('blog-current-image', 'blog-image-preview', blog.image);
         togglePreview('blog-current-logo', 'blog-logo-preview', blog.logo);
     } else {
-        $('blog-modal-title').textContent = 'New Blog';
+        $('blog-modal-title').textContent = 'New ' + label;
         $('blog-id').value = '';
         editor.innerHTML = '';
         $('blog-current-image').classList.add('hidden');
@@ -247,7 +330,8 @@ function togglePreview(wrapId, imgId, src) {
 }
 function closeBlogModal() { $('blog-modal').classList.add('hidden'); }
 
-$('new-blog-btn').addEventListener('click', () => openBlogModal(null));
+$('new-blog-btn').addEventListener('click', () => openBlogModal(null, 'blogs'));
+$('new-news-btn').addEventListener('click', () => openBlogModal(null, 'news'));
 $('blog-modal-close').addEventListener('click', closeBlogModal);
 $('blog-cancel').addEventListener('click', closeBlogModal);
 
@@ -265,13 +349,17 @@ $('blog-form').addEventListener('submit', async (e) => {
     if ($('blog-image').files[0]) fd.append('image', $('blog-image').files[0]);
     if ($('blog-logo').files[0]) fd.append('logo', $('blog-logo').files[0]);
 
-    const r = await api('admin/blogs' + (id ? '/' + id : ''), {
+    const r = await api('admin/' + currentType + (id ? '/' + id : ''), {
         method: id ? 'PUT' : 'POST',
         body: fd,
     });
     const data = await r.json();
-    if (r.ok) { closeBlogModal(); toast(id ? 'Blog updated' : 'Blog created'); loadBlogs(); }
-    else { $('blog-error').textContent = data.error || 'Save failed'; }
+    const label = currentType === 'news' ? 'News' : 'Blog';
+    if (r.ok) {
+        closeBlogModal();
+        toast(id ? label + ' updated' : label + ' created');
+        if (currentType === 'news') loadNews(); else loadBlogs();
+    } else { $('blog-error').textContent = data.error || 'Save failed'; }
 });
 
 checkAuth();

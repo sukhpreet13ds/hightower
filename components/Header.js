@@ -65,6 +65,12 @@ export default function Header() {
               <li className="nav-item">
                 <a href="/faq.html" className="nav-link-item">Common Questions</a>
               </li>
+              <li className="nav-item">
+                <a href="/blogs.html" className="nav-link-item">Blogs</a>
+              </li>
+              <li className="nav-item">
+                <a href="/news.html" className="nav-link-item">News</a>
+              </li>
             </ul>
           </nav>
 
@@ -116,6 +122,12 @@ export default function Header() {
             </li>
             <li className="floating-nav-item">
               <a href="/faq.html" className="floating-nav-link-item">Common Questions</a>
+            </li>
+            <li className="floating-nav-item">
+              <a href="/blogs.html" className="floating-nav-link-item">Blogs</a>
+            </li>
+            <li className="floating-nav-item">
+              <a href="/news.html" className="floating-nav-link-item">News</a>
             </li>
           </ul>
         </nav>
@@ -183,6 +195,8 @@ export default function Header() {
 
               <a href="/notable-trial-results-settlements.html" className="mobile-nav-item-link">Notable Trial Results & Settlements</a>
               <a href="/faq.html" className="mobile-nav-item-link">Common Questions</a>
+              <a href="/blogs.html" className="mobile-nav-item-link">Blogs</a>
+              <a href="/news.html" className="mobile-nav-item-link">News</a>
             </div>
 
             <div className="mobile-menu-footer">
