@@ -569,3 +569,253 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
             });
+
+/* ============================================================================
+ * Hightower backend integration — form submissions + dynamic blogs
+ * (appended; runs independently of the main DOMContentLoaded block above)
+ * ========================================================================== */
+(function () {
+    'use strict';
+
+    const API = '';   // same origin
+
+    function val(form, selector) {
+        const el = form.querySelector(selector);
+        return el ? el.value.trim() : '';
+    }
+
+    async function postSubmission(payload, form, btn) {
+        const original = btn ? btn.innerHTML : null;
+        if (btn) { btn.disabled = true; btn.innerHTML = 'Sending…'; }
+        try {
+            const res = await fetch(API + '/api/submissions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+            if (!res.ok) throw new Error('Request failed');
+            showFormSuccess(form);
+        } catch (e) {
+            if (btn) { btn.disabled = false; btn.innerHTML = original; }
+            alert('Sorry, something went wrong sending your request. Please call us or try again.');
+        }
+    }
+
+    function showFormSuccess(form) {
+        const msg = document.createElement('div');
+        msg.className = 'hh-form-success';
+        msg.style.cssText = 'padding:22px;text-align:center;color:#1c2433;background:#e3f3ea;border:1px solid #bfe3cd;border-radius:10px;font-weight:600;line-height:1.5;';
+        msg.innerHTML = '✓ Thank you! Your request has been received.<br>A member of our team will contact you shortly.';
+        form.replaceWith(msg);
+    }
+
+    function initForms() {
+        // 1. Hero + Consultation modal forms (same "case-review" layout)
+        document.querySelectorAll('.case-review-form').forEach(form => {
+            const isModal = !!form.closest('#consultation-modal');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const payload = {
+                    form_type: isModal ? 'consultation' : 'hero',
+                    first_name: val(form, 'input[id$="first-name"]'),
+                    last_name: val(form, 'input[id$="last-name"]'),
+                    phone: val(form, 'input[type="tel"]'),
+                    case_type: val(form, 'select'),
+                    message: val(form, 'textarea'),
+                };
+                postSubmission(payload, form, form.querySelector('button[type="submit"]'));
+            });
+        });
+
+        // 2. "Get Started" form (index)
+        document.querySelectorAll('.get-started-form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const consent = form.querySelector('input[type="checkbox"]');
+                const payload = {
+                    form_type: 'get-started',
+                    name: val(form, 'input[type="text"]'),
+                    email: val(form, 'input[type="email"]'),
+                    phone: val(form, 'input[type="tel"]'),
+                    message: val(form, 'textarea'),
+                    consent: consent ? consent.checked : false,
+                };
+                postSubmission(payload, form, form.querySelector('button[type="submit"]'));
+            });
+        });
+
+        // 3. Contact Us form
+        document.querySelectorAll('.contact-form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const payload = {
+                    form_type: 'contact',
+                    first_name: val(form, 'input[id$="first-name"]'),
+                    last_name: val(form, 'input[id$="last-name"]'),
+                    email: val(form, 'input[type="email"]'),
+                    phone: val(form, 'input[type="tel"]'),
+                    message: val(form, 'textarea'),
+                };
+                postSubmission(payload, form, form.querySelector('button[type="submit"]'));
+            });
+        });
+    }
+
+    /* ---------------- Dynamic blogs ---------------- */
+    function isHtml(c) { return /<[a-z][\s\S]*>/i.test(c || ''); }
+    function stripHtml(c) {
+        const d = document.createElement('div');
+        d.innerHTML = c || '';
+        return (d.textContent || '').replace(/\s+/g, ' ').trim();
+    }
+    function excerptFrom(blog) {
+        if (blog.excerpt) return blog.excerpt;
+        const c = isHtml(blog.content) ? stripHtml(blog.content) : (blog.content || '').trim();
+        return c.length > 130 ? c.slice(0, 130) + '…' : c;
+    }
+    function blogImage(blog) {
+        return blog.image ? blog.image : 'assets/hh-blog1.jpg';
+    }
+
+    // Home page "News & Articles" — latest 3
+    async function initHomeNews() {
+        const grid = document.querySelector('.news-articles-section .articles-grid');
+        if (!grid) return;
+        try {
+            const res = await fetch(API + '/api/blogs?limit=3');
+            const blogs = await res.json();
+            if (!Array.isArray(blogs) || blogs.length === 0) return; // keep static fallback
+            grid.innerHTML = blogs.map(b => `
+                <div class="article-card">
+                    <a href="blog-detail.html?id=${b.id}" style="text-decoration:none;color:inherit;display:block;height:100%;">
+                        <div class="article-image-wrapper">
+                            <img src="${blogImage(b)}" alt="${escapeAttr(b.title)}" class="article-img">
+                        </div>
+                        <div class="article-info">
+                            <h3 class="article-title">${escapeHtml(b.title)}</h3>
+                            <p class="article-desc">${escapeHtml(excerptFrom(b))}</p>
+                            <span class="article-read-more">Read More</span>
+                        </div>
+                    </a>
+                </div>`).join('');
+        } catch (e) { /* keep static content on failure */ }
+    }
+
+    // blogs.html — full grid
+    async function initBlogsGrid() {
+        const grid = document.querySelector('.blogs-grid');
+        if (!grid) return;
+        try {
+            const res = await fetch(API + '/api/blogs');
+            const blogs = await res.json();
+            if (!Array.isArray(blogs) || blogs.length === 0) return;
+            grid.innerHTML = blogs.map(b => `
+                <a href="blog-detail.html?id=${b.id}" class="blog-card">
+                    <div class="blog-card-img-wrapper">
+                        <img src="${blogImage(b)}" alt="${escapeAttr(b.title)}" class="blog-card-img">
+                    </div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">${escapeHtml(b.title)}</h3>
+                        <p class="blog-card-excerpt">${escapeHtml(excerptFrom(b))}</p>
+                        <span class="blog-card-link">Read More</span>
+                    </div>
+                </a>`).join('');
+        } catch (e) { /* keep static content */ }
+    }
+
+    // blog-detail.html — single post via ?id=
+    async function initBlogDetail() {
+        const titleEl = document.querySelector('.blog-title-main');
+        if (!titleEl) return;
+        // Wire the Share This Story bar on every blog-detail page.
+        initShareBar();
+
+        const id = new URLSearchParams(location.search).get('id');
+        if (!id) return; // no id -> keep the static sample article
+        try {
+            const res = await fetch(API + '/api/blogs/' + encodeURIComponent(id));
+            if (!res.ok) return;
+            const b = await res.json();
+
+            titleEl.textContent = b.title;
+            document.title = b.title + ' — Hightower & Hightower';
+
+            const img = document.querySelector('.blog-main-image');
+            if (img && b.image) { img.src = b.image; img.alt = b.title; }
+
+            // Source / publication logo
+            const logoWrap = document.getElementById('blog-source-logo');
+            const logoImg = document.getElementById('blog-source-logo-img');
+            if (logoWrap && logoImg && b.logo) { logoImg.src = b.logo; logoWrap.style.display = ''; }
+
+            // Article body (HTML content with tables / inline images, or legacy plain text)
+            const body = document.querySelector('.blog-article-content');
+            if (body) {
+                if (isHtml(b.content)) {
+                    body.innerHTML = b.content;
+                } else {
+                    const paras = (b.content || '').split(/\n\s*\n/).filter(Boolean);
+                    body.innerHTML = paras.length
+                        ? paras.map(p => `<p>${escapeHtml(p)}</p>`).join('')
+                        : `<p>${escapeHtml(b.excerpt || '')}</p>`;
+                }
+            }
+
+            // Post Tags
+            const tagsWrap = document.getElementById('blog-tags');
+            const tagsList = document.getElementById('blog-tags-list');
+            const tags = (b.tags || '').split(',').map(t => t.trim()).filter(Boolean);
+            if (tagsWrap && tagsList && tags.length) {
+                tagsList.innerHTML = tags.map(t => `<span class="blog-tag">${escapeHtml(t)}</span>`).join('');
+                tagsWrap.style.display = '';
+            }
+
+            // Refresh share links now that the title is set
+            initShareBar();
+        } catch (e) { /* keep static content */ }
+    }
+
+    // Build share links for the current page/title
+    function initShareBar() {
+        const icons = document.getElementById('blog-share-icons');
+        if (!icons) return;
+        const url = encodeURIComponent(location.href);
+        const titleEl = document.querySelector('.blog-title-main');
+        const title = encodeURIComponent(titleEl ? titleEl.textContent.trim() : document.title);
+        const map = {
+            facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+            twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+            reddit: `https://www.reddit.com/submit?url=${url}&title=${title}`,
+            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+            tumblr: `https://www.tumblr.com/share/link?url=${url}&description=${title}`,
+            pinterest: `https://pinterest.com/pin/create/button/?url=${url}&description=${title}`,
+            email: `mailto:?subject=${title}&body=${url}`,
+        };
+        icons.querySelectorAll('a[data-net]').forEach(a => {
+            const net = a.getAttribute('data-net');
+            if (map[net]) {
+                a.href = map[net];
+                if (net !== 'email') { a.target = '_blank'; a.rel = 'noopener'; }
+            }
+        });
+    }
+
+    function escapeHtml(s) {
+        return (s == null ? '' : String(s)).replace(/[&<>"']/g, c =>
+            ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+    function escapeAttr(s) { return escapeHtml(s); }
+
+    function init() {
+        initForms();
+        initHomeNews();
+        initBlogsGrid();
+        initBlogDetail();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

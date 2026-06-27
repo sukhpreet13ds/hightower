@@ -6469,3 +6469,112 @@ body {
     border-bottom: 2px solid var(--button);
     transition: color 0.3s;
 }
+/* ============================================================================
+ * Blog detail additions: source logo, Post Tags, Share bar, inline tables/images
+ * ========================================================================== */
+.blog-source-logo {
+    max-width: 1000px;
+    margin: 0 auto 10px;
+    padding: 0 20px;
+}
+.blog-source-logo img {
+    max-height: 70px;
+    width: auto;
+}
+
+/* Inline content inserted from the admin editor */
+.blog-article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+.blog-article-content table.blog-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 18px 0;
+    font-size: 0.95rem;
+}
+.blog-article-content table.blog-table th,
+.blog-article-content table.blog-table td {
+    border: 1px solid #e0d6c8;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+.blog-article-content table.blog-table th {
+    background: #f3ede4;
+    font-weight: 700;
+    color: #1c2433;
+}
+.blog-article-content table.blog-table tr:nth-child(even) td {
+    background: #faf7f2;
+}
+
+/* Post Tags */
+.blog-tags {
+    max-width: 1000px;
+    margin: 30px auto 0;
+    padding: 22px 20px 0;
+    border-top: 1px solid #e7e2d8;
+}
+.blog-tags-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1c2433;
+    margin-bottom: 14px;
+}
+.blog-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.blog-tag {
+    display: inline-block;
+    background: #f1f1f1;
+    color: #45506a;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    line-height: 1.2;
+}
+
+/* Share This Story bar */
+.blog-share {
+    max-width: 1000px;
+    margin: 26px auto 0;
+    padding: 18px 24px;
+    background: #f6f6f6;
+    border: 1px solid #ececec;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.blog-share-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2b3142;
+}
+.blog-share-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.blog-share-icons a {
+    color: #9aa0ab;
+    font-size: 1.05rem;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+.blog-share-icons a:hover {
+    color: #c2905b;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .blog-share { justify-content: center; text-align: center; }
+    .blog-share-label { width: 100%; }
+}

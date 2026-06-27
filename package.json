@@ -1,0 +1,14 @@
+{
+  "name": "hightower-site",
+  "version": "1.0.0",
+  "description": "Hightower & Hightower website with admin panel, blog management, and lead-capture form storage.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.2.0"
+  }
+}
