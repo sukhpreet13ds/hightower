@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower & Hightower</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/hh-fav.webp">
+    <link rel="icon" sizes="192x192" href="assets/hh-fav.webp">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Absolute Positioning for Headers on Lawyers Page */
+        .top-header-bar {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 105;
+        }
+
+        .main-header {
+            position: absolute !important;
+            top: 40px;
+            /* Height of the top header bar */
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 100;
+            box-shadow: none !important;
+        }
+
+        /* Lawyer Hero Section styling */
+        .lawyer-hero-section {
+            background-image: url('assets/lawyer-hero.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Push bottom banner to the end */
+            padding-top: 180px;
+            /* Space for overlay headers */
+            overflow: hidden;
+        }
+
+        .lawyer-hero-container {
+            max-width: 1825px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            /* Align form to the right */
+            align-items: flex-end;
+            padding: 0 40px 0px 40px;
+            flex-grow: 1;
+            /* Stretch to take space above bottom banner */
+        }
+
+        .lawyer-hero-right {
+            width: 100%;
+            max-width: 420px;
+            z-index: 15;
+        }
+
+        .nav-list {
+            margin-top: 34px;
+        }
+
+        .form-card {
+            margin-bottom: -22px;
+        }
+
+        /* Small desktops and landscape tablets positioning */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .lawyer-hero-section {
+                background-position: 20% top;
+            }
+        }
+
+        /* Mobile responsiveness for lawyer-hero-section */
+        @media (max-width: 1024px) {
+            .lawyer-hero-section {
+                background-image: none !important;
+                background-color: #1D3656 !important;
+                min-height: auto;
+                padding-top: 140px;
+            }
+
+            .lawyer-hero-container {
+                justify-content: center;
+                padding: 0 20px 30px 20px;
+            }
+
+            .lawyer-hero-right {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-header-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn"
+                    target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube"
+                    target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:352-629-7777" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 352-629-7777
+                </a>
+                <a href="contact-us.html" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="navbar-container">
+            <a href="index.html" class="logo-link">
+                <img src="./assets/h&h-logo.svg" alt="Hightower & Hightower Logo" class="logo-img">
+            </a>
+
+            <!-- Bottom Row: Nav Links (Aligned to Logo Center) -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">About Us <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu">
+                                <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                        class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                    <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                    <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                    <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                    <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                    <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="community-services.html">Community Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">Practice Areas <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident
+                                    Lawyer</a></li>
+                            <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security
+                                    Disability Law</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="notable-trial-results-settlements.html" class="nav-link-item">Notable Trial Results &
+                            Settlements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link-item">Common Questions</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Burger Menu Trigger for Mobile -->
+            <button class="burger-menu-btn" id="mobile-menu-trigger" aria-label="Open Menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="floating-header" id="floating-navbar">
+        <nav class="floating-nav-menu">
+            <ul class="floating-nav-list">
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">About Us <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                    class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                            <ul class="submenu">
+                                <li><a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                <li><a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                <li><a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                <li><a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                <li><a href="lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                <li><a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="community-services.html">Community Service</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">Practice Areas <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="areas-of-practice.html">Areas of Practice </a></li>
+                        <li><a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
+                        <li><a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                        <li><a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                        </li>
+                        <li><a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                        <li><a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
+                        <li><a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
+                        <li><a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability
+                                Law</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="notable-trial-results-settlements.html" class="floating-nav-link-item">Notable Trial
+                        Results & Settlements</a>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="faq.html" class="floating-nav-link-item">Common Questions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <!-- Header section of drawer -->
+            <div class="mobile-menu-header">
+                <a href="index.html" class="logo-link">
+                    <img src="./assets/h&h-logo.svg" alt="Logo" class="logo-img-mobile">
+                </a>
+
+                <div class="mobile-menu-actions-tab">
+
+                    <div class="mobile-header-socials">
+                        <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body section of drawer -->
+            <div class="mobile-menu-body">
+
+                <div class="mobile-nav-list">
+                    <!-- Accordion 1 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>About Us</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="mobile-nav-sub-accordion">
+                                <button class="sub-accordion-trigger">
+                                    <span>Lawyers</span> <i class="fa-solid fa-chevron-down sub-arrow"></i>
+                                </button>
+                                <div class="sub-accordion-panel">
+                                    <a href="lawyers.html">Lawyers</a>
+                                    <a href="lawyers/daniel-l-hightower.html">Daniel L. Hightower</a>
+                                    <a href="lawyers/alison-l-hightower.html">Alison L. Hightower</a>
+                                    <a href="lawyers/mark-n-tipton.html">Mark N. Tipton</a>
+                                    <a href="lawyers/barbara-l-richard.html">Barbara L. Richard</a>
+                                    <a href="lawyers/dave-guiley.html">Dave D. Guiley</a>
+                                    <a href="lawyers/shawn-e-clark.html">Shawn E. Clark</a>
+                                </div>
+                            </div>
+                            <a href="videos.html">Videos</a>
+                            <a href="community-services.html">Community Service</a>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>Practice Areas</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="areas-of-practice.html">Areas of Practice </a>
+                            <a href="./areas-of-practice/personal-injury-law.html">Personal Injury</a>
+                            <a href="./areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a>
+                            <a href="./areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                            <a href="./areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a>
+                            <a href="./areas-of-practice/work-accident-law.html">Work Accident Law</a>
+                            <a href="./areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a>
+                            <a href="./areas-of-practice/social-security-disability-law.html">Social Security Disability
+                                Law</a>
+                        </div>
+                    </div>
+
+                    <a href="notable-trial-results-settlements.html" class="mobile-nav-item-link">Notable Trial Results
+                        & Settlements</a>
+                    <a href="faq.html" class="mobile-nav-item-link">Common Questions</a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="contact-us.html" class="mobile-contact-btn">CONTACT US</a>
+                    <a href="tel:352-629-7777" class="mobile-phone-link">
+                        <i class="fa-solid fa-phone"></i> 352-629-7777
+                    </a>
+                    <div class="mobile-footer-socials">
+                        <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="lawyer-hero-section">
+            <div class="lawyer-hero-container">
+                <div class="lawyer-hero-right">
+                    <div class="form-card">
+                        <div class="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
+                        <h2 class="form-title">Talk to Hightower & Hightower</h2>
+                        <p class="form-subtitle">We'll review your case and respond within hours.</p>
+
+                        <form class="case-review-form" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">FIRST NAME</label>
+                                    <input type="text" id="first-name" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">LAST NAME</label>
+                                    <input type="text" id="last-name" placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-number">PHONE NUMBER</label>
+                                <input type="tel" id="phone-number" placeholder="(352) 555-1234" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="case-type">CASE TYPE</label>
+                                <select id="case-type" required>
+                                    <option value="" disabled selected>Select your case type</option>
+                                    <option value="personal-injury">Personal Injury</option>
+                                    <option value="car-accident">Car Accident</option>
+                                    <option value="medical-malpractice">Medical Malpractice</option>
+                                    <option value="wrongful-death">Wrongful Death</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="brief-description">BRIEF DESCRIPTION</label>
+                                <textarea id="brief-description" rows="3"
+                                    placeholder="Tell us briefly what happened and when..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
+                        </form>
+
+                        <p class="form-footer-text">
+                            By submitting, you agree to our <a href="privacy-policy.html" class="footer-text"
+                                style="color: #C2905B">Privacy Policy</a>. Your information is confidential and
+                            protected by attorney-client privilege.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Gold Banner Bar -->
+            <div class="hero-bottom-banner">
+                <span>No Cost Consultation – 100% FREE Until We Win!</span>
+            </div>
+        </section>
+
+        <section class="lawyer-pa-section">
+            <div class="pa-bg-svg-wrapper">
+                <img src="assets/hero-bg.svg" alt="H&H Logo Graphic" class="pa-bg-svg">
+            </div>
+            <div class="pa-container">
+                <div class="pa-header">
+                    <h2 class="pa-title">Statewide Lawyers</h2>
+                    <div class="pa-subtitle">Hightower & Hightower, P.a.</div>
+                </div>
+
+                <div class="pa-content-row">
+                    <div class="pa-left-col">
+                        <img src="assets/above-left.png" alt="Daniel & Alison Hightower" class="pa-featured-img">
+                    </div>
+                    <div class="pa-right-col">
+                        <h3 class="pa-content-title">Personal Injury Attorneys in Ocala, Florida</h3>
+
+                        <div class="pa-text-content">
+                            <p>Since 1976, Daniel L. Hightower has been standing up for the rights of people injured in
+                                car, work, and other accidents. Hightower & Hightower, P.A.'s personal injury lawyers,
+                                workers' compensation lawyers, and social security disability lawyers have years of
+                                experience in successfully representing the interests of their clients and obtaining
+                                recoveries on their behalf.</p>
+
+                            <p>The Law Office of Hightower & Hightower, P.A. has handled cases state-wide from Pensacola
+                                to Jacksonville to Islamorada to Tampa, Florida. We also proudly serve Alachua
+                                (Gainesville and surrounding cities), Bradford, Citrus, Clay, Columbia, Dixie, Flagler,
+                                Gilchrist, Hernando, Lafayette, Lake, Levy, Marion (Ocala and surrounding cities),
+                                Orange, Putnam, Seminole, St. Johns, Sumter (The Villages, Lady Lake and surrounding
+                                cities), Suwannee, Union, Volusia and other surrounding counties.</p>
+
+                            <p class="pa-quote">Mr. Hightower frequently says, "Have Briefcase, Will Travel."</p>
+
+                            <p>Since 1976, Daniel L. Hightower has been standing up for the rights of people injured in
+                                car, work, and other accidents. Our personal injury lawyers, workers' compensation
+                                lawyers, and social security disability lawyers have years of experience in successfully
+                                representing the interests of their clients and obtaining recoveries on their behalf.
+                            </p>
+                        </div>
+
+                        <div class="pa-footer-note">
+                            When we represent our clients, we're all in. We fight hard for them.<br>
+                            <strong>No Matter What.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lawyers-profiles-section">
+            <div class="profiles-container">
+                <h3 class="profiles-section-title">Touch the picture of each lawyer for his or her biographical
+                    information.</h3>
+
+                <div class="profiles-grid">
+                    <!-- Lawyer 1 -->
+                    <div class="profile-card">
+                        <a href="lawyers/daniel-l-hightower.html" style="text-decoration: none;">
+                            <div class="profile-img-wrapper">
+                                <img src="assets/lawyer-1.png" alt="Daniel L. Hightower" class="profile-img">
+                                <div class="profile-overlay-hover">
+                                    <span class="read-more-text">Read More <i
+                                            class="fa-solid fa-arrow-right-long"></i></span>
+                                </div>
+                            </div>
+                            <div class="profile-info-overlay">
+                                <span class="profile-badge">FOUNDING PARTNER</span>
+                                <h4 class="profile-name">Daniel L. Hightower</h4>
+                                <a href="#daniel" class="profile-meet-btn btn-white"
+                                    onclick="openConsultationModal(event)">CONSULTATION</a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Lawyer 2 -->
+                    <div class="profile-card">
+                        <a href="lawyers/alison-l-hightower.html" style="text-decoration: none;">
+                            <div class="profile-img-wrapper">
+                                <img src="assets/lawyer-2.png" alt="Alison L. Hightower" class="profile-img">
+                                <div class="profile-overlay-hover">
+                                    <span class="read-more-text">Read More <i
+                                            class="fa-solid fa-arrow-right-long"></i></span>
+                                </div>
+                            </div>
+                            <div class="profile-info-overlay">
+                                <span class="profile-badge">FOUNDING PARTNER</span>
+                                <h4 class="profile-name">Alison L. Hightower</h4>
+                                <a href="#alison" class="profile-meet-btn btn-white"
+                                    onclick="openConsultationModal(event)">CONSULTATION</a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Lawyer 3 -->
+                    <div class="profile-card">
+                        <a href="lawyers/barbara-l-richard.html" style="text-decoration: none;">
+                            <div class="profile-img-wrapper">
+                                <img src="assets/lawyer-3.png" alt="Barbara L. Richard" class="profile-img">
+                                <div class="profile-overlay-hover">
+                                    <span class="read-more-text">Read More <i
+                                            class="fa-solid fa-arrow-right-long"></i></span>
+                                </div>
+                            </div>
+                            <div class="profile-info-overlay">
+                                <h4 class="profile-name">Barbara L. Richard</h4>
+                                <a href="#barbara" class="profile-meet-btn btn-white"
+                                    onclick="openConsultationModal(event)">CONSULTATION</a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Lawyer 4 -->
+                    <div class="profile-card">
+                        <a href="lawyers/mark-n-tipton.html" style="text-decoration: none;">
+                            <div class="profile-img-wrapper">
+                                <img src="assets/lawyer-4.png" alt="Mark N. Tipton" class="profile-img">
+                                <div class="profile-overlay-hover">
+                                    <span class="read-more-text">Read More <i
+                                            class="fa-solid fa-arrow-right-long"></i></span>
+                                </div>
+                            </div>
+                            <div class="profile-info-overlay">
+                                <h4 class="profile-name">Mark N. Tipton</h4>
+                                <a href="#mark" class="profile-meet-btn btn-white"
+                                    onclick="openConsultationModal(event)">CONSULTATION</a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Lawyer 5 -->
+                    <div class="profile-card">
+                        <a href="lawyers/daniel-l-hightower.html" style="text-decoration: none;">
+                            <div class="profile-img-wrapper">
+                                <img src="assets/lawyer-5.png" alt="David D. Guiley" class="profile-img">
+                                <div class="profile-overlay-hover">
+                                    <span class="read-more-text">Read More <i
+                                            class="fa-solid fa-arrow-right-long"></i></span>
+                                </div>
+                            </div>
+                            <div class="profile-info-overlay">
+                                <h4 class="profile-name">David D. Guiley</h4>
+                                <a href="#david" class="profile-meet-btn btn-white"
+                                    onclick="openConsultationModal(event)">CONSULTATION</a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Lawyer 6 -->
+                    <div class="profile-card">
+                        <a href="lawyers/shawn-e-clark.html" style="text-decoration: none;">
+                            <div class="profile-img-wrapper">
+                                <img src="assets/lawyer-6.png" alt="Shawn E. Clark" class="profile-img">
+                                <div class="profile-overlay-hover">
+                                    <span class="read-more-text">Read More <i
+                                            class="fa-solid fa-arrow-right-long"></i></span>
+                                </div>
+                            </div>
+                            <div class="profile-info-overlay">
+                                <h4 class="profile-name">Shawn E. Clark</h4>
+                                <a href="#shawn" class="profile-meet-btn btn-white"
+                                    onclick="openConsultationModal(event)">CONSULTATION</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- H&H Honors & Awards Section -->
+        <section class="hh-honors-section" id="hh-honors-section">
+            <div class="honors-container">
+                <div class="honors-title-wrapper">
+                    <span class="honors-line"></span>
+                    <h2 class="honors-title">HONORS & AWARDS</h2>
+                    <span class="honors-line"></span>
+                </div>
+                <div class="honors-logos-row">
+                    <div class="honors-logos-track">
+                        <div class="honor-logo-item">
+                            <img src="assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                        <!-- Clones for seamless mobile marquee -->
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-text">Only pay if we win. Contact us 24/7.</h2>
+            </div>
+        </section>
+
+        <footer class="footer-section" id="footer-section">
+            <div class="footer-container">
+                <!-- Top Row: Contact, Logo, Socials -->
+                <div class="footer-top-row">
+                    <div class="footer-contact">
+                        <span class="consult-badge">100% Free Consultation</span>
+                        <a href="tel:352-646-3944" class="footer-phone">352-646-3944</a>
+                    </div>
+                    <div class="footer-logo-wrapper">
+                        <img src="assets/footer-logo.svg" alt="H&H Lawyers Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube"
+                            target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn"
+                            target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mid Row: Navigation Links -->
+                <div class="footer-nav-row">
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="lawyers.html">Meet Our Attorneys</a></li>
+                            <li><a href="areas-of-practice.html">Practice Areas</a></li>
+                            <li><a href="#">Our Victories</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Bottom Row: Copyright, Disclaimer -->
+                <div class="footer-bottom-row">
+
+                    <div class="footer-disclaimer">
+                        <div class="footer-bottom-meta">
+                            <p class="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.
+                            </p>
+                            <div class="legal-links">
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <span class="legal-divider">|</span>
+                                <a href="#">Site Map</a>
+                            </div>
+                        </div>
+                        <div class="footer-meta-desc">
+
+                            <p style="padding-top: 60px;">The information on this website is for general information
+                                purposes only. Nothing on this site should be taken as legal advice for any individual
+                                case or situation. This information is not intended to create, and receipt or viewing
+                                does not constitute, an attorney-client relationship. The verdicts and settlements
+                                listed on this site are intended to be representative of cases handled by Hightower &
+                                Hightower. These listings are not a guarantee or prediction of the outcome of any other
+                                claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+    <!-- Consultation Form Modal -->
+    <div class="consultation-modal" id="consultation-modal">
+        <div class="consult-modal-overlay" id="consult-modal-overlay"></div>
+        <div class="consult-modal-content">
+            <button class="consult-modal-close" id="consult-modal-close" aria-label="Close form">&times;</button>
+            <div class="form-card" style="box-shadow: none; border-top: none; margin: 0 !important;">
+                <div class="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
+                <h2 class="form-title">Talk to Hightower & Hightower</h2>
+                <p class="form-subtitle">We'll review your case and respond within hours.</p>
+
+                <form class="case-review-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modal-first-name">FIRST NAME</label>
+                            <input type="text" id="modal-first-name" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-last-name">LAST NAME</label>
+                            <input type="text" id="modal-last-name" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-phone-number">PHONE NUMBER</label>
+                        <input type="tel" id="modal-phone-number" placeholder="(407) 555-1234" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-case-type">CASE TYPE</label>
+                        <select id="modal-case-type" required>
+                            <option value="" disabled selected>Select your case type</option>
+                            <option value="personal-injury">Personal Injury</option>
+                            <option value="car-accident">Car Accident</option>
+                            <option value="medical-malpractice">Medical Malpractice</option>
+                            <option value="wrongful-death">Wrongful Death</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modal-brief-description">BRIEF DESCRIPTION</label>
+                        <textarea id="modal-brief-description" rows="3"
+                            placeholder="Tell us briefly what happened and when..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
+                            class="fa-solid fa-arrow-right-long"></i></button>
+                </form>
+
+                <p class="form-footer-text">
+                    By submitting, you agree to our Privacy Policy. Your information is confidential and
+                    protected by attorney-client privilege.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>

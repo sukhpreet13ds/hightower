@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower &amp; Hightower — Admin Panel</title>
+    <link rel="icon" href="assets/hh-fav.webp">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <!-- LOGIN -->
+    <div id="login-view" class="login-wrap">
+        <form id="login-form" class="login-card">
+            <h1 class="login-brand">Hightower &amp; Hightower</h1>
+            <p class="login-sub">Admin Panel</p>
+            <label>Username
+                <input type="text" id="login-username" autocomplete="username" required>
+            </label>
+            <label>Password
+                <input type="password" id="login-password" autocomplete="current-password" required>
+            </label>
+            <button type="submit" class="btn-primary">Sign In</button>
+            <p id="login-error" class="form-error"></p>
+        </form>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard-view" class="dash hidden">
+        <aside class="sidebar">
+            <div class="sidebar-brand">H&amp;H Admin</div>
+            <nav>
+                <button class="nav-item active" data-tab="submissions">
+                    Submissions <span id="unread-badge" class="badge hidden">0</span>
+                </button>
+                <button class="nav-item" data-tab="blogs">Blogs</button>
+            </nav>
+            <button id="logout-btn" class="logout">Log out</button>
+        </aside>
+
+        <main class="content">
+            <!-- SUBMISSIONS TAB -->
+            <section id="tab-submissions" class="tab">
+                <div class="content-head">
+                    <h2>Form Submissions</h2>
+                    <div class="filters">
+                        <select id="sub-filter">
+                            <option value="all">All forms</option>
+                            <option value="hero">Hero form</option>
+                            <option value="consultation">Consultation / Modal</option>
+                            <option value="get-started">Get Started</option>
+                            <option value="contact">Contact Us</option>
+                        </select>
+                        <button id="sub-refresh" class="btn-ghost">Refresh</button>
+                    </div>
+                </div>
+                <div id="submissions-list" class="cards"></div>
+                <p id="submissions-empty" class="empty hidden">No submissions yet.</p>
+            </section>
+
+            <!-- BLOGS TAB -->
+            <section id="tab-blogs" class="tab hidden">
+                <div class="content-head">
+                    <h2>Blog Posts</h2>
+                    <button id="new-blog-btn" class="btn-primary">+ New Blog</button>
+                </div>
+                <div id="blogs-list" class="cards"></div>
+                <p id="blogs-empty" class="empty hidden">No blogs yet. Create your first post.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- BLOG EDITOR MODAL -->
+    <div id="blog-modal" class="modal hidden">
+        <div class="modal-box">
+            <button class="modal-x" id="blog-modal-close">&times;</button>
+            <h3 id="blog-modal-title">New Blog</h3>
+            <form id="blog-form">
+                <input type="hidden" id="blog-id">
+                <label>Title (H1 heading) *
+                    <input type="text" id="blog-title" required placeholder="e.g. What Evidence Strengthens Your Injury Case?">
+                </label>
+                <label>Short excerpt (shown on cards)
+                    <textarea id="blog-excerpt" rows="2" placeholder="One or two sentences shown in the news cards…"></textarea>
+                </label>
+
+                <label>Tags / Categories
+                    <input type="text" id="blog-tags" placeholder="e.g. car accident, ocala lawyer, wrongful death claim">
+                </label>
+                <p class="field-hint">Separate tags with commas. They appear as “Post Tags” at the end of the article.</p>
+
+                <label style="margin-bottom:6px;">Full content (article body)</label>
+                <div class="editor-toolbar">
+                    <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+                    <button type="button" data-cmd="formatBlock" data-val="H2" title="Heading">H2</button>
+                    <button type="button" data-cmd="formatBlock" data-val="P" title="Normal text">¶</button>
+                    <button type="button" data-cmd="insertUnorderedList" title="Bulleted list">• List</button>
+                    <button type="button" data-cmd="insertOrderedList" title="Numbered list">1. List</button>
+                    <button type="button" data-cmd="createLink" title="Insert link">🔗 Link</button>
+                    <button type="button" id="tb-image" title="Insert image">🖼 Image</button>
+                    <button type="button" id="tb-table" title="Insert table">▦ Table</button>
+                    <button type="button" data-cmd="removeFormat" title="Clear formatting">⌫ Clear</button>
+                </div>
+                <div id="blog-content-editor" class="rich-editor" contenteditable="true"
+                    data-placeholder="Write the full article here. Use the toolbar to add headings, lists, tables and images…"></div>
+                <input type="file" id="tb-image-input" accept="image/*" style="display:none;">
+
+                <div class="grid-2">
+                    <label>Author
+                        <input type="text" id="blog-author" placeholder="Daniel L. Hightower">
+                    </label>
+                    <label>Status
+                        <select id="blog-published">
+                            <option value="1">Published (visible on site)</option>
+                            <option value="0">Draft (hidden)</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <label>Featured image
+                            <input type="file" id="blog-image" accept="image/*">
+                        </label>
+                        <div id="blog-current-image" class="current-image hidden">
+                            <img id="blog-image-preview" alt="current">
+                            <span>Current — choose a file to replace.</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Source / publication logo
+                            <input type="file" id="blog-logo" accept="image/*">
+                        </label>
+                        <div id="blog-current-logo" class="current-image hidden">
+                            <img id="blog-logo-preview" alt="current logo">
+                            <span>Current — choose a file to replace.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-ghost" id="blog-cancel">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Blog</button>
+                </div>
+                <p id="blog-error" class="form-error"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

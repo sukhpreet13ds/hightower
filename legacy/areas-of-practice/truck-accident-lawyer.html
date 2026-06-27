@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower & Hightower</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/hh-fav.webp">
+    <link rel="icon" sizes="192x192" href="../assets/hh-fav.webp">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Absolute Positioning for Headers on Lawyers Page */
+        .top-header-bar {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 105;
+        }
+
+        .main-header {
+            position: absolute !important;
+            top: 40px;
+            /* Height of the top header bar */
+            left: 0;
+            width: 100%;
+            background: transparent !important;
+            z-index: 100;
+            box-shadow: none !important;
+        }
+
+        /* Lawyer Hero Section styling */
+        .lawyer-hero-section {
+            background-image: url('assets/lawyer-hero.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Push bottom banner to the end */
+            padding-top: 180px;
+            /* Space for overlay headers */
+            overflow: hidden;
+        }
+
+        .lawyer-hero-container {
+            max-width: 1825px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            /* Align form to the right */
+            align-items: flex-end;
+            padding: 0 40px 0px 40px;
+            flex-grow: 1;
+            /* Stretch to take space above bottom banner */
+        }
+
+        .lawyer-hero-right {
+            width: 100%;
+            max-width: 420px;
+            z-index: 15;
+        }
+
+        .nav-list {
+            margin-top: 34px;
+        }
+
+        .form-card {
+            margin-bottom: -22px;
+        }
+
+        /* Mobile responsiveness for lawyer-hero-section */
+        @media (max-width: 1024px) {
+            .lawyer-hero-section {
+                background-image: none !important;
+                background-color: #1D3656 !important;
+                min-height: auto;
+                padding-top: 140px;
+            }
+
+            .lawyer-hero-container {
+                justify-content: center;
+                padding: 0 20px 30px 20px;
+            }
+
+            .lawyer-hero-right {
+                max-width: 100%;
+            }
+        }
+
+        /* Detail Area of Practice Section Styles */
+        .detail-area-of-practice-law {
+            padding: 80px 0 0 0;
+            background-color: #fff;
+        }
+
+        .practice-law-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Partners Row */
+        .partners-row {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .partners-image-col {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        .partners-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .partners-text-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .partners-text-col p {
+            font-family: var(--family-sans);
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .inline-partner-link {
+            color: #111;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--button);
+            transition: color 0.3s;
+        }
+
+        .inline-partner-link:hover {
+            color: var(--button);
+        }
+
+        /* Practice Mid Intro */
+        .practice-mid-intro {
+            margin-bottom: 40px;
+        }
+
+        .contingency-text {
+            font-family: var(--family-sans);
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .summary-claims-header {
+            font-family: var(--family-sans);
+            font-weight: 700;
+            font-size: 18px;
+            color: #111;
+            text-align: center;
+            margin: 40px 0 30px 0;
+        }
+
+        /* Claims Cards Row */
+        .claims-cards-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .claim-card {
+            position: relative;
+            background-color: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 240px;
+        }
+
+        .claim-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .claim-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .claim-card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+            color: #fff;
+            font-family: var(--family-sans);
+            font-weight: 700;
+            font-size: 16px;
+            padding: 40px 15px 20px 15px;
+            border-top: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Products Liability Banner */
+        .products-liability-banner {
+            display: flex;
+            width: 100%;
+            min-height: 550px;
+            margin-bottom: 80px;
+            background-color: #0f1c2d;
+            overflow: hidden;
+        }
+
+        .banner-image-half {
+            flex: 0 0 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .banner-text-half {
+            flex: 0 0 50%;
+            background: linear-gradient(to right,
+                    transparent 0%,
+                    rgba(15, 28, 45, 0.3) 25%,
+                    rgba(15, 28, 45, 0.8) 45%,
+                    rgba(15, 28, 45, 0.95) 65%,
+                    #0f1c2d 100%);
+            display: flex;
+            align-items: center;
+            padding: 60px 80px;
+            margin-left: -150px;
+            padding-left: 210px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner-text-content {
+            max-width: 600px;
+        }
+
+        .banner-section-title {
+            font-family: var(--family-editor), Georgia, serif;
+            font-size: 48px;
+            font-weight: 300;
+            color: #fff;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .banner-section-subtitle {
+            font-family: var(--family-editor), Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--button);
+            margin: 5px 0 20px 0;
+            line-height: 1.2;
+        }
+
+        .banner-divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--button);
+            margin-bottom: 25px;
+        }
+
+        .banner-text-content p {
+            font-family: var(--family-sans);
+            font-size: 18px;
+            color: #dae1e8;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+        }
+
+        .banner-text-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Premises Row */
+        .premises-row {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .premises-text-col {
+            flex: 1;
+        }
+
+        .premises-section-title {
+            font-family: var(--family-editor), Georgia, serif;
+            font-size: 48px;
+            font-weight: 300;
+            color: #0f1c2d;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .premises-section-subtitle {
+            font-family: var(--family-editor), Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--button);
+            margin: 5px 0 20px 0;
+            line-height: 1.2;
+        }
+
+        .premises-divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--button);
+            margin-bottom: 25px;
+        }
+
+        .premises-text-col p {
+            font-family: var(--family-sans);
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+        }
+
+        .premises-text-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        .premises-image-col {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        .premises-lawyer-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Premises Contact Callout (Gold Bar) */
+        .premises-contact-bar {
+            background-color: var(--button);
+            padding: 24px 0;
+            text-align: center;
+        }
+
+        .premises-contact-bar p {
+            font-family: var(--family-sans);
+            font-size: 35px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+
+        .gold-bar-link {
+            color: #fff;
+            text-decoration: underline;
+            transition: opacity 0.3s;
+        }
+
+        .gold-bar-link:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsiveness for Detail Section */
+        @media (max-width: 1024px) {
+            .partners-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .partners-image-col {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .products-liability-banner {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .banner-image-half {
+                height: 350px;
+                flex: 0 0 100%;
+            }
+
+            .banner-text-half {
+                flex: 0 0 100%;
+                padding: 40px 30px;
+                margin-left: 0;
+                background: linear-gradient(180deg, rgba(29, 54, 86, 0.95) 0%, #0f1c2d 100%);
+            }
+
+            .premises-row {
+                flex-direction: column-reverse;
+                gap: 30px;
+            }
+
+            .premises-image-col {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .practice-law-container {
+                padding: 0 20px;
+            }
+
+            .claims-cards-row {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding-bottom: 15px;
+                margin-bottom: 50px;
+                scrollbar-width: none;
+            }
+
+            .claims-cards-row::-webkit-scrollbar {
+                display: none;
+            }
+
+            .claim-card {
+                flex: 0 0 240px;
+                scroll-snap-align: start;
+                height: 220px;
+            }
+
+            .banner-section-title,
+            .premises-section-title {
+                font-size: 36px;
+            }
+
+            .banner-section-subtitle,
+            .premises-section-subtitle {
+                font-size: 28px;
+            }
+
+            .premises-contact-bar p {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-header-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn"
+                    target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube"
+                    target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="tel:352-629-7777" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 352-629-7777
+                </a>
+                <a href="../contact-us.html" class="contact-btn">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo-link">
+                <img src="../assets/h&h-logo.svg" alt="Hightower & Hightower Logo" class="logo-img">
+            </a>
+
+            <!-- Bottom Row: Nav Links (Aligned to Logo Center) -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">About Us <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu">
+                                <a href="../lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                        class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="../lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                    <li><a href="../lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                    <li><a href="../lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                    <li><a href="../lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                    <li><a href="../lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                    <li><a href="../lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../videos.html">Videos</a></li>
+                            <li><a href="../community-services.html">Community Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link-item">Practice Areas <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../areas-of-practice.html">Areas of Practice </a></li>
+                            <li><a href="personal-injury-law.html">Personal Injury</a></li>
+                            <li><a href="car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                            <li><a href="motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
+                            <li><a href="truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                            <li><a href="work-accident-law.html">Work Accident Law</a></li>
+                            <li><a href="wrongful-death-law.html">Wrongful Death Law</a></li>
+                            <li><a href="social-security-disability-law.html">Social Security Disability Law</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../notable-trial-results-settlements.html" class="nav-link-item">Notable Trial Results
+                            & Settlements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../faq.html" class="nav-link-item">Common Questions</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Burger Menu Trigger for Mobile -->
+            <button class="burger-menu-btn" id="mobile-menu-trigger" aria-label="Open Menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="floating-header" id="floating-navbar">
+        <nav class="floating-nav-menu">
+            <ul class="floating-nav-list">
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">About Us <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="../lawyers.html" class="submenu-trigger-link">Lawyers <i
+                                    class="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                            <ul class="submenu">
+                                <li><a href="../lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
+                                <li><a href="../lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
+                                <li><a href="../lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
+                                <li><a href="../lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
+                                <li><a href="../lawyers/dave-guiley.html">Dave D. Guiley</a></li>
+                                <li><a href="../lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../videos.html">Videos</a></li>
+                        <li><a href="../community-services.html">Community Service</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item has-dropdown">
+                    <a href="#" class="floating-nav-link-item">Practice Areas <i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="floating-dropdown-menu">
+                        <li><a href="../areas-of-practice.html">Areas of Practice </a></li>
+                        <li><a href="personal-injury-law.html">Personal Injury</a></li>
+                        <li><a href="car-accident-lawyer.html">Car Accident Lawyer</a></li>
+                        <li><a href="motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
+                        <li><a href="truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
+                        <li><a href="work-accident-law.html">Work Accident Law</a></li>
+                        <li><a href="wrongful-death-law.html">Wrongful Death Law</a></li>
+                        <li><a href="social-security-disability-law.html">Social Security Disability Law</a></li>
+                    </ul>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="../notable-trial-results-settlements.html" class="floating-nav-link-item">Notable Trial
+                        Results & Settlements</a>
+                </li>
+                <li class="floating-nav-item">
+                    <a href="../faq.html" class="floating-nav-link-item">Common Questions</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <!-- Header section of drawer -->
+            <div class="mobile-menu-header">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assets/h&h-logo.svg" alt="Logo" class="logo-img-mobile">
+                </a>
+
+                <div class="mobile-menu-actions-tab">
+
+                    <div class="mobile-header-socials">
+                        <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-menu-close">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body section of drawer -->
+            <div class="mobile-menu-body">
+
+                <div class="mobile-nav-list">
+                    <!-- Accordion 1 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>About Us</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="mobile-nav-sub-accordion">
+                                <button class="sub-accordion-trigger">
+                                    <span>Lawyers</span> <i class="fa-solid fa-chevron-down sub-arrow"></i>
+                                </button>
+                                <div class="sub-accordion-panel">
+                                    <a href="../lawyers.html">Lawyers</a>
+                                    <a href="../lawyers/daniel-l-hightower.html">Daniel L. Hightower</a>
+                                    <a href="../lawyers/alison-l-hightower.html">Alison L. Hightower</a>
+                                    <a href="../lawyers/mark-n-tipton.html">Mark N. Tipton</a>
+                                    <a href="../lawyers/barbara-l-richard.html">Barbara L. Richard</a>
+                                    <a href="../lawyers/dave-guiley.html">Dave D. Guiley</a>
+                                    <a href="../lawyers/shawn-e-clark.html">Shawn E. Clark</a>
+                                </div>
+                            </div>
+                            <a href="../videos.html">Videos</a>
+                            <a href="../community-services.html">Community Service</a>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="mobile-nav-accordion">
+                        <button class="accordion-trigger">
+                            <span>Practice Areas</span> <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-panel">
+                            <a href="../areas-of-practice.html">Areas of Practice </a>
+                            <a href="personal-injury-law.html">Personal Injury</a>
+                            <a href="car-accident-lawyer.html">Car Accident Lawyer</a>
+                            <a href="motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
+                            <a href="truck-accident-lawyer.html">Truck Accident Lawyer</a>
+                            <a href="work-accident-law.html">Work Accident Law</a>
+                            <a href="wrongful-death-law.html">Wrongful Death Law</a>
+                            <a href="social-security-disability-law.html">Social Security Disability Law</a>
+                        </div>
+                    </div>
+
+                    <a href="../notable-trial-results-settlements.html" class="mobile-nav-item-link">Notable Trial
+                        Results & Settlements</a>
+                    <a href="../faq.html" class="mobile-nav-item-link">Common Questions</a>
+                </div>
+
+                <div class="mobile-menu-footer">
+                    <a href="../contact-us.html" class="mobile-contact-btn">CONTACT US</a>
+                    <a href="tel:352-629-7777" class="mobile-phone-link">
+                        <i class="fa-solid fa-phone"></i> 352-629-7777
+                    </a>
+                    <div class="mobile-footer-socials">
+                        <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <section class="truck-accident-services-hero">
+            <div class="community-hero-container">
+                <div class="community-hero-left">
+                    <h1 class="community-hero-title">Ocala Truck Accident <br>Lawyer</h1>
+                </div>
+                <div class="community-hero-right">
+                    <div class="form-card">
+                        <div class="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
+                        <h2 class="form-title">Talk to Hightower & Hightower</h2>
+                        <p class="form-subtitle">We'll review your case and respond within hours.</p>
+
+                        <form class="case-review-form" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">FIRST NAME</label>
+                                    <input type="text" id="first-name" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">LAST NAME</label>
+                                    <input type="text" id="last-name" placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-number">PHONE NUMBER</label>
+                                <input type="tel" id="phone-number" placeholder="(352) 555-1234" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="case-type">CASE TYPE</label>
+                                <select id="case-type" required>
+                                    <option value="" disabled selected>Select your case type</option>
+                                    <option value="personal-injury">Personal Injury</option>
+                                    <option value="car-accident">Car Accident</option>
+                                    <option value="medical-malpractice">Medical Malpractice</option>
+                                    <option value="wrongful-death">Wrongful Death</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="brief-description">BRIEF DESCRIPTION</label>
+                                <textarea id="brief-description" rows="3"
+                                    placeholder="Tell us briefly what happened and when..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
+                        </form>
+
+                        <p class="form-footer-text">
+                            By submitting, you agree to our <a href="../privacy-policy.html" class="footer-text"
+                                style="color: #C2905B">Privacy Policy</a>. Your information is confidential and
+                            protected by attorney-client privilege.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Gold Banner -->
+            <div class="community-hero-banner">
+                <div class="community-hero-banner-content">
+                    No Cost Consultation – 100% FREE Until We Win!
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-area-of-practice-law">
+            <!-- Top section: Partners Row -->
+            <div class="practice-law-container">
+                <div class="partners-row">
+                    <div class="partners-image-col">
+                        <img src="../assets/law-partners.png" alt="Daniel L. Hightower & Alison L. Hightower"
+                            class="partners-img">
+                    </div>
+                    <div class="partners-text-col">
+                        <h2 class="premises-section-title" style="margin-bottom: 10px;">A Truck Accident Lawyer Focused
+                            on Your Recovery</h2>
+                        <p>Hightower & Hightower, P.A. has been standing up for the injured since 1976. For 50 years,
+                            truck accident victims have relied on our personal injury law firm for aggressive
+                            representation. Each attorney here is dedicated to protecting your rights, pursuing the
+                            justice you deserve, and holding at-fault parties accountable. If you’ve been in a trucking
+                            accident, don’t wait. Contact Hightower & Hightower today.</p>
+                        <p><strong><a href="../contact-us.html" class="inline-partner-link">Contact Us For A Free Case
+                                    Review</a></strong></p>
+                    </div>
+                </div>
+
+                <!-- Middle description text -->
+                <div class="practice-mid-intro">
+                    <h2 class="premises-section-title" style="text-align: center; margin-bottom: 10px;">If You’ve Been
+                        Injured In A Tractor-Trailer Accident</h2>
+                    <p class="contingency-text" style="text-align: center; max-width: 900px; margin: 0 auto 30px auto;">
+                        Central Florida is no stranger to tractor-trailer accidents. These crashes can result in serious
+                        injuries, including:</p>
+                </div>
+
+                <!-- Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile -->
+                <div class="claims-cards-row">
+                    <div class="claim-card">
+                        <img src="../assets/truck1.jpg" alt="Brain & Spinal Injuries" class="claim-card-img">
+                        <div class="claim-card-title">Brain & Spinal Injuries</div>
+                    </div>
+                    <div class="claim-card">
+                        <img src="../assets/truck2.jpg" alt="Neck & Back Injuries" class="claim-card-img">
+                        <div class="claim-card-title">Neck & Back Injuries</div>
+                    </div>
+                    <div class="claim-card">
+                        <img src="../assets/truck3.jpg" alt="Broken Bones" class="claim-card-img">
+                        <div class="claim-card-title">Broken Bones & Internal</div>
+                    </div>
+                    <div class="claim-card">
+                        <img src="../assets/truck4.jpg" alt="Permanent Disability" class="claim-card-img">
+                        <div class="claim-card-title">Permanent Disability</div>
+                    </div>
+                    <div class="claim-card">
+                        <img src="../assets/truck5.jpg" alt="Scarring & Burns" class="claim-card-img">
+                        <div class="claim-card-title">Scarring & Burns</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; margin-bottom: 60px; text-align: center;">
+                    <p class="contingency-text" style="max-width: 900px; margin: 0 auto;">If you were injured in a
+                        tractor-trailer accident, you may have legal options. Our advice is always to speak with a
+                        lawyer as soon as possible after a collision, and before giving any recorded statements to
+                        insurance companies.</p>
+                </div>
+            </div>
+
+            <!-- Middle Section: Products Liability Banner (mid image law-half.jpg) -->
+            <!-- Layout: split left (image), right (blue background with half-gradient and text) -->
+            <div class="products-liability-banner">
+                <div class="banner-image-half" style="background-image: url('../assets/truck-crash.jpg');">
+                </div>
+                <div class="banner-text-half">
+                    <div class="banner-text-content">
+                        <h2 class="banner-section-title">Compensation We Recover</h2>
+                        <h3 class="banner-section-subtitle">For Your Truck Accident Case</h3>
+                        <div class="banner-divider"></div>
+                        <p>Personal injury law calculates compensation for a truck accident case by looking at your
+                            damages. Damages are the total losses you’ve suffered due to the accident. This should
+                            account for past, present, and future losses, such as:</p>
+                        <p style="margin-left: 20px; font-weight: 500; color: #dae1e8; margin-bottom: 8px;">• Medical
+                            bills and hospital costs</p>
+                        <p style="margin-left: 20px; font-weight: 500; color: #dae1e8; margin-bottom: 8px;">• Costs of
+                            treatment you may need later on</p>
+                        <p style="margin-left: 20px; font-weight: 500; color: #dae1e8; margin-bottom: 8px;">• Money lost
+                            from being unable to work</p>
+                        <p style="margin-left: 20px; font-weight: 500; color: #dae1e8; margin-bottom: 8px;">• Damage to
+                            your property/belongings</p>
+                        <p style="margin-left: 20px; font-weight: 500; color: #dae1e8; margin-bottom: 20px;">• Physical
+                            pain, injury, or emotional suffering</p>
+                        <p><strong>How Much is a Truck Accident Settlement Worth?</strong><br>A case’s value depends on
+                            how the crash has affected the injured person. That can include changes in their health,
+                            their ability to handle daily activities, and the effects of the injuries on their ability
+                            to work and their relationships. These are all details that help us show the full impact the
+                            accident has had on the victim’s life as a whole.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Premises Liability (lawyer-1.png on the right) -->
+            <div class="practice-law-container">
+                <div class="premises-row">
+                    <div class="premises-text-col">
+                        <h2 class="premises-section-title">Are Truck Accidents</h2>
+                        <h3 class="premises-section-subtitle">More Dangerous Than Car Crashes?</h3>
+                        <div class="premises-divider"></div>
+                        <p>Yes. Trucks are not just ‘big vehicles.’ At maximum capacity, a tractor-trailer can outweigh
+                            a typical car by as much as twenty times. That’s 80,000 pounds that, even after impact, will
+                            continue to push cars through traffic and into other vehicles, causing multi-car collisions
+                            and increasing the severity of the crash. This size and weight can lead to severe,
+                            devastating injuries. Sometimes, fatalities.</p>
+                        <p><strong>Commercial Accident Claims Are Legally Complex</strong><br>More than one company can
+                            be tied to a single accident, making these crashes legally complex. Large trucking fleets
+                            involved also have “Catastrophic Response Teams” that they send to the scene immediately, to
+                            begin protecting their interests. They may even try to pressure victims into taking a quick
+                            settlement. Don’t let them take advantage. The trucking industry is highly regulated, and
+                            these cases are not handled the same as others. They are more serious, more aggressively
+                            defended, and require rigorous investigation.</p>
+                    </div>
+                    <div class="premises-image-col">
+                        <img src="../assets/lawyer-1.png" alt="Daniel L. Hightower" class="premises-lawyer-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Negligence Section (lawyer-2.png on the left, text on the right) -->
+            <div class="practice-law-container" style="margin-top: 80px; margin-bottom: 80px;">
+                <div class="partners-row" style="margin-bottom: 0;">
+
+                    <div class="partners-text-col">
+                        <h2 class="premises-section-title">Negligence & Accountability</h2>
+                        <h3 class="premises-section-subtitle">Holding Trucking Companies Accountable</h3>
+                        <div class="premises-divider"></div>
+                        <p>Negligence is the failure to use reasonable care. In a trucking accident case, that means a
+                            truck driver, trucking company, or a third party acted negligently and caused an accident.
+                            Actionable behavior can include speeding, driving while distracted, failing to maintain the
+                            truck, or violating road and safety rules. Negligence is what connects the accident to legal
+                            responsibility. To recover compensation, we must show that another party’s negligence caused
+                            or contributed to the crash and your injuries.</p>
+
+                        <h3 class="premises-section-subtitle"
+                            style="font-size: 24px; margin-top: 20px; margin-bottom: 10px;">Why You Must Act Quickly in
+                            Florida</h3>
+                        <p>It’s better to take action sooner rather than later. Florida law allows two years to file a
+                            lawsuit for injuries and related damages. Speaking with a truck accident attorney soon after
+                            the accident can help you understand how the law applies to your case. Our attorneys are
+                            here to help you through every step.</p>
+
+                        <h3 class="premises-section-subtitle"
+                            style="font-size: 24px; margin-top: 30px; margin-bottom: 10px;">How to Protect Your Rights
+                            After a Trucking Collision</h3>
+                        <p style="margin-left: 20px; margin-bottom: 8px;"><strong>1. Dial 911 right away.</strong> When
+                            law enforcement arrives, they will collect details and document the scene. Emergency
+                            responders can evaluate and treat injuries.</p>
+                        <p style="margin-left: 20px; margin-bottom: 8px;"><strong>2. Stay at the scene.</strong> Do not
+                            leave, as Florida law requires, but be careful not to admit fault. Statements made in the
+                            moment can be used against you.</p>
+                        <p style="margin-left: 20px; margin-bottom: 8px;"><strong>3. Take photos.</strong> If able,
+                            document injuries, vehicle damage, company markings, license plates, and road conditions.
+                        </p>
+                        <p style="margin-left: 20px; margin-bottom: 8px;"><strong>4. Seek medical attention.</strong> Do
+                            this even if you feel okay. Medical records are critical evidence for your case.</p>
+                        <p style="margin-left: 20px; margin-bottom: 20px;"><strong>5. Report the accident.</strong>
+                            Notify your insurance, but avoid accepting a quick settlement or giving recorded statements
+                            before talking to a lawyer.</p>
+
+                        <h3 class="premises-section-subtitle"
+                            style="font-size: 24px; margin-top: 30px; margin-bottom: 10px;">Experienced Truck Accident
+                            Lawyer with 50 Years of Experience</h3>
+                        <p>At Hightower & Hightower, P.A., we know how to handle trucking companies and their insurers.
+                            Trucking companies and drivers must follow special rules around vehicle maintenance, driver
+                            hours, weight limits, and more. Getting access to black box data, driver logs, vehicle
+                            inspections, and other important evidence is time-sensitive. The sooner we act, the better.
+                            If you or a family member has been injured in a trucking accident, contact our office today
+                            for a free consultation.</p>
+                    </div>
+                </div>
+            </div>
+<div class="faq-content-area" style="max-width: 1200px; margin: auto; margin-bottom: 20px;">
+     <div class="faq-category-group" data-category="trucking">
+                            <h2 class="faq-category-title">Trucking Accident Questions</h2>
+                            <div class="faq-accordion-list">
+                                <!-- Accordion 1 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>HOW ARE ACCIDENTS INVOLVING COMMERCIAL TRUCKS DIFFERENT FROM CAR
+                                            ACCIDENTS?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The size of tractor trailers puts passenger cars at a serious disadvantage.
+                                            Some tractor trailers can weigh over 80,000 pounds. When something that size
+                                            collides with an automobile, the injuries to the occupants can be
+                                            devastating and deadly.
+                                        </p>
+                                        <p class="faq-answer-text">
+                                            In addition, there are sections of the Vehicle Code applicable to trucking
+                                            companies and commercial truck drivers, as well as training and licensing
+                                            requirements specific for truck drivers making their defense in truck
+                                            accident cases more difficult and, therefore, better for plaintiffs.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 2 -->
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>WHAT IS THE FEDERAL GOVERNMENT DOING ABOUT TRACTOR TRAILERS AND HIGHWAY
+                                            SAFETY?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The Federal Motor Carrier Safety Administration controls specific
+                                            regulations that trucking companies are required to follow . These complex
+                                            regulations were put in place to protect accident victims of their own
+                                            pockets.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            ARE THERE ANY ADDITIONAL SAFETY LAWS RELATED TO TRUCKS AND TRUCK DRIVERS?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Yes. Specific laws and regulations are in place to protect passenger vehicle
+                                            drivers and occupants from the actions of negligent truck drivers and
+                                            trucking companies. State and Federal rules specify, for example, how many
+                                            hours and days truck drivers can stay on the road before taking a break, the
+                                            proper loading of cargo and weight the driver is carrying, and speeds for
+                                            safely traveling and passing other vehicles on the highway.
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>
+                                            WHAT DAMAGES CAN I RECOVER IN A TRUCK ACCIDENT INJURY CASE?</span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Plaintiffs may be entitled to compensation for past and future wages lost
+                                            and medical expenses. You may also be entitled to compensation for the pain
+                                            and suffering you’ve endured as a result of the truck accident. Punitive
+                                            damages are possible if the conduct of the person at-fault is proven to be
+                                            particularly reckless.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>IF I AM INJURED, HOW WILL I PAY FOR MY MEDICAL BILLS? WHO IS RESPONSIBLE?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            The trucking company more than likely will not pay your medical costs right
+                                            away. Your own insurance may cover some of your expenses, including some
+                                            medical bills and funeral costs if a loved one died. We urge you NOT to give
+                                            a statement to your insurance company or to the trucking company, nor to
+                                            sign any release forms, before consulting with an experienced truck accident
+                                            attorney. Your actions could be used against you to limit you are awarded.
+
+
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>WHAT IS THE TIME FRAME TO BRING AN INJURY OR DEATH CASE BASED ON A TRUCK
+                                            ACCIDENT?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            In the state of Florida, a truck accident case must be brought within four
+                                            years of the date of the accident. If someone died, the wrongful death
+                                            lawsuit must be brought within two years of the date of the decedent’s
+                                            death.
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>How are truck accidents different from regular car accidents?
+
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                            Truck accidents are vastly different due to:
+
+                                        </p>
+                                        <ul>
+                                            <li>Severity of Injuries: The massive size and weight of commercial trucks cause catastrophic injuries and high fatality rates.</li>
+                                            <li>Complex Regulations: Trucking companies and drivers must comply with strict federal safety regulations (e.g., Hours of Service limits, maintenance logs).</li>
+                                            <li>Multiple Liable Parties: Liability may extend beyond the driver to the trucking company, cargo loaders, or equipment manufacturers.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion">
+                                    <button class="faq-accordion-header">
+                                        <span>What evidence is critical in a commercial truck accident case?
+                                        </span>
+                                        <span class="faq-icon">+</span>
+                                    </button>
+                                    <div class="faq-accordion-content">
+                                        <p class="faq-answer-text">
+                                           Important evidence includes the truck's "black box" (Electronic Control Module) data, the driver’s logs and hours-of-service records, the trucking company’s hiring and maintenance records, post-accident drug test results, and data from the commercial vehicle's GPS tracking.
+
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+</div>
+            <!-- Premises Contact Callout (Gold Bar) -->
+            <div class="premises-contact-bar">
+                <div class="practice-law-container">
+                    <p>If you have a potential premises liability claim, please feel free to <a
+                            href="../contact-us.html" class="gold-bar-link">contact us</a>.</p>
+                </div>
+            </div>
+        </section>
+        <!-- H&H Honors & Awards Section -->
+        <section class="hh-honors-section" id="hh-honors-section">
+            <div class="honors-container">
+                <div class="honors-title-wrapper">
+                    <span class="honors-line"></span>
+                    <h2 class="honors-title">HONORS & AWARDS</h2>
+                    <span class="honors-line"></span>
+                </div>
+                <div class="honors-logos-row">
+                    <div class="honors-logos-track">
+                        <div class="honor-logo-item">
+                            <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="../assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="../assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="../assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item">
+                            <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                        <!-- Clones for seamless mobile marquee -->
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="../assets/award2.png" alt="AV Preeminent Rated">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="../assets/award3.png" alt="Martindale-Hubbell Client Champion Gold">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="../assets/award4.webp" alt="Florida Bar Certified Civil Trial">
+                        </div>
+                        <div class="honor-logo-item marquee-clone">
+                            <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-text">Only pay if we win. Contact us 24/7.</h2>
+            </div>
+        </section>
+
+        <footer class="footer-section" id="footer-section">
+            <div class="footer-container">
+                <!-- Top Row: Contact, Logo, Socials -->
+                <div class="footer-top-row">
+                    <div class="footer-contact">
+                        <span class="consult-badge">100% Free Consultation</span>
+                        <a href="tel:352-646-3944" class="footer-phone">352-646-3944</a>
+                    </div>
+                    <div class="footer-logo-wrapper">
+                        <img src="../assets/footer-logo.svg" alt="H&H Lawyers Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube"
+                            target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn"
+                            target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mid Row: Navigation Links -->
+                <div class="footer-nav-row">
+                    <nav class="footer-nav">
+                        <ul class="footer-nav-list">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../lawyers.html">Meet Our Attorneys</a></li>
+                            <li><a href="../areas-of-practice.html">Practice Areas</a></li>
+                            <li><a href="#">Our Victories</a></li>
+                            <li><a href="../contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Bottom Row: Copyright, Disclaimer -->
+                <div class="footer-bottom-row">
+
+                    <div class="footer-disclaimer">
+                        <div class="footer-bottom-meta">
+                            <p class="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.
+                            </p>
+                            <div class="legal-links">
+                                <a href="#">Privacy Policy</a>
+                                <span class="legal-divider">|</span>
+                                <a href="#">Site Map</a>
+                            </div>
+                        </div>
+                        <div class="footer-meta-desc">
+
+                            <p style="padding-top: 60px;">The information on this website is for general information
+                                purposes only. Nothing on this site should be taken as legal advice for any individual
+                                case or situation. This information is not intended to create, and receipt or viewing
+                                does not constitute, an attorney-client relationship. The verdicts and settlements
+                                listed on this site are intended to be representative of cases handled by Hightower &
+                                Hightower. These listings are not a guarantee or prediction of the outcome of any other
+                                claims.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../script/script.js"></script>
+</body>
+
+</html>
