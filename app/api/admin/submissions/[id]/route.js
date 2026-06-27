@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { get, run } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
 export const runtime = 'nodejs';
@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export async function PUT(req, { params }) {
   if (!(await requireAuth())) return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
   const { id } = await params;
-  const existing = db.prepare('SELECT * FROM submissions WHERE id = ?').get(Number(id));
+  const existing = await get('SELECT * FROM submissions WHERE id = ?', [Number(id)]);
   if (!existing) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
   let b = {};
@@ -20,16 +20,16 @@ export async function PUT(req, { params }) {
   const caseType = b.case_type !== undefined ? (String(b.case_type).trim() || null) : existing.case_type;
   const message = b.message !== undefined ? (String(b.message).trim() || null) : existing.message;
 
-  db.prepare(`
+  await run(`
     UPDATE submissions SET name = ?, email = ?, phone = ?, case_type = ?, message = ?
     WHERE id = ?
-  `).run(name, email, phone, caseType, message, Number(id));
+  `, [name, email, phone, caseType, message, Number(id)]);
   return NextResponse.json({ ok: true });
 }
 
 export async function DELETE(req, { params }) {
   if (!(await requireAuth())) return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
   const { id } = await params;
-  db.prepare('DELETE FROM submissions WHERE id = ?').run(Number(id));
+  await run('DELETE FROM submissions WHERE id = ?', [Number(id)]);
   return NextResponse.json({ ok: true });
 }

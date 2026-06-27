@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import db from '@/lib/db';
+import { get } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'News - Hightower & Hightower' };
@@ -18,7 +18,7 @@ export default async function Page({ searchParams }) {
   const sp = await searchParams;
   const id = Number(sp?.id);
   const post = id
-    ? db.prepare('SELECT * FROM news WHERE id = ? AND published = 1').get(id)
+    ? await get('SELECT * FROM news WHERE id = ? AND published = 1', [id])
     : null;
   const tags = post?.tags
     ? post.tags.split(',').map((t) => t.trim()).filter(Boolean)

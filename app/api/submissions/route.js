@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { run } from '@/lib/db';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -24,12 +24,11 @@ export async function POST(req) {
     return NextResponse.json({ error: 'Please provide a name, email or phone.' }, { status: 400 });
   }
 
-  const info = db.prepare(`
+  const info = await run(`
     INSERT INTO submissions
       (form_type, first_name, last_name, name, email, phone, case_type, message, consent, created_at)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(formType, firstName, lastName, name, email, phone, caseType, message, consent,
-    new Date().toISOString());
+  `, [formType, firstName, lastName, name, email, phone, caseType, message, consent, new Date().toISOString()]);
 
   return NextResponse.json({ ok: true, id: Number(info.lastInsertRowid) });
 }

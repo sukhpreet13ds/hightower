@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import db from '@/lib/db';
+import { all } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Hightower & Hightower' };
@@ -10,11 +10,11 @@ function blogExcerpt(b) {
   return text.length > 120 ? text.slice(0, 120) + '...' : text;
 }
 
-export default function Page() {
-  const latestBlogs = db.prepare(`
+export default async function Page() {
+  const latestBlogs = await all(`
     SELECT id, title, excerpt, content, image FROM blogs WHERE published = 1
-    ORDER BY datetime(created_at) DESC, id DESC LIMIT 3
-  `).all();
+    ORDER BY created_at DESC, id DESC LIMIT 3
+  `);
 
   return (
     <main className="main-content">

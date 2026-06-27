@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { all, run } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { saveImage } from '@/lib/cloudinary';
 
@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   if (!(await requireAuth())) return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
-  const rows = db.prepare('SELECT * FROM news ORDER BY id DESC').all();
+  const rows = await all('SELECT * FROM news ORDER BY id DESC');
   return NextResponse.json(rows);
 }
 
@@ -25,10 +25,10 @@ export async function POST(req) {
   const logo = (logoFile && logoFile.size) ? await saveImage(logoFile)
     : ((form.get('logo_url') || '').toString().trim() || null);
 
-  const info = db.prepare(`
+  const info = await run(`
     INSERT INTO news (title, excerpt, content, image, logo, tags, author, published, created_at)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(
+  `, [
     title,
     (form.get('excerpt') || '').toString().trim() || null,
     (form.get('content') || '').toString().trim() || null,
@@ -36,7 +36,7 @@ export async function POST(req) {
     (form.get('tags') || '').toString().trim() || null,
     (form.get('author') || '').toString().trim() || null,
     form.get('published') === '0' ? 0 : 1,
-    new Date().toISOString()
-  );
+    new Date().toISOString(),
+  ]);
   return NextResponse.json({ ok: true, id: Number(info.lastInsertRowid) });
 }

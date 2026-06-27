@@ -8,9 +8,10 @@
     "start": "next start -p 5702"
   },
   "dependencies": {
+    "cloudinary": "^2.5.0",
+    "mysql2": "^3.22.5",
     "next": "^15.5.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "cloudinary": "^2.5.0"
+    "react-dom": "^19.0.0"
   }
 }
