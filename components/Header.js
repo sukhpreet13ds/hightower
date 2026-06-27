@@ -1,6 +1,24 @@
 export default function Header() {
   return (
     <>
+      {/* top bar: social icons + phone + contact */}
+      <div className="top-header-bar">
+        <div className="top-bar-container">
+          <div className="social-icons">
+            <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+          </div>
+          <div className="contact-info">
+            <a href="tel:352-629-7777" className="phone-link">
+              <i className="fa-solid fa-phone"></i> 352-629-7777
+            </a>
+            <a href="/contact-us.html" className="contact-btn">CONTACT US</a>
+          </div>
+        </div>
+      </div>
+
       {/* header */}
       <header className="main-header">
         <div className="navbar-container">

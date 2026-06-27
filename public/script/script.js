@@ -808,9 +808,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function init() {
         initForms();
-        initHomeNews();
-        initBlogsGrid();
-        initBlogDetail();
+        // Blog lists & article content are now rendered server-side by Next.js.
+        // We only wire up the social share links on the blog detail page.
+        initShareBar();
     }
 
     if (document.readyState === 'loading') {

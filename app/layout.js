@@ -1,6 +1,4 @@
-import Header from '@/components/Header';
-import Modals from '@/components/Modals';
-import SiteScripts from '@/components/SiteScripts';
+import SiteChrome from '@/components/SiteChrome';
 
 export const metadata = {
   title: 'Hightower & Hightower',
@@ -26,10 +24,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Header />
-        {children}
-        <Modals />
-        <SiteScripts />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

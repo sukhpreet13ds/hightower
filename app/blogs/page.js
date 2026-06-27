@@ -1,6 +1,21 @@
 import Footer from '@/components/Footer';
-export const metadata = { title: 'Hightower & Hightower' };
+import db from '@/lib/db';
+
+export const dynamic = 'force-dynamic';
+export const metadata = { title: 'News & Articles - Hightower & Hightower' };
+
+function blogExcerpt(b) {
+  if (b.excerpt) return b.excerpt;
+  const text = (b.content || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length > 130 ? text.slice(0, 130) + '…' : text;
+}
+
 export default function Page() {
+  const blogs = db.prepare(`
+    SELECT id, title, excerpt, content, image FROM blogs WHERE published = 1
+    ORDER BY datetime(created_at) DESC, id DESC
+  `).all();
+
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{ __html: `
@@ -121,125 +136,18 @@ export default function Page() {
           <section className="blogs-grid-section">
             <div className="blogs-container-grid">
               <div className="blogs-grid">
-                {/* Card 1 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog1.jpg" alt="What Evidence Strengthens Your Injury Case?" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">What Evidence Strengthens Your Injury Case?</h3>
-                    <p className="blog-card-excerpt">To strengthen a personal injury case, you need
-                      objective proof that establishes who is at fault for...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 2 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog2.png" alt="When Should You Hire a Personal Injury Lawyer?" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">When Should You Hire a Personal Injury Lawyer?</h3>
-                    <p className="blog-card-excerpt">If you've recently been in an accident, are still in
-                      pain, and believe someone else is to blame...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 3 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog3.jpg" alt="Understanding Pain and Suffering in Injury Claims" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">Understanding Pain and Suffering in Injury Claims</h3>
-                    <p className="blog-card-excerpt">Pain and suffering are part of life, but after an
-                      accident, they can become part of a much bigger...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 4 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog4.jpg" alt="How Long Do Personal Injury Cases Typically Take?" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">How Long Do Personal Injury Cases Typically Take?</h3>
-                    <p className="blog-card-excerpt">On average, a personal injury case takes 6 to 18 months
-                      to resolve, but some cases can take several...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 5 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog5.jpeg" alt="When a Car Accident Becomes a Wrongful Death Case" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">When a Car Accident Becomes a Wrongful Death Case</h3>
-                    <p className="blog-card-excerpt">Losing a loved one in a fatal car accident is extremely
-                      devastating. When that car accident is the result of...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 6 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog6.jpeg" alt="What Qualifies as a Catastrophic Injury in a Lawsuit?" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">What Qualifies as a Catastrophic Injury in a Lawsuit?
-                    </h3>
-                    <p className="blog-card-excerpt">We rarely get a warning before life changes forever.
-                      One moment, you're driving home from work and the...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 7 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog7.webp" alt="Workers' Compensation in Florida" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">Workers' Compensation in Florida</h3>
-                    <p className="blog-card-excerpt">No one clocks in expecting to leave work with an
-                      injury, but it happens, and thousands of employees file for workers'
-                      compensation each year...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 8 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog8.jpg" alt="Under The Radar" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">Under The Radar</h3>
-                    <p className="blog-card-excerpt">By Daniel L. Hightower For forty plus years, when
-                      someone finds out I'm a lawyer and asks for my card, I give them one and always
-                      say "I hope you...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
-
-                {/* Card 9 */}
-                <a href="blog-detail.html" className="blog-card">
-                  <div className="blog-card-img-wrapper">
-                    <img src="./assets/hh-blog9.jpg" alt="What To Do If You've Been In a Motorcycle Accident" className="blog-card-img" />
-                  </div>
-                  <div className="blog-card-content">
-                    <h3 className="blog-card-title">What To Do If You've Been In a Motorcycle Accident</h3>
-                    <p className="blog-card-excerpt">Florida's warm weather and scenic roads make it
-                      enjoyable for motorcyclists, as we see many of them...</p>
-                    <span className="blog-card-link">Read More</span>
-                  </div>
-                </a>
+                {blogs.map((b) => (
+                  <a key={b.id} href={`blog-detail.html?id=${b.id}`} className="blog-card">
+                    <div className="blog-card-img-wrapper">
+                      <img src={b.image || './assets/hh-blog1.jpg'} alt={b.title} className="blog-card-img" />
+                    </div>
+                    <div className="blog-card-content">
+                      <h3 className="blog-card-title">{b.title}</h3>
+                      <p className="blog-card-excerpt">{blogExcerpt(b)}</p>
+                      <span className="blog-card-link">Read More</span>
+                    </div>
+                  </a>
+                ))}
               </div>
 
               <div className="blogs-load-more-container">

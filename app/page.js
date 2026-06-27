@@ -1,8 +1,21 @@
 import Footer from '@/components/Footer';
+import db from '@/lib/db';
 
+export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Hightower & Hightower' };
 
+function blogExcerpt(b) {
+  if (b.excerpt) return b.excerpt;
+  const text = (b.content || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.length > 120 ? text.slice(0, 120) + '...' : text;
+}
+
 export default function Page() {
+  const latestBlogs = db.prepare(`
+    SELECT id, title, excerpt, content, image FROM blogs WHERE published = 1
+    ORDER BY datetime(created_at) DESC, id DESC LIMIT 3
+  `).all();
+
   return (
     <main className="main-content">
       <section className="hh-hero-section" id="hh-hero-section">
@@ -637,53 +650,21 @@ export default function Page() {
           <h2 className="news-section-title">News & Articles</h2>
 
           <div className="articles-grid">
-            {/* Card 1 */}
-            <div className="article-card">
-              <a href="blog-detail.html"
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                <div className="article-image-wrapper">
-                  <img src="assets/hh-blog1.jpg" alt="Avoid a Long Wait" className="article-img"/>
-                </div>
-                <div className="article-info">
-                  <h3 className="article-title">What Evidence Strengthens Your Injury Case?</h3>
-                  <p className="article-desc">To strengthen a personal injury case, you need objective proof
-                    that establishes who is at fault for...</p>
-                  <span className="article-read-more">Read More</span>
-                </div>
-              </a>
-            </div>
-
-            {/* Card 2 */}
-            <div className="article-card">
-              <a href="blog-detail.html"
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                <div className="article-image-wrapper">
-                  <img src="assets/hh-blog2.png" alt="Taxable Settlements" className="article-img"/>
-                </div>
-                <div className="article-info">
-                  <h3 className="article-title">When Should You Hire a Personal Injury Lawyer?</h3>
-                  <p className="article-desc">If you've recently been in an accident, are still in pain, and
-                    believe someone else is to blame...</p>
-                  <span className="article-read-more">Read More</span>
-                </div>
-              </a>
-            </div>
-
-            {/* Card 3 */}
-            <div className="article-card">
-              <a href="blog-detail.html"
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                <div className="article-image-wrapper">
-                  <img src="assets/hh-blog3.jpg" alt="Medical Documentation" className="article-img"/>
-                </div>
-                <div className="article-info">
-                  <h3 className="article-title">Understanding Pain and Suffering in Injury Claims</h3>
-                  <p className="article-desc">Pain and suffering are part of life, but after an accident, they
-                    can become part of a much bigger...</p>
-                  <span className="article-read-more">Read More</span>
-                </div>
-              </a>
-            </div>
+            {latestBlogs.map((b) => (
+              <div className="article-card" key={b.id}>
+                <a href={`blog-detail.html?id=${b.id}`}
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                  <div className="article-image-wrapper">
+                    <img src={b.image || 'assets/hh-blog1.jpg'} alt={b.title} className="article-img"/>
+                  </div>
+                  <div className="article-info">
+                    <h3 className="article-title">{b.title}</h3>
+                    <p className="article-desc">{blogExcerpt(b)}</p>
+                    <span className="article-read-more">Read More</span>
+                  </div>
+                </a>
+              </div>
+            ))}
           </div>
 
           <div className="news-btn-wrapper">
