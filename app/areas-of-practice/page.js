@@ -5,7 +5,11 @@ export const metadata = { title: 'Hightower & Hightower' };
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .logo-link {
+            top: 3px !important;
+        }
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -95,29 +99,29 @@ export default function Page() {
       <section className="area-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Areas of <br/>Practice</h1>
+            <h1 className="community-hero-title">Areas of <br />Practice</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
               <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
               <h2 className="form-title">Talk to Hightower & Hightower</h2>
-              <p className="form-subtitle">We'll review your case and respond within hours.</p>
+              <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
               <form className="case-review-form" action="#" method="POST">
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" placeholder="John" required/>
+                    <input type="text" id="first-name" placeholder="John" required />
                   </div>
                   <div className="form-group">
                     <label htmlFor="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" placeholder="Doe" required/>
+                    <input type="text" id="last-name" placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="phone-number">PHONE NUMBER</label>
-                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required/>
+                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required />
                 </div>
 
                 <div className="form-group">
@@ -164,47 +168,50 @@ export default function Page() {
           <div className="area-services-laws-top-row">
             {/* Item 1: Personal Injury Law */}
             <div className="area-services-laws-item area-services-laws-large">
-              <a href="areas-of-practice/work-accident-law.html"
-                style={{ textDecoration: 'none', color: 'inherit' }}>
-                <img src="assets/law1.jpg" alt="Personal Injury Law" className="area-services-laws-bg-img"/>
-                <div className="area-services-laws-content">
-                  <h2 className="area-services-laws-title">Personal Injury<br/>Law</h2>
-                  <span className="area-services-laws-line"></span>
-                  <div className="area-services-laws-hover-content">
-                    <p className="area-services-laws-description">
-                      Since 1976, <a href="lawyers/daniel-l-hightower.html"
-                        className="area-services-laws-link">Daniel L. Hightower</a> has been standing up
-                      for
-                      the rights of people against those that caused them injury. Many times the
-                      at-fault
-                      party is represented by an insurance company, or the...
-                    </p>
-                    <a href="#" className="area-services-laws-button"
-                      data-open-consult="true">FREE CONSULTATION</a>
-                  </div>
+              <img src="assets/law1.jpg" alt="Personal Injury Law" className="area-services-laws-bg-img" />
+              <div className="area-services-laws-content">
+                <h2 className="area-services-laws-title">
+                  <a href="areas-of-practice/personal-injury-law.html" className="card-main-link">
+                    Personal Injury<br />Law
+                  </a>
+                </h2>
+                <span className="area-services-laws-line"></span>
+                <div className="area-services-laws-hover-content">
+                  <p className="area-services-laws-description">
+                    Since 1976, <a href="lawyers/daniel-l-hightower.html"
+                      className="area-services-laws-link">Daniel L. Hightower</a> has been standing up
+                    for
+                    the rights of people against those that caused them injury. Many times the
+                    at-fault
+                    party is represented by an insurance company, or the...
+                  </p>
+                  <a href="#" className="area-services-laws-button"
+                    data-open-consult="true">FREE CONSULTATION</a>
                 </div>
-              </a>
+              </div>
             </div>
             {/* Item 2: Car Accident Law */}
             <div className="area-services-laws-item area-services-laws-large">
-              <a href="areas-of-practice/work-accident-law.html" style={{ textDecoration: 'none' }}>
-                <img src="assets/law2.jpg" alt="Car Accident Law" className="area-services-laws-bg-img"/>
-                <div className="area-services-laws-content">
-                  <h2 className="area-services-laws-title">Car Accident<br/>Law</h2>
-                  <span className="area-services-laws-line"></span>
-                  <div className="area-services-laws-hover-content">
-                    <p className="area-services-laws-description">
-                      In a split second, an car, truck or motorcycle accident can change the lives of
-                      you
-                      and your loved ones forever. A traffic crash occurs somewhere in Florida every
-                      two
-                      seconds. Most crashes are caused by the negligence or...
-                    </p>
-                    <a href="#" className="area-services-laws-button"
-                      data-open-consult="true">FREE CONSULTATION</a>
-                  </div>
+              <img src="assets/law2.jpg" alt="Car Accident Law" className="area-services-laws-bg-img" />
+              <div className="area-services-laws-content">
+                <h2 className="area-services-laws-title">
+                  <a href="areas-of-practice/car-accident-lawyer.html" className="card-main-link">
+                    Car Accident<br />Law
+                  </a>
+                </h2>
+                <span className="area-services-laws-line"></span>
+                <div className="area-services-laws-hover-content">
+                  <p className="area-services-laws-description">
+                    In a split second, an car, truck or motorcycle accident can change the lives of
+                    you
+                    and your loved ones forever. A traffic crash occurs somewhere in Florida every
+                    two
+                    seconds. Most crashes are caused by the negligence or...
+                  </p>
+                  <a href="#" className="area-services-laws-button"
+                    data-open-consult="true">FREE CONSULTATION</a>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
 
@@ -212,80 +219,79 @@ export default function Page() {
           <div className="area-services-laws-bottom-row">
             {/* Item 3: Work Accident Law */}
             <div className="area-services-laws-item area-services-laws-small">
-              <a href="areas-of-practice/work-accident-law.html" style={{ textDecoration: 'none' }}>
-                <img src="assets/law3.jpg" alt="Work Accident Law" className="area-services-laws-bg-img"/>
-                <div className="area-services-laws-content">
-                  <h2 className="area-services-laws-title below-title">Work Accident<br/>Law</h2>
-                  <span className="area-services-laws-line"></span>
-                  <div className="area-services-laws-hover-content">
-                    <p className="area-services-laws-description below-desc-area">
-
-                      <a href="lawyers/daniel-l-hightower.html" className="area-services-laws-link">Daniel
-                        L.
-                        Hightower</a>, work accident lawyer, has been helping injured workers with
-                      their
-                      work accident claims since 1976. As an injured worker under the workers’
-                      compensation law you are entitled to receive...
-                    </p>
-                    <a href="#" className="area-services-laws-button area-services-laws-button-small"
-                      data-open-consult="true">FREE
-                      CONSULTATION</a>
-                  </div>
+              <img src="assets/law3.jpg" alt="Work Accident Law" className="area-services-laws-bg-img" />
+              <div className="area-services-laws-content">
+                <h2 className="area-services-laws-title below-title">
+                  <a href="areas-of-practice/work-accident-law.html" className="card-main-link">
+                    Work Accident<br />Law
+                  </a>
+                </h2>
+                <span className="area-services-laws-line"></span>
+                <div className="area-services-laws-hover-content">
+                  <p className="area-services-laws-description below-desc-area">
+                    <a href="lawyers/daniel-l-hightower.html" className="area-services-laws-link">Daniel
+                      L.
+                      Hightower</a>, work accident lawyer, has been helping injured workers with
+                    their
+                    work accident claims since 1976. As an injured worker under the workers’
+                    compensation law you are entitled to receive...
+                  </p>
+                  <a href="#" className="area-services-laws-button area-services-laws-button-small"
+                    data-open-consult="true">FREE CONSULTATION</a>
                 </div>
-              </a>
+              </div>
             </div>
             {/* Item 4: Wrongful Death Law */}
             <div className="area-services-laws-item area-services-laws-small">
-              <a href="areas-of-practice/wrongful-death-law.html" style={{ textDecoration: 'none' }}>
-                <img src="assets/law5.jpg" alt="Wrongful Death Law" className="area-services-laws-bg-img"/>
-                <div className="area-services-laws-content">
-                  <h2 className="area-services-laws-title below-title">Wrongful Death<br/>Law</h2>
-                  <span className="area-services-laws-line"></span>
-                  <div className="area-services-laws-hover-content">
-                    <p className="area-services-laws-description below-desc-area">
-
-                      Wrongful death is any death that results from the misconduct or negligence of
-                      another person or entity. Wrongful death can be the result of an auto accident,
-                      a
-                      work accident, a dangerous product or the negligent...
-                    </p>
-                    <a href="#" className="area-services-laws-button area-services-laws-button-small"
-                      data-open-consult="true">FREE
-                      CONSULTATION</a>
-                  </div>
+              <img src="assets/law5.jpg" alt="Wrongful Death Law" className="area-services-laws-bg-img" />
+              <div className="area-services-laws-content">
+                <h2 className="area-services-laws-title below-title">
+                  <a href="areas-of-practice/wrongful-death-law.html" className="card-main-link">
+                    Wrongful Death<br />Law
+                  </a>
+                </h2>
+                <span className="area-services-laws-line"></span>
+                <div className="area-services-laws-hover-content">
+                  <p className="area-services-laws-description below-desc-area">
+                    Wrongful death is any death that results from the misconduct or negligence of
+                    another person or entity. Wrongful death can be the result of an auto accident,
+                    a
+                    work accident, a dangerous product or the negligent...
+                  </p>
+                  <a href="#" className="area-services-laws-button area-services-laws-button-small"
+                    data-open-consult="true">FREE CONSULTATION</a>
                 </div>
-              </a>
+              </div>
             </div>
             {/* Item 5: Social Security Disability */}
             <div className="area-services-laws-item area-services-laws-small">
-              <a href="areas-of-practice/social-security-disability-law.html" style={{ textDecoration: 'none' }}>
-                <img src="assets/law4.jpg" alt="Social Security Disability"
-                  className="area-services-laws-bg-img"/>
-                <div className="area-services-laws-content">
-                  <h2 className="area-services-laws-title below-title">Social Security<br/>Disability</h2>
-                  <span className="area-services-laws-line"></span>
-                  <div className="area-services-laws-hover-content">
-                    <p className="area-services-laws-description below-desc-area">
-
-                      Occasionally prospective clients contact our office for representation before
-                      they
-                      have applied for Social Security Disability (SSD) benefits. We are always happy
-                      to
-                      answer any questions you may have, ...
-
-                    </p>
-                    <a href="#" className="area-services-laws-button area-services-laws-button-small"
-                      data-open-consult="true">FREE
-                      CONSULTATION</a>
-                  </div>
+              <img src="assets/law4.jpg" alt="Social Security Disability"
+                className="area-services-laws-bg-img" />
+              <div className="area-services-laws-content">
+                <h2 className="area-services-laws-title below-title">
+                  <a href="areas-of-practice/social-security-disability-law.html" className="card-main-link">
+                    Social Security<br />Disability
+                  </a>
+                </h2>
+                <span className="area-services-laws-line"></span>
+                <div className="area-services-laws-hover-content">
+                  <p className="area-services-laws-description below-desc-area">
+                    Occasionally prospective clients contact our office for representation before
+                    they
+                    have applied for Social Security Disability (SSD) benefits. We are always happy
+                    to
+                    answer any questions you may have, ...
+                  </p>
+                  <a href="#" className="area-services-laws-button area-services-laws-button-small"
+                    data-open-consult="true">FREE CONSULTATION</a>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
       {/* H&H Honors & Awards Section */}
-      <section className="hh-honors-section" id="hh-honors-section">
+         <section className="hh-honors-section" id="hh-honors-section">
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
@@ -295,35 +301,61 @@ export default function Page() {
           <div className="honors-logos-row">
             <div className="honors-logos-track">
               <div className="honor-logo-item">
-                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -332,7 +364,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

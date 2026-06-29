@@ -21,7 +21,7 @@ export default async function Page() {
       <section className="hh-hero-section" id="hh-hero-section">
         <div className="hero-container">
           <div className="hero-left-col">
-            <h1 className="hero-title">You Were Injured.<br/>We'll Fight to <span className="highlight-gold">Make It
+            <h1 className="hero-title">You Were Injured.<br />We'll Fight to <span className="highlight-gold">Make It
               Right.</span></h1>
             <p className="hero-description">
               For nearly 50 years, the Hightower family has stood beside injured Floridians — battling
@@ -30,40 +30,40 @@ export default async function Page() {
             </p>
             <div className="hero-btn-group">
               <a href="#" className="btn-schedule" data-open-consult="true">
-                <img src="assets/cal.png" alt="Play" className="icon-play"/> SCHEDULE CONSULTATION
+                <img src="assets/cal.png" alt="Play" className="icon-play" /> SCHEDULE CONSULTATION
               </a>
               <a href="videos.html" className="btn-get-know">
-                <img src="assets/button-play.png" alt="Play" className="icon-play"/> GET TO KNOW US
+                <img src="assets/button-play.png" alt="Play" className="icon-play" /> GET TO KNOW US
               </a>
             </div>
             <div className="hero-subtitle-since">Fighting for the injured since 1976.</div>
           </div>
 
           <div className="hero-middle-col">
-            <img src="assets/hero-hightower.png" alt="Attorney" className="hero-man-img"/>
+            <img src="assets/hero-hightower.png" alt="Attorney" className="hero-man-img" />
           </div>
 
           <div className="hero-right-col">
             <div className="form-card">
               <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
               <h2 className="form-title">Talk to Hightower & Hightower</h2>
-              <p className="form-subtitle">We'll review your case and respond within hours.</p>
+              <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
               <form className="case-review-form" action="#" method="POST">
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" placeholder="John" required/>
+                    <input type="text" id="first-name" placeholder="John" required />
                   </div>
                   <div className="form-group">
                     <label htmlFor="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" placeholder="Doe" required/>
+                    <input type="text" id="last-name" placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="phone-number">PHONE NUMBER</label>
-                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required/>
+                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required />
                 </div>
 
                 <div className="form-group">
@@ -181,7 +181,7 @@ export default async function Page() {
           <div className="law-card"
             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law1.jpg')" }}>
             <div className="law-card-content">
-              <h3 className="law-card-title">Personal Injury<br/>Law</h3>
+              <h3 className="law-card-title">Personal Injury<br />Law</h3>
               <p className="law-card-desc">
                 Since 1976, <a href="lawyers/daniel-l-hightower.html"
                   style={{ borderBottom: '2px solid var(--button)', color: '#fff', textDecoration: 'none' }}>Daniel
@@ -197,7 +197,7 @@ export default async function Page() {
           <div className="law-card"
             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law2.jpg')" }}>
             <div className="law-card-content">
-              <h3 className="law-card-title">Car Accident<br/>Law</h3>
+              <h3 className="law-card-title">Car Accident<br />Law</h3>
               <p className="law-card-desc">
                 In a split second, an car, truck or motorcycle accident can change the lives of you and your
                 loved ones forever. A traffic crash occurs somewhere in Florida every two seconds. Most
@@ -212,7 +212,7 @@ export default async function Page() {
           <div className="law-card"
             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law3.jpg')" }}>
             <div className="law-card-content">
-              <h3 className="law-card-title">Work Accident<br/>Law</h3>
+              <h3 className="law-card-title">Work Accident<br />Law</h3>
               <p className="law-card-desc">
                 Daniel L. Hightower, work accident lawyer, has been helping injured workers with their work
                 accident claims since 1976. As an injured worker under the workers’ compensation law you are
@@ -226,7 +226,7 @@ export default async function Page() {
           <div className="law-card"
             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law4.jpg')" }}>
             <div className="law-card-content">
-              <h3 className="law-card-title">Wrongful<br/>Death Law</h3>
+              <h3 className="law-card-title">Wrongful<br />Death Law</h3>
               <p className="law-card-desc">
                 Wrongful death is any death that results from the misconduct or negligence of another person
                 or entity. Wrongful death can be the result of an auto accident, a work accident, a
@@ -241,7 +241,7 @@ export default async function Page() {
           <div className="law-card"
             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)), url('assets/law5.jpg')" }}>
             <div className="law-card-content">
-              <h3 className="law-card-title">Social Security<br/>Disability</h3>
+              <h3 className="law-card-title">Social Security<br />Disability</h3>
               <p className="law-card-desc">
                 Occasionally prospective clients contact our office for representation before they have
                 applied for Social Security Disability (SSD) benefits. We are always happy to answer any
@@ -269,35 +269,61 @@ export default async function Page() {
           <div className="honors-logos-row">
             <div className="honors-logos-track">
               <div className="honor-logo-item">
-                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -311,9 +337,9 @@ export default async function Page() {
           {/* Left Column: Image with SVG overlay */}
           <div className="question-left-col">
             <div className="question-image-wrapper">
-              <img src="assets/questions-left.jpg" alt="Get Answers" className="question-main-img"/>
+              <img src="assets/questions-left.jpg" alt="Get Answers" className="question-main-img" />
               <div className="question-logo-overlay">
-                <img src="assets/questions-over.svg" alt="H&H Lawyers" className="question-overlay-svg"/>
+                <img src="assets/questions-over.svg" alt="H&H Lawyers" className="question-overlay-svg" />
               </div>
             </div>
           </div>
@@ -326,7 +352,7 @@ export default async function Page() {
               {/* Step 1 */}
               <div className="step-item">
                 <div className="step-meta">
-                  <img src="assets/steps.png" alt="Check" className="step-icon-img"/>
+                  <img src="assets/steps.png" alt="Check" className="step-icon-img" />
                   <span className="step-label">STEP 1</span>
                 </div>
                 <h3 className="step-title">Contact Us</h3>
@@ -339,29 +365,26 @@ export default async function Page() {
               {/* Step 2 */}
               <div className="step-item">
                 <div className="step-meta">
-                  <img src="assets/steps.png" alt="Check" className="step-icon-img"/>
+                  <img src="assets/steps.png" alt="Check" className="step-icon-img" />
                   <span className="step-label">STEP 2</span>
                 </div>
                 <h3 className="step-title">Speak with an Attorney for Free</h3>
                 <div className="step-content">
                   <span className="step-gold-line"></span>
-                  <p className="step-desc">We will schedule a free bankruptcy evaluation or personal injury
-                    consultation with one of our attorneys.</p>
+                  <p className="step-desc">We will schedule a free personal injury consultation with one of our attorneys.</p>
                 </div>
               </div>
 
               {/* Step 3 */}
               <div className="step-item">
                 <div className="step-meta">
-                  <img src="assets/steps.png" alt="Check" className="step-icon-img"/>
+                  <img src="assets/steps.png" alt="Check" className="step-icon-img" />
                   <span className="step-label">STEP 3</span>
                 </div>
                 <h3 className="step-title">Get Answers to Your Questions</h3>
                 <div className="step-content">
                   <span className="step-gold-line"></span>
-                  <p className="step-desc">We move quickly to stop creditor actions, file your case, or pursue
-                    your injury claim. In our call we will outline your legal options so you can make
-                    informed decisions.</p>
+                  <p className="step-desc">We move quickly to protect your rights and pursue your injury claim. In our consultation, we will outline your legal options so you can make informed decisions.</p>
                 </div>
               </div>
             </div>
@@ -391,7 +414,7 @@ export default async function Page() {
             {/* Original Card List */}
             {/* Card 1: Text Review */}
             <div className="review-card text-card">
-              <img src="assets/coma.png" alt="Quote" className="quote-icon"/>
+              <img src="assets/coma.png" alt="Quote" className="quote-icon" />
               <p className="review-text">"Mr. Hightower and his exceptional staff, went above and beyond my
                 expectations to help me resolve my issues. Mr. Hightower personally met with me and always
                 made me feel that he believed in me and my case. I received the best possible results of my
@@ -421,7 +444,7 @@ export default async function Page() {
 
             {/* Card 3: Text Review */}
             <div className="review-card text-card">
-              <img src="assets/coma.png" alt="Quote" className="quote-icon"/>
+              <img src="assets/coma.png" alt="Quote" className="quote-icon" />
               <p className="review-text">"Their legal team is absolutely amazing! They walked me through every
                 single step of my personal injury claim, answered all my questions, and made sure I received
                 the maximum compensation. I highly recommend them to anyone."</p>
@@ -450,7 +473,7 @@ export default async function Page() {
 
             {/* Card 5: Text Review */}
             <div className="review-card text-card">
-              <img src="assets/coma.png" alt="Quote" className="quote-icon"/>
+              <img src="assets/coma.png" alt="Quote" className="quote-icon" />
               <p className="review-text">"Professional, compassionate, and extremely dedicated. From the first
                 consultation to the final settlement, Daniel L. Hightower and his team showed incredible
                 support and fought relentlessly for my rights. Thank you!"</p>
@@ -469,7 +492,7 @@ export default async function Page() {
             {/* Duplicated Card List for Seamless Loop */}
             {/* Card 1 Duplicate */}
             <div className="review-card text-card">
-              <img src="assets/coma.png" alt="Quote" className="quote-icon"/>
+              <img src="assets/coma.png" alt="Quote" className="quote-icon" />
               <p className="review-text">"Mr. Hightower and his exceptional staff, went above and beyond my
                 expectations to help me resolve my issues. Mr. Hightower personally met with me and always
                 made me feel that he believed in me and my case. I received the best possible results of my
@@ -499,7 +522,7 @@ export default async function Page() {
 
             {/* Card 3 Duplicate */}
             <div className="review-card text-card">
-              <img src="assets/coma.png" alt="Quote" className="quote-icon"/>
+              <img src="assets/coma.png" alt="Quote" className="quote-icon" />
               <p className="review-text">"Their legal team is absolutely amazing! They walked me through every
                 single step of my personal injury claim, answered all my questions, and made sure I received
                 the maximum compensation. I highly recommend them to anyone."</p>
@@ -528,7 +551,7 @@ export default async function Page() {
 
             {/* Card 5 Duplicate */}
             <div className="review-card text-card">
-              <img src="assets/coma.png" alt="Quote" className="quote-icon"/>
+              <img src="assets/coma.png" alt="Quote" className="quote-icon" />
               <p className="review-text">"Professional, compassionate, and extremely dedicated. From the first
                 consultation to the final settlement, Daniel L. Hightower and his team showed incredible
                 support and fought relentlessly for my rights. Thank you!"</p>
@@ -567,7 +590,7 @@ export default async function Page() {
             </div>
 
             <div className="meet-card">
-              <img src="assets/meet-left.png" alt="Daniel L. Hightower" className="meet-photo"/>
+              <img src="assets/meet-left.png" alt="Daniel L. Hightower" className="meet-photo" />
               <div className="meet-info-overlay">
                 <span className="meet-role">FOUNDING PARTNER</span>
                 <h3 className="meet-name">Daniel L. Hightower</h3>
@@ -585,7 +608,7 @@ export default async function Page() {
           {/* Right Column: Alison's Card, Quote, Consultation Button */}
           <div className="meet-col meet-right-col">
             <div className="meet-card">
-              <img src="assets/meet-right.png" alt="Alison L. Hightower" className="meet-photo"/>
+              <img src="assets/meet-right.png" alt="Alison L. Hightower" className="meet-photo" />
               <div className="meet-info-overlay">
                 <span className="meet-role">PARTNER</span>
                 <h3 className="meet-name">Alison L. Hightower</h3>
@@ -616,13 +639,13 @@ export default async function Page() {
           <form className="get-started-form" action="#" method="POST">
             <div className="form-inputs-row">
               <div className="input-group">
-                <input type="text" id="form-name" name="name" placeholder="Name" required/>
+                <input type="text" id="form-name" name="name" placeholder="Name" required />
               </div>
               <div className="input-group">
-                <input type="email" id="form-email" name="email" placeholder="Email Address" required/>
+                <input type="email" id="form-email" name="email" placeholder="Email Address" required />
               </div>
               <div className="input-group">
-                <input type="tel" id="form-phone" name="phone" placeholder="Phone Number" required/>
+                <input type="tel" id="form-phone" name="phone" placeholder="Phone Number" required />
               </div>
             </div>
             <div className="form-textarea-group">
@@ -631,7 +654,7 @@ export default async function Page() {
             </div>
             <div className="form-checkbox-group">
               <label className="checkbox-container">
-                <input type="checkbox" id="form-consent" name="consent" required/>
+                <input type="checkbox" id="form-consent" name="consent" required />
                 <span className="consent-text">By providing your phone number, you agree to receive text
                   messages from Hightower and Hightower. Message and data rates may apply. Message
                   frequency varies.</span>
@@ -655,7 +678,7 @@ export default async function Page() {
                 <a href={`blog-detail.html?id=${b.id}`}
                   style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                   <div className="article-image-wrapper">
-                    <img src={b.image || 'assets/hh-blog1.jpg'} alt={b.title} className="article-img"/>
+                    <img src={b.image || 'assets/hh-blog1.jpg'} alt={b.title} className="article-img" />
                   </div>
                   <div className="article-info">
                     <h3 className="article-title">{b.title}</h3>
@@ -676,11 +699,12 @@ export default async function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 
       <Footer />
+
     </main>
   );
 }

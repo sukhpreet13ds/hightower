@@ -5,7 +5,11 @@ export const metadata = { title: 'Hightower & Hightower' };
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .logo-link {
+            top: 3px !important;
+        }
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -468,29 +472,29 @@ export default function Page() {
       <section className="car-law-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Car Accident <br/>Lawyer</h1>
+            <h1 className="community-hero-title">Ocala Car Accident <br />Lawyer</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
               <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
               <h2 className="form-title">Talk to Hightower & Hightower</h2>
-              <p className="form-subtitle">We'll review your case and respond within hours.</p>
+              <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
               <form className="case-review-form" action="#" method="POST">
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" placeholder="John" required/>
+                    <input type="text" id="first-name" placeholder="John" required />
                   </div>
                   <div className="form-group">
                     <label htmlFor="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" placeholder="Doe" required/>
+                    <input type="text" id="last-name" placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="phone-number">PHONE NUMBER</label>
-                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required/>
+                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required />
                 </div>
 
                 <div className="form-group">
@@ -512,7 +516,7 @@ export default function Page() {
                 </div>
 
                 <button type="submit" className="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
-                    className="fa-solid fa-arrow-right-long"></i></button>
+                  className="fa-solid fa-arrow-right-long"></i></button>
               </form>
 
               <p className="form-footer-text">
@@ -535,13 +539,13 @@ export default function Page() {
           <div className="partners-row">
             <div className="partners-image-col">
               <img src="../assets/law-partners.png" alt="Daniel L. Hightower & Alison L. Hightower"
-                className="partners-img"/>
+                className="partners-img" />
             </div>
             <div className="partners-text-col">
               <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>The Car Accident Lawyer Who Wins
                 Big for You</h2>
               <p>Since 1976, <a href="../lawyers/daniel-l-hightower.html"
-                  className="inline-partner-link">Hightower & Hightower, P.A.</a> has been standing up for
+                className="inline-partner-link">Hightower & Hightower, P.A.</a> has been standing up for
                 people who have been injured due to someone else’s negligence or wrongdoing. Our commitment
                 to our clients has established us as a <a href="personal-injury-law.html"
                   className="inline-partner-link">Personal Injury Law</a> Firm that accident victims can rely
@@ -575,23 +579,23 @@ export default function Page() {
 
           <div className="claims-cards-row">
             <div className="claim-card">
-              <img src="../assets/hurt1.jpg" alt="You Were Hurt" className="claim-card-img"/>
+              <img src="../assets/hurt1.jpg" alt="You Were Hurt" className="claim-card-img" />
               <div className="claim-card-title">You Were Hurt</div>
             </div>
             <div className="claim-card">
-              <img src="../assets/hurt2.webp" alt="Insurance Coverage" className="claim-card-img"/>
+              <img src="../assets/hurt2.webp" alt="Insurance Coverage" className="claim-card-img" />
               <div className="claim-card-title">Insurance Coverage</div>
             </div>
             <div className="claim-card">
-              <img src="../assets/hurt3.jpg" alt="Determining Fault" className="claim-card-img"/>
+              <img src="../assets/hurt3.jpg" alt="Determining Fault" className="claim-card-img" />
               <div className="claim-card-title">Determining Fault</div>
             </div>
             <div className="claim-card">
-              <img src="../assets/hurt4.jpg" alt="Overwhelming Paperwork" className="claim-card-img"/>
+              <img src="../assets/hurt4.jpg" alt="Overwhelming Paperwork" className="claim-card-img" />
               <div className="claim-card-title">Overwhelming Paperwork</div>
             </div>
             <div className="claim-card">
-              <img src="../assets/hurt5.jpg" alt="Strict Deadlines" className="claim-card-img"/>
+              <img src="../assets/hurt5.jpg" alt="Strict Deadlines" className="claim-card-img" />
               <div className="claim-card-title">Strict Deadlines</div>
             </div>
           </div>
@@ -655,7 +659,7 @@ export default function Page() {
                 supporting evidence to prove it.</p>
             </div>
             <div className="premises-image-col">
-              <img src="../assets/cop.webp" alt="Daniel L. Hightower" className="premises-lawyer-img"/>
+              <img src="../assets/cop.webp" alt="Daniel L. Hightower" className="premises-lawyer-img" />
             </div>
           </div>
         </div>
@@ -846,7 +850,7 @@ export default function Page() {
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you have a potential premises liability claim, please feel free to <a
-                href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>
@@ -860,34 +864,61 @@ export default function Page() {
           <div className="honors-logos-row">
             <div className="honors-logos-track">
               <div className="honor-logo-item">
-                <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item">
-                <img src="../assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="../assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item">
-                <img src="../assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="../assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item">
-                <img src="../assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="../assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item">
-                <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="../assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
+              {/* Clones for seamless mobile marquee */}
+              <div className="honor-logo-item marquee-clone">
+                <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="../assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="../assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="../assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="../assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="../assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="../assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="../assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -895,7 +926,7 @@ export default function Page() {
       </section>
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

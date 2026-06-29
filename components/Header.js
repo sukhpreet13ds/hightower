@@ -4,17 +4,34 @@ export default function Header() {
       {/* top bar: social icons + phone + contact */}
       <div className="top-header-bar">
         <div className="top-bar-container">
-          <div className="social-icons">
-            <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
-          </div>
-          <div className="contact-info">
-            <a href="tel:352-629-7777" className="phone-link">
-              <i className="fa-solid fa-phone"></i> 352-629-7777
+          <div className="top-bar-left">
+            <a href="https://maps.app.goo.gl/Fmg9FsvBxmEQRGR48" target="_blank" rel="noopener noreferrer" className="top-bar-location">
+              <i className="fa-solid fa-location-dot"></i> E. Silver Springs Blvd., Suite 300, Ocala, FL 34470
             </a>
-            <a href="/contact-us.html" className="contact-btn">CONTACT US</a>
+            <a href="https://maps.app.goo.gl/6airePnfPt9mrthM9" target="_blank" rel="noopener noreferrer" className="top-bar-location">
+              <i className="fa-solid fa-location-dot"></i> 3259 W. Bryant Ave., Bell, FL 32619
+            </a>
+          </div>
+          
+          <div className="top-bar-right">
+            <div className="top-bar-center">
+            <a href="/faq.html" className="top-bar-center-link">FAQ's</a>
+            <a href="/blogs.html" className="top-bar-center-link">Blogs</a>
+            <a href="/news.html" className="top-bar-center-link">News</a>
+            <a href="/client-testimonials.html" className="top-bar-center-link">Testimonials</a>
+          </div>
+            <div className="social-icons">
+              <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+            </div>
+            <div className="contact-info">
+              <a href="tel:352-629-7777" className="phone-link">
+                <i className="fa-solid fa-phone"></i> 352-629-7777
+              </a>
+              <a href="/contact-us.html" className="contact-btn">CONTACT US</a>
+            </div>
           </div>
         </div>
       </div>
@@ -43,7 +60,7 @@ export default function Header() {
                     </ul>
                   </li>
                   <li><a href="/videos.html">Videos</a></li>
-                  <li><a href="/community-services.html">Community Service</a></li>
+                  <li><a href="/community-service.html">Community Service</a></li>
                 </ul>
               </li>
               <li className="nav-item has-dropdown">
@@ -61,15 +78,6 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <a href="/notable-trial-results-settlements.html" className="nav-link-item">Notable Trial Results & Settlements</a>
-              </li>
-              <li className="nav-item">
-                <a href="/faq.html" className="nav-link-item">Common Questions</a>
-              </li>
-              <li className="nav-item">
-                <a href="/blogs.html" className="nav-link-item">Blogs</a>
-              </li>
-              <li className="nav-item">
-                <a href="/news.html" className="nav-link-item">News</a>
               </li>
             </ul>
           </nav>
@@ -101,7 +109,7 @@ export default function Header() {
                   </ul>
                 </li>
                 <li><a href="/videos.html">Videos</a></li>
-                <li><a href="/community-services.html">Community Service</a></li>
+                <li><a href="/community-service.html">Community Service</a></li>
               </ul>
             </li>
             <li className="floating-nav-item has-dropdown">
@@ -121,7 +129,7 @@ export default function Header() {
               <a href="/notable-trial-results-settlements.html" className="floating-nav-link-item">Notable Trial Results & Settlements</a>
             </li>
             <li className="floating-nav-item">
-              <a href="/faq.html" className="floating-nav-link-item">Common Questions</a>
+              <a href="/faq.html" className="floating-nav-link-item">FAQ's</a>
             </li>
             <li className="floating-nav-item">
               <a href="/blogs.html" className="floating-nav-link-item">Blogs</a>
@@ -136,14 +144,14 @@ export default function Header() {
       <div className="mobile-menu-overlay" id="mobile-menu">
         <div className="mobile-menu-content">
           <div className="mobile-menu-header">
-            <a href="/" className="logo-link">
+            {/* <a href="/" className="logo-link">
               <img src="/assets/h&h-logo.svg" alt="Logo" className="logo-img-mobile" />
-            </a>
-
+            </a> */}
+            <div></div>
             <div className="mobile-menu-actions-tab">
               <div className="mobile-header-socials">
-                <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
               </div>
               <button className="mobile-close-btn" id="mobile-menu-close">
                 Close
@@ -173,7 +181,7 @@ export default function Header() {
                     </div>
                   </div>
                   <a href="/videos.html">Videos</a>
-                  <a href="/community-services.html">Community Service</a>
+                  <a href="/community-service.html">Community Service</a>
                 </div>
               </div>
 
@@ -194,7 +202,7 @@ export default function Header() {
               </div>
 
               <a href="/notable-trial-results-settlements.html" className="mobile-nav-item-link">Notable Trial Results & Settlements</a>
-              <a href="/faq.html" className="mobile-nav-item-link">Common Questions</a>
+              <a href="/faq.html" className="mobile-nav-item-link">FAQ's</a>
               <a href="/blogs.html" className="mobile-nav-item-link">Blogs</a>
               <a href="/news.html" className="mobile-nav-item-link">News</a>
             </div>

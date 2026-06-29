@@ -1,4 +1,40 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setStatus({ type: 'success', message: 'Thank you for subscribing!' });
+        setEmail('');
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Subscription failed.' });
+      }
+    } catch (err) {
+      setStatus({ type: 'error', message: 'An error occurred. Please try again.' });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <footer className="footer-section" id="footer-section">
       <div className="footer-container">
@@ -6,6 +42,30 @@ export default function Footer() {
           <div className="footer-contact">
             <span className="consult-badge">100% Free Consultation</span>
             <a href="tel:352-646-3944" className="footer-phone">352-646-3944</a>
+            
+            <div className="footer-newsletter">
+              <h4>Signup For Our Newsletter</h4>
+              <p>Receive our newsletter and stay updated on legal topics and current events.</p>
+              <form className="newsletter-form" onSubmit={handleSubmit}>
+                <input 
+                  type="email" 
+                  placeholder="Your Email Address" 
+                  required 
+                  className="newsletter-input" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={submitting}
+                />
+                <button type="submit" className="newsletter-btn" disabled={submitting}>
+                  {submitting ? '...' : 'Subscribe'}
+                </button>
+              </form>
+              {status.message && (
+                <span className={`newsletter-status ${status.type}`}>
+                  {status.message}
+                </span>
+              )}
+            </div>
           </div>
           <div className="footer-logo-wrapper">
             <img src="/assets/footer-logo.svg" alt="H&H Lawyers Logo" className="footer-logo-img" />

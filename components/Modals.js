@@ -7,7 +7,7 @@ export default function Modals() {
         <div className="modal-content">
           <button className="modal-close" id="modal-close" aria-label="Close video">&times;</button>
           <div className="video-wrapper">
-            <video id="modal-video" src="" controls autoPlay></video>
+            <video id="modal-video" src={null} controls autoPlay></video>
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@ export default function Modals() {
           <div className="form-card" style={{ boxShadow: 'none', borderTop: 'none', margin: '0 !important' }}>
             <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
             <h2 className="form-title">Talk to Hightower & Hightower</h2>
-            <p className="form-subtitle">We'll review your case and respond within hours.</p>
+            <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
             <form className="case-review-form" action="#" method="POST">
               <div className="form-row">

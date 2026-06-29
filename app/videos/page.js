@@ -5,7 +5,18 @@ export const metadata = { title: 'Hightower & Hightower' };
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+
+        __html: `
+         .top-bar-center-link{
+            color: #000000 !important;
+          }
+        .top-bar-center-link:hover {
+            color: #c2905b !important;
+          }
+          .logo-link {
+            top: 3px !important;
+        }
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -115,7 +126,7 @@ export default function Page() {
         <div className="videos-container">
           {/* SVG Watermark background */}
           <div className="videos-bg-svg-wrapper">
-            <img src="./assets/hero-bg.svg" alt="H&H Background Logo" className="videos-bg-svg"/>
+            <img src="./assets/hero-bg.svg" alt="H&H Background Logo" className="videos-bg-svg" />
           </div>
 
           <div className="videos-title-area">
@@ -129,7 +140,7 @@ export default function Page() {
           {/* Featured Video Wrapper */}
           <div className="featured-video-wrapper">
             <video controls className="featured-video-player">
-              <source src="assets/Spot-3-Alison-Final.mp4" type="video/mp4"/>
+              <source src="assets/Spot-3-Alison-Final.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -153,14 +164,14 @@ export default function Page() {
             {/* Local Video 1 */}
             <div className="video-grid-item">
               <video controls className="grid-video-player">
-                <source src="assets/Spot-1-Alison-Final.mp4" type="video/mp4"/>
+                <source src="assets/Spot-1-Alison-Final.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
             {/* Local Video 2 */}
             <div className="video-grid-item">
               <video controls className="grid-video-player">
-                <source src="assets/Spot-2-Alison-Final.mp4" type="video/mp4"/>
+                <source src="assets/Spot-2-Alison-Final.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -179,35 +190,61 @@ export default function Page() {
           <div className="honors-logos-row">
             <div className="honors-logos-track">
               <div className="honor-logo-item">
-                <img src="./assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item">
-                <img src="./assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item">
-                <img src="./assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item">
-                <img src="./assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item">
-                <img src="./assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
-                <img src="./assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="./assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="./assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="./assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="./assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -216,7 +253,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

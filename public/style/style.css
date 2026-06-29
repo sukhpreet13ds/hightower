@@ -29,7 +29,7 @@
 
 body {
     font-family: var(--family-sans);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* Global scrollbar */
@@ -65,12 +65,75 @@ body {
 
 .top-bar-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
     padding: 0px 0px;
     gap: 35px;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 20px;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.top-bar-location {
+    color: var(--button);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.top-bar-location i {
+    color: var(--button);
+    font-size: 15px;
+}
+
+.top-bar-location:hover {
+    color: var(--button-hover);
+}
+
+.top-bar-center {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.top-bar-center-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--family-sans);
+    transition: color 0.3s ease;
+}
+
+.top-bar-center-link:hover {
+    color: var(--button);
+}
+
+@media (max-width: 1200px) {
+    .top-bar-left,
+    .top-bar-center {
+        display: none;
+    }
+
+    .top-bar-container {
+        justify-content: flex-end;
+    }
 }
 
 .main-header {
@@ -99,13 +162,13 @@ body {
 .logo-link {
     position: absolute;
     left: 40px;
-    top: -40px;
+    top: -20px;
     z-index: 110;
     display: inline-block;
 }
 
 .logo-img {
-    height: 172px;
+    height: 200px;
     width: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -2887,12 +2950,15 @@ body {
 
     .logo-link {
         position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
+        top: 10px !important;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 10px;
     }
 
     .logo-img {
-        height: 84px !important;
+        height: 100px !important;
+        top: 10px;
     }
 
     .burger-menu-btn {
@@ -4871,7 +4937,7 @@ body {
 }
 
 .notable-services-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), url('../assets/Notable-hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), url('../assets/notable-hero-back.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -6469,6 +6535,7 @@ body {
     border-bottom: 2px solid var(--button);
     transition: color 0.3s;
 }
+
 /* ============================================================================
  * Blog detail additions: source logo, Post Tags, Share bar, inline tables/images
  * ========================================================================== */
@@ -6477,6 +6544,7 @@ body {
     margin: 0 auto 10px;
     padding: 0 20px;
 }
+
 .blog-source-logo img {
     max-height: 70px;
     width: auto;
@@ -6489,12 +6557,14 @@ body {
     border-radius: 8px;
     margin: 16px 0;
 }
+
 .blog-article-content table.blog-table {
     border-collapse: collapse;
     width: 100%;
     margin: 18px 0;
     font-size: 0.95rem;
 }
+
 .blog-article-content table.blog-table th,
 .blog-article-content table.blog-table td {
     border: 1px solid #e0d6c8;
@@ -6502,11 +6572,13 @@ body {
     text-align: left;
     vertical-align: top;
 }
+
 .blog-article-content table.blog-table th {
     background: #f3ede4;
     font-weight: 700;
     color: #1c2433;
 }
+
 .blog-article-content table.blog-table tr:nth-child(even) td {
     background: #faf7f2;
 }
@@ -6518,17 +6590,20 @@ body {
     padding: 22px 20px 0;
     border-top: 1px solid #e7e2d8;
 }
+
 .blog-tags-title {
     font-size: 1.05rem;
     font-weight: 700;
     color: #1c2433;
     margin-bottom: 14px;
 }
+
 .blog-tags-list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .blog-tag {
     display: inline-block;
     background: #f1f1f1;
@@ -6554,27 +6629,137 @@ body {
     flex-wrap: wrap;
     gap: 14px;
 }
+
 .blog-share-label {
     font-size: 1.05rem;
     font-weight: 700;
     color: #2b3142;
 }
+
 .blog-share-icons {
     display: flex;
     align-items: center;
     gap: 18px;
 }
+
 .blog-share-icons a {
     color: #9aa0ab;
     font-size: 1.05rem;
     transition: color 0.18s ease, transform 0.18s ease;
 }
+
 .blog-share-icons a:hover {
     color: #c2905b;
     transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
-    .blog-share { justify-content: center; text-align: center; }
-    .blog-share-label { width: 100%; }
+    .blog-share {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .blog-share-label {
+        width: 100%;
+    }
+}
+
+.card-main-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-main-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.area-services-laws-link,
+.area-services-laws-button,
+.profile-meet-btn {
+    position: relative;
+    z-index: 5;
+}
+
+/* FOOTER NEWSLETTER SIGNUP */
+.footer-newsletter {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 340px;
+}
+
+.footer-newsletter h4 {
+    font-family: var(--family-sans);
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+}
+
+.footer-newsletter p {
+    font-family: var(--family-sans);
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--family-sans);
+    font-size: 14px;
+    color: #111;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.newsletter-input:focus {
+    border-color: var(--button);
+}
+
+.newsletter-btn {
+    background-color: var(--button);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-family: var(--family-sans);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.newsletter-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.newsletter-status {
+    font-family: var(--family-sans);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.newsletter-status.success {
+    color: green;
+}
+
+.newsletter-status.error {
+    color: red;
 }

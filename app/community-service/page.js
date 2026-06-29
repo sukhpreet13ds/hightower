@@ -5,7 +5,8 @@ export const metadata = { title: 'Hightower & Hightower' };
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -101,7 +102,7 @@ export default function Page() {
             <div className="form-card">
               <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
               <h2 className="form-title">Talk to Hightower & Hightower</h2>
-              <p className="form-subtitle">We'll review your case and respond within hours.</p>
+              <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
               <form className="case-review-form" action="#" method="POST">
                 <div className="form-row">
@@ -174,35 +175,35 @@ export default function Page() {
               <a href="https://abatefloridainc.com/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.05s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand1.png" alt="ABATE of Florida, Inc." />
+                  <img src="assets/brand2.png" alt="ABATE of Florida, Inc." />
                 </div>
                 <span className="sponsor-name">ABATE of Florida, Inc.</span>
               </a>
               <a href="https://www.facebook.com/AbateOfFloridaForestChapter" className="sponsor-item"
                 target="_blank" style={{ animationDelay: '0.1s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand2.png" alt="ABATE of Florida, Forest Chapter" />
+                  <img src="assets/brand4.png" alt="ABATE of Florida, Forest Chapter" />
                 </div>
                 <span className="sponsor-name">ABATE of Florida, Forest Chapter</span>
               </a>
               <a href="https://alachua.ifas.ufl.edu/agriculture/youth_fair/index.shtml" className="sponsor-item"
                 target="_blank" style={{ animationDelay: '0.15s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand3.png" alt="Alachua County Youth Fair and Livestock Show" />
+                  <img src="assets/brand5.png" alt="Alachua County Youth Fair and Livestock Show" />
                 </div>
                 <span className="sponsor-name">Alachua County Youth Fair and Livestock Show</span>
               </a>
               <a href="https://www.cancer.org/?gclid=CMORwr2LiasCFY5b7AodlxCX4Q" className="sponsor-item"
                 target="_blank" style={{ animationDelay: '0.2s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand4.png" alt="American Cancer Society" />
+                  <img src="assets/brand3.png" alt="American Cancer Society" />
                 </div>
                 <span className="sponsor-name">American Cancer Society</span>
               </a>
               <a href="https://www.gilchristschools.org/o/bhs/page/welcome-1" className="sponsor-item"
                 target="_blank" style={{ animationDelay: '0.25s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand5.png" alt="Bell High School Athletics" />
+                  <img src="assets/brand6.png" alt="Bell High School Athletics" />
                 </div>
                 <span className="sponsor-name">Bell High School Athletics</span>
               </a>
@@ -213,7 +214,7 @@ export default function Page() {
               <a href="https://scouting.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.3s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand6.png" alt="Boy Scouts of America" />
+                  <img src="assets/brand8.png" alt="Boy Scouts of America" />
                 </div>
                 <span className="sponsor-name">Boy Scouts of America</span>
               </a>
@@ -227,21 +228,21 @@ export default function Page() {
               <a href="https://www.clsmf.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.4s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand8.png" alt="Community Legal Services of Mid-Florida" />
+                  <img src="assets/brand9.png" alt="Community Legal Services of Mid-Florida" />
                 </div>
                 <span className="sponsor-name">Community Legal Services of Mid-Florida</span>
               </a>
               <a href="http://www.raftercrosscowboychurch.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.45s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand9.png" alt="Cowboy Church" />
+                  <img src="assets/brand10.png" alt="Cowboy Church" />
                 </div>
                 <span className="sponsor-name">Cowboy Church</span>
               </a>
               <a href="https://www.fumcocala.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.5s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand10.png" alt="First United Methodist Church of Ocala" />
+                  <img src="assets/brand11.png" alt="First United Methodist Church of Ocala" />
                 </div>
                 <span className="sponsor-name">First United Methodist Church of Ocala</span>
               </a>
@@ -252,14 +253,14 @@ export default function Page() {
               <a href="https://floridaworkers.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.55s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand11.png" alt="Florida Workers' Advocates" />
+                  <img src="assets/brand12.png" alt="Florida Workers' Advocates" />
                 </div>
                 <span className="sponsor-name">Florida Workers' Advocates</span>
               </a>
               <a href="https://historicocala.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.6s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand12.png" alt="Historical Ocala Preservation Society" />
+                  <img src="assets/brand25.png" alt="Historical Ocala Preservation Society" />
                 </div>
                 <span className="sponsor-name">Historical Ocala Preservation Society</span>
               </a>
@@ -305,7 +306,7 @@ export default function Page() {
               <a href="https://www.ocalarodeo.com/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '0.9s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand18.png" alt="Southeastern Pro Rodeo" />
+                  <img src="assets/brand20.png" alt="Southeastern Pro Rodeo" />
                 </div>
                 <span className="sponsor-name">Southeastern Pro Rodeo</span>
               </a>
@@ -319,7 +320,7 @@ export default function Page() {
               <a href="https://www.stirrupsnstrides.com/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '1.0s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand20.png" alt="Stirrups 'n Strides" />
+                  <img src="assets/brand18.png" alt="Stirrups 'n Strides" />
                 </div>
                 <span className="sponsor-name">Stirrups 'n Strides</span>
               </a>
@@ -351,23 +352,33 @@ export default function Page() {
               <a href="https://www.uwmc.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '1.2s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand24.png" alt="United Way of Marion County" />
+                  <img src="assets/brand1.png" alt="United Way of Marion County" />
                 </div>
                 <span className="sponsor-name">United Way of Marion County</span>
               </a>
               <a href="https://www.marionschools.net/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '1.25s' }}>
                 <div className="sponsor-logo-box">
-                  <img src="assets/brand25.png" alt="West Port High School Athletics" />
+                  <img src="assets/brand24.png" alt="West Port High School Athletics" />
                 </div>
                 <span className="sponsor-name">West Port High School Athletics</span>
+              </a>
+            </div>
+             {/* Row 6 */}
+            <div className="sponsors-row">
+              <a href="https://https://thecornerstoneschool.org/" className="sponsor-item" target="_blank"
+                style={{ animationDelay: '1.05s' }}>
+                <div className="sponsor-logo-box">
+                  <img src="assets/brand26.svg" alt="The Cornerstone School" />
+                </div>
+                <span className="sponsor-name">The Cornerstone School</span>
               </a>
             </div>
           </div>
         </div>
       </section>
       {/* H&H Honors & Awards Section */}
-      <section className="hh-honors-section" id="hh-honors-section">
+     <section className="hh-honors-section" id="hh-honors-section">
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
@@ -391,6 +402,19 @@ export default function Page() {
               <div className="honor-logo-item">
                 <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
                 <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
@@ -407,6 +431,19 @@ export default function Page() {
               <div className="honor-logo-item marquee-clone">
                 <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -414,7 +451,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

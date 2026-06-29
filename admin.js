@@ -18,6 +18,11 @@ function toast(msg, isErr) {
     setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2600);
 }
 
+function showLoader(id) {
+    const list = $(id);
+    if (list) list.innerHTML = '<div class="loader-container"><div class="loader"></div></div>';
+}
+
 const FORM_LABELS = {
     hero: 'Hero Form', consultation: 'Consultation', 'get-started': 'Get Started', contact: 'Contact Us',
 };
@@ -61,7 +66,12 @@ document.querySelectorAll('.nav-item').forEach(btn => {
         const tab = btn.dataset.tab;
         $('tab-submissions').classList.toggle('hidden', tab !== 'submissions');
         $('tab-blogs').classList.toggle('hidden', tab !== 'blogs');
-        if (tab === 'submissions') loadSubmissions(); else loadBlogs();
+        $('tab-news').classList.toggle('hidden', tab !== 'news');
+        $('tab-newsletter').classList.toggle('hidden', tab !== 'newsletter');
+        if (tab === 'submissions') loadSubmissions();
+        else if (tab === 'blogs') loadBlogs();
+        else if (tab === 'news') loadNews();
+        else if (tab === 'newsletter') loadNewsletter();
     });
 });
 
@@ -70,6 +80,7 @@ $('sub-refresh').addEventListener('click', loadSubmissions);
 $('sub-filter').addEventListener('change', loadSubmissions);
 
 async function loadSubmissions() {
+    showLoader('submissions-list');
     const type = $('sub-filter').value;
     const r = await api('admin/submissions?type=' + encodeURIComponent(type));
     if (!r.ok) return showLogin();
@@ -117,6 +128,7 @@ async function loadSubmissions() {
 
 /* ---------------- Blogs ---------------- */
 async function loadBlogs() {
+    showLoader('blogs-list');
     const r = await api('admin/blogs');
     if (!r.ok) return showLogin();
     const blogs = await r.json();
@@ -141,7 +153,7 @@ async function loadBlogs() {
         </div>`).join('');
 
     list.querySelectorAll('[data-edit]').forEach(btn =>
-        btn.addEventListener('click', () => openBlogModal(blogs.find(x => x.id == btn.dataset.edit))));
+        btn.addEventListener('click', () => openPostModal('blogs', blogs.find(x => x.id == btn.dataset.edit))));
     list.querySelectorAll('[data-del]').forEach(btn =>
         btn.addEventListener('click', async () => {
             if (!confirm('Delete this blog post?')) return;
@@ -215,25 +227,28 @@ $('tb-image-input').addEventListener('change', async (e) => {
     e.target.value = '';
 });
 
-/* ---- Blog editor modal ---- */
-function openBlogModal(blog) {
+/* ---- Post editor modal (Blogs & News) ---- */
+let activePostType = 'blogs';
+
+function openPostModal(type, post) {
+    activePostType = type;
     $('blog-error').textContent = '';
     $('blog-form').reset();
     $('blog-image').value = '';
     $('blog-logo').value = '';
-    if (blog) {
-        $('blog-modal-title').textContent = 'Edit Blog';
-        $('blog-id').value = blog.id;
-        $('blog-title').value = blog.title || '';
-        $('blog-excerpt').value = blog.excerpt || '';
-        $('blog-tags').value = blog.tags || '';
-        editor.innerHTML = contentToHtml(blog.content);
-        $('blog-author').value = blog.author || '';
-        $('blog-published').value = String(blog.published);
-        togglePreview('blog-current-image', 'blog-image-preview', blog.image);
-        togglePreview('blog-current-logo', 'blog-logo-preview', blog.logo);
+    if (post) {
+        $('blog-modal-title').textContent = type === 'blogs' ? 'Edit Blog' : 'Edit News';
+        $('blog-id').value = post.id;
+        $('blog-title').value = post.title || '';
+        $('blog-excerpt').value = post.excerpt || '';
+        $('blog-tags').value = post.tags || '';
+        editor.innerHTML = contentToHtml(post.content);
+        $('blog-author').value = post.author || '';
+        $('blog-published').value = String(post.published);
+        togglePreview('blog-current-image', 'blog-image-preview', post.image);
+        togglePreview('blog-current-logo', 'blog-logo-preview', post.logo);
     } else {
-        $('blog-modal-title').textContent = 'New Blog';
+        $('blog-modal-title').textContent = type === 'blogs' ? 'New Blog' : 'New News';
         $('blog-id').value = '';
         editor.innerHTML = '';
         $('blog-current-image').classList.add('hidden');
@@ -247,7 +262,8 @@ function togglePreview(wrapId, imgId, src) {
 }
 function closeBlogModal() { $('blog-modal').classList.add('hidden'); }
 
-$('new-blog-btn').addEventListener('click', () => openBlogModal(null));
+$('new-blog-btn').addEventListener('click', () => openPostModal('blogs', null));
+$('new-news-btn').addEventListener('click', () => openPostModal('news', null));
 $('blog-modal-close').addEventListener('click', closeBlogModal);
 $('blog-cancel').addEventListener('click', closeBlogModal);
 
@@ -265,13 +281,85 @@ $('blog-form').addEventListener('submit', async (e) => {
     if ($('blog-image').files[0]) fd.append('image', $('blog-image').files[0]);
     if ($('blog-logo').files[0]) fd.append('logo', $('blog-logo').files[0]);
 
-    const r = await api('admin/blogs' + (id ? '/' + id : ''), {
+    const r = await api(`admin/${activePostType}` + (id ? '/' + id : ''), {
         method: id ? 'PUT' : 'POST',
         body: fd,
     });
     const data = await r.json();
-    if (r.ok) { closeBlogModal(); toast(id ? 'Blog updated' : 'Blog created'); loadBlogs(); }
+    if (r.ok) {
+        closeBlogModal();
+        toast(id ? `${activePostType === 'blogs' ? 'Blog' : 'News'} updated` : `${activePostType === 'blogs' ? 'Blog' : 'News'} created`);
+        if (activePostType === 'blogs') loadBlogs(); else loadNews();
+    }
     else { $('blog-error').textContent = data.error || 'Save failed'; }
 });
+
+/* ---------------- News ---------------- */
+async function loadNews() {
+    showLoader('news-list');
+    const r = await api('admin/news');
+    if (!r.ok) return showLogin();
+    const news = await r.json();
+    const list = $('news-list');
+    $('news-empty').classList.toggle('hidden', news.length > 0);
+    list.innerHTML = news.map(n => `
+        <div class="blog-card-admin">
+            <div class="thumb" style="background-image:url('${n.image ? esc(n.image) : 'assets/hh-blog1.jpg'}')"></div>
+            <div class="body">
+                <h4>${esc(n.title)}</h4>
+                <p class="excerpt">${esc(n.excerpt || (n.content || '').slice(0, 120))}</p>
+                <div class="meta">
+                    <span class="status-pill ${n.published ? 'pub' : 'draft'}">${n.published ? 'Published' : 'Draft'}</span>
+                    &nbsp; ${esc(new Date(n.created_at).toLocaleDateString())}
+                    ${n.author ? ' · ' + esc(n.author) : ''}
+                </div>
+                <div class="actions">
+                    <button class="link-btn" data-edit="${n.id}">Edit</button>
+                    <button class="del-btn" data-del="${n.id}">Delete</button>
+                </div>
+            </div>
+        </div>`).join('');
+
+    list.querySelectorAll('[data-edit]').forEach(btn =>
+        btn.addEventListener('click', () => openPostModal('news', news.find(x => x.id == btn.dataset.edit))));
+    list.querySelectorAll('[data-del]').forEach(btn =>
+        btn.addEventListener('click', async () => {
+            if (!confirm('Delete this news post?')) return;
+            await api('admin/news/' + btn.dataset.del, { method: 'DELETE' });
+            toast('News deleted');
+            loadNews();
+        }));
+}
+
+/* ---------------- Newsletter ---------------- */
+$('newsletter-refresh').addEventListener('click', loadNewsletter);
+
+async function loadNewsletter() {
+    showLoader('newsletter-list');
+    const r = await api('admin/newsletter');
+    if (!r.ok) return showLogin();
+    const subscribers = await r.json();
+    const list = $('newsletter-list');
+    $('newsletter-empty').classList.toggle('hidden', subscribers.length > 0);
+    list.innerHTML = subscribers.map(s => {
+        const when = new Date(s.created_at).toLocaleString();
+        return `
+        <div class="sub-card">
+            <h4>${esc(s.email)}</h4>
+            <div class="time">Subscribed on: ${esc(when)}</div>
+            <div class="actions">
+                <button class="del-btn" data-del-newsletter="${s.id}">Delete</button>
+            </div>
+        </div>`;
+    }).join('');
+
+    list.querySelectorAll('[data-del-newsletter]').forEach(b =>
+        b.addEventListener('click', async () => {
+            if (!confirm('Delete this subscriber?')) return;
+            await api('admin/newsletter/' + b.dataset.delNewsletter, { method: 'DELETE' });
+            toast('Subscriber deleted');
+            loadNewsletter();
+        }));
+}
 
 checkAuth();

@@ -3,7 +3,17 @@ export const metadata = { title: 'Hightower & Hightower' };
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .top-bar-center-link{
+            color: #000000 !important;
+          }
+        .top-bar-center-link:hover {
+            color: #c2905b !important;
+          }
+          .logo-link {
+            top: 3px !important;
+        }
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -150,7 +160,7 @@ export default function Page() {
       </section>
 
       {/* H&H Honors & Awards Section */}
-      <section className="hh-honors-section" id="hh-honors-section">
+    <section className="hh-honors-section" id="hh-honors-section">
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
@@ -174,6 +184,19 @@ export default function Page() {
               <div className="honor-logo-item">
                 <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="../assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
                 <img src="../assets/award1.png" alt="The National Trial Lawyers Top 100" />
@@ -190,6 +213,19 @@ export default function Page() {
               <div className="honor-logo-item marquee-clone">
                 <img src="../assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="../assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -197,7 +233,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

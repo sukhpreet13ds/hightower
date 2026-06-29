@@ -4,7 +4,7 @@ import Script from 'next/script';
 export default function AdminPage() {
   return (
     <>
-      <link rel="stylesheet" href="/admin.css" />
+      <link rel="stylesheet" href="/admin.css?v=2" />
 
       {/* LOGIN */}
       <div id="login-view" className="login-wrap">
@@ -25,13 +25,16 @@ export default function AdminPage() {
       {/* DASHBOARD */}
       <div id="dashboard-view" className="dash hidden">
         <aside className="sidebar">
-          <div className="sidebar-brand">H&amp;H Admin</div>
+          <div className="sidebar-brand">
+            <img src="/assets/h&h-logo.svg" alt="Hightower & Hightower" className="sidebar-logo" />
+          </div>
           <nav>
             <button className="nav-item active" data-tab="submissions">
               Submissions <span id="unread-badge" className="badge hidden">0</span>
             </button>
             <button className="nav-item" data-tab="blogs">Blogs</button>
             <button className="nav-item" data-tab="news">News</button>
+            <button className="nav-item" data-tab="newsletter">Newsletter</button>
           </nav>
           <button id="logout-btn" className="logout">Log out</button>
         </aside>
@@ -74,6 +77,16 @@ export default function AdminPage() {
             </div>
             <div id="news-list" className="cards"></div>
             <p id="news-empty" className="empty hidden">No news yet. Create your first news post.</p>
+          </section>
+
+          {/* NEWSLETTER TAB */}
+          <section id="tab-newsletter" className="tab hidden">
+            <div className="content-head">
+              <h2>Newsletter Subscribers</h2>
+              <button id="newsletter-refresh" className="btn-ghost">Refresh</button>
+            </div>
+            <div id="newsletter-list" className="cards"></div>
+            <p id="newsletter-empty" className="empty hidden">No newsletter subscribers yet.</p>
           </section>
         </main>
       </div>
@@ -187,7 +200,7 @@ export default function AdminPage() {
         </div>
       </div>
 
-      <Script src="/admin.js" strategy="afterInteractive" />
+      <Script src="/admin.js?v=2" strategy="afterInteractive" />
     </>
   );
 }

@@ -26,7 +26,8 @@ export default async function Page({ searchParams }) {
 
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .top-header-bar {
             position: absolute !important;
             top: 0; left: 0; width: 100%;
@@ -112,11 +113,80 @@ export default async function Page({ searchParams }) {
           </div>
         </div>
       </section>
-
+<section className="hh-honors-section" id="hh-honors-section">
+        <div className="honors-container">
+          <div className="honors-title-wrapper">
+            <span className="honors-line"></span>
+            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <span className="honors-line"></span>
+          </div>
+          <div className="honors-logos-row">
+            <div className="honors-logos-track">
+              <div className="honor-logo-item">
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
+              </div>
+              <div className="honor-logo-item">
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
+              </div>
+              <div className="honor-logo-item">
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
+              </div>
+              <div className="honor-logo-item">
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
+              </div>
+              <div className="honor-logo-item">
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
+              {/* Clones for seamless mobile marquee */}
+              <div className="honor-logo-item marquee-clone">
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

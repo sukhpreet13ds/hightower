@@ -18,6 +18,11 @@ function toast(msg, isErr) {
     setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2600);
 }
 
+function showLoader(id) {
+    const list = $(id);
+    if (list) list.innerHTML = '<div class="loader-container"><div class="loader"></div></div>';
+}
+
 const FORM_LABELS = {
     hero: 'Hero Form', consultation: 'Consultation', 'get-started': 'Get Started', contact: 'Contact Us',
 };
@@ -62,9 +67,11 @@ document.querySelectorAll('.nav-item').forEach(btn => {
         $('tab-submissions').classList.toggle('hidden', tab !== 'submissions');
         $('tab-blogs').classList.toggle('hidden', tab !== 'blogs');
         $('tab-news').classList.toggle('hidden', tab !== 'news');
+        $('tab-newsletter').classList.toggle('hidden', tab !== 'newsletter');
         if (tab === 'submissions') loadSubmissions();
         else if (tab === 'blogs') loadBlogs();
-        else loadNews();
+        else if (tab === 'news') loadNews();
+        else if (tab === 'newsletter') loadNewsletter();
     });
 });
 
@@ -73,6 +80,7 @@ $('sub-refresh').addEventListener('click', loadSubmissions);
 $('sub-filter').addEventListener('change', loadSubmissions);
 
 async function loadSubmissions() {
+    showLoader('submissions-list');
     const type = $('sub-filter').value;
     const r = await api('admin/submissions?type=' + encodeURIComponent(type));
     if (!r.ok) return showLogin();
@@ -158,6 +166,7 @@ $('sub-form').addEventListener('submit', async (e) => {
 
 /* ---------------- Blogs ---------------- */
 async function loadBlogs() {
+    showLoader('blogs-list');
     const r = await api('admin/blogs');
     if (!r.ok) return showLogin();
     const blogs = await r.json();
@@ -194,6 +203,7 @@ async function loadBlogs() {
 
 /* ---------------- News (reuses the blog editor modal) ---------------- */
 async function loadNews() {
+    showLoader('news-list');
     const r = await api('admin/news');
     if (!r.ok) return showLogin();
     const items = await r.json();
@@ -361,5 +371,36 @@ $('blog-form').addEventListener('submit', async (e) => {
         if (currentType === 'news') loadNews(); else loadBlogs();
     } else { $('blog-error').textContent = data.error || 'Save failed'; }
 });
+
+/* ---------------- Newsletter ---------------- */
+$('newsletter-refresh').addEventListener('click', loadNewsletter);
+
+async function loadNewsletter() {
+    showLoader('newsletter-list');
+    const r = await api('admin/newsletter');
+    if (!r.ok) return showLogin();
+    const subscribers = await r.json();
+    const list = $('newsletter-list');
+    $('newsletter-empty').classList.toggle('hidden', subscribers.length > 0);
+    list.innerHTML = subscribers.map(s => {
+        const when = new Date(s.created_at).toLocaleString();
+        return `
+        <div class="sub-card">
+            <h4>${esc(s.email)}</h4>
+            <div class="time">Subscribed on: ${esc(when)}</div>
+            <div class="actions">
+                <button class="del-btn" data-del-newsletter="${s.id}">Delete</button>
+            </div>
+        </div>`;
+    }).join('');
+
+    list.querySelectorAll('[data-del-newsletter]').forEach(b =>
+        b.addEventListener('click', async () => {
+            if (!confirm('Delete this subscriber?')) return;
+            await api('admin/newsletter/' + b.dataset.delNewsletter, { method: 'DELETE' });
+            toast('Subscriber deleted');
+            loadNewsletter();
+        }));
+}
 
 checkAuth();

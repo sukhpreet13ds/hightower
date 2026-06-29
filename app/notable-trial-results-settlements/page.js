@@ -1,11 +1,15 @@
 import Footer from '@/components/Footer';
-
+import Image from 'next/image';
 export const metadata = { title: 'Hightower & Hightower' };
 
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .logo-link {
+            top: 3px !important;
+        }
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -101,7 +105,7 @@ export default function Page() {
             <div className="form-card">
               <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
               <h2 className="form-title">Talk to Hightower & Hightower</h2>
-              <p className="form-subtitle">We'll review your case and respond within hours.</p>
+              <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
               <form className="case-review-form" action="#" method="POST">
                 <div className="form-row">
@@ -315,11 +319,11 @@ export default function Page() {
               driver of a commercial truck.
             </p>
           </div>
-          {/* Center Image */}
-          {/* <div className="notable-middle-image-wrapper">
-                    <img src="assets/Notable-below.jpg" alt="Hightower & Hightower Lawyers Team"
-                        className="notable-middle-image">
-                </div> */}
+
+          <div className="notable-middle-image-wrapper">
+            <Image src="assets/lawyer-hero-cut.png" alt="Hightower & Hightower Lawyers Team"
+              className="notable-middle-image" width={750} height={750} />
+          </div>
 
           {/* Card 3 */}
           <div className="notable-card">
@@ -492,6 +496,19 @@ export default function Page() {
               <div className="honor-logo-item">
                 <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
+              <div className="honor-logo-item">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
                 <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
@@ -508,6 +525,19 @@ export default function Page() {
               <div className="honor-logo-item marquee-clone">
                 <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
               </div>
+              <div className="honor-logo-item marquee-clone">
+                <a
+                  href="https://www.bbb.org/us/fl/ocala/profile/personal-injury-lawyers/hightower-hightower-p-a-0733-235974524/#sealclick"
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <img
+                    src="assets/bbb-logo.png"
+                    alt="Hightower & Hightower, P.A. BBB Accredited Business"
+                    style={{ border: 0 }}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -515,7 +545,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 

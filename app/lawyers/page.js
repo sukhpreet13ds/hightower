@@ -5,7 +5,11 @@ export const metadata = { title: 'Hightower & Hightower' };
 export default function Page() {
   return (
     <main className="main-content">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .logo-link {
+            top: 3px !important;
+        }
         /* Absolute Positioning for Headers on Lawyers Page */
         .top-header-bar {
             position: absolute !important;
@@ -105,23 +109,23 @@ export default function Page() {
             <div className="form-card">
               <div className="form-badge">✓ 100% FREE - NO FEE UNLESS WE WIN</div>
               <h2 className="form-title">Talk to Hightower & Hightower</h2>
-              <p className="form-subtitle">We'll review your case and respond within hours.</p>
+              <p className="form-subtitle">We’ll review your case and get back to you soon.</p>
 
               <form className="case-review-form" action="#" method="POST">
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" placeholder="John" required/>
+                    <input type="text" id="first-name" placeholder="John" required />
                   </div>
                   <div className="form-group">
                     <label htmlFor="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" placeholder="Doe" required/>
+                    <input type="text" id="last-name" placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="phone-number">PHONE NUMBER</label>
-                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required/>
+                  <input type="tel" id="phone-number" placeholder="(352) 555-1234" required />
                 </div>
 
                 <div className="form-group">
@@ -163,17 +167,17 @@ export default function Page() {
 
       <section className="lawyer-pa-section">
         <div className="pa-bg-svg-wrapper">
-          <img src="assets/hero-bg.svg" alt="H&H Logo Graphic" className="pa-bg-svg"/>
+          <img src="assets/hero-bg.svg" alt="H&H Logo Graphic" className="pa-bg-svg" />
         </div>
         <div className="pa-container">
           <div className="pa-header">
             <h2 className="pa-title">Statewide Lawyers</h2>
-            <div className="pa-subtitle">Hightower & Hightower, P.a.</div>
+            <div className="pa-subtitle">Hightower & Hightower, P.A.</div>
           </div>
 
           <div className="pa-content-row">
             <div className="pa-left-col">
-              <img src="assets/above-left.png" alt="Daniel & Alison Hightower" className="pa-featured-img"/>
+              <img src="assets/above-left.png" alt="Daniel & Alison Hightower" className="pa-featured-img" />
             </div>
             <div className="pa-right-col">
               <h3 className="pa-content-title">Personal Injury Attorneys in Ocala, Florida</h3>
@@ -202,7 +206,7 @@ export default function Page() {
               </div>
 
               <div className="pa-footer-note">
-                When we represent our clients, we're all in. We fight hard for them.<br/>
+                When we represent our clients, we're all in. We fight hard for them.<br />
                 <strong>No Matter What.</strong>
               </div>
             </div>
@@ -218,106 +222,131 @@ export default function Page() {
           <div className="profiles-grid">
             {/* Lawyer 1 */}
             <div className="profile-card">
-              <a href="lawyers/daniel-l-hightower.html" style={{ textDecoration: 'none' }}>
-                <div className="profile-img-wrapper">
-                  <img src="assets/lawyer-1.png" alt="Daniel L. Hightower" className="profile-img"/>
-                  <div className="profile-overlay-hover">
-                    <span className="read-more-text">Read More <i
-                      className="fa-solid fa-arrow-right-long"></i></span>
-                  </div>
+              <a href='lawyers/daniel-l-hightower.html' style={{textDecoration:'none'}}>
+              <div className="profile-img-wrapper">
+                <img src="assets/lawyer-1.png" alt="Daniel L. Hightower" className="profile-img" />
+                <div className="profile-overlay-hover">
+                  <span className="read-more-text">Read More <i
+                    className="fa-solid fa-arrow-right-long"></i></span>
                 </div>
-                <div className="profile-info-overlay">
-                  <span className="profile-badge">FOUNDING PARTNER</span>
-                  <h4 className="profile-name">Daniel L. Hightower</h4>
-                  <a href="#daniel" className="profile-meet-btn btn-white"
-                    data-open-consult="true">CONSULTATION</a>
-                </div>
+              </div>
+              <div className="profile-info-overlay">
+                <span className="profile-badge">FOUNDING PARTNER</span>
+                <h4 className="profile-name">
+                  <a href="lawyers/daniel-l-hightower.html" className="card-main-link">
+                    Daniel L. Hightower
+                  </a>
+                </h4>
+                <a href="#daniel" className="profile-meet-btn btn-white"
+                  data-open-consult="true">CONSULTATION</a>
+              </div>
               </a>
             </div>
             {/* Lawyer 2 */}
             <div className="profile-card">
-              <a href="lawyers/alison-l-hightower.html" style={{ textDecoration: 'none' }}>
-                <div className="profile-img-wrapper">
-                  <img src="assets/lawyer-2.png" alt="Alison L. Hightower" className="profile-img"/>
-                  <div className="profile-overlay-hover">
-                    <span className="read-more-text">Read More <i
-                      className="fa-solid fa-arrow-right-long"></i></span>
-                  </div>
+              <a href='lawyers/alison-l-hightower.html' style={{textDecoration:'none'}}>
+
+              <div className="profile-img-wrapper">
+                <img src="assets/lawyer-2.png" alt="Alison L. Hightower" className="profile-img" />
+                <div className="profile-overlay-hover">
+                  <span className="read-more-text">Read More <i
+                    className="fa-solid fa-arrow-right-long"></i></span>
                 </div>
-                <div className="profile-info-overlay">
-                  <span className="profile-badge">FOUNDING PARTNER</span>
-                  <h4 className="profile-name">Alison L. Hightower</h4>
-                  <a href="#alison" className="profile-meet-btn btn-white"
-                    data-open-consult="true">CONSULTATION</a>
-                </div>
+              </div>
+              <div className="profile-info-overlay">
+                <span className="profile-badge">FOUNDING PARTNER</span>
+                <h4 className="profile-name">
+                  <a href="lawyers/alison-l-hightower.html" className="card-main-link">
+                    Alison L. Hightower
+                  </a>
+                </h4>
+                <a href="#alison" className="profile-meet-btn btn-white"
+                  data-open-consult="true">CONSULTATION</a>
+              </div>
               </a>
             </div>
             {/* Lawyer 3 */}
             <div className="profile-card">
-              <a href="lawyers/barbara-l-richard.html" style={{ textDecoration: 'none' }}>
-                <div className="profile-img-wrapper">
-                  <img src="assets/lawyer-3.png" alt="Barbara L. Richard" className="profile-img"/>
-                  <div className="profile-overlay-hover">
-                    <span className="read-more-text">Read More <i
-                      className="fa-solid fa-arrow-right-long"></i></span>
-                  </div>
+              <a href='lawyers/barbara-l-richard.html' style={{textDecoration:'none'}}>
+              <div className="profile-img-wrapper">
+                <img src="assets/lawyer-3.png" alt="Barbara L. Richard" className="profile-img" />
+                <div className="profile-overlay-hover">
+                  <span className="read-more-text">Read More <i
+                    className="fa-solid fa-arrow-right-long"></i></span>
                 </div>
-                <div className="profile-info-overlay">
-                  <h4 className="profile-name">Barbara L. Richard</h4>
-                  <a href="#barbara" className="profile-meet-btn btn-white"
-                    data-open-consult="true">CONSULTATION</a>
-                </div>
+              </div>
+              <div className="profile-info-overlay">
+                <h4 className="profile-name">
+                  <a href="lawyers/barbara-l-richard.html" className="card-main-link">
+                    Barbara L. Richard
+                  </a>
+                </h4>
+                <a href="#barbara" className="profile-meet-btn btn-white"
+                  data-open-consult="true">CONSULTATION</a>
+              </div>
               </a>
             </div>
             {/* Lawyer 4 */}
             <div className="profile-card">
-              <a href="lawyers/mark-n-tipton.html" style={{ textDecoration: 'none' }}>
-                <div className="profile-img-wrapper">
-                  <img src="assets/lawyer-4.png" alt="Mark N. Tipton" className="profile-img"/>
-                  <div className="profile-overlay-hover">
-                    <span className="read-more-text">Read More <i
-                      className="fa-solid fa-arrow-right-long"></i></span>
-                  </div>
+              <a href='lawyers/mark-n-tipton.html' style={{textDecoration:'none'}}>
+              <div className="profile-img-wrapper">
+                <img src="assets/lawyer-4.png" alt="Mark N. Tipton" className="profile-img" />
+                <div className="profile-overlay-hover">
+                  <span className="read-more-text">Read More <i
+                    className="fa-solid fa-arrow-right-long"></i></span>
                 </div>
-                <div className="profile-info-overlay">
-                  <h4 className="profile-name">Mark N. Tipton</h4>
-                  <a href="#mark" className="profile-meet-btn btn-white"
-                    data-open-consult="true">CONSULTATION</a>
-                </div>
+              </div>
+              <div className="profile-info-overlay">
+                <h4 className="profile-name">
+                  <a href="lawyers/mark-n-tipton.html" className="card-main-link">
+                    Mark N. Tipton
+                  </a>
+                </h4>
+                <a href="#mark" className="profile-meet-btn btn-white"
+                  data-open-consult="true">CONSULTATION</a>
+              </div>
               </a>
             </div>
             {/* Lawyer 5 */}
             <div className="profile-card">
-              <a href="lawyers/daniel-l-hightower.html" style={{ textDecoration: 'none' }}>
-                <div className="profile-img-wrapper">
-                  <img src="assets/lawyer-5.png" alt="David D. Guiley" className="profile-img"/>
-                  <div className="profile-overlay-hover">
-                    <span className="read-more-text">Read More <i
-                      className="fa-solid fa-arrow-right-long"></i></span>
-                  </div>
+              <a href='lawyers/dave-guiley.html' style={{textDecoration:'none'}}>
+              <div className="profile-img-wrapper">
+                <img src="assets/lawyer-5.png" alt="David D. Guiley" className="profile-img" />
+                <div className="profile-overlay-hover">
+                  <span className="read-more-text">Read More <i
+                    className="fa-solid fa-arrow-right-long"></i></span>
                 </div>
-                <div className="profile-info-overlay">
-                  <h4 className="profile-name">David D. Guiley</h4>
-                  <a href="#david" className="profile-meet-btn btn-white"
-                    data-open-consult="true">CONSULTATION</a>
-                </div>
+              </div>
+              <div className="profile-info-overlay">
+                <h4 className="profile-name">
+                  <a href="lawyers/dave-guiley.html" className="card-main-link">
+                    David D. Guiley
+                  </a>
+                </h4>
+                <a href="#david" className="profile-meet-btn btn-white"
+                  data-open-consult="true">CONSULTATION</a>
+              </div>
               </a>
             </div>
             {/* Lawyer 6 */}
             <div className="profile-card">
-              <a href="lawyers/shawn-e-clark.html" style={{ textDecoration: 'none' }}>
-                <div className="profile-img-wrapper">
-                  <img src="assets/lawyer-6.png" alt="Shawn E. Clark" className="profile-img"/>
-                  <div className="profile-overlay-hover">
-                    <span className="read-more-text">Read More <i
-                      className="fa-solid fa-arrow-right-long"></i></span>
-                  </div>
+              <a href='lawyers/shawn-e-clark.html' style={{textDecoration:'none'}}>
+              <div className="profile-img-wrapper">
+                <img src="assets/lawyer-6.png" alt="Shawn E. Clark" className="profile-img" />
+                <div className="profile-overlay-hover">
+                  <span className="read-more-text">Read More <i
+                    className="fa-solid fa-arrow-right-long"></i></span>
                 </div>
-                <div className="profile-info-overlay">
-                  <h4 className="profile-name">Shawn E. Clark</h4>
-                  <a href="#shawn" className="profile-meet-btn btn-white"
-                    data-open-consult="true">CONSULTATION</a>
-                </div>
+              </div>
+              <div className="profile-info-overlay">
+                <h4 className="profile-name">
+                  <a href="lawyers/shawn-e-clark.html" className="card-main-link">
+                    Shawn E. Clark
+                  </a>
+                </h4>
+                <a href="#shawn" className="profile-meet-btn btn-white"
+                  data-open-consult="true">CONSULTATION</a>
+              </div>
               </a>
             </div>
           </div>
@@ -334,35 +363,42 @@ export default function Page() {
           <div className="honors-logos-row">
             <div className="honors-logos-track">
               <div className="honor-logo-item">
-                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item">
-                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              
+              <div className="honor-logo-item">
+                <img src="assets/bbb-logo.png" alt="BBB Accredited" />
               </div>
               {/* Clones for seamless mobile marquee */}
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100"/>
+                <img src="assets/award1.png" alt="The National Trial Lawyers Top 100" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award2.png" alt="AV Preeminent Rated"/>
+                <img src="assets/award2.png" alt="AV Preeminent Rated" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold"/>
+                <img src="assets/award3.png" alt="Martindale-Hubbell Client Champion Gold" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial"/>
+                <img src="assets/award4.webp" alt="Florida Bar Certified Civil Trial" />
               </div>
               <div className="honor-logo-item marquee-clone">
-                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation"/>
+                <img src="assets/award5.png" alt="Florida Bar Certified Workers Compensation" />
+              </div>
+              <div className="honor-logo-item marquee-clone">
+                <img src="assets/bbb-logo.png" alt="BBB Accredited" />
               </div>
             </div>
           </div>
@@ -371,7 +407,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Only pay if we win. Contact us 24/7.</h2>
+          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
         </div>
       </section>
 
