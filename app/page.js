@@ -21,8 +21,8 @@ export default async function Page() {
       <section className="hh-hero-section" id="hh-hero-section">
         <div className="hero-container">
           <div className="hero-left-col">
-            <h1 className="hero-title">You Were Injured.<br />We'll Fight to <span className="highlight-gold">Make It
-              Right.</span></h1>
+
+            <h1 className="hero-title">FIGHTING FOR ACCIDENT VICTIM <br />JUSTICE <span className="highlight-gold">SINCE 1976</span></h1>
             <p className="hero-description">
               For nearly 50 years, the Hightower family has stood beside injured Floridians — battling
               insurance companies so you can focus on what matters: healing. Your consultation is free, and
