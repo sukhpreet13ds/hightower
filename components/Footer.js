@@ -84,7 +84,7 @@ export default function Footer() {
               <li><a href="/">Home</a></li>
               <li><a href="/lawyers.html">Meet Our Attorneys</a></li>
               <li><a href="/areas-of-practice.html">Practice Areas</a></li>
-              <li><a href="#">Our Victories</a></li>
+              <li><a href="/notable-trial-results-settlements.html">Notable Case Results</a></li>
               <li><a href="/contact-us.html">Contact Us</a></li>
             </ul>
           </nav>
