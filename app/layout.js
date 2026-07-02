@@ -23,6 +23,17 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         />
+        <meta property="og:title" content="Hightower & Hightower" />
+        <meta property="og:description" content="For nearly 50 years, the Hightower family has stood beside injured Floridians, battling insurance companies so you can focus on what matters: healing. Your consultation is free, and you pay nothing unless we make a recovery for you." />
+        <meta property="og:image" content="https://hightowerandhightower.netlify.app/assets/thumbnail-hightower.png" />
+        <meta property="og:url" content="https://hightowerandhightower.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Hightower & Hightower" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hightower & Hightower" />
+        <meta name="twitter:description" content="For nearly 50 years, the Hightower family has stood beside injured Floridians, battling insurance companies so you can focus on what matters: healing. Your consultation is free, and you pay nothing unless we make a recovery for you." />
+        <meta name="twitter:image" content="https://hightowerandhightower.netlify.app/assets/thumbnail-hightower.png" />
       </head>
       <body suppressHydrationWarning>
         <SiteChrome>{children}</SiteChrome>
