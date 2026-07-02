@@ -63,11 +63,7 @@ export default async function Page({ searchParams }) {
             <h1 className="blog-title-main">{post ? post.title : 'Article not found'}</h1>
           </div>
 
-          {post && post.logo && (
-            <div className="blog-source-logo" id="blog-source-logo">
-              <img id="blog-source-logo-img" src={post.logo} alt="Source logo" />
-            </div>
-          )}
+
 
           <div className="blog-full-detail">
             <div className="blog-main-image-wrapper">
@@ -113,7 +109,7 @@ export default async function Page({ searchParams }) {
           </div>
         </div>
       </section>
-<section className="hh-honors-section" id="hh-honors-section">
+      <section className="hh-honors-section" id="hh-honors-section">
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
