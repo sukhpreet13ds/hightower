@@ -122,14 +122,26 @@ export default function Page() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="case-type">CASE TYPE</label>
+                  <label htmlFor="case-type">CASE TYPE (TIPO DE CASO)</label>
                   <select id="case-type" required defaultValue="">
-                    <option value="" disabled>Select your case type</option>
-                    <option value="personal-injury">Personal Injury</option>
-                    <option value="car-accident">Car Accident</option>
-                    <option value="medical-malpractice">Medical Malpractice</option>
-                    <option value="wrongful-death">Wrongful Death</option>
-                    <option value="other">Other</option>
+                    <option value="" disabled>
+                      Select your case type (Seleccione su tipo de caso)
+                    </option>
+                    <option value="personal-injury">
+                      Personal Injury (Lesiones Personales)
+                    </option>
+                    <option value="car-accident">
+                      Car Accident (Accidente de Auto)
+                    </option>
+                    <option value="medical-malpractice">
+                      Medical Malpractice (Negligencia Médica)
+                    </option>
+                    <option value="wrongful-death">
+                      Wrongful Death (Muerte por Negligencia)
+                    </option>
+                    <option value="other">
+                      Other (Otro)
+                    </option>
                   </select>
                 </div>
 
@@ -364,7 +376,7 @@ export default function Page() {
                 <span className="sponsor-name">West Port High School Athletics</span>
               </a>
             </div>
-             {/* Row 6 */}
+            {/* Row 6 */}
             <div className="sponsors-row">
               <a href="https://https://thecornerstoneschool.org/" className="sponsor-item" target="_blank"
                 style={{ animationDelay: '1.05s' }}>
@@ -378,7 +390,7 @@ export default function Page() {
         </div>
       </section>
       {/* H&H Honors & Awards Section */}
-     <section className="hh-honors-section" id="hh-honors-section">
+      <section className="hh-honors-section" id="hh-honors-section">
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>

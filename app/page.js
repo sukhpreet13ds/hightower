@@ -22,8 +22,8 @@ export default async function Page() {
         <div className="hero-container">
           <div className="hero-left-col">
 
-            <h1 className="hero-title">You Were Injured.<br/>We'll Fight to <span className="highlight-gold">Make It
-                            Right.</span></h1>
+            <h1 className="hero-title">You Were Injured.<br />We'll Fight to <span className="highlight-gold">Make It
+              Right.</span></h1>
 
             <p className="hero-description">
               For nearly 50 years, the Hightower family has stood beside injured Floridians — battling
@@ -69,14 +69,26 @@ export default async function Page() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="case-type">CASE TYPE</label>
+                  <label htmlFor="case-type">CASE TYPE (TIPO DE CASO)</label>
                   <select id="case-type" required defaultValue="">
-                    <option value="" disabled>Select your case type</option>
-                    <option value="personal-injury">Personal Injury</option>
-                    <option value="car-accident">Car Accident</option>
-                    <option value="medical-malpractice">Medical Malpractice</option>
-                    <option value="wrongful-death">Wrongful Death</option>
-                    <option value="other">Other</option>
+                    <option value="" disabled>
+                      Select your case type (Seleccione su tipo de caso)
+                    </option>
+                    <option value="personal-injury">
+                      Personal Injury (Lesiones Personales)
+                    </option>
+                    <option value="car-accident">
+                      Car Accident (Accidente de Auto)
+                    </option>
+                    <option value="medical-malpractice">
+                      Medical Malpractice (Negligencia Médica)
+                    </option>
+                    <option value="wrongful-death">
+                      Wrongful Death (Muerte por Negligencia)
+                    </option>
+                    <option value="other">
+                      Other (Otro)
+                    </option>
                   </select>
                 </div>
 

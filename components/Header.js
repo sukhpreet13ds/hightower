@@ -12,14 +12,14 @@ export default function Header() {
               <i className="fa-solid fa-location-dot"></i> 3259 W. Bryant Ave., Bell, FL 32619
             </a>
           </div>
-          
+
           <div className="top-bar-right">
             <div className="top-bar-center">
-            <a href="/faq.html" className="top-bar-center-link">FAQ's</a>
-            <a href="/blogs.html" className="top-bar-center-link">Blogs</a>
-            <a href="/news.html" className="top-bar-center-link">News</a>
-            <a href="/client-testimonials.html" className="top-bar-center-link">Testimonials</a>
-          </div>
+              <a href="/faq.html" className="top-bar-center-link">FAQ's</a>
+              <a href="/blogs.html" className="top-bar-center-link">Blogs</a>
+              <a href="/news.html" className="top-bar-center-link">News</a>
+              <a href="/client-testimonials.html" className="top-bar-center-link">Testimonials</a>
+            </div>
             <div className="social-icons">
               <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
               <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
@@ -27,8 +27,15 @@ export default function Header() {
               <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
             </div>
             <div className="contact-info">
-              <a href="tel:352-629-7777" className="phone-link">
-                <i className="fa-solid fa-phone"></i> 352-629-7777
+              <a href="tel:+1 3526297777" className="phone-link">
+                <i className="fa-solid fa-phone"></i>
+
+                <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
+                  <span>352-629-7777</span>
+                  <span style={{ fontSize: "14px", fontWeight: "500", color: "#BB8A55" }}>
+                    Llámenos en Español
+                  </span>
+                </span>
               </a>
               <a href="/contact-us.html" className="contact-btn">CONTACT US</a>
             </div>
@@ -209,8 +216,14 @@ export default function Header() {
 
             <div className="mobile-menu-footer">
               <a href="/contact-us.html" className="mobile-contact-btn">CONTACT US</a>
-              <a href="tel:352-629-7777" className="mobile-phone-link">
-                <i className="fa-solid fa-phone"></i> 352-629-7777
+              <a href="tel:+1 3526297777" className="mobile-phone-link">
+                <i className="fa-solid fa-phone"></i>
+                <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
+                  <span>352-629-7777</span>
+                  <span style={{ fontSize: "11px", fontWeight: "500" }}>
+                    Llámenos en Español
+                  </span>
+                </span>
               </a>
               <div className="mobile-footer-socials">
                 <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
