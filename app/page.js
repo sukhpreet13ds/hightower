@@ -38,7 +38,7 @@ export default async function Page() {
                 <img src="assets/button-play.png" alt="Play" className="icon-play" /> GET TO KNOW US
               </a>
             </div>
-            <div className="hero-subtitle-since">Fighting for the injured since 1976.</div>
+            <div className="hero-subtitle-since">Fighting for accident victim justice since 1976.</div>
           </div>
 
           <div className="hero-middle-col">
