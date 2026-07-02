@@ -713,7 +713,7 @@ export default async function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">Fighting for accident victim justice since 1976.</h2>
         </div>
       </section>
 
