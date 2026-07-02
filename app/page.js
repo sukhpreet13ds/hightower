@@ -22,7 +22,7 @@ export default async function Page() {
         <div className="hero-container">
           <div className="hero-left-col">
 
-            <h1 class="hero-title">You Were Injured.<br>We'll Fight to <span class="highlight-gold">Make It
+            <h1 className="hero-title">You Were Injured.<br/>We'll Fight to <span className="highlight-gold">Make It
                             Right.</span></h1>
 
             <p className="hero-description">
@@ -86,7 +86,7 @@ export default async function Page() {
                     placeholder="Tell us briefly what happened and when..." required></textarea>
                 </div>
 
-                <button type="submit" className="btn-submit-case">SUBMIT MY FREE CASE REVIEW <i
+                <button type="submit" className="btn-submit-case">SUBMIT MY FREE CASE REVIEW{" "}<i
                   className="fa-solid fa-arrow-right-long"></i></button>
               </form>
 
