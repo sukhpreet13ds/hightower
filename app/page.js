@@ -339,7 +339,7 @@ export default async function Page() {
           {/* Left Column: Image with SVG overlay */}
           <div className="question-left-col">
             <div className="question-image-wrapper">
-              <img src="assets/questions-left.jpg" alt="Get Answers" className="question-main-img" />
+              <img src="assetsquestions-left (1).jpg" alt="Get Answers" className="question-main-img" />
               <div className="question-logo-overlay">
                 <img src="assets/questions-over.svg" alt="H&H Lawyers" className="question-overlay-svg" />
               </div>
