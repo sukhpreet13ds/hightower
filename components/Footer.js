@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="footer-top-row">
           <div className="footer-contact">
             <span className="consult-badge">100% Free Consultation</span>
-            <a href="tel:352-646-3944" className="footer-phone">352-646-3944</a>
+            <a href="tel:352-622-7777" className="footer-phone">352-622-7777</a>
             
             <div className="footer-newsletter">
               <h4>Signup For Our Newsletter</h4>
