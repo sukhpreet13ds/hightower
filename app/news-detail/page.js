@@ -25,23 +25,37 @@ export default async function Page({ searchParams }) {
     : [];
 
   return (
-    <main className="main-content">
+        <main className="main-content">
       <style dangerouslySetInnerHTML={{
         __html: `
+         .top-bar-center-link{
+            color: #000000 !important;
+          }
+        .top-bar-center-link:hover {
+            color: #c2905b !important;
+          }
+          .logo-link {
+            top: 3px !important;
+        }
         .top-header-bar {
             position: absolute !important;
-            top: 0; left: 0; width: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
             background: transparent !important;
             z-index: 105;
         }
         .main-header {
             position: absolute !important;
-            top: 40px; left: 0; width: 100%;
+            top: 40px;
+            left: 0;
+            width: 100%;
             background: transparent !important;
             z-index: 100;
             box-shadow: none !important;
         }
         .nav-list { margin-top: 34px; }
+        /* Make navbar items black without changing other things */
         .top-header-bar .social-icons a,
         .top-header-bar .phone-link,
         .top-header-bar .phone-link i,
@@ -49,8 +63,14 @@ export default async function Page({ searchParams }) {
         .main-header .dropdown-arrow {
             color: #000000 !important;
         }
-        .main-header .burger-bar { background-color: #000000 !important; }
-        .main-header .logo-img { filter: brightness(0) !important; }
+        .main-header .burger-bar {
+            background-color: #000000 !important;
+        }
+
+        /* white logo -> black on this white-background page */
+        .main-header .logo-img {
+            filter: brightness(0) !important;
+        }
       ` }} />
 
       <section className="videos-showcase-section">

@@ -36,6 +36,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 2.5. Desktop Side Panel Toggle (992px to 1784px)
+    const desktopSidePanel = document.getElementById('desktop-side-panel');
+    const sidePanelTrigger = document.getElementById('side-panel-trigger');
+    const sidePanelClose = document.getElementById('desktop-side-panel-close');
+
+    if (sidePanelTrigger && desktopSidePanel) {
+        sidePanelTrigger.addEventListener('click', () => {
+            desktopSidePanel.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (sidePanelClose && desktopSidePanel) {
+        sidePanelClose.addEventListener('click', () => {
+            desktopSidePanel.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    }
+
+    if (desktopSidePanel) {
+        desktopSidePanel.addEventListener('click', (e) => {
+            if (e.target === desktopSidePanel) {
+                desktopSidePanel.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     // 3. Mobile Menu Accordions (About Us, Practice Areas)
     const accordionTriggers = document.querySelectorAll('.accordion-trigger');
 

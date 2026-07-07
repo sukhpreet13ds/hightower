@@ -4,6 +4,9 @@ export default function Header() {
       {/* top bar: social icons + phone + contact */}
       <div className="top-header-bar">
         <div className="top-bar-container">
+          <button className="side-panel-trigger" id="side-panel-trigger" aria-label="Open Side Panel">
+            <i className="fa-solid fa-grip-lines"></i>
+          </button>
           <div className="top-bar-left">
             <a href="https://maps.app.goo.gl/Fmg9FsvBxmEQRGR48" target="_blank" rel="noopener noreferrer" className="top-bar-location">
               <i className="fa-solid fa-location-dot"></i> E. Silver Springs Blvd., Suite 300, Ocala, FL 34470
@@ -229,6 +232,64 @@ export default function Header() {
                 <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Side Panel for 992px to 1784px */}
+      <div className="desktop-side-panel-overlay" id="desktop-side-panel">
+        <div className="desktop-side-panel-content">
+          <div className="desktop-side-panel-header">
+            <button className="desktop-side-panel-close" id="desktop-side-panel-close" aria-label="Close Panel">
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div className="desktop-side-panel-body">
+            {/* Locations */}
+            <div className="side-panel-section side-panel-locations">
+              <h4 className="side-panel-title">Locations</h4>
+              <a href="https://maps.app.goo.gl/Fmg9FsvBxmEQRGR48" target="_blank" rel="noopener noreferrer" className="side-panel-location-link">
+                <i className="fa-solid fa-location-dot"></i> E. Silver Springs Blvd., Suite 300, Ocala, FL 34470
+              </a>
+              <a href="https://maps.app.goo.gl/6airePnfPt9mrthM9" target="_blank" rel="noopener noreferrer" className="side-panel-location-link">
+                <i className="fa-solid fa-location-dot"></i> 3259 W. Bryant Ave., Bell, FL 32619
+              </a>
+            </div>
+
+            {/* Central Items / Links */}
+            <div className="side-panel-section side-panel-nav">
+              <h4 className="side-panel-title">Quick Links</h4>
+              <a href="/faq.html" className="side-panel-nav-link">FAQ's</a>
+              <a href="/blogs.html" className="side-panel-nav-link">Blogs</a>
+              <a href="/news.html" className="side-panel-nav-link">News</a>
+              <a href="/client-testimonials.html" className="side-panel-nav-link">Testimonials</a>
+            </div>
+
+            {/* Social Icons */}
+            <div className="side-panel-section side-panel-socials">
+              <h4 className="side-panel-title">Follow Us</h4>
+              <div className="side-panel-social-icons">
+                <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="side-panel-section side-panel-contact">
+              <h4 className="side-panel-title">Contact</h4>
+              <a href="tel:+1 3526297777" className="side-panel-phone">
+                <i className="fa-solid fa-phone"></i>
+                <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
+                  <span>352-629-7777</span>
+                  <span style={{ fontSize: "12px", fontWeight: "500", color: "#BB8A55" }}>
+                    Llámenos en Español
+                  </span>
+                </span>
+              </a>
+              <a href="/contact-us.html" className="side-panel-contact-btn">CONTACT US</a>
             </div>
           </div>
         </div>
