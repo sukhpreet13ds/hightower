@@ -822,7 +822,7 @@ body {
 }
 
 .hero-subtitle-since {
-    font-size: 46px;
+    font-size: 30px;
     font-weight: 700;
     color: var(--button);
     margin-top: 10px;
@@ -1156,7 +1156,7 @@ body {
 /* Standard Desktop */
 @media (max-width: 1777px) {
     .hero-subtitle-since {
-        font-size: 42px;
+        font-size: 28px;
     }
 
     .hero-description {
@@ -2491,7 +2491,7 @@ body {
     }
 
     .hero-subtitle-since {
-        font-size: 42px;
+        font-size: 28px;
     }
 
     .hero-bottom-banner {
@@ -2591,7 +2591,7 @@ body {
     }
 
     .hero-subtitle-since {
-        font-size: 40px;
+        font-size: 28px;
     }
 
     .hero-bottom-banner {
@@ -2676,7 +2676,7 @@ body {
     }
 
     .hero-subtitle-since {
-        font-size: 45px;
+        font-size: 28px;
     }
 
     .logo-img-mobile {
