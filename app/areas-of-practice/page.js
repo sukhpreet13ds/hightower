@@ -183,7 +183,7 @@ export default function Page() {
               <img src="assets/law1.jpg" alt="Personal Injury Law" className="area-services-laws-bg-img" />
               <div className="area-services-laws-content">
                 <h2 className="area-services-laws-title">
-                  <a href="areas-of-practice/personal-injury-law.html" className="card-main-link">
+                  <a href="/areas-of-practice/personal-injury-law" className="card-main-link">
                     Personal Injury<br />Law
                   </a>
                 </h2>
@@ -197,8 +197,7 @@ export default function Page() {
                     at-fault
                     party is represented by an insurance company, or the...
                   </p>
-                  <a href="#" className="area-services-laws-button"
-                    data-open-consult="true">FREE CONSULTATION</a>
+                  <a href="/areas-of-practice/personal-injury-law" className="area-services-laws-button">READ MORE</a>
                 </div>
               </div>
             </div>
@@ -207,7 +206,7 @@ export default function Page() {
               <img src="assets/law2.jpg" alt="Car Accident Law" className="area-services-laws-bg-img" />
               <div className="area-services-laws-content">
                 <h2 className="area-services-laws-title">
-                  <a href="areas-of-practice/car-accident-lawyer.html" className="card-main-link">
+                  <a href="/areas-of-practice/car-accident-lawyer" className="card-main-link">
                     Car Accident<br />Law
                   </a>
                 </h2>
@@ -220,8 +219,7 @@ export default function Page() {
                     two
                     seconds. Most crashes are caused by the negligence or...
                   </p>
-                  <a href="#" className="area-services-laws-button"
-                    data-open-consult="true">FREE CONSULTATION</a>
+                  <a href="/areas-of-practice/car-accident-lawyer" className="area-services-laws-button">CONTINUE READING</a>
                 </div>
               </div>
             </div>
@@ -234,7 +232,7 @@ export default function Page() {
               <img src="assets/law3.jpg" alt="Work Accident Law" className="area-services-laws-bg-img" />
               <div className="area-services-laws-content">
                 <h2 className="area-services-laws-title below-title">
-                  <a href="areas-of-practice/work-accident-law.html" className="card-main-link">
+                  <a href="/areas-of-practice/work-accident-law" className="card-main-link">
                     Work Accident<br />Law
                   </a>
                 </h2>
@@ -248,8 +246,7 @@ export default function Page() {
                     work accident claims since 1976. As an injured worker under the workers’
                     compensation law you are entitled to receive...
                   </p>
-                  <a href="#" className="area-services-laws-button area-services-laws-button-small"
-                    data-open-consult="true">FREE CONSULTATION</a>
+                  <a href="/areas-of-practice/work-accident-law" className="area-services-laws-button area-services-laws-button-small">READ MORE</a>
                 </div>
               </div>
             </div>
@@ -258,7 +255,7 @@ export default function Page() {
               <img src="assets/law5.jpg" alt="Wrongful Death Law" className="area-services-laws-bg-img" />
               <div className="area-services-laws-content">
                 <h2 className="area-services-laws-title below-title">
-                  <a href="areas-of-practice/wrongful-death-law.html" className="card-main-link">
+                  <a href="/areas-of-practice/wrongful-death-law" className="card-main-link">
                     Wrongful Death<br />Law
                   </a>
                 </h2>
@@ -270,8 +267,7 @@ export default function Page() {
                     a
                     work accident, a dangerous product or the negligent...
                   </p>
-                  <a href="#" className="area-services-laws-button area-services-laws-button-small"
-                    data-open-consult="true">FREE CONSULTATION</a>
+                  <a href="/areas-of-practice/wrongful-death-law" className="area-services-laws-button area-services-laws-button-small">LEARN MORE</a>
                 </div>
               </div>
             </div>
@@ -281,7 +277,7 @@ export default function Page() {
                 className="area-services-laws-bg-img" />
               <div className="area-services-laws-content">
                 <h2 className="area-services-laws-title below-title">
-                  <a href="areas-of-practice/social-security-disability-law.html" className="card-main-link">
+                  <a href="/areas-of-practice/social-security-disability-law" className="card-main-link">
                     Social Security<br />Disability
                   </a>
                 </h2>
@@ -294,8 +290,7 @@ export default function Page() {
                     to
                     answer any questions you may have, ...
                   </p>
-                  <a href="#" className="area-services-laws-button area-services-laws-button-small"
-                    data-open-consult="true">FREE CONSULTATION</a>
+                  <a href="/areas-of-practice/social-security-disability-law" className="area-services-laws-button area-services-laws-button-small">CONTINUE READING</a>
                 </div>
               </div>
             </div>

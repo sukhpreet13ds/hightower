@@ -126,6 +126,7 @@ body {
 }
 
 @media (max-width: 1200px) {
+
     .top-bar-left,
     .top-bar-center {
         display: none;
@@ -4153,7 +4154,7 @@ body {
     gap: 80px;
     position: relative;
     z-index: 3;
-    margin-top: 35px;
+    margin-top: 82px;
 }
 
 .lawyer-profile-image-col {
@@ -4499,7 +4500,7 @@ body {
 
 .award-showcase-caption {
     font-family: var(--family-sans);
-    font-size: 28px;
+    font-size: 24px;
     color: #000000;
     line-height: 1.6;
     text-align: center;
@@ -4556,6 +4557,7 @@ body {
     padding: 40px 40px;
     position: relative;
     z-index: 2;
+    margin-top: 20px;
 }
 
 .blog-detail-container {
@@ -5715,6 +5717,7 @@ body {
     align-items: center;
     gap: 20px;
     transition: background-color 0.3s;
+    text-transform: uppercase;
 }
 
 .faq-accordion-header:hover {
@@ -6987,12 +6990,12 @@ body {
     .side-panel-trigger {
         display: inline-flex;
     }
-    
+
     .top-bar-left,
     .top-bar-center {
         display: none !important;
     }
-    
+
     .top-bar-container {
         justify-content: space-between !important;
         padding: 0 20px;

@@ -44,7 +44,7 @@ export default function Footer() {
             <a href="tel:352-622-7777" className="footer-phone">352-622-7777</a>
             
             <div className="footer-newsletter">
-              <h4>Signup For Our Newsletter</h4>
+              <h4>Sign Up for Our Newsletter</h4>
               <p>Receive our newsletter and stay updated on legal topics and current events.</p>
               <form className="newsletter-form" onSubmit={handleSubmit}>
                 <input 
@@ -82,10 +82,10 @@ export default function Footer() {
           <nav className="footer-nav">
             <ul className="footer-nav-list">
               <li><a href="/">Home</a></li>
-              <li><a href="/lawyers.html">Meet Our Attorneys</a></li>
-              <li><a href="/areas-of-practice.html">Practice Areas</a></li>
-              <li><a href="/notable-trial-results-settlements.html">Notable Case Results</a></li>
-              <li><a href="/contact-us.html">Contact Us</a></li>
+              <li><a href="/lawyers">Meet Our Attorneys</a></li>
+              <li><a href="/areas-of-practice">Practice Areas</a></li>
+              <li><a href="/notable-trial-results-settlements">Notable Case Results</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
             </ul>
           </nav>
         </div>
@@ -95,7 +95,7 @@ export default function Footer() {
             <div className="footer-bottom-meta">
               <p className="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.</p>
               <div className="legal-links">
-                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/privacy-policy">Privacy Policy</a>
                 <span className="legal-divider">|</span>
                 <a href="#">Site Map</a>
               </div>

@@ -26,15 +26,13 @@ export default async function Page() {
               Right.</span></h1>
 
             <p className="hero-description">
-              For nearly 50 years, the Hightower family has stood beside injured Floridians — battling
-              insurance companies so you can focus on what matters: healing. Your consultation is free, and
-              you pay nothing unless we make a recovery for you.
+              For nearly 50 years, Dan Hightower has stood beside injured Floridians, battling insurance companies so you can focus on what matters: healing. Today, the Hightower family and entire firm continue that work for injury victims throughout Florida. Your consultation is free, and you pay nothing unless we make a recovery for you.
             </p>
             <div className="hero-btn-group">
               <a href="#" className="btn-schedule" data-open-consult="true">
                 <img src="assets/cal.png" alt="Play" className="icon-play" /> SCHEDULE CONSULTATION
               </a>
-              <a href="videos.html" className="btn-get-know">
+              <a href="lawyers.html" className="btn-get-know">
                 <img src="assets/button-play.png" alt="Play" className="icon-play" /> GET TO KNOW US
               </a>
             </div>
@@ -136,7 +134,7 @@ export default async function Page() {
           </div>
           {/* Card 3 */}
           <div className="verdict-card">
-            <span className="verdict-label">WORK INJURED</span>
+            <span className="verdict-label">WORK INJURY</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="5.75"
               data-decimals="2">0.00</span> Million</h3>
             <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
@@ -613,8 +611,7 @@ export default async function Page() {
             </div>
 
             <div className="meet-quote">
-              <p className="quote-text"><span className="text-dim">“We take the cases we must win because it’s the
-                right thing—the ones we have to win. </span>Even if it’s hard. Especially if it’s
+              <p className="quote-text"><span className="text-dim">“We take serious injury or death cases we must win because it’s the right thing—the ones we have to win. </span> Even if it’s hard. Especially if it’s
                 hard.<span className="text-dim">”</span></p>
             </div>
           </div>
@@ -631,8 +628,7 @@ export default async function Page() {
             </div>
 
             <div className="meet-quote">
-              <p className="quote-text">“People call me when something terrible has happened and they need help.
-                It is personal to my clients, so it is personal to me. <span className="text-dim">We have to
+              <p className="quote-text">“People call me when they’ve been badly injured and they need help. It is personal to my clients, so it is personal to me. <span className="text-dim">We have to
                   win—no matter what.</span>”</p>
             </div>
 

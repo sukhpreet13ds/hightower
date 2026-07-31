@@ -552,12 +552,19 @@ export default function Page() {
         <div className="practice-law-container">
           <div className="partners-row">
             <div className="partners-image-col">
-              <img src="../assets/law-partners.png" alt="Daniel L. Hightower & Alison L. Hightower"
-                className="partners-img" />
+              <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+                <div style={{ flex: '1', textAlign: 'center' }}>
+                  <img src="../assets/Mark.N.jpg" alt="Mark N. Tipton" className="partners-img" style={{ width: '100%', height: 'auto', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
+                  <div style={{ marginTop: '10px', fontFamily: 'var(--family-sans)', fontWeight: '700', fontSize: '16px', color: '#111' }}>Mark N. Tipton</div>
+                </div>
+                <div style={{ flex: '1', textAlign: 'center' }}>
+                  <img src="../assets/Barbara-L-Richard.jpg" alt="Barbara L. Richard" className="partners-img" style={{ width: '100%', height: 'auto', borderRadius: '4px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
+                  <div style={{ marginTop: '10px', fontFamily: 'var(--family-sans)', fontWeight: '700', fontSize: '16px', color: '#111' }}>Barbara L. Richard</div>
+                </div>
+              </div>
             </div>
             <div className="partners-text-col">
-              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Daniel L. Hightower, Work
-                Accident Lawyer</h2>
+              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Hightower & Hightower, P.A. Work Accident Lawyers</h2>
               <p>Daniel L. Hightower, work accident lawyer, has been helping injured workers with their work
                 accident claims since 1976. As an injured worker under the workers’ compensation law you are
                 entitled to receive medical treatment and prescription drugs. You may also be entitled to
@@ -649,30 +656,10 @@ export default function Page() {
         </div>
 
         {/* Bottom Section: Premises Liability (lawyer-1.png on the right) */}
-        <div className="practice-law-container">
-          <div className="premises-row">
-            <div className="premises-text-col">
-              <h2 className="premises-section-title">Legitimate Claims</h2>
-              <h3 className="premises-section-subtitle">Honesty & Integrity</h3>
-              <div className="premises-divider"></div>
-              <p>Mr. Hightower will only represent people that he believes have legitimate claims. He will
-                require you to sign a letter promising that your injuries are legitimate and accident
-                related. He will have NOTHING to do with someone trying to pursue a fraudulent or frivolous
-                claim. Those people and those claims undermine the credibility of people with legitimate
-                claims and the ethical lawyers representing them.</p>
-              <p>The attorneys at Daniel L. Hightower, P.A. will help you navigate your way through this
-                process. We are on YOUR side. Contact us today for a free consultation.</p>
-              <p><strong><a href="../faq.html" className="inline-partner-link">Click here for our FAQs about Work
-                Accident Law.</a></strong></p>
-            </div>
-            <div className="premises-image-col">
-              <img src="../assets/lawyer-1.png" alt="Daniel L. Hightower" className="premises-lawyer-img" />
-            </div>
-          </div>
-        </div>
+
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="work">
-            <h2 className="faq-category-title">Work Accident Questions</h2>
+            <h2 className="faq-category-title">Wrongful Death</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
@@ -940,7 +927,7 @@ export default function Page() {
         {/* Premises Contact Callout (Gold Bar) */}
         <div className="premises-contact-bar">
           <div className="practice-law-container">
-            <p>If you have a potential premises liability claim, please feel free to <a
+            <p>If you have a potential work accident claim, please feel free to <a
               href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>

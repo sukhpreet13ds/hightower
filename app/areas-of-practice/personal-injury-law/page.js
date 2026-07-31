@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import ClaimsCarousel from '@/components/ClaimsCarousel';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
@@ -178,11 +179,24 @@ export default function Page() {
         }
 
         /* Claims Cards Row */
-        .claims-cards-row {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
+        .claims-carousel-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
             margin-bottom: 80px;
+        }
+
+        .claims-carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .claims-cards-row {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 100%;
         }
 
         .claim-card {
@@ -197,10 +211,46 @@ export default function Page() {
             text-align: center;
             transition: transform 0.3s ease;
             height: 240px;
+            flex: 0 0 calc((100% - 96px) / 5);
         }
 
         .claim-card:hover {
             transform: translateY(-5px);
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1D3656;
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+        
+        .carousel-arrow:hover:not(:disabled) {
+            background: #C2905B;
+        }
+        
+        .carousel-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .left-arrow {
+            left: -20px;
+        }
+        
+        .right-arrow {
+            right: -20px;
         }
 
         .claim-card-img {
@@ -226,40 +276,49 @@ export default function Page() {
 
         /* Products Liability Banner */
         .products-liability-banner {
-            display: flex;
             width: 100%;
-            min-height: 550px;
             margin-bottom: 80px;
             background-color: #0f1c2d;
-            overflow: hidden;
-        }
-
-        .banner-image-half {
-            flex: 0 0 50%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .banner-text-half {
-            flex: 0 0 50%;
-            background: linear-gradient(to right,
-                    transparent 0%,
-                    rgba(15, 28, 45, 0.3) 25%,
-                    rgba(15, 28, 45, 0.8) 45%,
-                    rgba(15, 28, 45, 0.95) 65%,
-                    #0f1c2d 100%);
-            display: flex;
-            align-items: center;
+            background: linear-gradient(180deg, rgba(29, 54, 86, 0.95) 0%, #0f1c2d 100%);
             padding: 60px 80px;
-            margin-left: -150px;
-            padding-left: 210px;
-            position: relative;
-            z-index: 2;
+            color: #fff;
         }
 
-        .banner-text-content {
-            max-width: 600px;
+        .banner-content-cols {
+            display: flex;
+            gap: 60px;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .banner-col-left,
+        .banner-col-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner-col-left p,
+        .banner-col-right p {
+            font-family: var(--family-sans);
+            font-size: 18px;
+            color: #dae1e8;
+            line-height: 1.7;
+            margin: 0 0 20px 0;
+        }
+
+        .banner-col-left li,
+        .banner-col-right li {
+            color: #fff !important;
+            font-family: var(--family-sans);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .banner-col-left li strong,
+        .banner-col-right li strong {
+            color: #fff;
         }
 
         .banner-section-title {
@@ -399,20 +458,12 @@ export default function Page() {
             }
 
             .products-liability-banner {
-                flex-direction: column;
-                min-height: auto;
-            }
-
-            .banner-image-half {
-                height: 350px;
-                flex: 0 0 100%;
-            }
-
-            .banner-text-half {
-                flex: 0 0 100%;
                 padding: 40px 30px;
-                margin-left: 0;
-                background: linear-gradient(180deg, rgba(29, 54, 86, 0.95) 0%, #0f1c2d 100%);
+            }
+
+            .banner-content-cols {
+                flex-direction: column;
+                gap: 30px;
             }
 
             .premises-row {
@@ -431,6 +482,18 @@ export default function Page() {
                 padding: 0 20px;
             }
 
+            .claims-carousel-container {
+                margin-bottom: 50px;
+            }
+
+            .carousel-arrow {
+                display: none !important;
+            }
+
+            .claims-carousel-viewport {
+                overflow: visible;
+            }
+
             .claims-cards-row {
                 display: flex;
                 overflow-x: auto;
@@ -438,8 +501,8 @@ export default function Page() {
                 -webkit-overflow-scrolling: touch;
                 gap: 16px;
                 padding-bottom: 15px;
-                margin-bottom: 50px;
                 scrollbar-width: none;
+                transform: none !important;
             }
 
             .claims-cards-row::-webkit-scrollbar {
@@ -595,66 +658,51 @@ export default function Page() {
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
-          <div className="claims-cards-row">
-            <div className="claim-card">
-              <img src="../assets/inside4.jpg" alt="Wrongful Death" className="claim-card-img" />
-              <div className="claim-card-title">Wrongful Death</div>
-            </div>
-            <div className="claim-card">
-              <img src="../assets/inside3.jpg" alt="Automobile Accidents" className="claim-card-img" />
-              <div className="claim-card-title">Automobile Accidents</div>
-            </div>
-            <div className="claim-card">
-              <img src="../assets/hh-blog3.jpg" alt="Work Accidents" className="claim-card-img" />
-              <div className="claim-card-title">Work Accidents</div>
-            </div>
-            <div className="claim-card">
-              <img src="../assets/inside1.jpg" alt="Dog Bites" className="claim-card-img" />
-              <div className="claim-card-title">Dog Bites</div>
-            </div>
-            <div className="claim-card">
-              <img src="../assets/inside2.jpg" alt="Slip and Falls" className="claim-card-img" />
-              <div className="claim-card-title">Slip and Falls</div>
-            </div>
-          </div>
+          <ClaimsCarousel />
         </div>
 
         {/* Middle Section: Products Liability Banner (mid image law-half.jpg) */}
         {/* Layout: split left (image), right (blue background with half-gradient and text) */}
-        <div className="products-liability-banner">
-          <div className="banner-image-half" style={{ backgroundImage: "url('../assets/mid-leftt.jpg')" }}>
-          </div>
-          <div className="banner-text-half">
-            <div className="banner-text-content">
-              <h2 className="banner-section-title">Products</h2>
-              <h3 className="banner-section-subtitle">Liability / Car Defects</h3>
-              <div className="banner-divider"></div>
-              <p>When products, including cars, are placed into the stream of commerce, the manufacturers,
-                distributors and retailers of those products have a responsibility to the consumers to meet
-                accepted standards of health and safety, to warn consumers of any hazards their products may
-                pose, and to remove dangerous products from the market. Unfortunately for us all, they don't
-                always uphold their legal responsibilities and innocent users of their products can be
-                seriously injured and sometimes even killed.</p>
-              <p>Products liability cases include: design defects, styling or construct defects. They can also
-                include cases involving other heavy equipment like construction equipment and scaffolding.
-                Finally, other ordinary household products like baby seats, appliances and electronic
-                devices can injure you or a loved one. It may be the result of substandard products or
-                failing to be properly warned about how to operate the product.</p>
-              <p>Unfortunately, too many of the governmental entities that are supposed to police the
-                manufacturers of products are too underfunded, understaffed or restricted by laws. Often
-                manufacturers, distributors and retailers are most concerned with the bottom line of their
-                business and not the safety of the consumer. That is why it is important there are lawyers
-                like those at Hightower & Hightower, P.A. that have the knowledge and the dedication to
-                their clients to aggressively pursue their claims and to fight the wrongs committed against
-                these unsuspecting consumers.</p>
-              <p>If you or a family member has been injured because of a defective product or design, please
-                feel free to contact us.</p>
+         <div className="products-liability-banner">
+          <div className="banner-content-cols">
+            <div className="banner-col-left">
+              <p>Our team works to build a strong case on your behalf. We investigate every aspect of your claim, from collecting evidence to consulting with experts and speaking with witnesses. We also negotiate assertively with insurance companies, using our experience to aim for a fair settlement that reflects the true extent of your losses. If negotiations stall, our trial attorneys are fully prepared to represent you in court. Throughout the process, we keep you informed and involved the entire way.</p>
+              
+              <h3 className="banner-section-subtitle" style={{ marginTop: '24px', textTransform: 'none' }}>What’s Involved in a Personal Injury Case?</h3>
+              <p>Every personal injury case begins with establishing that a responsible party owed you a duty of care and breached that duty, causing your injuries and leading to measurable damages. In practical terms, this means we will review accident reports, medical records, witness statements, and expert opinions to determine and demonstrate the fault and extent of your injuries and damages.</p>
+              <p>Damages due to an accident often include medical expenses, lost wages, future earning capacity, and non-economic harms like pain and suffering. When you come to our office, a personal injury attorney will carefully assess each aspect of your case.</p>
+              
+              <h3 className="banner-section-subtitle" style={{ marginTop: '24px', textTransform: 'none' }}>Important Elements of Any Personal Injury Case</h3>
+              <ul style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '15px 0', color: '#fff' }}>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Duty of Care:</strong> The responsible party owed a duty to you (such as keeping premises safe or driving responsibly).</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Breach of Duty:</strong> The responsible party failed to meet that duty.</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Causation:</strong> The breach of duty caused or significantly contributed to your injuries and damages.</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Damages:</strong> You suffered measurable harm such as medical bills, lost wages, or pain and suffering.</li>
+              </ul>
+            </div>
+
+            <div className="banner-col-right">
+              <h3 className="banner-section-subtitle" style={{ marginTop: '0', textTransform: 'none' }}>How Is The Value of Your Personal Injury Case Calculated?</h3>
+              <p>Determining the value of a personal injury claim depends on many factors, including:</p>
+              <ul style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '15px 0', color: '#fff' }}>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Severity of Injuries:</strong> The extent and permanence of your injuries.</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Medical Expenses:</strong> Past and future medical costs.</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Lost Wages & Earning Capacity:</strong> Missed workdays and any long-term impact on your ability to earn income.</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Pain and Suffering:</strong> Physical pain and emotional distress caused by the accident.</li>
+                <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Contributory Negligence:</strong> Whether you share any fault for the incident and to what extent.</li>
+              </ul>
+              
+              <p style={{ marginTop: '20px' }}>Our goal is to quantify and pursue all of the damages you are entitled to, covering medical bills, rehabilitative care, lost wages, reduced earning capacity, pain and suffering, and, in certain cases, punitive damages. Before we represent you, we offer a free consultation to discuss these details and help you understand potential outcomes.</p>
+              
+              <div style={{ marginTop: '30px', width: '100%' }}>
+                <img src="../assets/accident-thee.jpg" alt="Accident Representation" style={{ width: '100%', height: 'auto', borderRadius: '12px', display: 'block', objectFit: 'cover', boxShadow: '0 4px 20px rgba(0,0,0,0.3)' }} />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Section: Premises Liability (lawyer-1.png on the right) */}
-        <div className="practice-law-container">
+        {/* <div className="practice-law-container">
           <div className="premises-row">
             <div className="premises-text-col">
               <h2 className="premises-section-title">Premises</h2>
@@ -683,7 +731,7 @@ export default function Page() {
               <img src="../assets/lawyer-1.png" alt="Daniel L. Hightower" className="premises-lawyer-img" />
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="general">
             <h2 className="faq-category-title">General Questions</h2>
@@ -751,7 +799,7 @@ export default function Page() {
         {/* Premises Contact Callout (Gold Bar) */}
         <div className="premises-contact-bar">
           <div className="practice-law-container">
-            <p>If you have a potential premises liability claim, please feel free to <a
+            <p>If you have a potential personal injury claim, please feel free to <a
               href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>

@@ -132,7 +132,7 @@ export default function Page() {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 4px;
         }
 
         .partners-text-col p {
@@ -386,8 +386,28 @@ export default function Page() {
             opacity: 0.9;
         }
 
+        .investigation-grid,
+        .negligence-grid {
+            margin-top: 30px;
+        }
+
+        .investigation-card,
+        .negligence-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .investigation-card:hover,
+        .negligence-card:hover {
+            transform: translateY(-5px);
+        }
+
         /* Responsiveness for Detail Section */
         @media (max-width: 1024px) {
+            .investigation-grid,
+            .negligence-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
             .partners-row {
                 flex-direction: column;
                 gap: 30px;
@@ -427,6 +447,11 @@ export default function Page() {
         }
 
         @media (max-width: 768px) {
+            .investigation-grid,
+            .negligence-grid {
+                grid-template-columns: 1fr !important;
+            }
+
             .practice-law-container {
                 padding: 0 20px;
             }
@@ -566,6 +591,9 @@ export default function Page() {
                 half-century of experience protect it.</p>
               <p><strong><a href="../contact-us.html" className="inline-partner-link">Contact Us For a Free Case
                 Review</a></strong></p>
+              <div style={{ marginTop: '25px', width: '100%' }}>
+                <img src="../assets/moto-investigate.jpg" alt="Motorcycle Accident Investigation" style={{ width: '100%', height: 'auto', borderRadius: '8px', display: 'block', objectFit: 'cover', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }} />
+              </div>
             </div>
           </div>
 
@@ -672,43 +700,77 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Negligence Section (lawyer-2.png on the left, text on the right) */}
+        {/* Negligence Section with premium grid layout */}
         <div className="practice-law-container" style={{ marginTop: '80px', marginBottom: '80px' }}>
-          <div className="partners-row" style={{ marginBottom: '0' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
+            
+            {/* Why An Independent Investigation */}
+            <div>
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h2 className="premises-section-title">Why An Independent Investigation</h2>
+                <h3 className="premises-section-subtitle" style={{ margin: '5px auto 20px auto' }}>Is Necessary</h3>
+                <div className="premises-divider" style={{ margin: '0 auto 25px auto' }}></div>
+                <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>
+                  It’s an unfair reality, but many people assume motorcyclists are responsible for their own accidents. We’re here to flip that narrative. A professional investigation by our firm makes sure the facts, not assumptions, drive your case. We analyze:
+                </p>
+              </div>
 
-            <div className="partners-text-col">
-              <h2 className="premises-section-title">Why An Independent Investigation</h2>
-              <h3 className="premises-section-subtitle">Is Necessary</h3>
-              <div className="premises-divider"></div>
-              <p>It’s an unfair reality, but many people assume motorcyclists are responsible for their own
-                accidents. We’re here to flip that narrative. A professional investigation by our firm makes
-                sure the facts, not assumptions, drive your case. We analyze:</p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>•
-                Weather, lighting, and road hazards at the time of the crash.</p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>• GPS,
-                dash-cam footage, and GoPro “helmet cam” recordings.</p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '20px' }}>•
-                Forensic analysis of law enforcement records and expert witness statements.</p>
-
-              <h3 className="premises-section-subtitle"
-                style={{ fontSize: '24px', marginTop: '20px', marginBottom: '10px' }}>Overcoming The Burden of
-                Negligence</h3>
-              <p>To win your case, we must prove the four pillars of negligence:</p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>
-                <strong>1. Duty:</strong> The other driver had a legal obligation to follow the rules of the
-                road.
-              </p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>
-                <strong>2. Breach:</strong> They failed that duty (e.g. texting, speeding, or running a red
-                light).
-              </p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>
-                <strong>3. Causation:</strong> Their specific failure was the direct cause of the collision.
-              </p>
-              <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '20px' }}>
-                <strong>4. Damages:</strong> The crash resulted in actual physical or financial harm to you.
-              </p>
+              {/* Grid of 3 items */}
+              <div className="investigation-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+                <div className="investigation-card" style={{ padding: '30px', backgroundColor: '#fcfcfc', borderRadius: '16px', border: '1px solid #eaeaea', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '32px', color: 'var(--button)', marginBottom: '15px' }}><i className="fa-solid fa-cloud-sun"></i></div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '18px', fontWeight: '700', color: '#111', marginBottom: '10px' }}>Road Conditions</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#666', margin: '0', lineHeight: '1.6' }}>Weather, lighting, and road hazards at the time of the crash.</p>
+                </div>
+                <div className="investigation-card" style={{ padding: '30px', backgroundColor: '#fcfcfc', borderRadius: '16px', border: '1px solid #eaeaea', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '32px', color: 'var(--button)', marginBottom: '15px' }}><i className="fa-solid fa-video"></i></div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '18px', fontWeight: '700', color: '#111', marginBottom: '10px' }}>Video Evidence</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#666', margin: '0', lineHeight: '1.6' }}>GPS, dash-cam footage, and GoPro “helmet cam” recordings.</p>
+                </div>
+                <div className="investigation-card" style={{ padding: '30px', backgroundColor: '#fcfcfc', borderRadius: '16px', border: '1px solid #eaeaea', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', textAlign: 'center' }}>
+                  <div style={{ fontSize: '32px', color: 'var(--button)', marginBottom: '15px' }}><i className="fa-solid fa-magnifying-glass-chart"></i></div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '18px', fontWeight: '700', color: '#111', marginBottom: '10px' }}>Forensic Records</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#666', margin: '0', lineHeight: '1.6' }}>Forensic analysis of law enforcement records and expert witness statements.</p>
+                </div>
+              </div>
             </div>
+
+            {/* Overcoming The Burden of Negligence */}
+            <div style={{ marginTop: '20px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h2 className="premises-section-title">Overcoming The Burden</h2>
+                <h3 className="premises-section-subtitle" style={{ margin: '5px auto 20px auto' }}>Of Negligence</h3>
+                <div className="premises-divider" style={{ margin: '0 auto 25px auto' }}></div>
+                <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>
+                  To win your case, we must prove the four pillars of negligence:
+                </p>
+              </div>
+
+              {/* Grid of 4 pillars */}
+              <div className="negligence-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+                <div className="negligence-card" style={{ padding: '30px', backgroundColor: '#1D3656', borderRadius: '16px', color: '#fff', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 15px rgba(29,54,86,0.1)' }}>
+                  <div style={{ position: 'absolute', top: '15px', right: '20px', fontSize: '48px', fontWeight: '800', color: 'rgba(255,255,255,0.07)', fontFamily: 'var(--family-sans)' }}>01</div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '20px', fontWeight: '700', color: 'var(--button)', marginBottom: '12px' }}>Duty</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#dae1e8', margin: '0', lineHeight: '1.6' }}>The other driver had a legal obligation to follow the rules of the road.</p>
+                </div>
+                <div className="negligence-card" style={{ padding: '30px', backgroundColor: '#1D3656', borderRadius: '16px', color: '#fff', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 15px rgba(29,54,86,0.1)' }}>
+                  <div style={{ position: 'absolute', top: '15px', right: '20px', fontSize: '48px', fontWeight: '800', color: 'rgba(255,255,255,0.07)', fontFamily: 'var(--family-sans)' }}>02</div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '20px', fontWeight: '700', color: 'var(--button)', marginBottom: '12px' }}>Breach</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#dae1e8', margin: '0', lineHeight: '1.6' }}>They failed that duty (e.g. texting, speeding, or running a red light).</p>
+                </div>
+                <div className="negligence-card" style={{ padding: '30px', backgroundColor: '#1D3656', borderRadius: '16px', color: '#fff', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 15px rgba(29,54,86,0.1)' }}>
+                  <div style={{ position: 'absolute', top: '15px', right: '20px', fontSize: '48px', fontWeight: '800', color: 'rgba(255,255,255,0.07)', fontFamily: 'var(--family-sans)' }}>03</div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '20px', fontWeight: '700', color: 'var(--button)', marginBottom: '12px' }}>Causation</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#dae1e8', margin: '0', lineHeight: '1.6' }}>Their specific failure was the direct cause of the collision.</p>
+                </div>
+                <div className="negligence-card" style={{ padding: '30px', backgroundColor: '#1D3656', borderRadius: '16px', color: '#fff', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 15px rgba(29,54,86,0.1)' }}>
+                  <div style={{ position: 'absolute', top: '15px', right: '20px', fontSize: '48px', fontWeight: '800', color: 'rgba(255,255,255,0.07)', fontFamily: 'var(--family-sans)' }}>04</div>
+                  <h4 style={{ fontFamily: 'var(--family-sans)', fontSize: '20px', fontWeight: '700', color: 'var(--button)', marginBottom: '12px' }}>Damages</h4>
+                  <p style={{ fontFamily: 'var(--family-sans)', fontSize: '15px', color: '#dae1e8', margin: '0', lineHeight: '1.6' }}>The crash resulted in actual physical or financial harm to you.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -828,8 +890,6 @@ export default function Page() {
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
                     There is often an unfair bias among insurance adjusters and juries who assume motorcyclists are inherently reckless or speeding. An experienced motorcycle accident attorney counters this bias by reconstructing the accident scene, utilizing witness testimony, and presenting objective evidence to prove the other motorist was negligent.
-
-
                   </p>
                 </div>
               </div>
@@ -839,7 +899,7 @@ export default function Page() {
         {/* Premises Contact Callout (Gold Bar) */}
         <div className="premises-contact-bar">
           <div className="practice-law-container">
-            <p>If you have a potential premises liability claim, please feel free to <a
+            <p>If you have a potential motorcycle accident claim, please feel free to <a
               href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>

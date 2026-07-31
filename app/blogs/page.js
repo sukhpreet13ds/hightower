@@ -142,11 +142,11 @@ export default async function Page() {
           </div>
 
           <div className="videos-title-area">
-            <h1 className="videos-title-main">News &</h1>
-            <div className="videos-title-sub-wrapper">
+            <h1 className="videos-title-main">Blogs</h1>
+            {/* <div className="videos-title-sub-wrapper">
               <span className="videos-title-line"></span>
               <h2 className="videos-title-sub">Articles</h2>
-            </div>
+            </div> */}
           </div>
           <section className="blogs-grid-section">
             <div className="blogs-container-grid">
@@ -165,9 +165,9 @@ export default async function Page() {
                 ))}
               </div>
 
-              <div className="blogs-load-more-container">
+              {/* <div className="blogs-load-more-container">
                 <button className="blogs-load-more-btn">READ MORE ARTICLES</button>
-              </div>
+              </div> */}
             </div>
           </section>
         </div>

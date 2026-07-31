@@ -861,7 +861,7 @@ export default function Page() {
         </div>
         <div className="premises-contact-bar">
           <div className="practice-law-container">
-            <p>If you have a potential premises liability claim, please feel free to <a
+            <p>If you have a potential car accident claim, please feel free to <a
               href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>

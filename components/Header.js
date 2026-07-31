@@ -18,10 +18,10 @@ export default function Header() {
 
           <div className="top-bar-right">
             <div className="top-bar-center">
-              <a href="/faq.html" className="top-bar-center-link">FAQ's</a>
-              <a href="/blogs.html" className="top-bar-center-link">Blogs</a>
-              <a href="/news.html" className="top-bar-center-link">News</a>
-              <a href="/client-testimonials.html" className="top-bar-center-link">Testimonials</a>
+              <a href="/faq" className="top-bar-center-link">FAQ's</a>
+              <a href="/blogs" className="top-bar-center-link">Blogs</a>
+              <a href="/news" className="top-bar-center-link">News</a>
+              <a href="/client-testimonials" className="top-bar-center-link">Testimonials</a>
             </div>
             <div className="social-icons">
               <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
@@ -40,7 +40,7 @@ export default function Header() {
                   </span>
                 </span>
               </a>
-              <a href="/contact-us.html" className="contact-btn">CONTACT US</a>
+              <a href="/contact-us" className="contact-btn">CONTACT US</a>
             </div>
           </div>
         </div>
@@ -59,35 +59,35 @@ export default function Header() {
                 <a href="#" className="nav-link-item">About Us <i className="fa-solid fa-chevron-down dropdown-arrow"></i></a>
                 <ul className="dropdown-menu">
                   <li className="has-submenu">
-                    <a href="/lawyers.html" className="submenu-trigger-link">Lawyers <i className="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                    <a href="/lawyers" className="submenu-trigger-link">Lawyers <i className="fa-solid fa-chevron-right submenu-arrow"></i></a>
                     <ul className="submenu">
-                      <li><a href="/lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
-                      <li><a href="/lawyers/alison-l-hightower.html">Alison L. Hightower</a></li>
-                      <li><a href="/lawyers/mark-n-tipton.html">Mark N. Tipton</a></li>
-                      <li><a href="/lawyers/barbara-l-richard.html">Barbara L. Richard</a></li>
-                      <li><a href="/lawyers/dave-guiley.html">Dave D. Guiley</a></li>
-                      <li><a href="/lawyers/shawn-e-clark.html">Shawn E. Clark</a></li>
+                      <li><a href="/lawyers/daniel-l-hightower">Daniel L. Hightower</a></li>
+                      <li><a href="/lawyers/alison-l-hightower">Alison L. Hightower</a></li>
+                      <li><a href="/lawyers/mark-n-tipton">Mark N. Tipton</a></li>
+                      <li><a href="/lawyers/barbara-l-richard">Barbara L. Richard</a></li>
+                      <li><a href="/lawyers/dave-guiley">Dave D. Guiley</a></li>
+                      <li><a href="/lawyers/shawn-e-clark">Shawn E. Clark</a></li>
                     </ul>
                   </li>
-                  <li><a href="/videos.html">Videos</a></li>
-                  <li><a href="/community-service.html">Community Service</a></li>
+                  <li><a href="/videos">Videos</a></li>
+                  <li><a href="/community-service">Community Service</a></li>
                 </ul>
               </li>
               <li className="nav-item has-dropdown">
                 <a href="#" className="nav-link-item">Practice Areas <i className="fa-solid fa-chevron-down dropdown-arrow"></i></a>
                 <ul className="dropdown-menu">
-                  <li><a href="/areas-of-practice.html">Areas of Practice </a></li>
-                  <li><a href="/areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
-                  <li><a href="/areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
-                  <li><a href="/areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
-                  <li><a href="/areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
-                  <li><a href="/areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
-                  <li><a href="/areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
-                  <li><a href="/areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a></li>
+                  <li><a href="/areas-of-practice">Areas of Practice </a></li>
+                  <li><a href="/areas-of-practice/personal-injury-law">Personal Injury</a></li>
+                  <li><a href="/areas-of-practice/car-accident-lawyer">Car Accident Lawyer</a></li>
+                  <li><a href="/areas-of-practice/motorcycle-accident-lawyer">Motorcycle Accident Lawyer</a></li>
+                  <li><a href="/areas-of-practice/truck-accident-lawyer">Truck Accident Lawyer</a></li>
+                  <li><a href="/areas-of-practice/work-accident-law">Work Accident Law</a></li>
+                  <li><a href="/areas-of-practice/wrongful-death-law">Wrongful Death Law</a></li>
+                  <li><a href="/areas-of-practice/social-security-disability-law">Social Security Disability Law</a></li>
                 </ul>
               </li>
               <li className="nav-item">
-                <a href="/notable-trial-results-settlements.html" className="nav-link-item">Notable Trial Results & Settlements</a>
+                <a href="/notable-trial-results-settlements" className="nav-link-item">Notable Trial Results & Settlements</a>
               </li>
             </ul>
           </nav>
@@ -108,44 +108,44 @@ export default function Header() {
               <a href="#" className="floating-nav-link-item">About Us <i className="fa-solid fa-chevron-down dropdown-arrow"></i></a>
               <ul className="floating-dropdown-menu">
                 <li className="has-submenu">
-                  <a href="/lawyers.html" className="submenu-trigger-link">Lawyers <i className="fa-solid fa-chevron-right submenu-arrow"></i></a>
+                  <a href="/lawyers" className="submenu-trigger-link">Lawyers <i className="fa-solid fa-chevron-right submenu-arrow"></i></a>
                   <ul className="submenu">
-                    <li><a href="/lawyers/daniel-l-hightower.html">Daniel L. Hightower</a></li>
-                    <li><a href="/lawyers.html#alison">Alison L. Hightower</a></li>
-                    <li><a href="/lawyers.html#daniel">Mark N. Tipton</a></li>
-                    <li><a href="/lawyers.html#alison">Barbara L. Richard</a></li>
-                    <li><a href="/lawyers.html#daniel">Dave D. Guiley</a></li>
-                    <li><a href="/lawyers.html#alison">Shawn E. Clark</a></li>
+                    <li><a href="/lawyers/daniel-l-hightower">Daniel L. Hightower</a></li>
+                    <li><a href="/lawyers#alison">Alison L. Hightower</a></li>
+                    <li><a href="/lawyers#daniel">Mark N. Tipton</a></li>
+                    <li><a href="/lawyers#alison">Barbara L. Richard</a></li>
+                    <li><a href="/lawyers#daniel">Dave D. Guiley</a></li>
+                    <li><a href="/lawyers#alison">Shawn E. Clark</a></li>
                   </ul>
                 </li>
-                <li><a href="/videos.html">Videos</a></li>
-                <li><a href="/community-service.html">Community Service</a></li>
+                <li><a href="/videos">Videos</a></li>
+                <li><a href="/community-service">Community Service</a></li>
               </ul>
             </li>
             <li className="floating-nav-item has-dropdown">
               <a href="#" className="floating-nav-link-item">Practice Areas <i className="fa-solid fa-chevron-down dropdown-arrow"></i></a>
               <ul className="floating-dropdown-menu">
-                <li><a href="/areas-of-practice.html">Areas of Practice </a></li>
-                <li><a href="/areas-of-practice/personal-injury-law.html">Personal Injury</a></li>
-                <li><a href="/areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a></li>
-                <li><a href="/areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a></li>
-                <li><a href="/areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a></li>
-                <li><a href="/areas-of-practice/work-accident-law.html">Work Accident Law</a></li>
-                <li><a href="/areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a></li>
-                <li><a href="/areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a></li>
+                <li><a href="/areas-of-practice">Areas of Practice </a></li>
+                <li><a href="/areas-of-practice/personal-injury-law">Personal Injury</a></li>
+                <li><a href="/areas-of-practice/car-accident-lawyer">Car Accident Lawyer</a></li>
+                <li><a href="/areas-of-practice/motorcycle-accident-lawyer">Motorcycle Accident Lawyer</a></li>
+                <li><a href="/areas-of-practice/truck-accident-lawyer">Truck Accident Lawyer</a></li>
+                <li><a href="/areas-of-practice/work-accident-law">Work Accident Law</a></li>
+                <li><a href="/areas-of-practice/wrongful-death-law">Wrongful Death Law</a></li>
+                <li><a href="/areas-of-practice/social-security-disability-law">Social Security Disability Law</a></li>
               </ul>
             </li>
             <li className="floating-nav-item">
-              <a href="/notable-trial-results-settlements.html" className="floating-nav-link-item">Notable Trial Results & Settlements</a>
+              <a href="/notable-trial-results-settlements" className="floating-nav-link-item">Notable Trial Results & Settlements</a>
             </li>
             <li className="floating-nav-item">
-              <a href="/faq.html" className="floating-nav-link-item">FAQ's</a>
+              <a href="/faq" className="floating-nav-link-item">FAQ's</a>
             </li>
             <li className="floating-nav-item">
-              <a href="/blogs.html" className="floating-nav-link-item">Blogs</a>
+              <a href="/blogs" className="floating-nav-link-item">Blogs</a>
             </li>
             <li className="floating-nav-item">
-              <a href="/news.html" className="floating-nav-link-item">News</a>
+              <a href="/news" className="floating-nav-link-item">News</a>
             </li>
           </ul>
         </nav>
@@ -181,17 +181,17 @@ export default function Header() {
                       <span>Lawyers</span> <i className="fa-solid fa-chevron-down sub-arrow"></i>
                     </button>
                     <div className="sub-accordion-panel">
-                      <a href="/lawyers.html">Lawyers</a>
-                      <a href="/lawyers/daniel-l-hightower.html">Daniel L. Hightower</a>
-                      <a href="/lawyers.html#alison">Alison L. Hightower</a>
-                      <a href="/lawyers.html#daniel">Mark N. Tipton</a>
-                      <a href="/lawyers.html#alison">Barbara L. Richard</a>
-                      <a href="/lawyers.html#daniel">Dave D. Guiley</a>
-                      <a href="/lawyers.html#alison">Shawn E. Clark</a>
+                      <a href="/lawyers">Lawyers</a>
+                      <a href="/lawyers/daniel-l-hightower">Daniel L. Hightower</a>
+                      <a href="/lawyers#alison">Alison L. Hightower</a>
+                      <a href="/lawyers#daniel">Mark N. Tipton</a>
+                      <a href="/lawyers#alison">Barbara L. Richard</a>
+                      <a href="/lawyers#daniel">Dave D. Guiley</a>
+                      <a href="/lawyers#alison">Shawn E. Clark</a>
                     </div>
                   </div>
-                  <a href="/videos.html">Videos</a>
-                  <a href="/community-service.html">Community Service</a>
+                  <a href="/videos">Videos</a>
+                  <a href="/community-service">Community Service</a>
                 </div>
               </div>
 
@@ -200,25 +200,25 @@ export default function Header() {
                   <span>Practice Areas</span> <i className="fa-solid fa-chevron-down"></i>
                 </button>
                 <div className="accordion-panel">
-                  <a href="/areas-of-practice.html">Areas of Practice </a>
-                  <a href="/areas-of-practice/personal-injury-law.html">Personal Injury</a>
-                  <a href="/areas-of-practice/car-accident-lawyer.html">Car Accident Lawyer</a>
-                  <a href="/areas-of-practice/motorcycle-accident-lawyer.html">Motorcycle Accident Lawyer</a>
-                  <a href="/areas-of-practice/truck-accident-lawyer.html">Truck Accident Lawyer</a>
-                  <a href="/areas-of-practice/work-accident-law.html">Work Accident Law</a>
-                  <a href="/areas-of-practice/wrongful-death-law.html">Wrongful Death Law</a>
-                  <a href="/areas-of-practice/social-security-disability-law.html">Social Security Disability Law</a>
+                  <a href="/areas-of-practice">Areas of Practice </a>
+                  <a href="/areas-of-practice/personal-injury-law">Personal Injury</a>
+                  <a href="/areas-of-practice/car-accident-lawyer">Car Accident Lawyer</a>
+                  <a href="/areas-of-practice/motorcycle-accident-lawyer">Motorcycle Accident Lawyer</a>
+                  <a href="/areas-of-practice/truck-accident-lawyer">Truck Accident Lawyer</a>
+                  <a href="/areas-of-practice/work-accident-law">Work Accident Law</a>
+                  <a href="/areas-of-practice/wrongful-death-law">Wrongful Death Law</a>
+                  <a href="/areas-of-practice/social-security-disability-law">Social Security Disability Law</a>
                 </div>
               </div>
 
-              <a href="/notable-trial-results-settlements.html" className="mobile-nav-item-link">Notable Trial Results & Settlements</a>
-              <a href="/faq.html" className="mobile-nav-item-link">FAQ's</a>
-              <a href="/blogs.html" className="mobile-nav-item-link">Blogs</a>
-              <a href="/news.html" className="mobile-nav-item-link">News</a>
+              <a href="/notable-trial-results-settlements" className="mobile-nav-item-link">Notable Trial Results & Settlements</a>
+              <a href="/faq" className="mobile-nav-item-link">FAQ's</a>
+              <a href="/blogs" className="mobile-nav-item-link">Blogs</a>
+              <a href="/news" className="mobile-nav-item-link">News</a>
             </div>
 
             <div className="mobile-menu-footer">
-              <a href="/contact-us.html" className="mobile-contact-btn">CONTACT US</a>
+              <a href="/contact-us" className="mobile-contact-btn">CONTACT US</a>
               <a href="tel:+1 3526297777" className="mobile-phone-link">
                 <i className="fa-solid fa-phone"></i>
                 <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
@@ -260,10 +260,10 @@ export default function Header() {
             {/* Central Items / Links */}
             <div className="side-panel-section side-panel-nav">
               <h4 className="side-panel-title">Quick Links</h4>
-              <a href="/faq.html" className="side-panel-nav-link">FAQ's</a>
-              <a href="/blogs.html" className="side-panel-nav-link">Blogs</a>
-              <a href="/news.html" className="side-panel-nav-link">News</a>
-              <a href="/client-testimonials.html" className="side-panel-nav-link">Testimonials</a>
+              <a href="/faq" className="side-panel-nav-link">FAQ's</a>
+              <a href="/blogs" className="side-panel-nav-link">Blogs</a>
+              <a href="/news" className="side-panel-nav-link">News</a>
+              <a href="/client-testimonials" className="side-panel-nav-link">Testimonials</a>
             </div>
 
             {/* Social Icons */}
@@ -289,7 +289,7 @@ export default function Header() {
                   </span>
                 </span>
               </a>
-              <a href="/contact-us.html" className="side-panel-contact-btn">CONTACT US</a>
+              <a href="/contact-us" className="side-panel-contact-btn">CONTACT US</a>
             </div>
           </div>
         </div>

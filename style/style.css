@@ -4087,7 +4087,7 @@ body {
     gap: 80px;
     position: relative;
     z-index: 3;
-    margin-top: 35px;
+    margin-top: 82px;
 }
 
 .lawyer-profile-image-col {
@@ -4433,7 +4433,7 @@ body {
 
 .award-showcase-caption {
     font-family: var(--family-sans);
-    font-size: 28px;
+    font-size: 24px;
     color: #000000;
     line-height: 1.6;
     text-align: center;
@@ -5649,6 +5649,7 @@ body {
     align-items: center;
     gap: 20px;
     transition: background-color 0.3s;
+    text-transform: uppercase;
 }
 
 .faq-accordion-header:hover {
@@ -6469,6 +6470,7 @@ body {
     border-bottom: 2px solid var(--button);
     transition: color 0.3s;
 }
+
 /* ============================================================================
  * Blog detail additions: source logo, Post Tags, Share bar, inline tables/images
  * ========================================================================== */
@@ -6477,6 +6479,7 @@ body {
     margin: 0 auto 10px;
     padding: 0 20px;
 }
+
 .blog-source-logo img {
     max-height: 70px;
     width: auto;
@@ -6489,12 +6492,14 @@ body {
     border-radius: 8px;
     margin: 16px 0;
 }
+
 .blog-article-content table.blog-table {
     border-collapse: collapse;
     width: 100%;
     margin: 18px 0;
     font-size: 0.95rem;
 }
+
 .blog-article-content table.blog-table th,
 .blog-article-content table.blog-table td {
     border: 1px solid #e0d6c8;
@@ -6502,11 +6507,13 @@ body {
     text-align: left;
     vertical-align: top;
 }
+
 .blog-article-content table.blog-table th {
     background: #f3ede4;
     font-weight: 700;
     color: #1c2433;
 }
+
 .blog-article-content table.blog-table tr:nth-child(even) td {
     background: #faf7f2;
 }
@@ -6518,17 +6525,20 @@ body {
     padding: 22px 20px 0;
     border-top: 1px solid #e7e2d8;
 }
+
 .blog-tags-title {
     font-size: 1.05rem;
     font-weight: 700;
     color: #1c2433;
     margin-bottom: 14px;
 }
+
 .blog-tags-list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .blog-tag {
     display: inline-block;
     background: #f1f1f1;
@@ -6554,29 +6564,39 @@ body {
     flex-wrap: wrap;
     gap: 14px;
 }
+
 .blog-share-label {
     font-size: 1.05rem;
     font-weight: 700;
     color: #2b3142;
 }
+
 .blog-share-icons {
     display: flex;
     align-items: center;
     gap: 18px;
 }
+
 .blog-share-icons a {
     color: #9aa0ab;
     font-size: 1.05rem;
     transition: color 0.18s ease, transform 0.18s ease;
 }
+
 .blog-share-icons a:hover {
     color: #c2905b;
     transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
-    .blog-share { justify-content: center; text-align: center; }
-    .blog-share-label { width: 100%; }
+    .blog-share {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .blog-share-label {
+        width: 100%;
+    }
 }
 
 /* DESKTOP SIDE PANEL & RESPONSIVE TRIGGER STYLES (992px to 1784px) */
@@ -6802,12 +6822,12 @@ body {
     .side-panel-trigger {
         display: inline-flex;
     }
-    
+
     .top-bar-left,
     .top-bar-center {
         display: none !important;
     }
-    
+
     .top-bar-container {
         justify-content: space-between !important;
         padding: 0 20px;

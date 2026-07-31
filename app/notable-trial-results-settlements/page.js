@@ -224,7 +224,7 @@ export default function Page() {
 
           {/* Card 2 */}
           <div className="notable-card">
-            <h3 className="notable-card-title">2) $1.26 MILLION LUMP SUM SETTLEMENT FOR MOTOR VEHICLE CRASH VICTIM
+            <h3 className="notable-card-title">2) $1.26 MILLION SETTLEMENT FOR MOTOR VEHICLE CRASH VICTIM
             </h3>
             <p className="notable-card-paragraph">
               Mr. G., age 54, was a seat-belted passenger in his friend’s car, proceeding along the road at a
@@ -345,7 +345,7 @@ export default function Page() {
               Florida jury and helped his client, a 42 year old woman, recover a jury verdict of $520,000.00.
               Mr. Hightower’s client had been seriously and permanently injured in a rear end collision caused
               by the carelessness of the driver of a commercial van. The insurance company’s last settlement
-              offer before trial was $58,000.00.
+              offer before trial was <b>$58,000.00</b>  .
             </p>
           </div>
           <div className="notable-card">
@@ -359,7 +359,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">9) $2.1 MILLION TRAUMATIC BRAIN INJURY
+            <h3 className="notable-card-title">9) $2.1 MILLION SETTLEMENT FOR TRAUMATIC BRAIN INJURY
             </h3>
             <p className="notable-card-paragraph">
               Mr. R.’s vehicle was hit on the driver’s side door by a commercial truck causing a terrible
@@ -380,7 +380,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">11) $700,000.00 LUMP SUM SETTLEMENT FOR MOTOR VEHICLE CRASH VICTIM
+            <h3 className="notable-card-title">11) $700,000.00 SETTLEMENT FOR MOTOR VEHICLE CRASH VICTIM
             </h3>
             <p className="notable-card-paragraph">
               J.R. was rear-ended by a tractor-trailer going 35mph and required neck surgery from his crash
@@ -390,7 +390,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">12) $600,840.00 WORKERS’ COMPENSATION LUMP SUM SETTLEMENT
+            <h3 className="notable-card-title">12) $600,840.00 WORKERS’ COMPENSATION LUMP SUM SETTLEMENT FOR INJURED WORKER
             </h3>
             <p className="notable-card-paragraph">
               A diesel mechanic injured their neck while torquing a cylinder head for over 45 minutes.
@@ -407,7 +407,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">14) $829,500.00 SETTLEMENT BEFORE TRIAL
+            <h3 className="notable-card-title">14) $829,500.00 SETTLEMENT FOR MOTOR VEHICLE CRASH VICTIM BEFORE TRIAL
             </h3>
             <p className="notable-card-paragraph">
               A reckless driver attempted a u-turn and veered into our client’s lane. Our client had permanent
@@ -415,7 +415,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">15) $2,013,165.00 LUMP SUM SETTLEMENT FOR A WORK ACCIDENT
+            <h3 className="notable-card-title">15) $2,013.165.00 LUMP SUM SETTLEMENT FOR INJURED WORKER
 
             </h3>
             <p className="notable-card-paragraph">
@@ -434,7 +434,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">17) $750,000.00 MOTOR VEHICLE CRASH VICTIM
+            <h3 className="notable-card-title">17) $750,000.00 SETTLEMENT FOR MOTOR VEHICLE CRASH VICTIM
 
             </h3>
             <p className="notable-card-paragraph">
