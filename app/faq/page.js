@@ -222,17 +222,7 @@ export default function Page() {
           {/* Grid Layout: Sidebar Filter & Content */}
           <div className="faq-layout-grid">
             {/* Sidebar Filters */}
-            <aside className="faq-sidebar">
-              <button className="faq-filter-btn active" data-category="all">• General Questions</button>
-              {/* <button className="faq-filter-btn" data-category="general">• General Questions</button>
-              <button className="faq-filter-btn" data-category="auto">• Auto Accident Questions</button>
-              <button className="faq-filter-btn" data-category="motorcycle">• Motorcycle Accident
-                  Questions</button>
-              <button className="faq-filter-btn" data-category="trucking">• Trucking Accident Questions</button>
-              <button className="faq-filter-btn" data-category="work">• Work Accident Questions</button>
-              <button className="faq-filter-btn" data-category="social-security">• Social Security Disability
-                  Questions</button> */}
-            </aside>
+         
 
             {/* FAQ Question Accordions */}
             <div className="faq-content-area">

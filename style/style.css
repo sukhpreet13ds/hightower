@@ -4704,7 +4704,7 @@ body {
             rgba(0, 0, 0, 0) 55%),
         linear-gradient(rgba(0, 0, 0, 0.25),
             rgba(0, 0, 0, 0.45)),
-        url('../assets/personal-law-hero.png');
+        url('../assets/personal-law-hero.jpg');
 
     background-size: cover;
     background-position: center;

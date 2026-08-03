@@ -120,7 +120,7 @@ export default async function Page() {
         <div className="verdicts-row">
           {/* Card 1 */}
           <div className="verdict-card">
-            <span className="verdict-label">PERSONAL INJURED</span>
+            <span className="verdict-label">PERSONAL INJURY</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="9.6"
               data-decimals="1">0.0</span> Million</h3>
             <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
