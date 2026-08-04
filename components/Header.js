@@ -183,11 +183,11 @@ export default function Header() {
                     <div className="sub-accordion-panel">
                       <a href="/lawyers">Lawyers</a>
                       <a href="/lawyers/daniel-l-hightower">Daniel L. Hightower</a>
-                      <a href="/lawyers#alison">Alison L. Hightower</a>
-                      <a href="/lawyers#daniel">Mark N. Tipton</a>
-                      <a href="/lawyers#alison">Barbara L. Richard</a>
-                      <a href="/lawyers#daniel">Dave D. Guiley</a>
-                      <a href="/lawyers#alison">Shawn E. Clark</a>
+                      <a href="/lawyers/alison-l-hightower">Alison L. Hightower</a>
+                      <a href="/lawyers/mark-n-tipton">Mark N. Tipton</a>
+                      <a href="/lawyers/barbara-l-richard">Barbara L. Richard</a>
+                      <a href="/lawyers/dave-guiley">Dave D. Guiley</a>
+                      <a href="/lawyers/shawn-e-clark">Shawn E. Clark</a>
                     </div>
                   </div>
                   <a href="/videos">Videos</a>
