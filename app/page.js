@@ -117,7 +117,7 @@ export default async function Page() {
 
       {/* H&H Million Section (Notable Verdicts) */}
       <section className="hh-million-section" id="hh-million-section">
-        <div className="verdicts-row">
+        <div className="verdicts-row">  
           {/* Card 1 */}
           <div className="verdict-card">
             <span className="verdict-label">PERSONAL INJURY</span>
@@ -444,7 +444,7 @@ export default async function Page() {
             </div>
 
             {/* Card 2: Video Review */}
-            <div className="review-card video-card" data-video-src="assets/client-v-1.mp4">
+            {/* <div className="review-card video-card" data-video-src="assets/client-v-1.mp4">
               <div className="video-thumbnail-container">
                 <video src="assets/client-v-1.mp4" muted loop playsInline
                   className="card-video-element"></video>
@@ -452,7 +452,7 @@ export default async function Page() {
                   <i className="fa-solid fa-play"></i>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Card 3: Text Review */}
             <div className="review-card text-card">
@@ -473,7 +473,7 @@ export default async function Page() {
             </div>
 
             {/* Card 4: Video Review */}
-            <div className="review-card video-card" data-video-src="assets/client-v-2.mp4">
+            {/* <div className="review-card video-card" data-video-src="assets/client-v-2.mp4">
               <div className="video-thumbnail-container">
                 <video src="assets/client-v-2.mp4" muted loop playsInline
                   className="card-video-element"></video>
@@ -481,7 +481,7 @@ export default async function Page() {
                   <i className="fa-solid fa-play"></i>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Card 5: Text Review */}
             <div className="review-card text-card">
@@ -522,7 +522,7 @@ export default async function Page() {
             </div>
 
             {/* Card 2 Duplicate */}
-            <div className="review-card video-card" data-video-src="assets/client-v-1.mp4">
+            {/* <div className="review-card video-card" data-video-src="assets/client-v-1.mp4">
               <div className="video-thumbnail-container">
                 <video src="assets/client-v-1.mp4" muted loop playsInline
                   className="card-video-element"></video>
@@ -530,7 +530,7 @@ export default async function Page() {
                   <i className="fa-solid fa-play"></i>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Card 3 Duplicate */}
             <div className="review-card text-card">
@@ -551,7 +551,7 @@ export default async function Page() {
             </div>
 
             {/* Card 4 Duplicate */}
-            <div className="review-card video-card" data-video-src="assets/client-v-2.mp4">
+            {/* <div className="review-card video-card" data-video-src="assets/client-v-2.mp4">
               <div className="video-thumbnail-container">
                 <video src="assets/client-v-2.mp4" muted loop playsInline
                   className="card-video-element"></video>
@@ -559,7 +559,7 @@ export default async function Page() {
                   <i className="fa-solid fa-play"></i>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Card 5 Duplicate */}
             <div className="review-card text-card">
@@ -628,8 +628,7 @@ export default async function Page() {
             </div>
 
             <div className="meet-quote">
-              <p className="quote-text">“People call me when they’ve been badly injured and they need help. It is personal to my clients, so it is personal to me. <span className="text-dim">We have to
-                  win—no matter what.</span>”</p>
+              <p className="quote-text">“People call me when they’ve been badly injured and they need help. It is personal to my clients, so it is personal to me. <span className="text-dim">We have to win for them—no matter what.</span>”</p>
             </div>
 
             <div className="meet-action">

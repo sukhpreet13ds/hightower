@@ -552,7 +552,7 @@ export default function Page() {
         <div className="practice-law-container">
           <div className="partners-row">
             <div className="partners-image-col">
-              <img src="../assets/law-partners.png" alt="Daniel L. Hightower & Alison L. Hightower"
+              <img src="../assets/truck-crash.jpg" alt="Daniel L. Hightower & Alison L. Hightower"
                 className="partners-img" />
             </div>
             <div className="partners-text-col">

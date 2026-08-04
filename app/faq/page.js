@@ -241,8 +241,8 @@ export default function Page() {
                         Our Ocala personal injury lawyers represent clients across a wide range of accident and injury cases, including:
                       </p>
                       <ul className="faq-list-items">
-                        <li>Car accidents</li>
-                        <li>Motorcycle accidents</li>
+                        <li>Car Accidents</li>
+                        <li>Motorcycle Accidents</li>
                         <li>Truck Accidents</li>
                         <li>Slip and Falls</li>
                         <li>Wrongful Death</li>

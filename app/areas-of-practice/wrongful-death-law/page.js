@@ -370,7 +370,7 @@ export default function Page() {
 
         .premises-contact-bar p {
             font-family: var(--family-sans);
-            font-size: 18px;
+            font-size: 35px;
             font-weight: 700;
             color: #fff;
             margin: 0;
@@ -652,7 +652,7 @@ export default function Page() {
         </div>
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="work">
-            <h2 className="faq-category-title">Work Accident Questions</h2>
+            <h2 className="faq-category-title">Wrongful Death Questions</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">

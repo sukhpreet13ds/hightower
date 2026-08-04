@@ -344,8 +344,8 @@ export default function Page() {
               Mr. Hightower assisted by his associate, Mr. Guiley, tried a case before a Marion County,
               Florida jury and helped his client, a 42 year old woman, recover a jury verdict of $520,000.00.
               Mr. Hightower’s client had been seriously and permanently injured in a rear end collision caused
-              by the carelessness of the driver of a commercial van. The insurance company’s last settlement
-              offer before trial was <b>$58,000.00</b>  .
+              by the carelessness of the driver of a commercial van. <b>The insurance company’s last settlement
+              offer before trial was $58,000.00</b>.
             </p>
           </div>
           <div className="notable-card">
@@ -399,7 +399,7 @@ export default function Page() {
             </p>
           </div>
           <div className="notable-card">
-            <h3 className="notable-card-title">13) $773,732.24 WORKERS’ COMPENSATION LUMP SUM SETTLEMENT
+            <h3 className="notable-card-title">13) $773,732.24 WORKERS’ COMPENSATION LUMP SUM SETTLEMENT FOR INJURED WORKER
             </h3>
             <p className="notable-card-paragraph">
               A truck driver on I-75 was cut off by an SUV, shattered their right leg, right ankle, right

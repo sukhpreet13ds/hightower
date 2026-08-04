@@ -262,7 +262,7 @@ export default function Page() {
               </div>
 
               {/* Card 2: Video Review */}
-              <div className="review-card video-card" data-video-src="assets/client-v-1.mp4">
+              {/* <div className="review-card video-card" data-video-src="assets/client-v-1.mp4">
                 <div className="video-thumbnail-container">
                   <video src="assets/client-v-1.mp4" muted loop playsInline
                     className="card-video-element"></video>
@@ -270,7 +270,7 @@ export default function Page() {
                     <i className="fa-solid fa-play"></i>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Card 3: Text Review */}
               <div className="review-card text-card">
@@ -299,7 +299,7 @@ export default function Page() {
               </div>
 
               {/* Card 4: Video Review */}
-              <div className="review-card video-card" data-video-src="assets/client-v-2.mp4">
+              {/* <div className="review-card video-card" data-video-src="assets/client-v-2.mp4">
                 <div className="video-thumbnail-container">
                   <video src="assets/client-v-2.mp4" muted loop playsInline
                     className="card-video-element"></video>
@@ -307,7 +307,7 @@ export default function Page() {
                     <i className="fa-solid fa-play"></i>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Card 5: Text Review */}
               <div className="review-card text-card">

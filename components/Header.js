@@ -111,11 +111,11 @@ export default function Header() {
                   <a href="/lawyers" className="submenu-trigger-link">Lawyers <i className="fa-solid fa-chevron-right submenu-arrow"></i></a>
                   <ul className="submenu">
                     <li><a href="/lawyers/daniel-l-hightower">Daniel L. Hightower</a></li>
-                    <li><a href="/lawyers#alison">Alison L. Hightower</a></li>
-                    <li><a href="/lawyers#daniel">Mark N. Tipton</a></li>
-                    <li><a href="/lawyers#alison">Barbara L. Richard</a></li>
-                    <li><a href="/lawyers#daniel">Dave D. Guiley</a></li>
-                    <li><a href="/lawyers#alison">Shawn E. Clark</a></li>
+                    <li><a href="/lawyers/alison-l-hightower">Alison L. Hightower</a></li>
+                    <li><a href="/lawyers/mark-n-tipton">Mark N. Tipton</a></li>
+                    <li><a href="/lawyers/barbara-l-richard">Barbara L. Richard</a></li>
+                    <li><a href="/lawyers/dave-guiley">Dave D. Guiley</a></li>
+                    <li><a href="/lawyers/shawn-e-clark">Shawn E. Clark</a></li>
                   </ul>
                 </li>
                 <li><a href="/videos">Videos</a></li>
