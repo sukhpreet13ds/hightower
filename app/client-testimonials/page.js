@@ -457,6 +457,34 @@ export default function Page() {
                   </div>
                 </div>
               </div>
+              <div className="review-card text-card">
+                <img src="assets/coma.png" alt="Quote" className="quote-icon" />
+                <p className="review-text">“After my motorcycle accident, I was facing a mountain of medical bills and insurance pushback. Mr. Hightower and his incredible team took over my case seamlessly. Their compassion, prompt communication, and dedication ensured I received full compensation. I couldn't be more thankful for their support.”</p>
+                <div className="review-footer">
+                  <span className="review-author">- Robert M.</span>
+                  <div className="review-stars">
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card text-card">
+                <img src="assets/coma.png" alt="Quote" className="quote-icon" />
+                <p className="review-text">“Navigating a workplace injury claim felt overwhelming until I reached out to Hightower & Hightower. They handled every detail with extreme professionalism and care, keeping me informed every step of the way. I highly recommend them to anyone in need of strong legal representation.”</p>
+                <div className="review-footer">
+                  <span className="review-author">- Sarah P.</span>
+                  <div className="review-stars">
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>

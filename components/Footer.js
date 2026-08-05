@@ -96,8 +96,8 @@ export default function Footer() {
               <p className="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.</p>
               <div className="legal-links">
                 <a href="/privacy-policy">Privacy Policy</a>
-                <span className="legal-divider">|</span>
-                <a href="#">Site Map</a>
+                {/* <span className="legal-divider">|</span>
+                <a href="#">Site Map</a> */}
               </div>
             </div>
             <div className="footer-meta-desc">
