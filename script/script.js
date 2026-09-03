@@ -663,6 +663,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------------- Dynamic blogs ---------------- */
     function isHtml(c) { return /<[a-z][\s\S]*>/i.test(c || ''); }
+    function cleanBlogContent(html) {
+        if (!html) return '';
+        let c = html;
+        c = c.replace(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, level, attrs, inner) => {
+            if (/font-weight\s*:\s*(?:400|normal)/i.test(inner)) {
+                return '<div class="blog-paragraph">' + inner + '</div>';
+            }
+            return match;
+        });
+        c = c.replace(/style=(["'])([\s\S]*?)\1/gi, (match, quote, styleContent) => {
+            let newStyle = styleContent
+                .replace(/font-size\s*:\s*[^;'"]+(?:;|$)/gi, '')
+                .trim();
+            if (!newStyle || newStyle === ';') return '';
+            return 'style=' + quote + newStyle + quote;
+        });
+        c = c.replace(/(<h[1-6][^>]*>(?:<[^>]+>)*)\s*<br\s*\/?>/gi, '$1');
+        return c;
+    }
     function stripHtml(c) {
         const d = document.createElement('div');
         d.innerHTML = c || '';
@@ -752,7 +771,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const body = document.querySelector('.blog-article-content');
             if (body) {
                 if (isHtml(b.content)) {
-                    body.innerHTML = b.content;
+                    body.innerHTML = cleanBlogContent(b.content);
                 } else {
                     const paras = (b.content || '').split(/\n\s*\n/).filter(Boolean);
                     body.innerHTML = paras.length

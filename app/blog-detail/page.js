@@ -4,9 +4,32 @@ import { get } from '@/lib/db';
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Article - Hightower & Hightower' };
 
+function cleanBlogContent(html) {
+  if (!html) return '';
+  let c = html;
+  // If an <h[1-6]> wraps content with font-weight: 400 or normal, convert to paragraph wrapper
+  c = c.replace(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, level, attrs, inner) => {
+    if (/font-weight\s*:\s*(?:400|normal)/i.test(inner)) {
+      return '<div class="blog-paragraph">' + inner + '</div>';
+    }
+    return match;
+  });
+  // Strip inline font-size styles so declared sizes (32px subheadings, 18px paragraphs) take effect
+  c = c.replace(/style=(["'])([\s\S]*?)\1/gi, (match, quote, styleContent) => {
+    let newStyle = styleContent
+      .replace(/font-size\s*:\s*[^;'"]+(?:;|$)/gi, '')
+      .trim();
+    if (!newStyle || newStyle === ';') return '';
+    return 'style=' + quote + newStyle + quote;
+  });
+  // Remove leading <br> inside headings
+  c = c.replace(/(<h[1-6][^>]*>(?:<[^>]+>)*)\s*<br\s*\/?>/gi, '$1');
+  return c;
+}
+
 function renderContent(content) {
   const c = content || '';
-  if (/<[a-z][\s\S]*>/i.test(c)) return c; // already HTML
+  if (/<[a-z][\s\S]*>/i.test(c)) return cleanBlogContent(c);
   return c
     .split(/\n\s*\n/)
     .filter(Boolean)

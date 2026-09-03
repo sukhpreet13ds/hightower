@@ -267,6 +267,26 @@ $('new-news-btn').addEventListener('click', () => openPostModal('news', null));
 $('blog-modal-close').addEventListener('click', closeBlogModal);
 $('blog-cancel').addEventListener('click', closeBlogModal);
 
+function cleanBlogContent(html) {
+    if (!html) return '';
+    let c = html;
+    c = c.replace(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, level, attrs, inner) => {
+        if (/font-weight\s*:\s*(?:400|normal)/i.test(inner)) {
+            return '<div class="blog-paragraph">' + inner + '</div>';
+        }
+        return match;
+    });
+    c = c.replace(/style=(["'])([\s\S]*?)\1/gi, (match, quote, styleContent) => {
+        let newStyle = styleContent
+            .replace(/font-size\s*:\s*[^;'"]+(?:;|$)/gi, '')
+            .trim();
+        if (!newStyle || newStyle === ';') return '';
+        return 'style=' + quote + newStyle + quote;
+    });
+    c = c.replace(/(<h[1-6][^>]*>(?:<[^>]+>)*)\s*<br\s*\/?>/gi, '$1');
+    return c;
+}
+
 $('blog-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     $('blog-error').textContent = '';
@@ -275,7 +295,7 @@ $('blog-form').addEventListener('submit', async (e) => {
     fd.append('title', $('blog-title').value);
     fd.append('excerpt', $('blog-excerpt').value);
     fd.append('tags', $('blog-tags').value);
-    fd.append('content', editor.innerHTML.trim());
+    fd.append('content', cleanBlogContent(editor.innerHTML.trim()));
     fd.append('author', $('blog-author').value);
     fd.append('published', $('blog-published').value);
     if ($('blog-image').files[0]) fd.append('image', $('blog-image').files[0]);
