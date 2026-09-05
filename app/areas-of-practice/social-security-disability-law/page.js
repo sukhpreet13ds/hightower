@@ -751,28 +751,12 @@ export default function Page() {
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    WHEN SHOULD I APPLY FOR SOCIAL SECURITY DISABILITY BENEFITS?</span>
+                    Do I need a lawyer to apply for Social Security Disability?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    If you think you may be entitled to disability benefits, you should apply as
-                    soon as possible. In some instances, Social Security will pay benefits up to
-                    12 months before your application. If you wait until next month to apply,
-                    you could lose out on several hundred dollars worth of past benefits.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-                    What is the difference between SSDI and SSI?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    Social Security Disability Insurance (SSDI): Available to individuals who have worked a certain number of years and paid Social Security taxes (earned enough "work credits").<br />
-                    Supplemental Security Income (SSI): A needs-based program for disabled individuals who have limited income and resources, regardless of their work history.
+                  You don’t necessarily need a lawyer to apply for Social Security Disability, but having one can definitely be helpful. This is because the initial approval rate for SSDI and SSI claims is quite low, and many valid claims are denied simply because of incomplete medical documentation or paperwork errors. If you do get denied, a lawyer can make a big difference by helping you through the appeals process.
 
                   </p>
                 </div>
@@ -780,29 +764,90 @@ export default function Page() {
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    Why was my Social Security Disability claim denied?</span>
+                    What’s the difference between SSDI and SSI?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The Social Security Administration (SSA) denies a majority of initial applications. Common reasons include a lack of sufficient medical evidence, earning too much money from working, or failing to follow prescribed treatments. A denial does not mean you don't qualify; it usually means you need to appeal the decision with stronger evidence.
+                     Social Security Disability Insurance (SSDI) is based on your work history and the Social Security taxes you’ve paid throughout your working life. Supplemental Security Income (SSI) is based purely on financial need and doesn’t require a specific or prior work history. Some applicants may qualify for both, depending on their income and assets.
+
+
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    How long does the SSD appeal process take?</span>
+                    My claim was denied. What are my options?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The appeal process can be lengthy. It often takes several months to get a decision on a Reconsideration (the first level of appeal). If that is denied and a hearing before an Administrative Law Judge (ALJ) is requested, it can take an additional 12 to 18 months or more depending on the backlog in your region.
+                    A denial is not the end of the road. Most successful claims are actually approved after an appeal, particularly at the hearing stage. Each appeal also has a strict deadline, so it’s important to act quickly once you receive a denial letter.
+
+                  </p>
+                </div>
+              </div>
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+                    How long does the disability process take?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                    The time it takes to process a disability claim can be quite long and varies depending on where you are in the process and how busy your local Social Security office is. Initial applications can take several months, and if your case goes to a hearing, it can take considerably longer. We help you manage that process and keep your claim moving forward. <a href='https://hightowerandhightower.netlify.app/blogs/how-a-social-security-disability-lawyer-can-help-you-avoid-a-long-wait' style={{ color: 'var(--button)' }} target='_blank'>Learn how a Social Security disability lawyer may help you avoid a longer wait.</a>
+
+
+                  </p>
+                </div>
+              </div>
+ <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+                    What medical evidence do I need for my claim?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                 To support your claim, you’ll need to provide medical evidence that shows how your condition affects your daily life and ability to work. Social Security wants to see consistent treatment records, objective test results, and statements from your treating doctors that describe how your condition limits your ability. Gaps in treatment or missing records are a common reason claims get denied, so we can work with you to make sure your file is as complete as possible.
+
+
 
                   </p>
                 </div>
               </div>
 
+               <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+                   I’m worried about the cost of a lawyer. How do your fees work?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                  Social Security disability cases are also handled on a contingency basis. Attorney fees are regulated by federal law and are only owed if you win your case, typically as a percentage of your past-due benefits.
+
+
+
+                  </p>
+                </div>
+              </div>
+               <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+                   What sets our local law firm apart and makes us the best fit for you?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                  We’ve been helping people in Ocala and surrounding areas with the Social Security system for an impressive 50 years. That’s five decades of experience and knowledge that we can tap into to help you navigate this complex process. We’re not just familiar with the local hearing office, we know it inside and out, and we’re well-versed in what the judges in this area expect to see in a case. We also believe in building personal relationships with our clients and providing them with the attention and care they deserve.
+
+
+
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

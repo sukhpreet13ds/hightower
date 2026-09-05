@@ -658,14 +658,12 @@ export default function Page() {
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    What is a wrongful death claim?</span>
+                    What qualifies as a wrongful death claim in Florida?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    A wrongful death claim is a civil lawsuit brought when a person dies due to the
-                    legal fault, negligence, or intentional act of another person or entity. It seeks
-                    financial compensation for the survivors' emotional and financial losses.
+                    In Florida, a wrongful death claim is made when someone’s death is caused by another person’s careless or reckless behavior. This can happen in many different situations, <a href='https://hightowerandhightower.netlify.app/blogs/when-a-car-accident-becomes-a-wrongful-death-case' style={{ color: 'var(--button)' }} target='_blank'>like in car or work accidents.</a> It’s a way for the family of the person who died to get justice and compensation for their loss. The claim is separate from any criminal case that may also result from the same incident.
                   </p>
                 </div>
               </div>
@@ -673,14 +671,12 @@ export default function Page() {
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    Who is eligible to file a wrongful death lawsuit?</span>
+                    Who can file a wrongful death claim on behalf of a loved one?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Eligibility varies by state law, but it is typically filed by the personal
-                    representative (executor) of the deceased person’s estate on behalf of immediate
-                    family members, such as a surviving spouse, children, or parents.
+                    In Florida, the claim must be filed by the personal representative of the deceased’s estate, on behalf of the surviving family members and the estate itself. Surviving spouses, children, and parents are among those who may be entitled to recover damages, depending on the family’s circumstances.
                   </p>
                 </div>
               </div>
@@ -688,20 +684,83 @@ export default function Page() {
                 <button className="faq-accordion-header">
                   <span>
 
-                    What types of damages can be recovered in a wrongful death case?
+                    What compensation can a family recover in a wrongful death case?
                   </span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Damages generally fall into categories including:
+                    Damages can include funeral and burial expenses, medical costs incurred before death, lost income and benefits the deceased would have provided, and compensation for the loss of companionship, guidance, and support. Surviving spouses and children may also be entitled to damages for their own pain and suffering.
+
                   </p>
-                  <ul>
-                    <li>Medical expenses incurred by the deceased prior to death.</li>
-                    <li>Funeral and burial costs.</li>
-                    <li>Loss of the deceased person's expected future income and financial support.</li>
-                    <li>Loss of companionship, guidance, and emotional support.</li>
-                  </ul>
+                </div>
+              </div>
+
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+
+                    How long do we have to file a wrongful death claim in Florida?
+                  </span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                    In Florida, you typically have two years from the date of death to file a wrongful death claim. But, it’s really important to note that this deadline can change depending on the specifics of your case. So, don’t wait too long to get your situation looked at, or you might miss your chance to file a claim. It’s always a good idea to get a professional to review your case as soon as possible, just to be safe.
+
+
+                  </p>
+                </div>
+              </div>
+
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+
+                    Will we have to go through a lengthy trial?
+                  </span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                    Probably not, because a lot of wrongful death cases get settled through negotiations with the insurance company of the person or party at fault. However, we still get ready for every case as if it’s going to court. That’s usually what gets the insurance company to make a decent offer in the first place. This way, we’re prepared for anything, and we can work towards getting you the fair compensation you deserve.
+
+
+                  </p>
+                </div>
+              </div>
+
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+
+                    I’m worried about the cost of a lawyer during an already difficult time. How are you paid?
+                  </span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                    We take care of wrongful death cases on a contingency fee basis, which means you don’t have to pay us anything upfront. We only get paid if we’re able to get you the compensation you deserve, and even then, our fee is a small percentage of what you’re awarded. We want to make sure you get the help you need without breaking the bank.
+
+
+                  </p>
+                </div>
+              </div>
+
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+
+                    Why choose your firm instead of a national lawyer?
+                  </span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                    Losing a family member is one of the hardest things you can go through, and you deserve a legal team that treats you like a person, not a file number. We’ve served Ocala and Marion County families for 50 years, and when you call us, you speak with those who will actually handle your case. Our goal is to provide you with the personalized attention and support you need during this difficult time. With Hightower & Hightower, you can trust that you’re getting a team dedicated to helping you through the process, every step of the way.
+
+
+                  </p>
                 </div>
               </div>
             </div>

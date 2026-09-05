@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { get, run } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { saveImage } from '@/lib/cloudinary';
+import { slugify } from '@/lib/slug';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -14,6 +15,8 @@ export async function PUT(req, { params }) {
 
   const form = await req.formData();
   const title = (form.get('title') || '').toString().trim() || existing.title;
+  const customSlug = (form.get('slug') || '').toString().trim();
+  const slug = customSlug ? slugify(customSlug) : (existing.slug || slugify(title) || `blog-${id}`);
 
   const imageFile = form.get('image');
   const logoFile = form.get('logo');
@@ -23,9 +26,10 @@ export async function PUT(req, { params }) {
     : ((form.get('logo_url') || '').toString().trim() || existing.logo);
 
   await run(`
-    UPDATE blogs SET title = ?, excerpt = ?, content = ?, image = ?, logo = ?, tags = ?, author = ?, published = ?
+    UPDATE blogs SET slug = ?, title = ?, excerpt = ?, content = ?, image = ?, logo = ?, tags = ?, author = ?, published = ?
     WHERE id = ?
   `, [
+    slug,
     title,
     (form.get('excerpt') || '').toString().trim() || null,
     (form.get('content') || '').toString().trim() || null,
@@ -35,7 +39,7 @@ export async function PUT(req, { params }) {
     form.get('published') === '0' ? 0 : 1,
     Number(id),
   ]);
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, slug });
 }
 
 export async function DELETE(req, { params }) {

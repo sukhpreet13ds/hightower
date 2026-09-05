@@ -12,7 +12,7 @@ function blogExcerpt(b) {
 
 export default async function Page() {
   const latestBlogs = await all(`
-    SELECT id, title, excerpt, content, image FROM blogs WHERE published = 1
+    SELECT id, slug, title, excerpt, content, image FROM blogs WHERE published = 1
     ORDER BY created_at DESC, id DESC LIMIT 3
   `);
 
@@ -684,7 +684,7 @@ export default async function Page() {
           <div className="articles-grid">
             {latestBlogs.map((b) => (
               <div className="article-card" key={b.id}>
-                <a href={`blog-detail.html?id=${b.id}`}
+                <a href={`/blogs/${b.slug || b.id}`}
                   style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                   <div className="article-image-wrapper">
                     <img src={b.image || 'assets/hh-blog1.jpg'} alt={b.title} className="article-img" />

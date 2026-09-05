@@ -47,6 +47,7 @@ db.exec(`
 
 // Lightweight migration: add columns to an existing blogs table if missing.
 const blogCols = db.prepare('PRAGMA table_info(blogs)').all().map(c => c.name);
+if (!blogCols.includes('slug')) db.exec('ALTER TABLE blogs ADD COLUMN slug TEXT');
 if (!blogCols.includes('logo')) db.exec('ALTER TABLE blogs ADD COLUMN logo TEXT');
 if (!blogCols.includes('tags')) db.exec('ALTER TABLE blogs ADD COLUMN tags TEXT');
 

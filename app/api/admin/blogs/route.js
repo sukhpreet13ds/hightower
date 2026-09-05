@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { all, run } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { saveImage } from '@/lib/cloudinary';
+import { slugify } from '@/lib/slug';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -18,6 +19,9 @@ export async function POST(req) {
   const title = (form.get('title') || '').toString().trim();
   if (!title) return NextResponse.json({ error: 'Title (H1 heading) is required' }, { status: 400 });
 
+  const customSlug = (form.get('slug') || '').toString().trim();
+  const slug = slugify(customSlug || title) || `blog-${Date.now()}`;
+
   const imageFile = form.get('image');
   const logoFile = form.get('logo');
   const image = (imageFile && imageFile.size) ? await saveImage(imageFile)
@@ -26,9 +30,10 @@ export async function POST(req) {
     : ((form.get('logo_url') || '').toString().trim() || null);
 
   const info = await run(`
-    INSERT INTO blogs (title, excerpt, content, image, logo, tags, author, published, created_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO blogs (slug, title, excerpt, content, image, logo, tags, author, published, created_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `, [
+    slug,
     title,
     (form.get('excerpt') || '').toString().trim() || null,
     (form.get('content') || '').toString().trim() || null,
@@ -38,5 +43,6 @@ export async function POST(req) {
     form.get('published') === '0' ? 0 : 1,
     new Date().toISOString(),
   ]);
-  return NextResponse.json({ ok: true, id: Number(info.lastInsertRowid) });
+  return NextResponse.json({ ok: true, id: Number(info.lastInsertRowid), slug });
 }
+

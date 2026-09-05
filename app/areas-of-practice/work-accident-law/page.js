@@ -659,21 +659,18 @@ export default function Page() {
 
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="work">
-            <h2 className="faq-category-title">Wrongful Death</h2>
+            <h2 className="faq-category-title">Work Accident Questions</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    HOW LONG DO I HAVE IF I HAVE BEEN INJURED AT WORK TO REPORT IT TO MY
-                    EMPLOYER?</span>
+                   Do I need a lawyer for a workplace injury claim?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    You should report your work accident or injury to your employer right away.
-                    Failure to report your injury within 30 days may be used as a defense
-                    against your claim.
+                   Don’t rely on the insurance carrier to treat you fairly. The workers’ compensation system is not always as cut and dry as it seems. A skilled attorney is able to ensure your claim is properly filed to receive the benefits you need to recover. If your benefits are suddenly cut off, your attorney can work to have them reinstated. He or she can also determine whether another party is responsible for your injury. <a href='https://hightowerandhightower.netlify.app/blogs/workers-compensation-in-florida' style={{ color: 'var(--button)' }} target='_blank'>You can learn more about workers’ compensation in Florida here.</a>
                   </p>
                 </div>
               </div>
@@ -681,37 +678,38 @@ export default function Page() {
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    WILL I BE PAID FOR THE TIME I LOSE FROM WORK BECAUSE OF MY WORK
-                    INJURY?</span>
+                    What benefits am I entitled to after a work injury?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Wage replacement benefits will start on the eighth (8) day that the injured
-                    employee is unable to work. You will not receive wage replacement benefits
-                    for the first seven (7) days of work missed, unless you are out of work for
-                    more than 21 days due to the work accident. If your disability requires you
-                    to miss more than twenty-one (21) days, you are paid from the date of the
-                    accident.
+                   The Florida workers’ compensation laws outline the benefits to which an injured worker is entitled, including medical and benefits for lost time. The amount of lost time benefits to which an injured worker is entitled is based upon his or her average weekly wage, the extent of his or her injury, and the degree of permanent impairment resulting from the workplace injury.
+
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-
-                    HOW MUCH WILL I BE PAID FOR MY LOST WAGES?
+What if my employer or their insurance company denies my claim?
                   </span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    In most cases, the wage-replacement benefits will equal two-thirds (2/3) of
-                    your pre-injury regular weekly wage (AWW), but the benefit will not be
-                    higher than Florida’s average weekly wage. Checks are usually paid on a
-                    bi-weekly basis until you are released to work by your physician. If you
-                    continue to lose wages after returning to work or being released to work,
-                    you may be entitled to wage-replacement benefits at a lower rate.
+                    Many workplace injury denials are based on incorrect reasons. Some denials are based on the employer/workers compensation carrier, disputing whether the work-related injury occurred while the employee was on the job. Other denials are based on failure to timely file a claim or the results of an Independent Medical Examination (IME) that was conducted by the employer/workers compensation carrier’s selected doctor. Many denials can be challenged and are overturned on appeal.
+                  </p>
+                </div>
+              </div>
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+                    Can I be fired for filing a workers’ compensation claim?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                     It is against the law for your employer to retaliate against you for filing a legitimate workers’ compensation claim. However, if you have been demoted, had your hours reduced, or even fired for filing a work accident claim, we would like to review your situation as soon as possible.
                   </p>
                 </div>
               </div>
@@ -719,185 +717,12 @@ export default function Page() {
                 <button className="faq-accordion-header">
                   <span>
 
-                    WHAT IS AWW (AVERAGE WEEKLY WAGE)?</span>
+                    What if someone other than my employer caused my injury?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Your Average Weekly Wage is determined by wages you earned in the 13 weeks
-                    prior to the date of your work accident. To be sure this amount is
-                    calculated correctly by the employer/insurance carrier so that you are paid
-                    the correct amount, you may want to contact Daniel L. Hightower, an
-                    experienced workers’ compensation attorney.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    WILL MY MEDICAL BILLS AND PRESCRIPTIONS BE PAID?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    All reasonable, necessary and authorized medical bills, prescriptions and
-                    out-of-pocket expenses will be paid by your employer/insurance carrier.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    DO I GET TO CHOOSE THE DOCTOR I TREAT WITH?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    You must see physicians that are authorized by the workers’ compensation
-                    insurance company. However, you are allowed a one-time change in your
-                    authorized treating physician.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    HOW MUCH IS MY CASE WORTH?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    To determine how much your case might be worth we analyze multiple factors
-                    including your age, wages, future expected wages, job type, injury type,
-                    level of education and training, and future estimated medical care and
-                    therapy.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    WHAT IF I’M NOT ABLE TO RETURN TO MY CURRENT LINE OF WORK BECAUSE OF MY
-                    INJURY?
-                  </span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    Under the Workers’ Compensation Act, if you are unable to return to
-                    employment earning wages similar to your pre-injury wages, then you may be
-                    entitled to retraining at the State’s expense. The retraining program has to
-                    be approved by the Division of Workers’ Compensation Bureau of
-                    Rehabilitation and Reemployment Services. Often employees who are approved
-                    for retraining are also entitled to temporary total disability benefits for
-                    up to one year while they are pursuing retraining.
-                  </p>
-                  <p className="faq-answer-text">
-                    If retraining is not a viable option and you are unable to obtain any kind
-                    of employment, then you may be eligible for disability payments. These can
-                    be temporary, while you are still recovering from your injury, or permanent.
-                    Your entitlement to disability benefits would depend on the specific facts
-                    of your case and so the assessment must be made on a case-by-case basis.
-                  </p>
-                  <p className="faq-answer-text">
-                    There are limited options available and each case is different. Please
-                    contact us to discuss the options available to you.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    WHAT DOES TTD (TEMPORARY TOTAL DISABLED) MEAN?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    TTD means an injured worker is totally unable to work during the recovery
-                    and improvement process. TTD benefits are the wage-loss benefits that are
-                    provided as a result of your work injury that temporarily prevents you from
-                    returning to work and you have not reached MMI.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-                    WHAT DOES MMI MEAN?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    Maximum Medical Improvement – The point at which you have improved as much
-                    as the doctors expect you to improve medically.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-                    WHAT DOES TPD (TEMPORARY PARTIAL DISABILITY) MEAN?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    TPD means an injured worker is partially unable to work during the recovery
-                    and improvement process. TPD benefits are the wage-loss benefits that are
-                    provided when the doctor releases you to return to work and you have not
-                    reached MMI and you earn less than 80% of the pre-injury wage. The benefit
-                    is equal to 80% of the difference between 80% of the pre-injury wage and the
-                    post-injury wage.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-                    WHAT DOES PTD (PERMANENT TOTAL DISABILITY) MEAN?
-                  </span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    When an injured worker’s recovery has progressed as far as medical treatment
-                    can take it, the worker is said to have reached MMI. After that, temporary
-                    benefits are no longer payable, and some workers whose permanent physical
-                    restrictions prevent them from returning to work may be entitled to PTD
-                    benefits for loss of wage earning capacity. The requirements for these
-                    benefits change depending on the year you were injured. If you are PTD you
-                    may qualify for Social Security benefits, as well. Please read our
-                    information regarding Social Security Disability claims and contact us.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    What should I do if I am injured at work?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    You should report the injury to your employer or supervisor as soon as possible, ideally in writing. Most states have strict deadlines (often within 30 days) for reporting workplace injuries. After reporting, seek medical care from an authorized workers' compensation doctor if your employer requires it.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>
-
-                    Can I sue my employer for a workplace injury?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    In most cases, no. Workers’ compensation is a "no-fault" system, meaning you do not have to prove your employer did anything wrong to get benefits. In exchange for this guaranteed coverage, employees generally give up the right to sue their employer for negligence. However, you may be able to sue a third party (such as a subcontractor or equipment manufacturer) if their negligence caused your injury.
+                   Even though you are prohibited by Florida’s Workers Compensation laws from suing your employer for work-related injuries, you can usually sue third parties who caused your injury, such as a subcontractor, equipment manufacturer, or even another driver.
 
                   </p>
                 </div>
@@ -906,21 +731,29 @@ export default function Page() {
                 <button className="faq-accordion-header">
                   <span>
 
-                    What benefits can I receive through Workers' Compensation?</span>
+                   I’m worried about the cost of a lawyer. How do your fees work?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Workers' comp typically covers:
+                    We handle work accident cases on a contingency basis. This means there is no charge for our services until benefits or compensation are recovered for our client’s work accident injury.
                   </p>
-                  <ul>
-                    <li>All reasonable and necessary medical treatments related to the injury.</li>
-                    <li>A percentage of your lost wages while you are unable to work (temporary disability benefits).</li>
-                    <li>Permanent disability benefits if you do not fully recover.</li>
-                    <li>Vocational rehabilitation if you need to train for a new line of work.</li>
-                  </ul>
                 </div>
               </div>
+              <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>
+
+                    Why choose our local Ocala firm instead of a national lawyer?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                     We’ve been representing injured workers in Ocala and Marion County for 50 years. We know the local employers, the local judges of compensation claims, and how Florida’s workers’ comp system works day to day. When you call us, you can speak with the legal team who will actually handle your case, and we care about getting justice for you.
+                  </p>
+                </div>
+              </div>
+             
             </div>
           </div>
         </div>

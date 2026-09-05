@@ -727,57 +727,37 @@ export default function Page() {
               {/* Accordion 1 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>HOW ARE ACCIDENTS INVOLVING COMMERCIAL TRUCKS DIFFERENT FROM CAR
-                    ACCIDENTS?</span>
+                  <span>How is a serious truck crash case different from a standard car accident?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The size of tractor trailers puts passenger cars at a serious disadvantage.
-                    Some tractor trailers can weigh over 80,000 pounds. When something that size
-                    collides with an automobile, the injuries to the occupants can be
-                    devastating and deadly.
-                  </p>
-                  <p className="faq-answer-text">
-                    In addition, there are sections of the Vehicle Code applicable to trucking
-                    companies and commercial truck drivers, as well as training and licensing
-                    requirements specific for truck drivers making their defense in truck
-                    accident cases more difficult and, therefore, better for plaintiffs.
+                     A truck accident case is usually more complicated. Trucking companies typically have rapid-response teams, and you need an aggressive legal team that can match their resources. The case may involve multiple parties, such as the driver, the trucking company, maintenance providers, or insurers. The harm caused by a collision with a semi-truck is also usually more severe than in a car accident.
                   </p>
                 </div>
               </div>
               {/* Accordion 2 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>WHAT IS THE FEDERAL GOVERNMENT DOING ABOUT TRACTOR TRAILERS AND HIGHWAY
-                    SAFETY?</span>
+                  <span>Can I recover more than just medical bills after a commercial truck accident?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The Federal Motor Carrier Safety Administration controls specific
-                    regulations that trucking companies are required to follow . These complex
-                    regulations were put in place to protect accident victims of their own
-                    pockets.
-
+                    Absolutely. A truck accident settlement is intended to cover the “total losses” you’ve experienced. This covers both economic damages, like medical bills and lost income, and non-economic damages, which compensate for physical and emotional suffering or a loss of quality of life.
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    ARE THERE ANY ADDITIONAL SAFETY LAWS RELATED TO TRUCKS AND TRUCK DRIVERS?
+                   How much does it cost to hire Hightower & Hightower, P.A. for a truck accident? 
                   </span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Yes. Specific laws and regulations are in place to protect passenger vehicle
-                    drivers and occupants from the actions of negligent truck drivers and
-                    trucking companies. State and Federal rules specify, for example, how many
-                    hours and days truck drivers can stay on the road before taking a break, the
-                    proper loading of cargo and weight the driver is carrying, and speeds for
-                    safely traveling and passing other vehicles on the highway.
+                   We work on a contingency fee basis. You pay nothing out of pocket and no hourly fees. We only receive a fee if we successfully recover money for you through a settlement or a court verdict. If we don’t win, you don’t owe us any attorney fees.
 
 
                   </p>
@@ -786,34 +766,27 @@ export default function Page() {
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                    WHAT DAMAGES CAN I RECOVER IN A TRUCK ACCIDENT INJURY CASE?</span>
+                    Should I give a recorded statement to the trucking company’s insurance?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Plaintiffs may be entitled to compensation for past and future wages lost
-                    and medical expenses. You may also be entitled to compensation for the pain
-                    and suffering you’ve endured as a result of the truck accident. Punitive
-                    damages are possible if the conduct of the person at-fault is proven to be
-                    particularly reckless.
+                   No. You are not legally required to give a recorded statement to the other party’s insurer, and we strongly advise against it. These adjusters are looking for any statement (even a casual “I’m doing okay”) to argue that your injuries aren’t severe or that you were at fault. We will handle communications with insurance companies.
+
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>IF I AM INJURED, HOW WILL I PAY FOR MY MEDICAL BILLS? WHO IS RESPONSIBLE?
+                  <span>Why are commercial truck accidents handled differently than regular car accidents?
                   </span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The trucking company more than likely will not pay your medical costs right
-                    away. Your own insurance may cover some of your expenses, including some
-                    medical bills and funeral costs if a loved one died. We urge you NOT to give
-                    a statement to your insurance company or to the trucking company, nor to
-                    sign any release forms, before consulting with an experienced truck accident
-                    attorney. Your actions could be used against you to limit you are awarded.
+                   Commercial trucking companies and drivers are subject to federal and state regulations that don’t apply to ordinary passenger vehicles, covering everything from driver hours to vehicle maintenance and cargo loading. A truck accident claim often means investigating the trucking company itself, not just the driver, and preserving evidence like black box data before it gets overwritten.
+
 
 
                   </p>
@@ -822,54 +795,17 @@ export default function Page() {
 
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>WHAT IS THE TIME FRAME TO BRING AN INJURY OR DEATH CASE BASED ON A TRUCK
-                    ACCIDENT?
+                  <span>Why should I choose a local truck crash attorney firm over a national lawyer?
                   </span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    In the state of Florida, a truck accident case must be brought within four
-                    years of the date of the accident. If someone died, the wrongful death
-                    lawsuit must be brought within two years of the date of the decedent’s
-                    death.
+                   Our firm is well-versed in the unique hazards along I-4, I-75, and US-27. These are specific stretches of highway where Central Florida trucking accidents occur often. We’ve also served Ocala and the surrounding areas since 1976. We understand the local courts and the specific logistics of Florida’s roads and highways. And when you call us, you speak with the legal team who will actually handle your case, not a remote call center.
 
                   </p>
                 </div>
               </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>How are truck accidents different from regular car accidents?
-
-                  </span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    Truck accidents are vastly different due to:
-
-                  </p>
-                  <ul>
-                    <li>Severity of Injuries: The massive size and weight of commercial trucks cause catastrophic injuries and high fatality rates.</li>
-                    <li>Complex Regulations: Trucking companies and drivers must comply with strict federal safety regulations (e.g., Hours of Service limits, maintenance logs).</li>
-                    <li>Multiple Liable Parties: Liability may extend beyond the driver to the trucking company, cargo loaders, or equipment manufacturers.</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>What evidence is critical in a commercial truck accident case?
-                  </span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    Important evidence includes the truck's "black box" (Electronic Control Module) data, the driver’s logs and hours-of-service records, the trucking company’s hiring and maintenance records, post-accident drug test results, and data from the commercial vehicle's GPS tracking.
-
-                  </p>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>

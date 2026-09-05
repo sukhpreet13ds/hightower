@@ -12,7 +12,7 @@ function newsExcerpt(b) {
 
 export default async function Page() {
   const items = await all(`
-    SELECT id, title, excerpt, content, image FROM news WHERE published = 1
+    SELECT id, slug, title, excerpt, content, image FROM news WHERE published = 1
     ORDER BY created_at DESC, id DESC
   `);
 
@@ -84,7 +84,7 @@ export default async function Page() {
             <div className="blogs-container-grid">
               <div className="blogs-grid">
                 {items.map((n) => (
-                  <a key={n.id} href={`news-detail.html?id=${n.id}`} className="blog-card">
+                  <a key={n.id} href={`/news/${n.slug || n.id}`} className="blog-card">
                     <div className="blog-card-img-wrapper">
                       <img src={n.image || './assets/hh-blog1.jpg'} alt={n.title} className="blog-card-img" />
                     </div>

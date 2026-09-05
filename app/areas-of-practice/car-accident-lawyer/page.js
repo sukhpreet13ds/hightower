@@ -713,148 +713,74 @@ export default function Page() {
             <div className="faq-accordion-list">
               <div className="faq-accordion">
                 <button className="faq-accordion-header active">
-                  <span>If I am in an automobile accident, what should I do?</span>
+                  <span>How much does it cost to hire Hightower & Hightower, P.A.?</span>
                   <span className="faq-icon">−</span>
                 </button>
                 <div className="faq-accordion-content" style={{ maxHeight: 'none', padding: '25px' }}>
                   <p className="faq-answer-text">
-                    Florida law requires that you remain at the scene of an accident until the
-                    police arrives to help in the preparation of an accident report. Report the
-                    accident to your insurance company as soon as you get home from the scene,
-                    or as soon as possible. In order to prove your case, you have the burden of
-                    presenting evidence to establish your claim, therefore, preservation of
-                    evidence is crucial. Such evidence may consist of documentation of the
-                    physical evidence at the accident site, of the vehicles involved in the
-                    accident and of your medical injuries. You may not know the legal
-                    requirements necessary to prove your case and therefore, we recommend that
-                    you contact an attorney immediately to be advised of your legal rights.
+                   We operate on a contingency fee basis. This means there are no upfront costs or hourly fees to hire us. We only get paid if we successfully secure a settlement or court award for you. If we don’t win your case, you owe us nothing in attorney fees.
+
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>Who will pay to fix the damage to my vehicle?</span>
+                  <span>What is the “serious injury threshold” in Florida car accident cases?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    That depends on what type of insurance coverage you have or the insurance
-                    coverage of the person that caused the accident. Call the other driver’s
-                    insurance company and request that your car be fixed. Only discuss property
-                    damage issues with them. Do not give any statements or discuss how the
-                    accident happened or your injuries. Check your policy to see whether you
-                    have rental car coverage, towing and what deductibles apply. It may be in
-                    your best interest to retain the services of a lawyer with experience in
-                    handling auto accident claims as they are familiar with the terms of
-                    different insurance policies and regularly negotiate the resolution of
-                    property damage claims with many different insurance companies.
+                   Under Florida’s No-Fault laws, your own PIP insurance covers the first $10,000 of medical bills regardless of fault. To sue the other driver for “pain and suffering” or non-economic damages, your injuries must meet a certain threshold, such as significant and permanent loss of a bodily function, permanent scarring, or permanent injury. We can evaluate your medical records to determine if your case meets this legal requirement.
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>Who will pay my medical bills and lost wages?</span>
+                  <span>How long do I have to file a car accident claim in Marion County?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    There may be many sources from which to get your medical bills paid and,
-                    depending on the types of insurance, they each take different priority. For
-                    instance, in Florida, you are required to carry personal injury protection
-                    (PIP) insurance. This is generally in the amount of $10,000 and may have
-                    different deductible amounts. This money is available to pay for medical
-                    bills and/or lost wages. However, unless you instruct your insurance carrier
-                    to reserve your PIP for your lost wages, they will pay it to the first
-                    medical bills they receive. There may also be other insurance available to
-                    pay for your medical bills including medical payments coverage, health
-                    insurance, Medicare, Medicaid or disability insurance. If you are in an
-                    automobile accident, you should contact an experienced personal injury
-                    lawyer to discuss how the relevant state laws and policies of insurance
-                    apply to recover damages for your injuries.
+                    In Florida, the statute of limitations for most personal injury lawsuits is two years from the date of the accident. While that may seem like a long time, evidence like tire marks, witness memories, vehicle data, and footage can disappear quickly. It is always best to reach out to an attorney as soon as possible after the accident to preserve your rights. <a href='https://hightowerandhightower.netlify.app/blogs/what-evidence-strengthens-your-injury-case' style={{ color: 'var(--button)' }} target='_blank'>Learn what evidence can help strengthen your injury case here.</a>
+
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>What if the person that caused the accident does not have
-                    insurance?</span>
+                  <span>Should I speak to the other driver’s insurance adjuster?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Unfortunately, nearly 20% of Florida’s drivers do not have any form of
-                    automobile insurance. If you purchased Uninsured Motorist Coverage from your
-                    insurance carrier, you may look to your own insurance company to pay you for
-                    the damages caused by the negligence of the uninsured motorist carrier. We
-                    caution you, however, in negotiating your claim with your insurance company
-                    yourself as, even though they are your insurance company, (to pay the least
-                    amount of money out on claims) their interest is directly opposite to what
-                    is in your best interest, (to obtain a just settlement to compensate you
-                    fairly for all of your damages). We recommend you obtain legal counsel
-                    before attempting to negotiate your claims directly with your own insurance
-                    company.
+                    No. You should avoid giving a recorded statement or signing any documents from the other driver’s insurance company without consulting a lawyer first. Adjusters are trained to look for statements they can use to minimize your claim or shift fault onto you. We handle all communications with the insurance companies so you don’t have to.
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>The insurance company wants to take my recorded statement, what is
-                    that?</span>
+                  <span>How long will it take to resolve my car accident case?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    We do not recommend that you give a recorded statement to anyone, other than
-                    your own insurance carrier. Many insurance policies require the insured
-                    (you) to “cooperate” with their investigation of the accident. This
-                    recording can and will be used as evidence against you if you pursue a claim
-                    regarding your accident, therefore, we would advise you obtain legal counsel
-                    before giving any such statement.
+                   Every case is unique. Some settlements can be reached in a few months, while complex cases involving litigation may take longer. Our priority is ensuring you don’t settle too early before the full extent of your injuries, and your future medical needs, is truly known. We work diligently to move your case forward as quickly as possible without sacrificing the value you deserve.
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>What should I do immediately after a car accident?</span>
+                  <span>Why should I choose a local firm instead of a large national law firm?</span>
                   <span className="faq-icon">+</span>
                 </button>
-                <div className="faq-accordion-content">
-                  <ul>
-                    <li style={{ color: '#111' }}>Check for injuries and call 911 for emergency medical help if needed.</li>
-                    <li style={{ color: '#111' }}>Move to safety if the vehicles are blocking traffic and it is safe to do so.</li>
-                    <li style={{ color: '#111' }}>Call the police to file an official accident report.</li>
-                    <li style={{ color: '#111' }}>Exchange information with the other driver (name, contact info, insurance details).</li>
-                    <li style={{ color: '#111' }}>Document the scene by taking photos of vehicle damage, road conditions, injuries, and gathering witness contacts.</li>
-                    <li style={{ color: '#111' }}>Seek medical attention immediately, even if you feel fine, as some injuries delay symptoms.</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>Should I speak or give a statement to the other driver’s insurance company?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    No. You should avoid giving a recorded statement or signing any documents from the opposing insurance company without consulting a lawyer first. Insurance adjusters often look for statements they can use to minimize your claim or shift blame onto you.
-                  </p>
-                </div>
-              </div>
-              <div className="faq-accordion">
-                <button className="faq-accordion-header">
-                  <span>What if the driver who hit me doesn't have insurance?</span>
-                  <span className="faq-icon">+</span>
-                </button>
-                <div className="faq-accordion-content">
-                  <p className="faq-answer-text">
-                    If you are hit by an uninsured or underinsured driver, you can seek compensation through your own auto insurance policy if you have Uninsured/Underinsured Motorist (UM/UIM) coverage. Your lawyer can help you navigate this process with your own insurer.
-                  </p>
-                </div>
+                 <p className="faq-answer-text">
+                Since 1976, we have built deep roots in Marion County. We know the local courts, the local roads where accidents happen, and the local medical providers who treat our clients. When you call us, you are a neighbor receiving personalized, aggressive representation from a family-led firm.
+</p>
               </div>
             </div>
           </div>

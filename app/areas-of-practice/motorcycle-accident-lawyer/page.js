@@ -782,42 +782,26 @@ export default function Page() {
               {/* Accordion 1 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>When there is a motorcycle accident related injury or death in florida,
-                    who is allowed to sue?</span>
+                  <span>Do I need a lawyer for a motorcycle accident claim?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    If any party other than the motorcycle driver involved in the Florida
-                    motorcycle accident is at fault, the motorcycle driver and/or that person’s
-                    surviving family members may pursue a personal injury or wrongful death
-                    lawsuit seeking damages and compensation.
-                    If the motorcycle driver is at fault, then anyone else injured or killed in
-                    the Florida motorcycle accident – including the motorcyclist’s passenger
-                    and/or people in other vehicles and their surviving family members — may
-                    pursue a lawsuit against the motorcycle operator. Any other person injured
-                    by a motorcyclist, such as a pedestrian, can recover damages against the
-                    motorcycle operator and any other responsible party.
+                    Motorcycle accident claims can be difficult because insurance companies will try to minimize injuries or blame the rider. A lawyer can investigate the crash, handle the insurance companies for you, and fight for the compensation you may deserve. <a href='https://hightowerandhightower.netlify.app/blogs/what-to-do-if-youve-been-in-a-motorcycle-accident' style={{ color: 'var(--button)' }} target='_blank'>Read what to do after you have been in a motorcycle accident.</a>
+
                   </p>
                 </div>
               </div>
               {/* Accordion 2 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>When a motorcycle accident happens in florida, which parties involved may
-                    be held responsible?</span>
+                  <span>How much is my motorcycle accident case worth?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Defendants in Florida motorcycle accident cases may include the motorcycle
-                    driver, other motor vehicle operators, property owners where dangerous
-                    conditions may exist (on both public and private properties), mechanical
-                    repair and service shops, as well as motorcycle, tire, and parts
-                    manufacturers. Any of these parties may be held liable in a Florida court of
-                    law. A lawsuit seeks to identify and hold responsible any persons or
-                    entities whose wrongful conduct or negligence may have contributed to injury
-                    and/or death resulting from a Florida motorcycle accident.
+                   The value of a motorcycle accident case depends on many factors, including the severity of your injuries, your medical expenses, lost wages, pain and suffering, and how the accident has affected your daily life. If your injuries require ongoing treatment or have long-term effects, that may increase the value of your claim.
+
 
                   </p>
                 </div>
@@ -825,22 +809,13 @@ export default function Page() {
               {/* Accordion 3 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>Why is it so important for me to have my florida motorcycle accident case
-                    investigated?</span>
+                  <span>Why doesn’t my insurance cover my motorcycle injuries?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Motorcyclists may sometimes run up against the bias that because they
-                    operate a motorcycle in Florida, they are the ones who cause accidents and
-                    they are responsible for their own injuries. The reality is that sometimes
-                    the motorcyclist did nothing to cause the accident, and the liability lies
-                    with another driver or other entities whose conduct or negligence
-                    contributed to the Florida motorcycle accident. A proper examination brings
-                    forth the true facts of the case including the conditions at the Florida
-                    motorcycle accident scene; details of how, when, why, what, and who was
-                    involved in the accident; as well as witness statements and reports from law
-                    enforcement and other agencies involved in the investigation.
+                     In Florida, motorcycles are specifically excluded from the No-Fault law. This means that unlike a car accident, you do not have an automatic $10,000 in medical coverage (PIP) through your own policy. Unless you purchased a specific, optional motorcycle PIP, your medical bills must be covered by health insurance, Uninsured Motorist (UM) coverage, or a claim against the at-fault driver.
+
 
                   </p>
                 </div>
@@ -848,20 +823,12 @@ export default function Page() {
               {/* Accordion 4 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>How important is it for me to consult a florida motorcycle accident lawyer
-                    regarding my motorcycle accident case?</span>
+                  <span>What if the driver who hit me doesn’t have insurance?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    It is very important, particularly if the Florida motorcycle accident you
-                    were involved in resulted in your own injuries or in serious injury or death
-                    to other drivers and passengers involved. Motorcyclists often get blamed
-                    when they are involved in serious motor vehicle accidents — and the opposing
-                    side will be looking for evidence to support that claim, whether it’s
-                    entirely true or not. An experienced Florida motorcycle accident attorney
-                    can investigate your case and compile the necessary legal documentation and
-                    evidence that will support you in your injury claims.
+                    This is a common issue in Florida, as Bodily Injury (BI) coverage is not mandatory for all drivers. This is where Uninsured Motorist (UM) coverage on your own motorcycle policy becomes your most important asset. If you have UM, it steps in to pay for your medical bills and pain and suffering when the at-fault driver is uninsured or underinsured. We can review your policy to identify every available source of recovery.
 
                   </p>
                 </div>
@@ -869,13 +836,13 @@ export default function Page() {
 
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>What if I wasn't wearing a helmet at the time of the motorcycle accident?
+                  <span>I’m worried about the cost of a lawyer. How do your fees work?
                   </span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    You can still file a claim. Depending on state laws, not wearing a helmet might impact the amount of compensation you receive if head or neck injuries are involved (under comparative negligence laws). However, it does not bar you from seeking compensation for injuries to other parts of your body, or if the accident was entirely the other driver's fault.
+                    We handle all motorcycle accident cases on a contingency fee basis. You pay nothing upfront, and there are no out-of-pocket costs to start your case. We only receive a legal fee if we successfully secure a settlement or jury award for you. If we don’t win your case, you owe us nothing in attorney fees.
 
 
                   </p>
@@ -884,12 +851,13 @@ export default function Page() {
 
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>How does bias against motorcyclists affect a legal claim?</span>
+                  <span>Why choose a local Ocala firm instead of a “big city” lawyer?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    There is often an unfair bias among insurance adjusters and juries who assume motorcyclists are inherently reckless or speeding. An experienced motorcycle accident attorney counters this bias by reconstructing the accident scene, utilizing witness testimony, and presenting objective evidence to prove the other motorist was negligent.
+                    We’ve been protecting Ocala riders for 50 years. We know the roads and we know the law. We are intimately familiar with Central Florida, as well as the local courts and the specific logistics of Florida’s roads. When you call us, you speak with the legal team who will actually handle your case, not a call center.
+
                   </p>
                 </div>
               </div>

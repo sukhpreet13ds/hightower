@@ -734,17 +734,17 @@ export default function Page() {
         </div> */}
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="general">
-            <h2 className="faq-category-title">General Questions</h2>
+            <h2 className="faq-category-title">Personal Injury Questions</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 (Expanded by default as requested in mockup screenshot) */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header active">
-                  <span>What is a personal injury claim?</span>
+                  <span>Can I recover compensation if I was partly at fault for my accident?</span>
                   <span className="faq-icon">−</span>
                 </button>
                 <div className="faq-accordion-content" style={{ maxHeight: 'none', padding: '25px' }}>
                   <p className="faq-answer-text">
-                    A personal injury claim is a legal dispute that arises when one person suffers harm from an accident or injury, and someone else might be legally responsible for that harm. A personal injury case can be resolved through formal lawsuit proceedings or, more commonly, through an informal settlement before a lawsuit is filed.
+                    Florida follows a modified comparative negligence standard. This means that the amount of money you can get might be reduced based on how much you were at fault. If you’re found to be more than 50% at fault, you might not be able to get any compensation at all. It’s also important to remember that just because you think you might have done something wrong, it doesn’t mean you don’t have a case. Insurance companies often try to say that the person who’s making a claim was more at fault than they really were, just so they can pay out less money.
 
                   </p>
                 </div>
@@ -752,12 +752,12 @@ export default function Page() {
               {/* Accordion 2 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>How much does it cost to hire a personal injury lawyer?</span>
+                  <span>What’s the difference between a personal injury claim and a workers’ compensation claim?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Most personal injury law firms operate on a contingency fee basis. This means you pay nothing upfront, and the firm only gets paid if they successfully recover compensation for you through a settlement or jury verdict. The fee is typically a percentage of the final recovery.
+                    If you get hurt on the job, Florida law says you usually have to go through the workers’ compensation system, rather than taking your employer to court. But, if someone or something outside of your job (like a careless driver, or a property owner who didn’t take care of their space) causes your injury, that’s when you’d file a personal injury claim. In some situations, like a work injury caused by a third party, you may actually have both a workers’ comp claim and a personal injury claim at the same time.
 
 
                   </p>
@@ -766,31 +766,40 @@ export default function Page() {
               {/* Accordion 3 */}
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>How long do I have to file a personal injury lawsuit?</span>
+                  <span>What should I do in the days after an accident to protect my claim?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The timeframe to file a lawsuit is determined by a law called the statute of limitations. This time limit varies significantly by state and by the type of case (ranging from one to several years from the date of the accident). Failing to file before the deadline usually means losing your right to sue permanently.
+                    Some injuries don’t show up right away, so it’s better to be safe than sorry. Seek medical attention, even if your injuries seem minor at first. Also take photos of the scene, get contact information for any witnesses, and avoid giving a recorded statement to an insurance adjuster before speaking with an attorney. What you say early on can end up being used against you later.
+
 
                   </p>
                 </div>
               </div>
               <div className="faq-accordion">
                 <button className="faq-accordion-header">
-                  <span>What is my personal injury case worth?</span>
+                  <span>How long does a personal injury case usually take?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The value of a case depends on several unique factors, including:
+                   The length of time it takes to resolve a personal injury case can vary greatly, depending on how complicated the case is and how badly you’re hurt. Straightforward claims can settle in a matter of months. If your injuries are really serious or will affect you for a long time, it’s going to take longer. We need to know exactly how much medical care you’ll need before we can settle the case. If we rush into a settlement too quickly, before you’ve fully recovered, you might not get the compensation you deserve. <a href='https://hightowerandhightower.netlify.app/blogs/how-long-do-personal-injury-cases-typically-take' style={{ color: 'var(--button)' }} target='_blank'>Learn more about how long personal injury cases typically take here.</a>
+
                   </p>
-                  <ul style={{ color: '#111', textTransform: 'capitalize' }}>
-                    <li>The severity of your injuries and medical treatment costs.</li>
-                    <li>Lost wages and future loss of earning capacity.</li>
-                    <li>Pain, suffering, and emotional distress.</li>
-                    <li>The amount of available insurance coverage and clear proof of liability.</li>
-                  </ul>
+                </div>
+              </div>
+
+                 <div className="faq-accordion">
+                <button className="faq-accordion-header">
+                  <span>What should I bring to my free consultation?</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-accordion-content">
+                  <p className="faq-answer-text">
+                  When you come in for your consultation, try to bring any documentation you have related to the accident. This might be photos, insurance information, medical records or bills, and letters from the insurance company. Most importantly, don’t stress about the consultation. We’re here to listen to your story and learn the facts of your case. Do not worry if you don’t have everything gathered yet. Our goal is to make this process as smooth as possible for you, so just come prepared to share your story and we’ll take it from there.
+
+                  </p>
                 </div>
               </div>
             </div>

@@ -734,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!Array.isArray(blogs) || blogs.length === 0) return; // keep static fallback
             grid.innerHTML = blogs.map(b => `
                 <div class="article-card">
-                    <a href="blog-detail.html?id=${b.id}" style="text-decoration:none;color:inherit;display:block;height:100%;">
+                    <a href="/blogs/${b.slug || b.id}" style="text-decoration:none;color:inherit;display:block;height:100%;">
                         <div class="article-image-wrapper">
                             <img src="${blogImage(b)}" alt="${escapeAttr(b.title)}" class="article-img">
                         </div>
@@ -757,7 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const blogs = await res.json();
             if (!Array.isArray(blogs) || blogs.length === 0) return;
             grid.innerHTML = blogs.map(b => `
-                <a href="blog-detail.html?id=${b.id}" class="blog-card">
+                <a href="/blogs/${b.slug || b.id}" class="blog-card">
                     <div class="blog-card-img-wrapper">
                         <img src="${blogImage(b)}" alt="${escapeAttr(b.title)}" class="blog-card-img">
                     </div>
