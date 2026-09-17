@@ -727,7 +727,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 12px 40px 0 40px;
+    padding: 22px 40px 0 40px;
     gap: 30px;
 }
 
