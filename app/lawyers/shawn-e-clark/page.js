@@ -166,7 +166,7 @@ export default function Page() {
                   enjoys spending time with his wife, Catherine, their two dogs, and their cat. Since
                   2022, he has proudly served as a mentor in the Big Brothers Big Sisters program.
                 </p>
-                <p>Shawn currently practices in the area of <a href="daniel-l-hightower.html"
+                <p>Shawn currently practices in the area of <a href="/areas-of-practice/personal-injury-law"
                   className="inline-partner-link">Personal Injury</a>, leveraging his extensive
                   experience to provide compassionate and effective representation for his clients.</p>
               </div>

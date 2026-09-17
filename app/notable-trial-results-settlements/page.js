@@ -159,7 +159,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>

@@ -532,7 +532,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="../privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -556,10 +556,10 @@ export default function Page() {
             <div className="partners-text-col">
               <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>The Car Accident Lawyer Who Wins
                 Big for You</h2>
-              <p>Since 1976, <a href="../lawyers/daniel-l-hightower.html"
+              <p>Since 1976, <a href="/lawyers/daniel-l-hightower"
                 className="inline-partner-link">Hightower & Hightower, P.A.</a> has been standing up for
                 people who have been injured due to someone else’s negligence or wrongdoing. Our commitment
-                to our clients has established us as a <a href="personal-injury-law.html"
+                to our clients has established us as a <a href="/areas-of-practice/personal-injury-law"
                   className="inline-partner-link">Personal Injury Law</a> Firm that accident victims can rely
                 on for compassionate guidance and aggressive representation. Each attorney at our firm is
                 dedicated to protecting your rights, pursuing the justice you deserve, and holding negligent
@@ -575,7 +575,7 @@ export default function Page() {
                 discuss your legal options. We work diligently to secure justice for you, negotiate with
                 insurers, and, if necessary, litigate your case in court. Importantly, we operate on a
                 contingency fee basis, meaning you pay nothing unless we make a recovery on your behalf.</p>
-              <p><strong><a href="../contact-us.html" className="inline-partner-link">Contact Us For A Free Case
+              <p><strong><a href="/contact-us" className="inline-partner-link">Contact Us For A Free Case
                 Review</a></strong></p>
             </div>
           </div>
@@ -788,7 +788,7 @@ export default function Page() {
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you have a potential car accident claim, please feel free to <a
-              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="/contact-us" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>

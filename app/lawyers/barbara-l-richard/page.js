@@ -149,7 +149,7 @@ export default function Page() {
                   Barbara is also a member of the Marion County Bar Association, the Florida Bar
                   Association, and the American Bar Association, and she has been admitted to practice in
                   the U.S. District Court, Northern and Middle Districts of Florida.</p>
-                <p>Barbara is a practicing attorney in the area of <a href="#"
+                <p>Barbara is a practicing attorney in the area of <a href="/blogs/workers-compensation-in-florida"
                   style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Workers’
                   Compensation.</a></p>
 

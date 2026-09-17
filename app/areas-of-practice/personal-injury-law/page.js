@@ -595,7 +595,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="../privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -619,7 +619,7 @@ export default function Page() {
                 className="partners-img" />
             </div>
             <div className="partners-text-col">
-              <p>Since 1976, <a href="daniel-l-hightower.html" className="inline-partner-link">Daniel L.
+              <p>Since 1976, <a href="/lawyers/daniel-l-hightower" className="inline-partner-link">Daniel L.
                 Hightower</a> has been standing up for the rights of people against those that caused
                 them injury. Many times the at-fault party is represented by an insurance company, or the
                 injured party is seeking benefits from their own insurance company. You do not have to, and
@@ -809,7 +809,7 @@ export default function Page() {
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you have a potential personal injury claim, please feel free to <a
-              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="/contact-us" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>

@@ -225,8 +225,7 @@ export default function Page() {
 
       <section className="lawyers-profiles-section">
         <div className="profiles-container">
-          <h3 className="profiles-section-title">Touch the picture of each lawyer for his or her biographical
-            information.</h3>
+          <h3 className="profiles-section-title">Click on each attorney’s photo to learn more about their experience and background.</h3>
 
           <div className="profiles-grid">
             {/* Lawyer 1 */}

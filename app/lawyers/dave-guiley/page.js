@@ -153,9 +153,9 @@ export default function Page() {
                     style={{ color: '#0000007c' }}>“testament to the fact
                     that Mr. Guiley’s peers rank him at the highest level of professional
                     excellence.”</i></p>
-                <p>Dave is a practicing attorney in the areas of <a href="#"
+                <p>Dave is a practicing attorney in the areas of <a href="/areas-of-practice/personal-injury-law"
                   style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Personal
-                  Injury</a> and <a href="#"
+                  Injury</a> and <a href="/areas-of-practice/wrongful-death-law"
                     style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Wrongful
                     Death</a>.</p>
 

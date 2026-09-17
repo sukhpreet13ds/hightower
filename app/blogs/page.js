@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 import { all } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'News & Articles - Hightower & Hightower' };
+export const metadata = { title: 'Blogs - Hightower & Hightower' };
 
 function blogExcerpt(b) {
   if (b.excerpt) return b.excerpt;

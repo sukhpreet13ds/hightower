@@ -32,7 +32,7 @@ export default async function Page() {
               <a href="#" className="btn-schedule" data-open-consult="true">
                 <img src="assets/cal.png" alt="Play" className="icon-play" /> SCHEDULE CONSULTATION
               </a>
-              <a href="lawyers.html" className="btn-get-know">
+              <a href="lawyers" className="btn-get-know">
                 <img src="assets/button-play.png" alt="Play" className="icon-play" /> GET TO KNOW US
               </a>
             </div>
@@ -101,7 +101,7 @@ export default async function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -123,41 +123,41 @@ export default async function Page() {
             <span className="verdict-label">PERSONAL INJURY</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="9.6"
               data-decimals="1">0.0</span> Million</h3>
-            <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
+            <a href="/notable-trial-results-settlements#million-navigate" className="verdict-link">Read More</a>
           </div>
           {/* Card 2 */}
           <div className="verdict-card">
             <span className="verdict-label">CAR ACCIDENT</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="2.1"
               data-decimals="1">0.0</span> Million</h3>
-            <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
+            <a href="/notable-trial-results-settlements#million-navigate" className="verdict-link">Read More</a>
           </div>
           {/* Card 3 */}
           <div className="verdict-card">
             <span className="verdict-label">WORK INJURY</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="5.75"
               data-decimals="2">0.00</span> Million</h3>
-            <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
+            <a href="/notable-trial-results-settlements#million-navigate" className="verdict-link">Read More</a>
           </div>
           {/* Card 4 */}
           <div className="verdict-card">
             <span className="verdict-label">WRONGFUL DEATH</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="2.0"
               data-decimals="1">0.0</span> Million</h3>
-            <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
+            <a href="/notable-trial-results-settlements#million-navigate" className="verdict-link">Read More</a>
           </div>
           {/* Card 5 */}
           <div className="verdict-card">
             <span className="verdict-label">MOTORCYCLIST ACCIDENT</span>
             <h3 className="verdict-amount">$<span className="animate-counter" data-target="2.5"
               data-decimals="1">0.0</span> Million</h3>
-            <a href="notable-trial-results-settlements.html#million-navigate" className="verdict-link">Read More</a>
+            <a href="/notable-trial-results-settlements#million-navigate" className="verdict-link">Read More</a>
           </div>
         </div>
 
         {/* Centered Overlapping Button */}
         <div className="verdicts-btn-wrapper">
-          <a href="notable-trial-results-settlements.html" className="btn-all-verdicts">SEE ALL NOTABLE VERDICTS</a>
+          <a href="/notable-trial-results-settlements" className="btn-all-verdicts">SEE ALL NOTABLE VERDICTS</a>
         </div>
       </section>
 
@@ -195,14 +195,14 @@ export default async function Page() {
             <div className="law-card-content">
               <h3 className="law-card-title">Personal Injury<br />Law</h3>
               <p className="law-card-desc">
-                Since 1976, <a href="lawyers/daniel-l-hightower.html"
+                Since 1976, <a href="/lawyers/daniel-l-hightower"
                   style={{ borderBottom: '2px solid var(--button)', color: '#fff', textDecoration: 'none' }}>Daniel
                   L.
                   Hightower</a> has been standing up for the rights of people against those that
                 caused them injury. Many times the at-fault party is represented by an insurance company, or
                 the injured party is seeking benefits from their own insurance company...
               </p>
-              <a href="areas-of-practice/personal-injury-law.html" className="btn-law-consult">LEARN MORE</a>
+              <a href="/areas-of-practice/personal-injury-law" className="btn-law-consult">LEARN MORE</a>
             </div>
           </div>
           {/* Card 2: Car Accident Law */}
@@ -217,7 +217,7 @@ export default async function Page() {
                 collision, you may have a claim against the at-fault driver and your own...
 
               </p>
-              <a href="areas-of-practice/car-accident-lawyer.html" className="btn-law-consult">LEARN MORE</a>
+              <a href="/areas-of-practice/car-accident-lawyer" className="btn-law-consult">LEARN MORE</a>
             </div>
           </div>
           {/* Card 3: Work Accident Law */}
@@ -231,7 +231,7 @@ export default async function Page() {
                 entitled to receive medical treatment and prescription drugs. You may also be entitled to
                 wage loss reimbursement for time you have been...
               </p>
-              <a href="areas-of-practice/work-accident-law.html" className="btn-law-consult">LEARN MORE</a>
+              <a href="/areas-of-practice/work-accident-law" className="btn-law-consult">LEARN MORE</a>
             </div>
           </div>
           {/* Card 4: Wrongful Death Law */}
@@ -246,7 +246,7 @@ export default async function Page() {
                 pain and grief that they may not realize that the death of their...
 
               </p>
-              <a href="areas-of-practice/wrongful-death-law.html" className="btn-law-consult">LEARN MORE</a>
+              <a href="/areas-of-practice/wrongful-death-law" className="btn-law-consult">LEARN MORE</a>
             </div>
           </div>
           {/* Card 5: Social Security Disability */}
@@ -261,7 +261,7 @@ export default async function Page() {
                 the initial application has been denied. In theory, you should...
 
               </p>
-              <a href="areas-of-practice/social-security-disability-law.html" className="btn-law-consult">LEARN
+              <a href="/areas-of-practice/social-security-disability-law" className="btn-law-consult">LEARN
                 MORE</a>
             </div>
           </div>
@@ -583,7 +583,7 @@ export default async function Page() {
 
         {/* Centered Reviews CTA Button */}
         <div className="client-btn-wrapper">
-          <a href="client-testimonials.html" className="btn-view-all-reviews">VIEW ALL REVIEWS</a>
+          <a href="/client-testimonials" className="btn-view-all-reviews">VIEW ALL REVIEWS</a>
         </div>
       </section>
 
@@ -606,7 +606,7 @@ export default async function Page() {
               <div className="meet-info-overlay">
                 <span className="meet-role">FOUNDING PARTNER</span>
                 <h3 className="meet-name">Daniel L. Hightower</h3>
-                <a href="lawyers/daniel-l-hightower.html" className="btn-meet-partner">MEET DANIEL</a>
+                <a href="/lawyers/daniel-l-hightower" className="btn-meet-partner">MEET DANIEL</a>
               </div>
             </div>
 
@@ -623,7 +623,7 @@ export default async function Page() {
               <div className="meet-info-overlay">
                 <span className="meet-role">PARTNER</span>
                 <h3 className="meet-name">Alison L. Hightower</h3>
-                <a href="lawyers/alison-l-hightower.html" className="btn-meet-partner">MEET ALISON</a>
+                <a href="/lawyers/alison-l-hightower" className="btn-meet-partner">MEET ALISON</a>
               </div>
             </div>
 
@@ -700,7 +700,7 @@ export default async function Page() {
           </div>
 
           <div className="news-btn-wrapper">
-            <a href="blogs.html" className="btn-read-more-articles">READ MORE ARTICLES</a>
+            <a href="/blogs" className="btn-read-more-articles">READ MORE ARTICLES</a>
           </div>
         </div>
       </section>

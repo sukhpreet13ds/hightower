@@ -142,7 +142,7 @@ export default function Page() {
               </div>
               <div className="lawyer-profile-bio-text">
                 <p>Alison L. Hightower graduated from Stetson University College of Law with Honors in May of 2014. Alison is a member of the Florida Justice Association and the Marion County Bar Association. She has been admitted to practice in the U.S. District Court, Middle District of Florida and the U.S. District Court, Southern District of Florida. Alison has been involved with the Volunteer Income Tax Assistance (VITA) program through United Way of Marion County and the D.R. Smith American Inn of Court. She shares her father’s commitment to legal aid work through participation in Community Legal Services of Mid-Florida’s pro bono volunteer attorney program.</p>
-                <p>Alison is a practicing attorney in the area of <a href="/areas-of-practice/personal-injury-law.html"
+                <p>Alison is a practicing attorney in the area of <a href="/areas-of-practice/personal-injury-law"
                   style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Personal Injury
                   law.</a></p>
 

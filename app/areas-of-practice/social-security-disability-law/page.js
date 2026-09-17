@@ -532,7 +532,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="../privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -735,7 +735,7 @@ export default function Page() {
                 prepare for the hearing so that your testimony will maximize your chances of being found
                 disabled. Finally, we will attend the hearing with you to ensure that you have an
                 opportunity to fully explain your particular circumstances to the judge.</p>
-              <p><strong><a href="../faq.html" className="inline-partner-link">Click here for our FAQs about
+              <p><strong><a href="/faq" className="inline-partner-link">Click here for our FAQs about
                 Social Security Disability Law.</a></strong></p>
             </div>
             <div className="premises-image-col">
@@ -855,7 +855,7 @@ export default function Page() {
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you need help with your Social Security Disability claim, please feel free to <a
-              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="/contact-us" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>

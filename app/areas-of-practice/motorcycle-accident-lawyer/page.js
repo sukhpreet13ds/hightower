@@ -557,7 +557,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="../privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -589,7 +589,7 @@ export default function Page() {
                 that riders receive the aggressive representation they deserve. If you’ve been injured in a
                 motorcycle accident, don’t wait for the insurance company to dictate your future. Let our
                 half-century of experience protect it.</p>
-              <p><strong><a href="../contact-us.html" className="inline-partner-link">Contact Us For a Free Case
+              <p><strong><a href="/contact-us" className="inline-partner-link">Contact Us For a Free Case
                 Review</a></strong></p>
               <div style={{ marginTop: '25px', width: '100%' }}>
                 <img src="../assets/moto-investigate.jpg" alt="Motorcycle Accident Investigation" style={{ width: '100%', height: 'auto', borderRadius: '8px', display: 'block', objectFit: 'cover', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }} />
@@ -868,7 +868,7 @@ export default function Page() {
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you have a potential motorcycle accident claim, please feel free to <a
-              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="/contact-us" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>

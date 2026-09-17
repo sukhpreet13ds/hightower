@@ -152,7 +152,7 @@ export default function Page() {
                   to Ocala in 1973. Here, he joined the Green, Simmons, & Green Law Firm, working one year
                   as a part-time Assistant State Attorney, prosecuting felony crimes. After fourteen years
                   with the same firm, Mr. Hightower started his own law firm in 1987, Daniel L. Hightower,
-                  P.A., focusing on <a href="../areas-of-practice/personal-injury-law.html"
+                  P.A., focusing on <a href="/areas-of-practice/personal-injury-law"
                     className="inline-partner-link">Personal Injury</a>, Wrongful Death and Workers'
                   Compensation
                   cases.</p>

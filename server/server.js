@@ -268,5 +268,5 @@ app.listen(PORT, HOST, () => {
   console.log(`Hightower site listening on ${HOST}:${PORT}`);
   console.log(`  Local:   http://localhost:${PORT}`);
   lan.forEach(ip => console.log(`  Network: http://${ip}:${PORT}`));
-  console.log(`  Admin:   http://localhost:${PORT}/admin.html`);
+  console.log(`  Admin:   http://localhost:${PORT}/admin`);
 });

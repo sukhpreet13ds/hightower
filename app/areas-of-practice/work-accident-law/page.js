@@ -532,7 +532,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="../privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -761,7 +761,7 @@ What if my employer or their insurance company denies my claim?
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you have a potential work accident claim, please feel free to <a
-              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="/contact-us" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>

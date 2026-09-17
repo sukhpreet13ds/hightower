@@ -532,7 +532,7 @@ export default function Page() {
               </form>
 
               <p className="form-footer-text">
-                By submitting, you agree to our <a href="../privacy-policy.html" className="footer-text"
+                By submitting, you agree to our <a href="/privacy-policy" className="footer-text"
                   style={{ color: '#C2905B' }}>Privacy Policy</a>. Your information is confidential and
                 protected by attorney-client privilege.
               </p>
@@ -563,7 +563,7 @@ export default function Page() {
                 representation. Each attorney here is dedicated to protecting your rights, pursuing the
                 justice you deserve, and holding at-fault parties accountable. If you’ve been in a trucking
                 accident, don’t wait. Contact Hightower & Hightower today.</p>
-              <p><strong><a href="../contact-us.html" className="inline-partner-link">Contact Us For A Free Case
+              <p><strong><a href="/contact-us" className="inline-partner-link">Contact Us For A Free Case
                 Review</a></strong></p>
             </div>
           </div>
@@ -813,7 +813,7 @@ export default function Page() {
         <div className="premises-contact-bar">
           <div className="practice-law-container">
             <p>If you have a potential truck accident claim, please feel free to <a
-              href="../contact-us.html" className="gold-bar-link">contact us</a>.</p>
+              href="/contact-us" className="gold-bar-link">contact us</a>.</p>
           </div>
         </div>
       </section>

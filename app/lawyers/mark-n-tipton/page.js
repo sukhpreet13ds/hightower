@@ -143,7 +143,7 @@ export default function Page() {
               <div className="lawyer-profile-bio-text">
                 <p>Mark N. Tipton received a Bachelor’s degree from Weber State College in 1988. While
                   attending Weber State College, he had the privilege of being selected for an internship
-                  with the Utah Legal Services Corporation, where he represented clients in <a href="#"
+                  with the Utah Legal Services Corporation, where he represented clients in <a href="/areas-of-practice/social-security-disability-law"
                     style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>social security
                     disability</a> and other public entitlement cases. Thereafter he attended the
                   University of Florida College of Law where he received his law degree in 1991. He was
