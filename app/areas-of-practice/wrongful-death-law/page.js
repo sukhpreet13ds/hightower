@@ -559,17 +559,10 @@ export default function Page() {
               <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Wrongful Death Attorney in Ocala
               </h2>
               <p>Wrongful death is any death that results from the misconduct or negligence of another person
-                or entity. Wrongful death can be the result of an auto accident, a work accident, a
-                dangerous product or the negligent acts of others.</p>
+                or entity. Wrongful death can be the result of an auto accident, a work accident or the negligent acts of others.</p>
               <p>Many times families are so stricken by pain and grief that they may not realize that the
                 death of their loved one was due to the negligence of another. Their loved one is no longer
-                there to tell them what happened to them. It is through the work of attorneys with access to
-                forensic experts that preservation of previously undetected evidence can be preserved to
-                prove the case. For instance, a person may be involved in an automobile accident and may be
-                ejected because, the police report says, the person was not wearing their seatbelt. However,
-                upon closer inspection by an engineering expert with special knowledge concerning seatbelt
-                latching mechanisms, it can be determined if there was a failure of the seatbelt latch
-                during the collision, resulting in the ejection of the passenger.</p>
+                there to tell them what happened to them.</p>
             </div>
           </div>
 
@@ -579,7 +572,7 @@ export default function Page() {
               Survivors</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
               While no amount of money can make up for the loss of a loved one, if a death was caused by the
-              negligence of another person or entity, the law provides for compensation to the survivors: the
+              negligence of another person or entity, the law may provide for compensation to the survivors: the
               spouse, child or parents of the loved one. Such recovery may help with funeral and medical
               bills, as well as lost income.</p>
           </div>
@@ -640,8 +633,8 @@ export default function Page() {
               <h3 className="premises-section-subtitle">Wrongful Death Attorney</h3>
               <div className="premises-divider"></div>
               <p>To speak to a dedicated Ocala wrongful death attorney for a confidential consultation, call
-                us today at <strong><a href="tel:3526463268"
-                  style={{ color: '#C2905B' }}>352-646-3268</a></strong>. Our experienced legal team is
+                us today at <strong><a href="tel:352-629-7777"
+                  style={{ color: '#C2905B' }}>352-629-7777</a></strong>. Our experienced legal team is
                 here to help you evaluate your circumstances, preserve vital evidence, and pursue the
                 compensation your family deserves.</p>
             </div>
@@ -740,7 +733,7 @@ export default function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    We take care of wrongful death cases on a contingency fee basis, which means you don’t have to pay us anything upfront. We only get paid if we’re able to get you the compensation you deserve, and even then, our fee is a small percentage of what you’re awarded. We want to make sure you get the help you need without breaking the bank.
+                    We take care of wrongful death cases on a contingency fee basis, which means you don’t have to pay us anything upfront. We only get paid if we’re able to get you the compensation you deserve, and even then, our fee is a percentage of what you’re awarded. We want to make sure you get the help you need without breaking the bank.
 
 
                   </p>

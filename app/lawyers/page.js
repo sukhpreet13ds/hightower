@@ -262,7 +262,7 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="profile-info-overlay">
-                  <span className="profile-badge">FOUNDING PARTNER</span>
+                  <span className="profile-badge">PARTNER</span>
                   <h4 className="profile-name">
                     <a href="/lawyers/alison-l-hightower" className="card-main-link">
                       Alison L. Hightower
