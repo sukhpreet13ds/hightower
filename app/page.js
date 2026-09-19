@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import { all } from '@/lib/db';
+import { getSectionContent } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Hightower & Hightower' };
@@ -11,10 +12,13 @@ function blogExcerpt(b) {
 }
 
 export default async function Page() {
-  const latestBlogs = await all(`
-    SELECT id, slug, title, excerpt, content, image FROM blogs WHERE published = 1
-    ORDER BY created_at DESC, id DESC LIMIT 3
-  `);
+  const [latestBlogs, c] = await Promise.all([
+    all(`
+      SELECT id, slug, title, excerpt, content, image FROM blogs WHERE published = 1
+      ORDER BY created_at DESC, id DESC LIMIT 3
+    `),
+    getSectionContent('home'),
+  ]);
 
   return (
     <main className="main-content">
@@ -22,21 +26,20 @@ export default async function Page() {
         <div className="hero-container">
           <div className="hero-left-col">
 
-            <h1 className="hero-title">You Were Injured.<br />We'll Fight to <span className="highlight-gold">Make It
-              Right.</span></h1>
+            <h1 className="hero-title">{c.hero_title_line1}<br />{c.hero_title_line2} <span className="highlight-gold">{c.hero_title_highlight}</span></h1>
 
             <p className="hero-description">
-              For nearly 50 years, Dan Hightower has stood beside injured Floridians, battling insurance companies so you can focus on what matters: healing. Today, the Hightower family and entire firm continue that work for injury victims throughout Florida. Your consultation is free, and you pay nothing unless we make a recovery for you.
+              {c.hero_description}
             </p>
             <div className="hero-btn-group">
               <a href="#" className="btn-schedule" data-open-consult="true">
-                <img src="assets/cal.png" alt="Play" className="icon-play" /> SCHEDULE CONSULTATION
+                <img src="assets/cal.png" alt="Play" className="icon-play" /> {c.hero_schedule_btn_text}
               </a>
               <a href="lawyers" className="btn-get-know">
-                <img src="assets/button-play.png" alt="Play" className="icon-play" /> GET TO KNOW US
+                <img src="assets/button-play.png" alt="Play" className="icon-play" /> {c.hero_get_to_know_btn_text}
               </a>
             </div>
-            <div className="hero-subtitle-since">Fighting for accident victim justice since 1976.</div>
+            <div className="hero-subtitle-since">{c.hero_since_text}</div>
           </div>
 
           <div className="hero-middle-col">
@@ -111,7 +114,7 @@ export default async function Page() {
 
         {/* Bottom Gold Banner Bar */}
         <div className="hero-bottom-banner">
-          <span>No Cost Consultation – 100% FREE Until We Win!</span>
+          <span>{c.hero_banner_text}</span>
         </div>
       </section>
 
@@ -167,10 +170,10 @@ export default async function Page() {
           {/* Left Column: Title */}
           <div className="practice-left-col">
             <h2 className="practice-title">
-              Our Areas
+              {c.practice_title_line1}
               <div className="practice-title-sub">
                 <span className="title-line"></span>
-                <span className="highlight-gold">of Practice</span>
+                <span className="highlight-gold">{c.practice_title_highlight}</span>
               </div>
             </h2>
           </div>
@@ -178,10 +181,9 @@ export default async function Page() {
           {/* Right Column: Description & Action Button */}
           <div className="practice-right-col">
             <p className="practice-desc">
-              Our legal team is honored to stand up for the rights of those who have been severely injured, as
-              well as their families.
+              {c.practice_desc}
             </p>
-            <a href="#" className="btn-free-consult" data-open-consult="true">FREE CONSULTATION</a>
+            <a href="#" className="btn-free-consult" data-open-consult="true">{c.practice_btn_text}</a>
           </div>
         </div>
       </section>
@@ -275,7 +277,7 @@ export default async function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -358,7 +360,7 @@ export default async function Page() {
 
           {/* Right Column: 3 Steps */}
           <div className="question-right-col">
-            <h2 className="question-section-title">Get Answers in 3 Easy Steps</h2>
+            <h2 className="question-section-title">{c.question_title}</h2>
 
             <div className="steps-wrapper">
               {/* Step 1 */}
@@ -402,8 +404,7 @@ export default async function Page() {
             </div>
 
             <div className="question-btn-wrapper">
-              <a href="#" className="btn-free-consult-steps" data-open-consult="true">GET A FREE
-                CONSULTATION</a>
+              <a href="#" className="btn-free-consult-steps" data-open-consult="true">{c.question_btn_text}</a>
             </div>
           </div>
         </div>
@@ -593,10 +594,10 @@ export default async function Page() {
           <div className="meet-col meet-left-col">
             <div className="meet-title-block">
               <h2 className="meet-title">
-                The Hightower
+                {c.meet_title_line1}
                 <div className="meet-title-sub">
                   <span className="meet-title-line"></span>
-                  <span className="highlight-gold">Standard</span>
+                  <span className="highlight-gold">{c.meet_title_highlight}</span>
                 </div>
               </h2>
             </div>
@@ -642,8 +643,8 @@ export default async function Page() {
       {/* Form Section */}
       <section className="form-section" id="form-section">
         <div className="form-section-container">
-          <h2 className="form-section-title">Get Started Now!</h2>
-          <p className="form-section-subtitle">Take The First Step, We Look Forward To Helping You.</p>
+          <h2 className="form-section-title">{c.form_section_title}</h2>
+          <p className="form-section-subtitle">{c.form_section_subtitle}</p>
 
           <form className="get-started-form" action="#" method="POST">
             <div className="form-inputs-row">
@@ -679,7 +680,7 @@ export default async function Page() {
 
       <section className="news-articles-section" id="news-articles-section">
         <div className="news-container">
-          <h2 className="news-section-title">News & Articles</h2>
+          <h2 className="news-section-title">{c.news_section_title}</h2>
 
           <div className="articles-grid">
             {latestBlogs.map((b) => (
@@ -708,7 +709,7 @@ export default async function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for accident victim justice since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

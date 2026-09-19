@@ -8,6 +8,7 @@
     "start": "next start -p 5702"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cloudinary": "^2.5.0",
     "mysql2": "^3.22.5",
     "next": "^15.5.0",

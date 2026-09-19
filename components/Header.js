@@ -1,4 +1,7 @@
-export default function Header() {
+import { CONTENT_DEFAULTS } from '@/lib/content-defaults';
+
+export default function Header({ content }) {
+  const c = { ...CONTENT_DEFAULTS.header, ...content };
   return (
     <>
       {/* top bar: social icons + phone + contact */}
@@ -8,11 +11,11 @@ export default function Header() {
             <i className="fa-solid fa-grip-lines"></i>
           </button>
           <div className="top-bar-left">
-            <a href="https://maps.app.goo.gl/Fmg9FsvBxmEQRGR48" target="_blank" rel="noopener noreferrer" className="top-bar-location">
-              <i className="fa-solid fa-location-dot"></i> E. Silver Springs Blvd., Suite 300, Ocala, FL 34470
+            <a href={c.address_1_url} target="_blank" rel="noopener noreferrer" className="top-bar-location">
+              <i className="fa-solid fa-location-dot"></i> {c.address_1_text}
             </a>
-            <a href="https://maps.app.goo.gl/6airePnfPt9mrthM9" target="_blank" rel="noopener noreferrer" className="top-bar-location">
-              <i className="fa-solid fa-location-dot"></i> 3259 W. Bryant Ave., Bell, FL 32619
+            <a href={c.address_2_url} target="_blank" rel="noopener noreferrer" className="top-bar-location">
+              <i className="fa-solid fa-location-dot"></i> {c.address_2_text}
             </a>
           </div>
 
@@ -24,23 +27,23 @@ export default function Header() {
               <a href="/client-testimonials" className="top-bar-center-link">Testimonials</a>
             </div>
             <div className="social-icons">
-              <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+              <a href={c.facebook_url} aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href={c.linkedin_url} aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+              <a href={c.twitter_url} aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+              <a href={c.youtube_url} aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
             </div>
             <div className="contact-info">
-              <a href="tel:+1 3526297777" className="phone-link">
+              <a href={c.phone_link} className="phone-link">
                 <i className="fa-solid fa-phone"></i>
 
                 <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
-                  <span>352-629-7777</span>
+                  <span>{c.phone_display}</span>
                   <span style={{ fontSize: "14px", fontWeight: "500", color: "#BB8A55" }}>
-                    Llámenos en Español
+                    {c.phone_caption}
                   </span>
                 </span>
               </a>
-              <a href="/contact-us" className="contact-btn">CONTACT US</a>
+              <a href="/contact-us" className="contact-btn">{c.contact_button_text}</a>
             </div>
           </div>
         </div>
@@ -160,8 +163,8 @@ export default function Header() {
             <div></div>
             <div className="mobile-menu-actions-tab">
               <div className="mobile-header-socials">
-                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+                <a href={c.twitter_url} aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+                <a href={c.youtube_url} aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
               </div>
               <button className="mobile-close-btn" id="mobile-menu-close">
                 Close
@@ -218,19 +221,19 @@ export default function Header() {
             </div>
 
             <div className="mobile-menu-footer">
-              <a href="/contact-us" className="mobile-contact-btn">CONTACT US</a>
-              <a href="tel:+1 3526297777" className="mobile-phone-link">
+              <a href="/contact-us" className="mobile-contact-btn">{c.contact_button_text}</a>
+              <a href={c.phone_link} className="mobile-phone-link">
                 <i className="fa-solid fa-phone"></i>
                 <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
-                  <span>352-629-7777</span>
+                  <span>{c.phone_display}</span>
                   <span style={{ fontSize: "11px", fontWeight: "500" }}>
-                    Llámenos en Español
+                    {c.phone_caption}
                   </span>
                 </span>
               </a>
               <div className="mobile-footer-socials">
-                <a href="https://www.linkedin.com/company/hightower-law/" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/HightowerLawFL/" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href={c.linkedin_url} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+                <a href={c.facebook_url} aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
             </div>
           </div>
@@ -249,11 +252,11 @@ export default function Header() {
             {/* Locations */}
             <div className="side-panel-section side-panel-locations">
               <h4 className="side-panel-title">Locations</h4>
-              <a href="https://maps.app.goo.gl/Fmg9FsvBxmEQRGR48" target="_blank" rel="noopener noreferrer" className="side-panel-location-link">
-                <i className="fa-solid fa-location-dot"></i> E. Silver Springs Blvd., Suite 300, Ocala, FL 34470
+              <a href={c.address_1_url} target="_blank" rel="noopener noreferrer" className="side-panel-location-link">
+                <i className="fa-solid fa-location-dot"></i> {c.address_1_text}
               </a>
-              <a href="https://maps.app.goo.gl/6airePnfPt9mrthM9" target="_blank" rel="noopener noreferrer" className="side-panel-location-link">
-                <i className="fa-solid fa-location-dot"></i> 3259 W. Bryant Ave., Bell, FL 32619
+              <a href={c.address_2_url} target="_blank" rel="noopener noreferrer" className="side-panel-location-link">
+                <i className="fa-solid fa-location-dot"></i> {c.address_2_text}
               </a>
             </div>
 
@@ -270,26 +273,26 @@ export default function Header() {
             <div className="side-panel-section side-panel-socials">
               <h4 className="side-panel-title">Follow Us</h4>
               <div className="side-panel-social-icons">
-                <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+                <a href={c.facebook_url} aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href={c.linkedin_url} aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+                <a href={c.twitter_url} aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+                <a href={c.youtube_url} aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
               </div>
             </div>
 
             {/* Contact Info */}
             <div className="side-panel-section side-panel-contact">
               <h4 className="side-panel-title">Contact</h4>
-              <a href="tel:+1 3526297777" className="side-panel-phone">
+              <a href={c.phone_link} className="side-panel-phone">
                 <i className="fa-solid fa-phone"></i>
                 <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
-                  <span>352-629-7777</span>
+                  <span>{c.phone_display}</span>
                   <span style={{ fontSize: "12px", fontWeight: "500", color: "#BB8A55" }}>
-                    Llámenos en Español
+                    {c.phone_caption}
                   </span>
                 </span>
               </a>
-              <a href="/contact-us" className="side-panel-contact-btn">CONTACT US</a>
+              <a href="/contact-us" className="side-panel-contact-btn">{c.contact_button_text}</a>
             </div>
           </div>
         </div>

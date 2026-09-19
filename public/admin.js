@@ -65,10 +65,12 @@ document.querySelectorAll('.nav-item').forEach(btn => {
         btn.classList.add('active');
         const tab = btn.dataset.tab;
         $('tab-submissions').classList.toggle('hidden', tab !== 'submissions');
+        $('tab-content').classList.toggle('hidden', tab !== 'content');
         $('tab-blogs').classList.toggle('hidden', tab !== 'blogs');
         $('tab-news').classList.toggle('hidden', tab !== 'news');
         $('tab-newsletter').classList.toggle('hidden', tab !== 'newsletter');
         if (tab === 'submissions') loadSubmissions();
+        else if (tab === 'content') loadContent();
         else if (tab === 'blogs') loadBlogs();
         else if (tab === 'news') loadNews();
         else if (tab === 'newsletter') loadNewsletter();
@@ -162,6 +164,50 @@ $('sub-form').addEventListener('submit', async (e) => {
     const data = await r.json();
     if (r.ok) { closeSubModal(); toast('Submission updated'); loadSubmissions(); }
     else { $('sub-error').textContent = data.error || 'Save failed'; }
+});
+
+/* ---------------- Website Content ---------------- */
+let currentContentSection = 'header';
+
+document.querySelectorAll('.subtab-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.subtab-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentContentSection = btn.dataset.contentSection;
+        loadContent();
+    });
+});
+
+async function loadContent() {
+    $('content-error').textContent = '';
+    showLoader('content-fields');
+    const r = await api('admin/content?section=' + encodeURIComponent(currentContentSection));
+    if (!r.ok) return showLogin();
+    const { fields, values } = await r.json();
+    $('content-fields').innerHTML = fields.map(f => `
+        <label>${esc(f.label)}
+            ${f.type === 'textarea'
+                ? `<textarea data-content-key="${esc(f.key)}" rows="3">${esc(values[f.key] ?? '')}</textarea>`
+                : `<input type="text" data-content-key="${esc(f.key)}" value="${esc(values[f.key] ?? '')}" />`}
+        </label>
+        ${f.hint ? `<p class="field-hint">${esc(f.hint)}</p>` : ''}
+    `).join('');
+}
+
+$('content-save-btn').addEventListener('click', async () => {
+    $('content-error').textContent = '';
+    const values = {};
+    document.querySelectorAll('#content-fields [data-content-key]').forEach(el => {
+        values[el.dataset.contentKey] = el.value;
+    });
+    const r = await api('admin/content', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ section: currentContentSection, values }),
+    });
+    const data = await r.json();
+    if (r.ok) toast('Content saved');
+    else $('content-error').textContent = data.error || 'Save failed';
 });
 
 /* ---------------- Blogs ---------------- */

@@ -10,7 +10,7 @@ import SiteScripts from './SiteScripts';
  * The admin panel (/admin) has its own UI, so it is rendered WITHOUT the
  * public-site header/modals/script — keeping the two navbars separate.
  */
-export default function SiteChrome({ children }) {
+export default function SiteChrome({ children, headerContent }) {
   const pathname = usePathname();
   const isAdmin = pathname && pathname.startsWith('/admin');
 
@@ -18,7 +18,7 @@ export default function SiteChrome({ children }) {
 
   return (
     <>
-      <Header />
+      <Header content={headerContent} />
       {children}
       <Modals />
       <SiteScripts />

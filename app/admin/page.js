@@ -4,7 +4,7 @@ import Script from 'next/script';
 export default function AdminPage() {
   return (
     <>
-      <link rel="stylesheet" href="/admin.css?v=2" />
+      <link rel="stylesheet" href="/admin.css?v=3" />
 
       {/* LOGIN */}
       <div id="login-view" className="login-wrap">
@@ -32,6 +32,7 @@ export default function AdminPage() {
             <button className="nav-item active" data-tab="submissions">
               Submissions <span id="unread-badge" className="badge hidden">0</span>
             </button>
+            <button className="nav-item" data-tab="content">Website Content</button>
             <button className="nav-item" data-tab="blogs">Blogs</button>
             <button className="nav-item" data-tab="news">News</button>
             <button className="nav-item" data-tab="newsletter">Newsletter</button>
@@ -57,6 +58,24 @@ export default function AdminPage() {
             </div>
             <div id="submissions-list" className="cards"></div>
             <p id="submissions-empty" className="empty hidden">No submissions yet.</p>
+          </section>
+
+          {/* WEBSITE CONTENT TAB */}
+          <section id="tab-content" className="tab hidden">
+            <div className="content-head">
+              <div>
+                <h2>Website Content</h2>
+                <p className="content-sub">Edit the text and links on your public website pages.</p>
+              </div>
+              <button id="content-save-btn" className="btn-primary">Save Changes</button>
+            </div>
+            <div className="content-subtabs">
+              <button className="subtab-item active" data-content-section="header">Header</button>
+              <button className="subtab-item" data-content-section="footer">Footer</button>
+              <button className="subtab-item" data-content-section="home">Home Page</button>
+            </div>
+            <div id="content-fields" className="content-fields-card"></div>
+            <p id="content-error" className="form-error"></p>
           </section>
 
           {/* BLOGS TAB */}
@@ -200,7 +219,7 @@ export default function AdminPage() {
         </div>
       </div>
 
-      <Script src="/admin.js?v=2" strategy="afterInteractive" />
+      <Script src="/admin.js?v=3" strategy="afterInteractive" />
     </>
   );
 }

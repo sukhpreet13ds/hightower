@@ -1,11 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { CONTENT_DEFAULTS } from '@/lib/content-defaults';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState({ type: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
+  const [content, setContent] = useState(CONTENT_DEFAULTS.footer);
+
+  useEffect(() => {
+    fetch('/api/content?section=footer')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => { if (data) setContent((prev) => ({ ...prev, ...data })); })
+      .catch(() => {});
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,12 +49,12 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-top-row">
           <div className="footer-contact">
-            <span className="consult-badge">100% Free Consultation</span>
-            <a href="tel:352-629-7777" className="footer-phone">352-629-7777</a>
-            
+            <span className="consult-badge">{content.consult_badge_text}</span>
+            <a href={`tel:${content.phone_display}`} className="footer-phone">{content.phone_display}</a>
+
             <div className="footer-newsletter">
-              <h4>Sign Up for Our Newsletter</h4>
-              <p>Receive our newsletter and stay updated on legal topics and current events.</p>
+              <h4>{content.newsletter_title}</h4>
+              <p>{content.newsletter_subtitle}</p>
               <form className="newsletter-form" onSubmit={handleSubmit}>
                 <input 
                   type="email" 
@@ -71,10 +80,10 @@ export default function Footer() {
             <img src="/assets/footer-logo.svg" alt="H&H Lawyers Logo" className="footer-logo-img" />
           </div>
           <div className="footer-socials">
-            <a href="https://www.facebook.com/danhightowerlawyer/" aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="https://twitter.com/dan_hightower" aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UC5QEO_t8BdcwOsEOWT5MHiQ" aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
-            <a href="https://www.linkedin.com/company/daniel-l-hightower-p-a-" aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href={content.facebook_url} aria-label="Facebook" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+            <a href={content.twitter_url} aria-label="X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+            <a href={content.youtube_url} aria-label="YouTube" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+            <a href={content.linkedin_url} aria-label="LinkedIn" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
 
@@ -93,7 +102,7 @@ export default function Footer() {
         <div className="footer-bottom-row">
           <div className="footer-disclaimer">
             <div className="footer-bottom-meta">
-              <p className="copyright-text">Copyright &copy; 2026 Hightower & Hightower. All Rights Reserved.</p>
+              <p className="copyright-text">{content.copyright_text}</p>
               <div className="legal-links">
                 <a href="/privacy-policy">Privacy Policy</a>
                 {/* <span className="legal-divider">|</span>
@@ -101,7 +110,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="footer-meta-desc">
-              <p style={{ paddingTop: '60px' }}>The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship. The verdicts and settlements listed on this site are intended to be representative of cases handled by Hightower & Hightower. These listings are not a guarantee or prediction of the outcome of any other claims.</p>
+              <p style={{ paddingTop: '60px' }}>{content.disclaimer_text}</p>
             </div>
           </div>
         </div>
