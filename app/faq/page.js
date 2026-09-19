@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('faq');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -134,7 +136,7 @@ export default function Page() {
       <section className="faq-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">FAQ's</h1>
+            <h1 className="community-hero-title">{c.hero_title}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -204,7 +206,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.banner_text}
           </div>
         </div>
       </section>
@@ -214,9 +216,7 @@ export default function Page() {
         <div className="faq-container">
           {/* Intro paragraph */}
           <p className="faq-intro-text">
-            Our Frequently Asked Questions section has been sorted by topic to help you get the answers you
-            need. Click on one of the topics below to be taken to that section. As always, feel free to contact
-            us with any questions you might have.
+            {c.intro_text}
           </p>
 
           {/* Grid Layout: Sidebar Filter & Content */}
@@ -228,17 +228,17 @@ export default function Page() {
             <div className="faq-content-area">
               {/* Group 1: General Questions */}
               <div className="faq-category-group" data-category="general">
-                <h2 className="faq-category-title">General Questions</h2>
+                <h2 className="faq-category-title">{c.category_title}</h2>
                 <div className="faq-accordion-list">
                   {/* Accordion 1 (Expanded by default as requested in mockup screenshot) */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header active">
-                      <span>What kind of personal injury cases do you take?</span>
+                      <span>{c.faq_1_question}</span>
                       <span className="faq-icon">−</span>
                     </button>
                     <div className="faq-accordion-content" style={{ maxHeight: 'none', padding: '25px' }}>
                       <p className="faq-answer-text">
-                        Our Ocala personal injury lawyers represent clients across a wide range of accident and injury cases, including:
+                        {c.faq_1_answer}
                       </p>
                       <ul className="faq-list-items">
                         <li>Car Accidents</li>
@@ -257,12 +257,12 @@ export default function Page() {
                   {/* Accordion 2 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>How much is my case worth?</span>
+                      <span>{c.faq_2_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                       The value of each case is different and must be evaluated separately. We have five decades of experience handling accident and injury cases and take a great deal of time to properly evaluate your case. A person who has been injured through the negligence of another may recover for past and future medical expenses, past and future lost wages, and, in many cases, the value of your past and future pain, suffering, loss of enjoyment of life, and other non-economic damages. Additionally, if you have a spouse and/or children, they may have a claim in their own right for their loss of your consortium (companionship, services, comfort) due to the injuries you suffered. However, you must know that there is never any guarantee of any recovery.
+                       {c.faq_2_answer}
 
                       </p>
                     </div>
@@ -270,12 +270,12 @@ export default function Page() {
                   {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>How will I pay for my legal fees?</span>
+                      <span>{c.faq_3_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        We take cases on a contingency fee basis. That means you pay no fees or costs unless and until we make a recovery for you.
+                        {c.faq_3_answer}
 
                       </p>
                     </div>
@@ -284,12 +284,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>How long has your firm been serving Ocala?</span>
+                      <span>{c.faq_4_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Daniel L. Hightower has been representing accident victims in Marion County since 1976, providing nearly five decades of experience in the state of Florida.
+                        {c.faq_4_answer}
 
                       </p>
                     </div>
@@ -299,12 +299,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>How do you decide whether or not you will take my case?</span>
+                      <span>{c.faq_5_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Once we receive initial information from you about your case, you may be asked to schedule an appointment with an attorney in our firm to meet and further discuss your case. During that free initial consultation, we will ask you to bring all documentation concerning your accident, such as a police report, policies of insurance, photographs, and medical records and bills (if you have them). We will review the documentation and gather further information from you regarding the facts surrounding your accident, and answer your questions at that time. We review each case on an individual basis. Unfortunately, we do not have the resources to take every case; however, if after meeting with you and reviewing your case we feel we can be of service, we will take your case. If we cannot take your case, we may be able to refer you to other lawyers we know who can help.
+                        {c.faq_5_answer}
 
                       </p>
                     </div>
@@ -313,12 +313,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>What should I know about car, truck, and motorcycle accident cases?</span>
+                      <span>{c.faq_6_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                       These are some of the most common cases we handle, but each comes with its own challenges. Car accidents can lead to substantial injuries and financial burdens, and we handle the insurance process, gather evidence, and advocate for fair compensation for your losses. Truck accidents fall under unique commercial trucking laws and regulations, so we use our knowledge of these specific legal requirements to determine liability and hold the responsible parties accountable. Motorcycle accidents tend to result in more serious harm due to limited rider protection, and whether you were the operator or a passenger, we work to protect your interests and secure compensation for medical bills, lost income, and more.
+                       {c.faq_6_answer}
 
                       </p>
                     </div>
@@ -327,12 +327,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>What do I need to prove to win a personal injury claim?</span>
+                      <span>{c.faq_7_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Four things generally need to be established: that the other party owed you a duty of care, that they breached that duty, that the breach caused your injuries, and that you suffered real, measurable damages like medical bills or lost wages. Our focus is to recover maximum compensation for you.
+                        {c.faq_7_answer}
 
                       </p>
                     </div>
@@ -341,12 +341,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>I was in a car accident and the insurance company keeps calling me. What should I do?</span>
+                      <span>{c.faq_8_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Be cautious before giving a recorded statement or accepting a settlement offer. Insurance companies will try to resolve claims quickly and for less than what they’re worth. Our team of personal injury lawyers will handle communication with the insurer so you can focus on recovering.
+                        {c.faq_8_answer}
 
                       </p>
                     </div>
@@ -355,12 +355,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>What if I was partially at fault for the accident?</span>
+                      <span>{c.faq_9_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        You may still be able to recover compensation. Florida law accounts for shared fault (contributory negligence), and how much you’re at fault can affect your settlement, not necessarily eliminate it. We’ll go over how this applies to your specific situation.
+                        {c.faq_9_answer}
 
                       </p>
                     </div>
@@ -369,12 +369,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>What’s the deadline to file a personal injury claim in Florida?</span>
+                      <span>{c.faq_10_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Timing varies depending on the type of case, and it can be shorter if a government entity is involved. It’s best not to wait for very long. Evidence can disappear quickly, especially in cases where a hazard might get fixed or footage is deleted before it can be documented.
+                        {c.faq_10_answer}
 
                       </p>
                     </div>
@@ -383,26 +383,12 @@ export default function Page() {
                    {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>What’s the difference between a workers’ comp claim and a personal injury lawsuit for a workplace injury?</span>
+                      <span>{c.faq_11_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Workers’ compensation covers many on-the-job injuries regardless of fault, but a separate personal injury claim may be possible if a third party (not your employer) contributed to the accident. We can help you figure out which path, or both, applies to you.
-
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Accordion 3 */}
-                  <div className="faq-accordion">
-                    <button className="faq-accordion-header">
-                      <span>Will my case go to trial?</span>
-                      <span className="faq-icon">+</span>
-                    </button>
-                    <div className="faq-accordion-content">
-                      <p className="faq-answer-text">
-                        Most personal injury cases settle through negotiation with the insurance company. But if they won’t offer a fair settlement, our attorneys are prepared to take your case to court.
+                        {c.faq_11_answer}
 
                       </p>
                     </div>
@@ -411,12 +397,26 @@ export default function Page() {
                   {/* Accordion 3 */}
                   <div className="faq-accordion">
                     <button className="faq-accordion-header">
-                      <span>Do you handle Social Security Disability claims?</span>
+                      <span>{c.faq_12_question}</span>
                       <span className="faq-icon">+</span>
                     </button>
                     <div className="faq-accordion-content">
                       <p className="faq-answer-text">
-                        Yes. While we encourage most people to apply for SSD benefits on their own first, since you shouldn’t need an attorney for the initial application, we step in if your claim is denied. If that happens, we handle the appeals paperwork, help gather the medical evidence needed to prove your disability, prepare you for your hearing, and attend the hearing with you.    
+                        {c.faq_12_answer}
+
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Accordion 3 */}
+                  <div className="faq-accordion">
+                    <button className="faq-accordion-header">
+                      <span>{c.faq_13_question}</span>
+                      <span className="faq-icon">+</span>
+                    </button>
+                    <div className="faq-accordion-content">
+                      <p className="faq-answer-text">
+                        {c.faq_13_answer}
 
                       </p>
                     </div>
@@ -434,7 +434,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -503,7 +503,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

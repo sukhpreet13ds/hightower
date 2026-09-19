@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyer-mark');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -134,35 +136,19 @@ export default function Page() {
             {/* Right Side: Biography and Title */}
             <div className="lawyer-profile-content-col">
               <div className="lawyer-profile-title-area">
-                <h1 className="lawyer-profile-title-main">Mark N.</h1>
+                <h1 className="lawyer-profile-title-main">{c.title_main}</h1>
                 <div className="lawyer-profile-title-sub-wrapper">
                   <span className="lawyer-profile-title-line"></span>
-                  <h2 className="lawyer-profile-title-sub">Tipton</h2>
+                  <h2 className="lawyer-profile-title-sub">{c.title_sub}</h2>
                 </div>
               </div>
               <div className="lawyer-profile-bio-text">
-                <p>Mark N. Tipton received a Bachelor’s degree from Weber State College in 1988. While
-                  attending Weber State College, he had the privilege of being selected for an internship
-                  with the Utah Legal Services Corporation, where he represented clients in <a href="/areas-of-practice/social-security-disability-law"
+                <p>{c.bio_p1_before}<a href="/areas-of-practice/social-security-disability-law"
                     style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>social security
-                    disability</a> and other public entitlement cases. Thereafter he attended the
-                  University of Florida College of Law where he received his law degree in 1991. He was
-                  admitted to the Florida Bar in 1991 and has been a practicing attorney in the
-                  Ocala/Gainesville area since that time.</p>
-                <p>He has limited his practice almost exclusively to workers’ compensation and social
-                  security disability cases since being admitted to the Bar. Mark Tipton received Board
-                  Certification in workers’ compensation in 1998, based upon his experience litigating
-                  Workers’ Compensation cases and his knowledge of the law. Board Certification is the
-                  highest level of recognition of the competence and experience of attorneys by the
-                  Florida Bar. Mark holds an AV® Preeminent™ rating from Martindale-Hubbell Peer Review.
+                    disability</a>{c.bio_p1_after}</p>
+                <p>{c.bio_p2}
                 </p>
-                <p>In addition to workers’ compensation, a significant portion of his practice is devoted to
-                  representing clients in social security disability cases. His experience with the Legal
-                  Services Corporation exposed him to many abuses that occur in the Social Security System
-                  and the seemingly needless barriers which people have to overcome to receive social
-                  security benefits. As a result, he is committed to ensuring that people who meet the
-                  social security disability standard receive proper representation and a fair opportunity
-                  to establish their entitlement to the disability insurance benefits.</p>
+                <p>{c.bio_p3}</p>
 
               </div>
             </div>
@@ -175,7 +161,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -244,7 +230,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

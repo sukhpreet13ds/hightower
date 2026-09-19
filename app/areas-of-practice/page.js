@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('areas-index');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -99,7 +101,7 @@ export default function Page() {
       <section className="area-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Areas of <br />Practice</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -169,7 +171,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -302,7 +304,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -371,7 +373,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

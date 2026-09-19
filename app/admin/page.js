@@ -4,7 +4,7 @@ import Script from 'next/script';
 export default function AdminPage() {
   return (
     <>
-      <link rel="stylesheet" href="/admin.css?v=3" />
+      <link rel="stylesheet" href="/admin.css?v=4" />
 
       {/* LOGIN */}
       <div id="login-view" className="login-wrap">
@@ -69,10 +69,46 @@ export default function AdminPage() {
               </div>
               <button id="content-save-btn" className="btn-primary">Save Changes</button>
             </div>
-            <div className="content-subtabs">
-              <button className="subtab-item active" data-content-section="header">Header</button>
-              <button className="subtab-item" data-content-section="footer">Footer</button>
-              <button className="subtab-item" data-content-section="home">Home Page</button>
+            <div className="content-subtabs-wrap">
+              <div className="subtab-group">
+                <span className="subtab-group-label">Site-Wide</span>
+                <button className="subtab-item active" data-content-section="header">Header</button>
+                <button className="subtab-item" data-content-section="footer">Footer</button>
+                <button className="subtab-item" data-content-section="home">Home Page</button>
+              </div>
+              <div className="subtab-group">
+                <span className="subtab-group-label">Practice Areas</span>
+                <button className="subtab-item" data-content-section="areas-index">Areas of Practice (index)</button>
+                <button className="subtab-item" data-content-section="practice-personal-injury">Personal Injury</button>
+                <button className="subtab-item" data-content-section="practice-car-accident">Car Accident</button>
+                <button className="subtab-item" data-content-section="practice-motorcycle-accident">Motorcycle Accident</button>
+                <button className="subtab-item" data-content-section="practice-truck-accident">Truck Accident</button>
+                <button className="subtab-item" data-content-section="practice-work-accident">Work Accident</button>
+                <button className="subtab-item" data-content-section="practice-wrongful-death">Wrongful Death</button>
+                <button className="subtab-item" data-content-section="practice-ssd">Social Security Disability</button>
+              </div>
+              <div className="subtab-group">
+                <span className="subtab-group-label">Attorneys</span>
+                <button className="subtab-item" data-content-section="lawyers-index">Lawyers (index)</button>
+                <button className="subtab-item" data-content-section="lawyer-daniel">Daniel L. Hightower</button>
+                <button className="subtab-item" data-content-section="lawyer-alison">Alison L. Hightower</button>
+                <button className="subtab-item" data-content-section="lawyer-mark">Mark N. Tipton</button>
+                <button className="subtab-item" data-content-section="lawyer-barbara">Barbara L. Richard</button>
+                <button className="subtab-item" data-content-section="lawyer-dave">David D. Guiley</button>
+                <button className="subtab-item" data-content-section="lawyer-shawn">Shawn E. Clark</button>
+              </div>
+              <div className="subtab-group">
+                <span className="subtab-group-label">Other Pages</span>
+                <button className="subtab-item" data-content-section="notable-results">Notable Results</button>
+                <button className="subtab-item" data-content-section="testimonials">Testimonials</button>
+                <button className="subtab-item" data-content-section="community-service">Community Service</button>
+                <button className="subtab-item" data-content-section="contact-us">Contact Us</button>
+                <button className="subtab-item" data-content-section="faq">FAQ</button>
+                <button className="subtab-item" data-content-section="privacy-policy">Privacy Policy</button>
+                <button className="subtab-item" data-content-section="videos">Videos</button>
+                <button className="subtab-item" data-content-section="blogs-index">Blogs (listing)</button>
+                <button className="subtab-item" data-content-section="news-index">News (listing)</button>
+              </div>
             </div>
             <div id="content-fields" className="content-fields-card"></div>
             <p id="content-error" className="form-error"></p>
@@ -219,7 +255,7 @@ export default function AdminPage() {
         </div>
       </div>
 
-      <Script src="/admin.js?v=3" strategy="afterInteractive" />
+      <Script src="/admin.js?v=4" strategy="afterInteractive" />
     </>
   );
 }

@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-motorcycle-accident');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -497,7 +499,7 @@ export default function Page() {
       <section className="moto-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Motorcycle Accident <br />Lawyer</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -567,7 +569,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -581,14 +583,8 @@ export default function Page() {
                 className="partners-img" />
             </div>
             <div className="partners-text-col">
-              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Your Motorcycle Accident Lawyer
-                Since 1976</h2>
-              <p>For 50 years, our firm has been a fixture in the Central Florida riding community. We have
-                stood up for riders who have been sidelined by the negligence of distracted or careless
-                drivers since 1976. Our attorneys are dedicated to holding at-fault parties accountable so
-                that riders receive the aggressive representation they deserve. If you’ve been injured in a
-                motorcycle accident, don’t wait for the insurance company to dictate your future. Let our
-                half-century of experience protect it.</p>
+              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>{c.intro_title}</h2>
+              <p>{c.intro_p1}</p>
               <p><strong><a href="/contact-us" className="inline-partner-link">Contact Us For a Free Case
                 Review</a></strong></p>
               <div style={{ marginTop: '25px', width: '100%' }}>
@@ -599,12 +595,9 @@ export default function Page() {
 
           {/* Middle description text */}
           <div className="practice-mid-intro">
-            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>Recovering
-              Compensation for Motorcycle Crash Injuries</h2>
+            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.mid_intro_title}</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
-              A motorcycle offers almost no physical protection, meaning crash injuries are usually
-              life-altering. If someone else caused the wreck, the rider (or the rider’s family in the event
-              of a fatal crash) can sue for:</p>
+              {c.mid_intro_text}</p>
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
@@ -633,7 +626,7 @@ export default function Page() {
 
           <div style={{ marginTop: '30px', marginBottom: '60px', textAlign: 'center' }}>
             <h3 className="premises-section-subtitle" style={{ fontSize: '24px', color: '#d9534f', marginBottom: '15px' }}>
-              Stop! Before You Call the Insurance Adjuster:</h3>
+              {c.stop_before_title}</h3>
             <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto 10px auto', fontWeight: '500' }}>•
               Do not give a recorded statement.</p>
             <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto 10px auto', fontWeight: '500' }}>•
@@ -651,20 +644,14 @@ export default function Page() {
           </div>
           <div className="banner-text-half">
             <div className="banner-text-content">
-              <h2 className="banner-section-title">Who Pays</h2>
-              <h3 className="banner-section-subtitle">Medical Bills After a Crash?</h3>
+              <h2 className="banner-section-title">{c.who_pays_title_line1}</h2>
+              <h3 className="banner-section-subtitle">{c.who_pays_title_line2}</h3>
               <div className="banner-divider"></div>
-              <p>If you drive a car in Florida, you are required to carry Personal Injury Protection (PIP),
-                which covers your medical bills regardless of who caused the crash. Motorcycles are
-                different. Under Florida law, motorcycles are not considered “motor vehicles” for PIP
-                purposes. This means that unless you specifically purchased expensive, optional motorcycle
-                PIP, you do not have that “No-Fault” safety net. If you’re in a wreck, you can’t look to
-                your own auto policy for the first $10,000 in medical coverage.</p>
+              <p>{c.who_pays_p1}</p>
               <h4
                 style={{ fontFamily: 'var(--family-sans)', fontSize: '20px', fontWeight: '700', color: 'var(--button)', margin: '20px 0 10px 0' }}>
-                Understanding PIP Exemptions for Florida Motorcyclists</h4>
-              <p style={{ marginBottom: '8px', fontSize: '16px' }}>Since there is no automatic PIP, medical
-                expenses are typically handled through these three channels:</p>
+                {c.who_pays_h4}</h4>
+              <p style={{ marginBottom: '8px', fontSize: '16px' }}>{c.who_pays_p2}</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}><strong>1.
                 Your Health Insurance:</strong> Usually, private health insurance/Medicare/Medicaid
                 becomes primary payer, but they require reimbursement later.</p>
@@ -674,8 +661,7 @@ export default function Page() {
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '20px' }}><strong>3.
                 Uninsured Motorist (UM) Coverage:</strong> The most important safety net if the at-fault
                 driver is uninsured/underinsured.</p>
-              <p>When we take your case, we step in immediately to coordinate with doctors and insurance
-                carriers so you can focus on healing, not collection calls.</p>
+              <p>{c.who_pays_p3}</p>
             </div>
           </div>
         </div>
@@ -684,15 +670,10 @@ export default function Page() {
         <div className="practice-law-container">
           <div className="premises-row">
             <div className="premises-text-col">
-              <h2 className="premises-section-title">Fault & Liability</h2>
-              <h3 className="premises-section-subtitle">Can I Still Sue if Partially My Fault?</h3>
+              <h2 className="premises-section-title">{c.fault_liability_title_line1}</h2>
+              <h3 className="premises-section-subtitle">{c.fault_liability_title_line2}</h3>
               <div className="premises-divider"></div>
-              <p>In Florida, the 51% Rule (officially known as Modified Comparative Negligence) is the legal
-                standard used to determine if you can recover compensation after an accident where fault is
-                shared. Put into effect in 2023, you can only recover damages if you are 50% or less at
-                fault. If you are 51% or more at fault, you receive zero compensation. At Hightower &
-                Hightower, P.A., we use forensic evidence and expert testimony to keep the focus on the
-                negligent driver and protect your right to a recovery.</p>
+              <p>{c.fault_liability_p1}</p>
             </div>
             <div className="premises-image-col">
               <img src="../assets/lawyer-1.png" alt="Daniel L. Hightower" className="premises-lawyer-img" />
@@ -707,11 +688,11 @@ export default function Page() {
             {/* Why An Independent Investigation */}
             <div>
               <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h2 className="premises-section-title">Why An Independent Investigation</h2>
-                <h3 className="premises-section-subtitle" style={{ margin: '5px auto 20px auto' }}>Is Necessary</h3>
+                <h2 className="premises-section-title">{c.investigation_title_line1}</h2>
+                <h3 className="premises-section-subtitle" style={{ margin: '5px auto 20px auto' }}>{c.investigation_title_line2}</h3>
                 <div className="premises-divider" style={{ margin: '0 auto 25px auto' }}></div>
                 <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>
-                  It’s an unfair reality, but many people assume motorcyclists are responsible for their own accidents. We’re here to flip that narrative. A professional investigation by our firm makes sure the facts, not assumptions, drive your case. We analyze:
+                  {c.investigation_intro}
                 </p>
               </div>
 
@@ -738,11 +719,11 @@ export default function Page() {
             {/* Overcoming The Burden of Negligence */}
             <div style={{ marginTop: '20px' }}>
               <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h2 className="premises-section-title">Overcoming The Burden</h2>
-                <h3 className="premises-section-subtitle" style={{ margin: '5px auto 20px auto' }}>Of Negligence</h3>
+                <h2 className="premises-section-title">{c.overcoming_title_line1}</h2>
+                <h3 className="premises-section-subtitle" style={{ margin: '5px auto 20px auto' }}>{c.overcoming_title_line2}</h3>
                 <div className="premises-divider" style={{ margin: '0 auto 25px auto' }}></div>
                 <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>
-                  To win your case, we must prove the four pillars of negligence:
+                  {c.overcoming_intro}
                 </p>
               </div>
 
@@ -777,7 +758,7 @@ export default function Page() {
 
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="motorcycle">
-            <h2 className="faq-category-title">Motorcycle Accident Questions</h2>
+            <h2 className="faq-category-title">{c.faq_title}</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
@@ -877,7 +858,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -946,7 +927,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

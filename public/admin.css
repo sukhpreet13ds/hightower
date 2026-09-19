@@ -116,6 +116,17 @@ label input, label textarea, label select { margin-top: 6px; font-weight: 400; c
 .filters select { width: auto; }
 
 /* ---------- Website Content tab ---------- */
+.content-subtabs-wrap { margin-bottom: 22px; }
+.subtab-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.subtab-group-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #9aa3b5;
+    width: 100%;
+    margin-bottom: 2px;
+}
 .content-subtabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .subtab-item {
     background: #fff;

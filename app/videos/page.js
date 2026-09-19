@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('videos');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -130,10 +132,10 @@ export default function Page() {
           </div>
 
           <div className="videos-title-area">
-            <h1 className="videos-title-main">Watch Our</h1>
+            <h1 className="videos-title-main">{c.title_main}</h1>
             <div className="videos-title-sub-wrapper">
               <span className="videos-title-line"></span>
-              <h2 className="videos-title-sub">Videos</h2>
+              <h2 className="videos-title-sub">{c.title_sub}</h2>
             </div>
           </div>
 
@@ -184,7 +186,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -253,7 +255,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

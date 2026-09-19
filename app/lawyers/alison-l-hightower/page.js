@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyer-alison');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -134,15 +136,15 @@ export default function Page() {
             {/* Right Side: Biography and Title */}
             <div className="lawyer-profile-content-col">
               <div className="lawyer-profile-title-area">
-                <h1 className="lawyer-profile-title-main">Alison L.</h1>
+                <h1 className="lawyer-profile-title-main">{c.title_main}</h1>
                 <div className="lawyer-profile-title-sub-wrapper">
                   <span className="lawyer-profile-title-line"></span>
-                  <h2 className="lawyer-profile-title-sub">Hightower</h2>
+                  <h2 className="lawyer-profile-title-sub">{c.title_sub}</h2>
                 </div>
               </div>
               <div className="lawyer-profile-bio-text">
-                <p>Alison L. Hightower graduated from Stetson University College of Law with Honors in May of 2014. Alison is a member of the Florida Justice Association and the Marion County Bar Association. She has been admitted to practice in the U.S. District Court, Middle District of Florida and the U.S. District Court, Southern District of Florida. Alison has been involved with the Volunteer Income Tax Assistance (VITA) program through United Way of Marion County and the D.R. Smith American Inn of Court. She shares her father’s commitment to legal aid work through participation in Community Legal Services of Mid-Florida’s pro bono volunteer attorney program.</p>
-                <p>Alison is a practicing attorney in the area of <a href="/areas-of-practice/personal-injury-law"
+                <p>{c.bio_p1}</p>
+                <p>{c.practicing_area_lead}<a href="/areas-of-practice/personal-injury-law"
                   style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Personal Injury
                   law.</a></p>
 
@@ -157,7 +159,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -226,7 +228,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

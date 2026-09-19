@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-ssd');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -472,7 +474,7 @@ export default function Page() {
       <section className="social-dis-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Social Security <br />Disability Law</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -542,7 +544,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -556,44 +558,19 @@ export default function Page() {
                 className="partners-img" />
             </div>
             <div className="partners-text-col">
-              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Social Security Disability Law
-                Firm</h2>
-              <p>Occasionally prospective clients contact our office for representation before they have
-                applied for Social Security Disability (SSD) benefits. We are always happy to answer any
-                questions you may have, but we generally do not officially get involved in SSD cases until
-                the initial application has been denied. In theory, you should not need an attorney. You
-                have worked hard and paid into the Social Security system for most of your adult life. Part
-                of the money withheld from your paychecks was intended to provide you with disability
-                insurance. When the system works, you can get your disability benefits started without an
-                attorney and without paying attorney fees.</p>
-              <p>Recent studies suggest that the Social Security Administration approves nearly 40% of the
-                applications they receive for disability benefits. If you think you may be entitled to
-                disability benefits, you should apply as soon as possible. In some instances, Social
-                Security will pay benefits up to 12 months before your application. If you wait until next
-                month to apply, you could lose out on several hundred dollars worth of past benefits.</p>
+              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>{c.intro_title}</h2>
+              <p>{c.intro_p1}</p>
+              <p>{c.intro_p2}</p>
             </div>
           </div>
 
           {/* Middle description text */}
           <div className="practice-mid-intro">
-            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>How to Apply for
-              SSD Benefits</h2>
+            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.apply_title}</h2>
             <p className="contingency-text" style={{ maxWidth: '1000px', margin: '0 auto 20px auto', lineHeight: '1.7' }}>
-              Although the application is fairly lengthy, you should be able to answer most, if not all, of
-              the questions from memory. If you need assistance filling out the application due to problems
-              with reading, writing, etc., Social Security will help you. The Social Security Administration
-              has tried to make the application forms easy to understand. They have also established an
-              on-line application for Social Security Disability Insurance benefits which you can access at
-              the Social Security website. At the time of drafting this page, an online application for
-              Supplemental Security Income (SSI) benefits was not available. If you would prefer to apply in
-              person, you can initiate the application process by calling 1-800-772-1213. You may also want to
-              check the Social Security Administration’s web page at www.SSA.gov for additional information
-              and answers to many questions.</p>
+              {c.apply_p1}</p>
             <p className="contingency-text" style={{ maxWidth: '1000px', margin: '0 auto 30px auto', lineHeight: '1.7' }}>
-              You do not need to gather your medical records before you apply and you do not have to prove you
-              are disabled when you apply. Rather, you simply need to provide Social Security with information
-              so that they can investigate to determine whether you are disabled. The only information that
-              people often can’t provide from memory are:</p>
+              {c.apply_p2}</p>
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
@@ -621,10 +598,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: '30px', marginBottom: '60px', textAlign: 'center' }}>
-            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>Even with regard to this
-              information, it is better to apply and provide incomplete answers than to delay your
-              application. Social Security will request your medical records directly from the doctors and
-              hospitals you list on the application.</p>
+            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>{c.apply_followup}</p>
           </div>
         </div>
 
@@ -635,15 +609,10 @@ export default function Page() {
           </div>
           <div className="banner-text-half">
             <div className="banner-text-content">
-              <h2 className="banner-section-title">Submitting Evidence</h2>
-              <h3 className="banner-section-subtitle">To Improve Your Chances</h3>
+              <h2 className="banner-section-title">{c.evidence_title_line1}</h2>
+              <h3 className="banner-section-subtitle">{c.evidence_title_line2}</h3>
               <div className="banner-divider"></div>
-              <p>Again, you do not need to present proof of your disability when you apply for disability
-                benefits, but you may submit evidence after you have filed your application. Generally, you
-                will have very little, if any control, over the medical evidence that is in your file at the
-                application stage. However, you may be able to improve your chances of being found disabled,
-                by submitting additional non-medical evidence concerning your disability. Examples of
-                documents include:</p>
+              <p>{c.evidence_p1}</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}>• A letter
                 from your last employer describing the problems you had performing your work duties.</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}>• A letter
@@ -666,15 +635,8 @@ export default function Page() {
 
         {/* Detailed Evidence & Credibility comparison section */}
         <div className="practice-law-container" style={{ marginBottom: '80px' }}>
-          <h3 className="premises-section-title" style={{ fontSize: '32px', marginBottom: '15px' }}>The Importance of
-            Specific Details</h3>
-          <p className="contingency-text">None of these documents are required, but in a close case they can be
-            helpful. Ask whoever is preparing the letter to base the letter on what they have observed, rather
-            than what you have told them. (In other words, it would be better if a friend describes, for
-            example, that they have often observed you walking hunched over, holding your back and grimacing,
-            rather than writing that you have often told them that your back was hurting.) Also, ask them to
-            include specific details and examples, rather than generalizations. Compare the following, for
-            example:</p>
+          <h3 className="premises-section-title" style={{ fontSize: '32px', marginBottom: '15px' }}>{c.details_title}</h3>
+          <p className="contingency-text">{c.details_p1}</p>
 
           <div
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '25px' }}>
@@ -709,32 +671,18 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <p className="contingency-text" style={{ marginTop: '20px', fontWeight: '600' }}>Details add credibility and
-            therefore a detailed letter is more likely to help than one with a bunch of generalizations.</p>
+          <p className="contingency-text" style={{ marginTop: '20px', fontWeight: '600' }}>{c.details_closing}</p>
         </div>
 
         {/* Bottom Section: Premises Liability (lawyer-1.png on the right) */}
         <div className="practice-law-container">
           <div className="premises-row">
             <div className="premises-text-col">
-              <h2 className="premises-section-title">If Your Application Is Denied</h2>
-              <h3 className="premises-section-subtitle">Don't Be Discouraged</h3>
+              <h2 className="premises-section-title">{c.denied_title_line1}</h2>
+              <h3 className="premises-section-subtitle">{c.denied_title_line2}</h3>
               <div className="premises-divider"></div>
-              <p>If your application is denied, don’t be discouraged. The Social Security Administration
-                wrongly denies benefits in many cases. You have a right to a hearing with a United States
-                Administrative Law Judge. The Administrative Law Judge does not work for Social Security and
-                he is not bound by any prior decisions reached by the Social Security Administration.
-                Further, whereas the initial decisions tend to be based almost exclusively on the medical
-                records, an Administrative Law Judge will have the benefit of your testimony regarding how
-                your injuries impact your ability to work. More than half of the people nationally who
-                pursue their claim to a hearing are found to be disabled.</p>
-              <p>If you are denied at the application stage, please contact our office. We would be happy to
-                meet with you for a free initial consultation. If you choose to have us represent you, we
-                will assist with all of the paperwork in connection with the appeals and we will help gather
-                the medical evidence necessary to prove that you are disabled. Further, we will help you
-                prepare for the hearing so that your testimony will maximize your chances of being found
-                disabled. Finally, we will attend the hearing with you to ensure that you have an
-                opportunity to fully explain your particular circumstances to the judge.</p>
+              <p>{c.denied_p1}</p>
+              <p>{c.denied_p2}</p>
               <p><strong><a href="/faq" className="inline-partner-link">Click here for our FAQs about
                 Social Security Disability Law.</a></strong></p>
             </div>
@@ -745,7 +693,7 @@ export default function Page() {
         </div>
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="social-security">
-            <h2 className="faq-category-title">Social Security Disability Questions</h2>
+            <h2 className="faq-category-title">{c.faq_title}</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
@@ -864,7 +812,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -933,7 +881,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

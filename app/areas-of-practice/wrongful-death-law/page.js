@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-wrongful-death');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -472,7 +474,7 @@ export default function Page() {
       <section className="death-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Wrongful Death <br />Lawyer</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -542,7 +544,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -556,25 +558,18 @@ export default function Page() {
                 className="partners-img" />
             </div>
             <div className="partners-text-col">
-              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Wrongful Death Attorney in Ocala
+              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>{c.intro_title}
               </h2>
-              <p>Wrongful death is any death that results from the misconduct or negligence of another person
-                or entity. Wrongful death can be the result of an auto accident, a work accident or the negligent acts of others.</p>
-              <p>Many times families are so stricken by pain and grief that they may not realize that the
-                death of their loved one was due to the negligence of another. Their loved one is no longer
-                there to tell them what happened to them.</p>
+              <p>{c.intro_p1}</p>
+              <p>{c.intro_p2}</p>
             </div>
           </div>
 
           {/* Middle description text */}
           <div className="practice-mid-intro">
-            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>Compensation for
-              Survivors</h2>
+            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.mid_intro_title}</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
-              While no amount of money can make up for the loss of a loved one, if a death was caused by the
-              negligence of another person or entity, the law may provide for compensation to the survivors: the
-              spouse, child or parents of the loved one. Such recovery may help with funeral and medical
-              bills, as well as lost income.</p>
+              {c.mid_intro_text}</p>
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
@@ -602,9 +597,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: '30px', marginBottom: '60px', textAlign: 'center' }}>
-            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>It is important to note that
-              the statute of limitations, the time within which you must bring a wrongful death lawsuit, is
-              only two years.</p>
+            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>{c.closing_p}</p>
           </div>
         </div>
 
@@ -615,12 +608,10 @@ export default function Page() {
           </div>
           <div className="banner-text-half">
             <div className="banner-text-content">
-              <h2 className="banner-section-title">Act Quickly to</h2>
-              <h3 className="banner-section-subtitle">Protect Your Rights</h3>
+              <h2 className="banner-section-title">{c.banner_title_line1}</h2>
+              <h3 className="banner-section-subtitle">{c.banner_title_line2}</h3>
               <div className="banner-divider"></div>
-              <p>If you suspect that wrongful conduct may be to blame for the death of a family member, you
-                must move quickly to protect your legal rights and preserve the evidence. Please contact us
-                to schedule your free initial consultation today.</p>
+              <p>{c.banner_p}</p>
             </div>
           </div>
         </div>
@@ -629,8 +620,8 @@ export default function Page() {
         <div className="practice-law-container">
           <div className="premises-row">
             <div className="premises-text-col">
-              <h2 className="premises-section-title">Dedicated Ocala</h2>
-              <h3 className="premises-section-subtitle">Wrongful Death Attorney</h3>
+              <h2 className="premises-section-title">{c.premises_title_line1}</h2>
+              <h3 className="premises-section-subtitle">{c.premises_title_line2}</h3>
               <div className="premises-divider"></div>
               <p>To speak to a dedicated Ocala wrongful death attorney for a confidential consultation, call
                 us today at <strong><a href="tel:352-629-7777"
@@ -645,7 +636,7 @@ export default function Page() {
         </div>
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="work">
-            <h2 className="faq-category-title">Wrongful Death Questions</h2>
+            <h2 className="faq-category-title">{c.faq_title}</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
@@ -772,7 +763,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -841,7 +832,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

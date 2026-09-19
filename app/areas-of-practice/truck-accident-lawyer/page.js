@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-truck-accident');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -472,7 +474,7 @@ export default function Page() {
       <section className="truck-accident-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Truck Accident <br />Lawyer</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -542,7 +544,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -556,13 +558,8 @@ export default function Page() {
                 className="partners-img" />
             </div>
             <div className="partners-text-col">
-              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>A Truck Accident Lawyer Focused
-                on Your Recovery</h2>
-              <p>Hightower & Hightower, P.A. has been standing up for the injured since 1976. For 50 years,
-                truck accident victims have relied on our personal injury law firm for aggressive
-                representation. Each attorney here is dedicated to protecting your rights, pursuing the
-                justice you deserve, and holding at-fault parties accountable. If you’ve been in a trucking
-                accident, don’t wait. Contact Hightower & Hightower today.</p>
+              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>{c.intro_title}</h2>
+              <p>{c.intro_p1}</p>
               <p><strong><a href="/contact-us" className="inline-partner-link">Contact Us For A Free Case
                 Review</a></strong></p>
             </div>
@@ -570,11 +567,9 @@ export default function Page() {
 
           {/* Middle description text */}
           <div className="practice-mid-intro">
-            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>If You’ve Been
-              Injured In A Tractor-Trailer Accident</h2>
+            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.mid_intro_title}</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
-              Central Florida is no stranger to tractor-trailer accidents. These crashes can result in serious
-              injuries, including:</p>
+              {c.mid_intro_text}</p>
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
@@ -602,10 +597,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: '30px', marginBottom: '60px', textAlign: 'center' }}>
-            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>If you were injured in a
-              tractor-trailer accident, you may have legal options. Our advice is always to speak with a
-              lawyer as soon as possible after a collision, and before giving any recorded statements to
-              insurance companies.</p>
+            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>{c.mid_intro_followup}</p>
           </div>
         </div>
 
@@ -616,12 +608,10 @@ export default function Page() {
           </div>
           <div className="banner-text-half">
             <div className="banner-text-content">
-              <h2 className="banner-section-title">Compensation We Recover</h2>
-              <h3 className="banner-section-subtitle">For Your Truck Accident Case</h3>
+              <h2 className="banner-section-title">{c.compensation_title_line1}</h2>
+              <h3 className="banner-section-subtitle">{c.compensation_title_line2}</h3>
               <div className="banner-divider"></div>
-              <p>Personal injury law calculates compensation for a truck accident case by looking at your
-                damages. Damages are the total losses you’ve suffered due to the accident. This should
-                account for past, present, and future losses, such as:</p>
+              <p>{c.compensation_intro}</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}>• Medical
                 bills and hospital costs</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}>• Costs of
@@ -632,11 +622,7 @@ export default function Page() {
                 your property/belongings</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '20px' }}>• Physical
                 pain, injury, or emotional suffering</p>
-              <p><strong>How Much is a Truck Accident Settlement Worth?</strong><br />A case’s value depends on
-                how the crash has affected the injured person. That can include changes in their health,
-                their ability to handle daily activities, and the effects of the injuries on their ability
-                to work and their relationships. These are all details that help us show the full impact the
-                accident has had on the victim’s life as a whole.</p>
+              <p><strong>{c.compensation_value_title}</strong><br />{c.compensation_value_text}</p>
             </div>
           </div>
         </div>
@@ -645,21 +631,11 @@ export default function Page() {
         <div className="practice-law-container">
           <div className="premises-row">
             <div className="premises-text-col">
-              <h2 className="premises-section-title">Are Truck Accidents</h2>
-              <h3 className="premises-section-subtitle">More Dangerous Than Car Crashes?</h3>
+              <h2 className="premises-section-title">{c.danger_title_line1}</h2>
+              <h3 className="premises-section-subtitle">{c.danger_title_line2}</h3>
               <div className="premises-divider"></div>
-              <p>Yes. Trucks are not just ‘big vehicles.’ At maximum capacity, a tractor-trailer can outweigh
-                a typical car by as much as twenty times. That’s 80,000 pounds that, even after impact, will
-                continue to push cars through traffic and into other vehicles, causing multi-car collisions
-                and increasing the severity of the crash. This size and weight can lead to severe,
-                devastating injuries. Sometimes, fatalities.</p>
-              <p><strong>Commercial Accident Claims Are Legally Complex</strong><br />More than one company can
-                be tied to a single accident, making these crashes legally complex. Large trucking fleets
-                involved also have “Catastrophic Response Teams” that they send to the scene immediately, to
-                begin protecting their interests. They may even try to pressure victims into taking a quick
-                settlement. Don’t let them take advantage. The trucking industry is highly regulated, and
-                these cases are not handled the same as others. They are more serious, more aggressively
-                defended, and require rigorous investigation.</p>
+              <p>{c.danger_p1}</p>
+              <p><strong>{c.danger_p2_title}</strong><br />{c.danger_p2_text}</p>
             </div>
             <div className="premises-image-col">
               <img src="../assets/lawyer-1.png" alt="Daniel L. Hightower" className="premises-lawyer-img" />
@@ -672,27 +648,17 @@ export default function Page() {
           <div className="partners-row" style={{ marginBottom: '0' }}>
 
             <div className="partners-text-col">
-              <h2 className="premises-section-title">Negligence & Accountability</h2>
-              <h3 className="premises-section-subtitle">Holding Trucking Companies Accountable</h3>
+              <h2 className="premises-section-title">{c.negligence_title}</h2>
+              <h3 className="premises-section-subtitle">{c.negligence_subtitle}</h3>
               <div className="premises-divider"></div>
-              <p>Negligence is the failure to use reasonable care. In a trucking accident case, that means a
-                truck driver, trucking company, or a third party acted negligently and caused an accident.
-                Actionable behavior can include speeding, driving while distracted, failing to maintain the
-                truck, or violating road and safety rules. Negligence is what connects the accident to legal
-                responsibility. To recover compensation, we must show that another party’s negligence caused
-                or contributed to the crash and your injuries.</p>
+              <p>{c.negligence_p1}</p>
 
               <h3 className="premises-section-subtitle"
-                style={{ fontSize: '24px', marginTop: '20px', marginBottom: '10px' }}>Why You Must Act Quickly in
-                Florida</h3>
-              <p>It’s better to take action sooner rather than later. Florida law allows two years to file a
-                lawsuit for injuries and related damages. Speaking with a truck accident attorney soon after
-                the accident can help you understand how the law applies to your case. Our attorneys are
-                here to help you through every step.</p>
+                style={{ fontSize: '24px', marginTop: '20px', marginBottom: '10px' }}>{c.why_act_title}</h3>
+              <p>{c.why_act_p}</p>
 
               <h3 className="premises-section-subtitle"
-                style={{ fontSize: '24px', marginTop: '30px', marginBottom: '10px' }}>How to Protect Your Rights
-                After a Trucking Collision</h3>
+                style={{ fontSize: '24px', marginTop: '30px', marginBottom: '10px' }}>{c.protect_rights_title}</h3>
               <p style={{ marginLeft: '20px', marginBottom: '8px' }}><strong>1. Dial 911 right away.</strong> When
                 law enforcement arrives, they will collect details and document the scene. Emergency
                 responders can evaluate and treat injuries.</p>
@@ -709,20 +675,14 @@ export default function Page() {
                 before talking to a lawyer.</p>
 
               <h3 className="premises-section-subtitle"
-                style={{ fontSize: '24px', marginTop: '30px', marginBottom: '10px' }}>Experienced Truck Accident
-                Lawyer with 50 Years of Experience</h3>
-              <p>At Hightower & Hightower, P.A., we know how to handle trucking companies and their insurers.
-                Trucking companies and drivers must follow special rules around vehicle maintenance, driver
-                hours, weight limits, and more. Getting access to black box data, driver logs, vehicle
-                inspections, and other important evidence is time-sensitive. The sooner we act, the better.
-                If you or a family member has been injured in a trucking accident, contact our office today
-                for a free consultation.</p>
+                style={{ fontSize: '24px', marginTop: '30px', marginBottom: '10px' }}>{c.experienced_title}</h3>
+              <p>{c.experienced_p}</p>
             </div>
           </div>
         </div>
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="trucking">
-            <h2 className="faq-category-title">Trucking Accident Questions</h2>
+            <h2 className="faq-category-title">{c.faq_title}</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
@@ -822,7 +782,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -891,7 +851,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

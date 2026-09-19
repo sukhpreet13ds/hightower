@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyer-barbara');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -134,22 +136,15 @@ export default function Page() {
             {/* Right Side: Biography and Title */}
             <div className="lawyer-profile-content-col">
               <div className="lawyer-profile-title-area">
-                <h1 className="lawyer-profile-title-main">Barbara L.</h1>
+                <h1 className="lawyer-profile-title-main">{c.title_main}</h1>
                 <div className="lawyer-profile-title-sub-wrapper">
                   <span className="lawyer-profile-title-line"></span>
-                  <h2 className="lawyer-profile-title-sub">Richard</h2>
+                  <h2 className="lawyer-profile-title-sub">{c.title_sub}</h2>
                 </div>
               </div>
               <div className="lawyer-profile-bio-text">
-                <p>Barbara L. Richard is a graduate of the University of Florida College of Law. Barbara has
-                  been practicing since 1995 and is board-certified by the Florida Bar in Workers’
-                  Compensation. She has served as a judicial clerk for the Judge of Compensation Claims in
-                  the Daytona Beach District and is a member of the Florida Workers’ Advocates, an
-                  association that actively advocates for the rights of injured workers in Florida.
-                  Barbara is also a member of the Marion County Bar Association, the Florida Bar
-                  Association, and the American Bar Association, and she has been admitted to practice in
-                  the U.S. District Court, Northern and Middle Districts of Florida.</p>
-                <p>Barbara is a practicing attorney in the area of <a href="/blogs/workers-compensation-in-florida"
+                <p>{c.bio_p1}</p>
+                <p>{c.practicing_area_lead}<a href="/blogs/workers-compensation-in-florida"
                   style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Workers’
                   Compensation.</a></p>
 
@@ -165,7 +160,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -234,7 +229,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

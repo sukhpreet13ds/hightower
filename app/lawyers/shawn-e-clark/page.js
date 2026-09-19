@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyer-shawn');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -134,41 +136,22 @@ export default function Page() {
             {/* Right Side: Biography and Title */}
             <div className="lawyer-profile-content-col">
               <div className="lawyer-profile-title-area">
-                <h1 className="lawyer-profile-title-main">Shawn E.</h1>
+                <h1 className="lawyer-profile-title-main">{c.title_main}</h1>
                 <div className="lawyer-profile-title-sub-wrapper">
                   <span className="lawyer-profile-title-line"></span>
-                  <h2 className="lawyer-profile-title-sub">Clark</h2>
+                  <h2 className="lawyer-profile-title-sub">{c.title_sub}</h2>
                 </div>
               </div>
               <div className="lawyer-profile-bio-text">
-                <p>Shawn Clark graduated from the University of Florida in Gainesville with a Bachelor’s
-                  degree in 2007. He furthered his education at the University of Florida Levin College of
-                  Law, earning his Juris Doctor degree in 2011. His academic excellence was recognized
-                  when he was inducted into the prestigious Order of the Coif, a national honor society
-                  for law graduates ranking in the top 10% of their class.</p>
-                <p>Shawn began his legal career as an associate attorney at an employment law firm in
-                  Jacksonville Beach, where he honed his skills in litigation strategy and complex legal
-                  research.</p>
-                <p>In 2013, he returned to Gainesville and transitioned his practice to criminal defense.
-                  Over the years, Shawn has personally represented thousands of clients facing criminal
-                  charges, guiding them through every stage of the legal process—from arrest to trial. His
-                  dedication to client advocacy earned him the role of supervisor for the Levy and
-                  Gilchrist offices within his firm.</p>
-                <p>Shawn is admitted to practice in the State of Florida. He actively contributes to the
-                  legal community as the current Treasurer of the Marion County Bar Association, as a
-                  voting member of the Eighth Judicial Circuit Bar Grievance Committee, and as a pro bono
-                  attorney providing free legal services with Community Legal Services of Mid-FL. He is
-                  also affiliated with several professional organizations, including the Florida Justice
-                  Association, the National Institute for Trial Advocacy, and the Florida Association of
-                  Criminal Defense Lawyers.
+                <p>{c.bio_p1}</p>
+                <p>{c.bio_p2}</p>
+                <p>{c.bio_p3}</p>
+                <p>{c.bio_p4}
                 </p>
-                <p>Beyond his professional achievements, Shawn values family and community involvement. He
-                  enjoys spending time with his wife, Catherine, their two dogs, and their cat. Since
-                  2022, he has proudly served as a mentor in the Big Brothers Big Sisters program.
+                <p>{c.bio_p5}
                 </p>
-                <p>Shawn currently practices in the area of <a href="/areas-of-practice/personal-injury-law"
-                  className="inline-partner-link">Personal Injury</a>, leveraging his extensive
-                  experience to provide compassionate and effective representation for his clients.</p>
+                <p>{c.bio_p6_before}<a href="/areas-of-practice/personal-injury-law"
+                  className="inline-partner-link">Personal Injury</a>{c.bio_p6_after}</p>
               </div>
             </div>
           </div>
@@ -180,7 +163,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -249,7 +232,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('testimonials');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -223,9 +225,8 @@ export default function Page() {
 
           <div className="testimonials-section-view">
             <div className="testimonials-header">
-              <h1>Client Testimonials</h1>
-              <p>At Hightower & Hightower, we fight relentlessly for our clients. Read and watch their
-                personal experiences working with our legal team.</p>
+              <h1>{c.header_title}</h1>
+              <p>{c.header_subtitle}</p>
             </div>
 
             <div className="testimonials-grid">
@@ -497,7 +498,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -566,7 +567,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 
