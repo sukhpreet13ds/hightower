@@ -681,28 +681,9 @@ export default async function Page() {
               <h2 className="premises-section-title">{c.denied_title_line1}</h2>
               <h3 className="premises-section-subtitle">{c.denied_title_line2}</h3>
               <div className="premises-divider"></div>
-<<<<<<< HEAD
-              <p>If your application is denied, don’t be discouraged. The Social Security Administration
-                wrongly denies benefits in many cases. You have a right to a hearing with a United States
-                Administrative Law Judge. The Administrative Law Judge does not work for Social Security and
-                he is not bound by any prior decisions reached by the Social Security Administration.
-                Further, whereas the initial decisions tend to be based almost exclusively on the medical
-                records, an Administrative Law Judge will have the benefit of your testimony regarding how
-                your injuries impact your ability to work. More than half of the people nationally who
-                pursue their claim to a hearing are found to be disabled.</p>
-              <p>If you are denied at the application stage, please contact our office. We would be happy to
-                meet with you for a free initial consultation. If you choose to have us represent you, we
-                will assist with all of the paperwork in connection with the appeals and we will help gather
-                the medical evidence necessary to prove that you are disabled. Further, we will help you
-                prepare for the hearing so that your testimony will maximize your chances of being found
-                disabled. Finally, we will attend the hearing with you to ensure that you have an
-                opportunity to fully explain your particular circumstances to the judge.</p>
-              <p><strong><a href="/faqs" className="inline-partner-link">Click here for our FAQs about
-=======
               <p>{c.denied_p1}</p>
               <p>{c.denied_p2}</p>
-              <p><strong><a href="/faq" className="inline-partner-link">Click here for our FAQs about
->>>>>>> b51781ccc9958e6dd973724d84a003b3c38e7173
+              <p><strong><a href="/faqs" className="inline-partner-link">Click here for our FAQs about
                 Social Security Disability Law.</a></strong></p>
             </div>
             <div className="premises-image-col">
