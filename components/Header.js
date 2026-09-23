@@ -18,7 +18,7 @@ export default function Header() {
 
           <div className="top-bar-right">
             <div className="top-bar-center">
-              <a href="/faq" className="top-bar-center-link">FAQ's</a>
+              <a href="/faqs" className="top-bar-center-link">FAQ's</a>
               <a href="/blogs" className="top-bar-center-link">Blogs</a>
               <a href="/news" className="top-bar-center-link">News</a>
               <a href="/client-testimonials" className="top-bar-center-link">Testimonials</a>
@@ -70,7 +70,7 @@ export default function Header() {
                     </ul>
                   </li>
                   <li><a href="/videos">Videos</a></li>
-                  <li><a href="/community-service">Community Service</a></li>
+                  <li><a href="/community-services">Community Service</a></li>
                 </ul>
               </li>
               <li className="nav-item has-dropdown">
@@ -119,7 +119,7 @@ export default function Header() {
                   </ul>
                 </li>
                 <li><a href="/videos">Videos</a></li>
-                <li><a href="/community-service">Community Service</a></li>
+                <li><a href="/community-services">Community Service</a></li>
               </ul>
             </li>
             <li className="floating-nav-item has-dropdown">
@@ -139,7 +139,7 @@ export default function Header() {
               <a href="/notable-trial-results-settlements" className="floating-nav-link-item">Notable Trial Results & Settlements</a>
             </li>
             <li className="floating-nav-item">
-              <a href="/faq" className="floating-nav-link-item">FAQ's</a>
+              <a href="/faqs" className="floating-nav-link-item">FAQ's</a>
             </li>
             <li className="floating-nav-item">
               <a href="/blogs" className="floating-nav-link-item">Blogs</a>
@@ -191,7 +191,7 @@ export default function Header() {
                     </div>
                   </div>
                   <a href="/videos">Videos</a>
-                  <a href="/community-service">Community Service</a>
+                  <a href="/community-services">Community Service</a>
                 </div>
               </div>
 
@@ -212,7 +212,7 @@ export default function Header() {
               </div>
 
               <a href="/notable-trial-results-settlements" className="mobile-nav-item-link">Notable Trial Results & Settlements</a>
-              <a href="/faq" className="mobile-nav-item-link">FAQ's</a>
+              <a href="/faqs" className="mobile-nav-item-link">FAQ's</a>
               <a href="/blogs" className="mobile-nav-item-link">Blogs</a>
               <a href="/news" className="mobile-nav-item-link">News</a>
             </div>
@@ -260,7 +260,7 @@ export default function Header() {
             {/* Central Items / Links */}
             <div className="side-panel-section side-panel-nav">
               <h4 className="side-panel-title">Quick Links</h4>
-              <a href="/faq" className="side-panel-nav-link">FAQ's</a>
+              <a href="/faqs" className="side-panel-nav-link">FAQ's</a>
               <a href="/blogs" className="side-panel-nav-link">Blogs</a>
               <a href="/news" className="side-panel-nav-link">News</a>
               <a href="/client-testimonials" className="side-panel-nav-link">Testimonials</a>

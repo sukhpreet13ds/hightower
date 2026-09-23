@@ -735,7 +735,7 @@ export default function Page() {
                 prepare for the hearing so that your testimony will maximize your chances of being found
                 disabled. Finally, we will attend the hearing with you to ensure that you have an
                 opportunity to fully explain your particular circumstances to the judge.</p>
-              <p><strong><a href="/faq" className="inline-partner-link">Click here for our FAQs about
+              <p><strong><a href="/faqs" className="inline-partner-link">Click here for our FAQs about
                 Social Security Disability Law.</a></strong></p>
             </div>
             <div className="premises-image-col">
@@ -756,7 +756,7 @@ export default function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                  You don’t necessarily need a lawyer to apply for Social Security Disability, but having one can definitely be helpful. This is because the initial approval rate for SSDI and SSI claims is quite low, and many valid claims are denied simply because of incomplete medical documentation or paperwork errors. If you do get denied, a lawyer can make a big difference by helping you through the appeals process.
+                    You don’t necessarily need a lawyer to apply for Social Security Disability, but having one can definitely be helpful. This is because the initial approval rate for SSDI and SSI claims is quite low, and many valid claims are denied simply because of incomplete medical documentation or paperwork errors. If you do get denied, a lawyer can make a big difference by helping you through the appeals process.
 
                   </p>
                 </div>
@@ -769,7 +769,7 @@ export default function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                     Social Security Disability Insurance (SSDI) is based on your work history and the Social Security taxes you’ve paid throughout your working life. Supplemental Security Income (SSI) is based purely on financial need and doesn’t require a specific or prior work history. Some applicants may qualify for both, depending on their income and assets.
+                    Social Security Disability Insurance (SSDI) is based on your work history and the Social Security taxes you’ve paid throughout your working life. Supplemental Security Income (SSI) is based purely on financial need and doesn’t require a specific or prior work history. Some applicants may qualify for both, depending on their income and assets.
 
 
                   </p>
@@ -802,7 +802,7 @@ export default function Page() {
                   </p>
                 </div>
               </div>
- <div className="faq-accordion">
+              <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
                     What medical evidence do I need for my claim?</span>
@@ -810,7 +810,7 @@ export default function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                 To support your claim, you’ll need to provide medical evidence that shows how your condition affects your daily life and ability to work. Social Security wants to see consistent treatment records, objective test results, and statements from your treating doctors that describe how your condition limits your ability. Gaps in treatment or missing records are a common reason claims get denied, so we can work with you to make sure your file is as complete as possible.
+                    To support your claim, you’ll need to provide medical evidence that shows how your condition affects your daily life and ability to work. Social Security wants to see consistent treatment records, objective test results, and statements from your treating doctors that describe how your condition limits your ability. Gaps in treatment or missing records are a common reason claims get denied, so we can work with you to make sure your file is as complete as possible.
 
 
 
@@ -818,30 +818,30 @@ export default function Page() {
                 </div>
               </div>
 
-               <div className="faq-accordion">
+              <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                   I’m worried about the cost of a lawyer. How do your fees work?</span>
+                    I’m worried about the cost of a lawyer. How do your fees work?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                  Social Security disability cases are also handled on a contingency basis. Attorney fees are regulated by federal law and are only owed if you win your case, typically as a percentage of your past-due benefits.
+                    Social Security disability cases are also handled on a contingency basis. Attorney fees are regulated by federal law and are only owed if you win your case, typically as a percentage of your past-due benefits.
 
 
 
                   </p>
                 </div>
               </div>
-               <div className="faq-accordion">
+              <div className="faq-accordion">
                 <button className="faq-accordion-header">
                   <span>
-                   What sets our local law firm apart and makes us the best fit for you?</span>
+                    What sets our local law firm apart and makes us the best fit for you?</span>
                   <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                  We’ve been helping people in Ocala and surrounding areas with the Social Security system for an impressive 50 years. That’s five decades of experience and knowledge that we can tap into to help you navigate this complex process. We’re not just familiar with the local hearing office, we know it inside and out, and we’re well-versed in what the judges in this area expect to see in a case. We also believe in building personal relationships with our clients and providing them with the attention and care they deserve.
+                    We’ve been helping people in Ocala and surrounding areas with the Social Security system for an impressive 50 years. That’s five decades of experience and knowledge that we can tap into to help you navigate this complex process. We’re not just familiar with the local hearing office, we know it inside and out, and we’re well-versed in what the judges in this area expect to see in a case. We also believe in building personal relationships with our clients and providing them with the attention and care they deserve.
 
 
 

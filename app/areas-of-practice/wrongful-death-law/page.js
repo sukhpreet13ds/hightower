@@ -578,7 +578,7 @@ export default function Page() {
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
-          <div className="claims-cards-row">
+          <div className="claims-cards-row">  
             <div className="claim-card">
               <img src="../assets/death1.jpg" alt="Funeral & Medical" className="claim-card-img" />
               <div className="claim-card-title">Funeral & Medical</div>

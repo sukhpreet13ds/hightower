@@ -152,7 +152,7 @@ export default async function Page() {
             <div className="blogs-container-grid">
               <div className="blogs-grid">
                 {blogs.map((b) => (
-                  <a key={b.id} href={`/blogs/${b.slug || b.id}`} className="blog-card">
+                  <a key={b.id} href={`/${b.slug || b.id}`} className="blog-card">
                     <div className="blog-card-img-wrapper">
                       <img src={b.image || './assets/hh-blog1.jpg'} alt={b.title} className="blog-card-img" />
                     </div>

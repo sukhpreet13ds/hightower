@@ -13,7 +13,7 @@ export default async function Page({ searchParams }) {
       ? await get('SELECT slug, id FROM blogs WHERE (id = ? OR slug = ?) AND published = 1', [Number(slug), slug])
       : await get('SELECT slug, id FROM blogs WHERE slug = ? AND published = 1', [slug]);
     if (post) {
-      redirect(`/blogs/${post.slug || post.id}`);
+      redirect(`/${post.slug || post.id}`);
     }
   }
   redirect('/blogs');

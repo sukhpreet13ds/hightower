@@ -684,7 +684,7 @@ export default async function Page() {
           <div className="articles-grid">
             {latestBlogs.map((b) => (
               <div className="article-card" key={b.id}>
-                <a href={`/blogs/${b.slug || b.id}`}
+                <a href={`/${b.slug || b.id}`}
                   style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                   <div className="article-image-wrapper">
                     <img src={b.image || 'assets/hh-blog1.jpg'} alt={b.title} className="article-img" />
