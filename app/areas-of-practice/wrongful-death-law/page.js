@@ -565,7 +565,7 @@ export default async function Page() {
             </div>
           </div>
 
-          {/* Middle description text */}
+          {/* Middle description textt */}
           <div className="practice-mid-intro">
             <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.mid_intro_title}</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
