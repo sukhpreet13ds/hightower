@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyers-index');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -173,7 +175,7 @@ export default function Page() {
 
         {/* Bottom Gold Banner Bar */}
         <div className="hero-bottom-banner">
-          <span>No Cost Consultation – 100% FREE Until We Win!</span>
+          <span>{c.hero_banner_text}</span>
         </div>
       </section>
 
@@ -183,8 +185,8 @@ export default function Page() {
         </div>
         <div className="pa-container">
           <div className="pa-header">
-            <h2 className="pa-title">Statewide Lawyers</h2>
-            <div className="pa-subtitle">Hightower & Hightower, P.A.</div>
+            <h2 className="pa-title">{c.pa_title}</h2>
+            <div className="pa-subtitle">{c.pa_subtitle}</div>
           </div>
 
           <div className="pa-content-row">
@@ -192,31 +194,22 @@ export default function Page() {
               <img src="assets/above-left.png" alt="Daniel & Alison Hightower" className="pa-featured-img" />
             </div>
             <div className="pa-right-col">
-              <h3 className="pa-content-title">Personal Injury Attorneys in Ocala, Florida</h3>
+              <h3 className="pa-content-title">{c.pa_content_title}</h3>
 
               <div className="pa-text-content">
-                <p>Since 1976, Daniel L. Hightower has been standing up for the rights of people injured in
-                  car, work, and other accidents. Hightower & Hightower, P.A.'s personal injury lawyers,
-                  workers' compensation lawyers, and social security disability lawyers have years of
-                  experience in successfully representing the interests of their clients and obtaining
-                  recoveries on their behalf.</p>
+                <p>{c.pa_paragraph_1}</p>
 
-                <p>The Law Office of Hightower & Hightower, P.A. has handled cases state-wide from Pensacola
-                  to Jacksonville to Islamorada to Tampa, Florida. We also proudly serve Alachua
-                  (Gainesville and surrounding cities), Bradford, Citrus, Clay, Columbia, Dixie, Flagler,
-                  Gilchrist, Hernando, Lafayette, Lake, Levy, Marion (Ocala and surrounding cities),
-                  Orange, Putnam, Seminole, St. Johns, Sumter (The Villages, Lady Lake and surrounding
-                  cities), Suwannee, Union, Volusia and other surrounding counties.</p>
+                <p>{c.pa_paragraph_2}</p>
 
-                <p className="pa-quote">Mr. Hightower frequently says, "Have Briefcase, Will Travel."</p>
+                <p className="pa-quote">{c.pa_quote}</p>
 
-                <p>Turn to the experienced, local lawyers at the Law Office of Hightower & Hightower, P.A. Our team of personal injury lawyers, based in Ocala, Florida, will relentlessly pursue your maximum compensation.
+                <p>{c.pa_paragraph_3}
                 </p>
               </div>
 
               <div className="pa-footer-note">
-                When we represent our clients, we're all in. We fight hard for them.<br />
-                <strong>No Matter What.</strong>
+                {c.pa_footer_note_text}<br />
+                <strong>{c.pa_footer_note_bold}</strong>
               </div>
             </div>
           </div>
@@ -225,7 +218,7 @@ export default function Page() {
 
       <section className="lawyers-profiles-section">
         <div className="profiles-container">
-          <h3 className="profiles-section-title">Click on each attorney’s photo to learn more about their experience and background.</h3>
+          <h3 className="profiles-section-title">{c.profiles_section_title}</h3>
 
           <div className="profiles-grid">
             {/* Lawyer 1 */}
@@ -366,7 +359,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -416,7 +409,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

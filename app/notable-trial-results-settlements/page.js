@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
 import Image from 'next/image';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('notable-results');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -99,7 +101,7 @@ export default function Page() {
       <section className="notable-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Notable Trial Results & Settlements</h1>
+            <h1 className="community-hero-title">{c.hero_title}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -169,7 +171,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.banner_text}
           </div>
         </div>
       </section>
@@ -180,12 +182,7 @@ export default function Page() {
           <div className="notable-header-row">
             <div className="notable-intro-wrapper">
               <p className="notable-intro-text">
-                If you or a family member is involved in a serious motor vehicle collision or a serious work
-                accident and sustain moderate, severe or catastrophic injuries, please call our office for a
-                free consultation with us to discuss the case and your legal remedies. Notwithstanding the
-                case results below, each case is different and the recovery that an individual makes depends
-                in large part on the facts of the case, the seriousness of the injuries, the law applicable
-                to the case and the insurance coverages available.
+                {c.intro_text}
               </p>
             </div>
             <div className="notable-svg-wrapper">
@@ -217,8 +214,7 @@ export default function Page() {
               for <strong>$9,661,232.98</strong>.
             </p>
             <p className="notable-card-paragraph notable-quote">
-              When asked for comment on the verdict, Mr. Hightower simply said two things: 1) “Justice was
-              served” and 2) “Watch out for motorcycles.”
+              {c.quote_1}
             </p>
           </div>
 
@@ -253,9 +249,7 @@ export default function Page() {
               the case.
             </p>
             <p className="notable-card-paragraph notable-quote">
-              <strong>When asked for comment on the final settlement, Mr. Hightower said, “When I believe in a
-                client and their case, I will continue negotiating, if necessary, litigating until I get my
-                innocent, injured client a just result.”</strong>
+              <strong>{c.quote_2}</strong>
             </p>
           </div>
           {/* card 3 */}
@@ -281,9 +275,7 @@ export default function Page() {
               hospital bills.
             </p>
             <p className="notable-card-paragraph notable-quote">
-              <strong>When asked for comment on the settlement, Mr. Hightower said, “Everyone in America has
-                legal rights, but sometimes it takes good, aggressive lawyers to enforce those
-                rights.”</strong>
+              <strong>{c.quote_3}</strong>
             </p>
           </div>
           {/* card 4 */}
@@ -306,9 +298,7 @@ export default function Page() {
             </p>
 
             <p className="notable-card-paragraph notable-quote">
-              <strong>After years of filing claims on Michele C.’s behalf, Ocala workers’ compensation
-                attorney, Dan Hightower, and his associate attorney, Barbara Richard, were able to negotiate
-                an overall settlement of $1.5 million for Michele C.</strong>
+              <strong>{c.quote_4}</strong>
             </p>
           </div>
           {/* card 5 */}
@@ -488,7 +478,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -557,7 +547,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

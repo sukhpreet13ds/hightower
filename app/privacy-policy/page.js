@@ -1,8 +1,16 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+function renderParagraphs(text) {
+  return String(text || '').split('\n\n').map((para, i) => (
+    <p key={i}>{para}</p>
+  ));
+}
+
+export default async function Page() {
+  const c = await getSectionContent('privacy-policy');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -271,146 +279,73 @@ export default function Page() {
 
       <section className="privacy-hh-section">
         <div className="privacy-hero">
-          <h1>Privacy Policy</h1>
-          <p>Welcome to the Hightower & Hightower, P.A. website</p>
+          <h1>{c.hero_title}</h1>
+          <p>{c.hero_subtitle}</p>
         </div>
 
         <div className="privacy-container">
           <div className="privacy-intro-box">
-            <p>Hightower & Hightower, P.A. has created this privacy statement to demonstrate its firm commitment
-              to privacy for Hightower & Hightower, P.A. clients and other website users and to disclose its
-              information gathering and dissemination practices. If you have any questions regarding this
-              Privacy Policy or the practices of this website, please contact us at:</p>
+            <p>{c.intro_text}</p>
 
             <div className="contact-info-grid">
               <div className="contact-info-item">
                 <i className="fa-solid fa-location-dot"></i>
-                <span>7 E Silver Springs Blvd #300, Ocala, FL 34470</span>
+                <span>{c.contact_address}</span>
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-phone"></i>
-                <a href="tel:352-656-6959">352-656-6959</a>
+                <a href={`tel:${c.contact_phone}`}>{c.contact_phone}</a>
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-envelope"></i>
-                <a href="mailto:Info@hightowerandhightower.com">Info@hightowerandhightower.com</a>
+                <a href={`mailto:${c.contact_email}`}>{c.contact_email}</a>
               </div>
             </div>
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-database"></i> INFORMATION COLLECTED</h2>
-            <p>Hightower & Hightower, P.A. collects “Non-Personal Information” and “Personal Information.”
-              Non-Personal Information includes information that cannot be used to personally identify you,
-              such as anonymous usage data, general demographic information we may collect, referring/exit
-              pages and URLs, platform types, preferences you submit and preferences that are generated based
-              on the data you submit and number of clicks.</p>
-            <p>Personal Information includes contact details, name, phone number, email address, case details,
-              or any other information, which you submit to us through the website’s contact form(s) or client
-              portal.</p>
+            {renderParagraphs(c.section_info_collected)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-server"></i> SERVER LOG INFORMATION</h2>
-            <p>When you visit Hightower & Hightower, P.A. website, you are identified as a unique IP address
-              that is automatically collected in server logs. Hightower & Hightower, P.A. uses this
-              information to help diagnose problems with our server and to analyze server traffic to learn
-              which pages on Hightower & Hightower, P.A. website receive more or fewer visitors. This
-              information is anonymous and cannot be traced back to a specific individual.</p>
-            <p>The server log also can tell us the time and date of access, which browser you are using, and the
-              name of the website you came from (known as the “referring URL”).</p>
+            {renderParagraphs(c.section_server_log)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-cookie-bite"></i> COOKIES</h2>
-            <p>When you visit Hightower & Hightower, P.A. website, we track certain Non-Personal Information
-              using cookies, small text files which include an anonymous unique identifier. Hightower &
-              Hightower, P.A. may use both persistent and session cookies; persistent cookies remain on your
-              computer after you close your session and until you delete them, while session cookies expire
-              when you close your browser. Sending a cookie to a user’s browser enables us to collect
-              Non-Personal Information about that user and keep a record of the user’s preferences when
-              utilizing our website.</p>
+            {renderParagraphs(c.section_cookies)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-user-shield"></i> USER-INPUT PERSONAL INFORMATION</h2>
-            <p>Hightower & Hightower, P.A. collects Personal Information in the course of providing legal
-              services to clients and as provided by visitors to its website. We store all user-input data,
-              including Personal Information, sent through the website’s contact form(s).</p>
-            <p>Current and future services on Hightower & Hightower, P.A. website may require users to set up an
-              account and provide names, email addresses, billing and delivery information, credit card or
-              other financial account information, and other Personal Information. By providing this Personal
-              Information, you can transact business via the Internet, which in the past required telephone or
-              mail contact with Hightower & Hightower, P.A.</p>
-            <p>Access to the website’s client portal is protected by a password. We recommend that you do not
-              divulge your password to anyone. Users who have logged into the client portal have the option of
-              updating contact information and preferences. These online services are provided as a
-              convenience and allow Hightower & Hightower, P.A. to provide clients with efficient and
-              high-quality legal services at a lower cost.</p>
-            <p>Users are responsible for maintaining the confidentiality of accounts and passwords and agree to
-              accept responsibility for all activities that occur under their accounts and passwords.</p>
+            {renderParagraphs(c.section_user_input)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-share-nodes"></i> HOW INFORMATION IS USED & SHARED</h2>
 
             <h3>PERSONAL INFORMATION:</h3>
-            <p>Except as otherwise stated in this Privacy Policy, we <strong>DO NOT</strong> disclose any
-              Personal Information to unrelated parties outside of the firm except in limited circumstances.
-              Such circumstances include disclosures to our agents or data processors or other contractors
-              acting on our behalf and at our direction, subject to appropriate confidentiality, privacy and
-              information security commitments provided by the receiving party, or where we believe it
-              necessary to provide a service which you have requested, or as permitted or required by law, or
-              as otherwise authorized or directed by you.</p>
-            <p>Consistent with our professional obligations, we may provide Personal Information to regulatory
-              authorities and law enforcement officials in accordance with applicable law or when we otherwise
-              believe in good faith that the provision of such information is required or permitted by law,
-              such as in connection with the investigation or assertion of our legal defenses or for our
-              compliance matters.</p>
-            <p>We will use and process your Personal Information for providing, promoting, and improving our
-              legal services and complying with our legal and ethical obligations related to those legal
-              services. In general, the Personal Information you provide to us is used to help us communicate
-              with you. For example, we use Personal Information to contact clients regarding their
-              representation, contact users in response to questions, solicit feedback from users, provide
-              technical support, and inform users about promotional offers.</p>
+            {renderParagraphs(c.section_shared_personal)}
 
             <h3>NON-PERSONAL INFORMATION:</h3>
-            <p>In general, we use Non-Personal Information to help us improve the website and customize the user
-              experience. We also aggregate Non-Personal Information in order to track traffic and analyze use
-              patterns on the website. This Privacy Policy does not limit in any way our use or disclosure of
-              Non-Personal Information and we reserve the right to use and disclose anonymous, aggregate,
-              Non-Personal Information to our partners, advertisers, and other reputable third parties at our
-              discretion.</p>
+            {renderParagraphs(c.section_shared_nonpersonal)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-link"></i> LINKED SITES</h2>
-            <p>Hightower & Hightower, P.A. website contains links to other external websites (“linked sites”)
-              that we believe may be useful to Hightower & Hightower, P.A. users and the public. Hightower &
-              Hightower, P.A. is not responsible for the content, business practices, or privacy practices of
-              linked sites. This Privacy Policy applies solely to information collected by us through this
-              website.</p>
+            {renderParagraphs(c.section_linked_sites)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-lock"></i> SECURITY</h2>
-            <p>Hightower & Hightower, P.A. website has security measures in place to protect your information
-              from unauthorized access. We further protect your information from potential security breaches
-              by implementing certain technological security measures including encryption, firewalls, and
-              secure socket layer (SSL) technology. Only authorized employees, agents, and contractors (who
-              have agreed to keep information secure and confidential) have access to this information.</p>
-            <p>Unfortunately, no data transmission over the Internet can be guaranteed to be 100% secure.
-              Accordingly, and despite our efforts, Hightower & Hightower, P.A. cannot guarantee or warrant
-              that your information will not be accessed, disclosed, altered, or destroyed by breach of such
-              firewalls and secure server software. By using our website, you acknowledge that you understand
-              and agree to assume these risks.</p>
+            {renderParagraphs(c.section_security)}
           </div>
 
           <div className="privacy-section">
             <h2><i className="fa-solid fa-clock-rotate-left"></i> CHANGES TO OUR PRIVACY POLICY</h2>
-            <p>Hightower & Hightower, P.A. reserves the right to revise this policy at any time without advance
-              notice. Please review the policy periodically for changes. We will endeavor to provide notice
-              ahead of significant changes by email or through a notice on the website.</p>
+            {renderParagraphs(c.section_changes)}
           </div>
         </div>
       </section>
@@ -421,7 +356,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -490,7 +425,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

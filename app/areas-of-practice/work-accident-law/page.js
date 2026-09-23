@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-work-accident');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -472,7 +474,7 @@ export default function Page() {
       <section className="work-acc-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Work Accident <br />Law</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -542,7 +544,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -564,27 +566,18 @@ export default function Page() {
               </div>
             </div>
             <div className="partners-text-col">
-              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>Hightower & Hightower, P.A. Work Accident Lawyers</h2>
-              <p>Daniel L. Hightower, work accident lawyer, has been helping injured workers with their work
-                accident claims since 1976. As an injured worker under the workers’ compensation law you are
-                entitled to receive medical treatment and prescription drugs. You may also be entitled to
-                wage loss reimbursement for time you have been unable to work. Most employers are required
-                to carry workers’ compensation insurance.</p>
-              <p>If you have been injured at work and have questions, please contact us for a free
-                consultation. There are no fees and no costs if no recovery of benefits or settlement is
-                made for you.</p>
-              <p>Do you think your work injury may have been caused by a faulty product, unsafe work
-                environment or someone else? You may be able to make a claim against a third party. Contact
-                us for a free consultation and let Daniel L. Hightower review your options.</p>
+              <h2 className="premises-section-title" style={{ marginBottom: '10px' }}>{c.intro_title}</h2>
+              <p>{c.intro_p1}</p>
+              <p>{c.intro_p2}</p>
+              <p>{c.intro_p3}</p>
             </div>
           </div>
 
           {/* Middle description text */}
           <div className="practice-mid-intro">
-            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>WHAT TO DO:</h2>
+            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.mid_intro_title}</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
-              If you have been injured at work, taking the right steps immediately is critical. Follow these
-              guidelines to protect your health and your rights:</p>
+              {c.mid_intro_text}</p>
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
@@ -639,18 +632,11 @@ export default function Page() {
           </div>
           <div className="banner-text-half">
             <div className="banner-text-content">
-              <h2 className="banner-section-title">Time Limits &</h2>
-              <h3 className="banner-section-subtitle">Statute of Limitations</h3>
+              <h2 className="banner-section-title">{c.time_limits_title_line1}</h2>
+              <h3 className="banner-section-subtitle">{c.time_limits_title_line2}</h3>
               <div className="banner-divider"></div>
-              <p>There are time limits for filing a work injury claim and time limits for keeping the claim
-                from being closed by the insurance company. Once you are injured at work or become aware of
-                a work injury, you have 30 days to report your injury to your employer. Failure to report
-                within 30 days may be used as a defense against your claim.</p>
-              <p>Generally, the Statute of Limitations in workers’ compensation cases is two (2) years from
-                the date of the accident, or one (1) year from the last time the employer/carrier provided
-                medical treatment or paid compensation benefits, whichever is later. Other statutes may also
-                apply to the determination of when the timeline begins or expires. If the Statute of
-                Limitations expires, you will probably not be able to pursue your claim.</p>
+              <p>{c.time_limits_p1}</p>
+              <p>{c.time_limits_p2}</p>
             </div>
           </div>
         </div>
@@ -659,7 +645,7 @@ export default function Page() {
 
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="work">
-            <h2 className="faq-category-title">Work Accident Questions</h2>
+            <h2 className="faq-category-title">{c.faq_title}</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 */}
               <div className="faq-accordion">
@@ -771,7 +757,7 @@ What if my employer or their insurance company denies my claim?
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -840,7 +826,7 @@ What if my employer or their insurance company denies my claim?
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

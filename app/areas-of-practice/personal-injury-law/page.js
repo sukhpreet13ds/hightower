@@ -1,9 +1,11 @@
 import Footer from '@/components/Footer';
 import ClaimsCarousel from '@/components/ClaimsCarousel';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-personal-injury');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -535,7 +537,7 @@ export default function Page() {
       <section className="personal-injury-law-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Personal <br />Injury Lawyer</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -605,7 +607,7 @@ export default function Page() {
         {/* Bottom Gold Banner */}
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -626,35 +628,18 @@ export default function Page() {
                 should not, go it alone against the insurance companies, even if the insurance company is
                 your own. The attorneys at Hightower & Hightower, P.A. have years of experience successfully
                 representing the interests of their clients and obtaining recoveries on their behalf.</p>
-              <p>Each lawyer in the Personal Injury Department has years of experience prosecuting personal
-                injury and wrongful death claims of people and families in the courts of central and north
-                Florida. Each attorney is assisted by a team of top-notch paralegals, investigators and
-                support staff that help to investigate each claim and vigorously prosecute each case to a
-                swift resolution.</p>
-              <p>Many of our clients have been seriously or catastrophically injured and proving such a case
-                often demands the coordination of various resources, including accident reconstructionists,
-                engineers and economists. We have the professional and financial resources to properly
-                prepare these cases.</p>
-              <p>Client satisfaction is of utmost importance to Hightower & Hightower, P.A. and we feel
-                strongly about frequent communication with our clients and keeping them informed of the
-                status of their cases every step of the way.</p>
-              <p>When Hightower & Hightower, P.A. undertakes the legal representation of a client, we make a
-                commitment to the client to see them through until justice is obtained. From the beginning
-                of the case, the legal professionals at Hightower & Hightower, P.A. fully investigate the
-                case, develop trial strategies and aggressively pursue a just resolution of the claim, both
-                by settlement or by jury verdict. All of the attorneys in the Personal Injury Department are
-                proven trial lawyers that will take your case to trial for you if necessary.</p>
+              <p>{c.intro_p2}</p>
+              <p>{c.intro_p3}</p>
+              <p>{c.intro_p4}</p>
+              <p>{c.intro_p5}</p>
             </div>
           </div>
 
           {/* Middle description text */}
           <div className="practice-mid-intro">
-            <p className="contingency-text">The vast majority of our cases are handled on a contingency fee basis
-              which means that we don't charge any fees or costs unless we make a recovery for you. If you
-              have a potential personal injury claim, please feel free to contact us. Prior to representing
-              any client, an attorney will meet with you personally to discuss your case at no charge to you.
+            <p className="contingency-text">{c.contingency_text}
             </p>
-            <p className="summary-claims-header">Below are types of Personal Injury Claims we handle:</p>
+            <p className="summary-claims-header">{c.claims_header}</p>
           </div>
 
           {/* Rounded Cards Row (HH-Blog 1 to 5) with horizontal swipe on mobile */}
@@ -666,13 +651,13 @@ export default function Page() {
          <div className="products-liability-banner">
           <div className="banner-content-cols">
             <div className="banner-col-left">
-              <p>Our team works to build a strong case on your behalf. We investigate every aspect of your claim, from collecting evidence to consulting with experts and speaking with witnesses. We also negotiate assertively with insurance companies, using our experience to aim for a fair settlement that reflects the true extent of your losses. If negotiations stall, our trial attorneys are fully prepared to represent you in court. Throughout the process, we keep you informed and involved the entire way.</p>
-              
-              <h3 className="banner-section-subtitle" style={{ marginTop: '24px', textTransform: 'none' }}>What’s Involved in a Personal Injury Case?</h3>
-              <p>Every personal injury case begins with establishing that a responsible party owed you a duty of care and breached that duty, causing your injuries and leading to measurable damages. In practical terms, this means we will review accident reports, medical records, witness statements, and expert opinions to determine and demonstrate the fault and extent of your injuries and damages.</p>
-              <p>Damages due to an accident often include medical expenses, lost wages, future earning capacity, and non-economic harms like pain and suffering. When you come to our office, a personal injury attorney will carefully assess each aspect of your case.</p>
-              
-              <h3 className="banner-section-subtitle" style={{ marginTop: '24px', textTransform: 'none' }}>Important Elements of Any Personal Injury Case</h3>
+              <p>{c.banner_left_intro}</p>
+
+              <h3 className="banner-section-subtitle" style={{ marginTop: '24px', textTransform: 'none' }}>{c.banner_left_h3_1}</h3>
+              <p>{c.banner_left_p1}</p>
+              <p>{c.banner_left_p2}</p>
+
+              <h3 className="banner-section-subtitle" style={{ marginTop: '24px', textTransform: 'none' }}>{c.banner_left_h3_2}</h3>
               <ul style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '15px 0', color: '#fff' }}>
                 <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Duty of Care:</strong> The responsible party owed a duty to you (such as keeping premises safe or driving responsibly).</li>
                 <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Breach of Duty:</strong> The responsible party failed to meet that duty.</li>
@@ -682,8 +667,8 @@ export default function Page() {
             </div>
 
             <div className="banner-col-right">
-              <h3 className="banner-section-subtitle" style={{ marginTop: '0', textTransform: 'none' }}>How Is The Value of Your Personal Injury Case Calculated?</h3>
-              <p>Determining the value of a personal injury claim depends on many factors, including:</p>
+              <h3 className="banner-section-subtitle" style={{ marginTop: '0', textTransform: 'none' }}>{c.banner_right_h3}</h3>
+              <p>{c.banner_right_intro}</p>
               <ul style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '15px 0', color: '#fff' }}>
                 <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Severity of Injuries:</strong> The extent and permanence of your injuries.</li>
                 <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Medical Expenses:</strong> Past and future medical costs.</li>
@@ -692,7 +677,7 @@ export default function Page() {
                 <li style={{ marginBottom: '8px', fontFamily: 'var(--family-sans)', color: '#fff' }}><strong>Contributory Negligence:</strong> Whether you share any fault for the incident and to what extent.</li>
               </ul>
               
-              <p style={{ marginTop: '20px' }}>Our goal is to quantify and pursue all of the damages you are entitled to, covering medical bills, rehabilitative care, lost wages, reduced earning capacity, pain and suffering, and, in certain cases, punitive damages. Before we represent you, we offer a free consultation to discuss these details and help you understand potential outcomes.</p>
+              <p style={{ marginTop: '20px' }}>{c.banner_right_p2}</p>
               
               <div style={{ marginTop: '30px', width: '100%' }}>
                 <img src="../assets/accident-thee.jpg" alt="Accident Representation" style={{ width: '100%', height: 'auto', borderRadius: '12px', display: 'block', objectFit: 'cover', boxShadow: '0 4px 20px rgba(0,0,0,0.3)' }} />
@@ -734,7 +719,7 @@ export default function Page() {
         </div> */}
         <div className="faq-content-area" style={{ maxWidth: '1200px', margin: 'auto', marginBottom: '20px' }}>
           <div className="faq-category-group" data-category="general">
-            <h2 className="faq-category-title">Personal Injury Questions</h2>
+            <h2 className="faq-category-title">{c.faq_title}</h2>
             <div className="faq-accordion-list">
               {/* Accordion 1 (Expanded by default as requested in mockup screenshot) */}
               <div className="faq-accordion">
@@ -818,7 +803,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -887,7 +872,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

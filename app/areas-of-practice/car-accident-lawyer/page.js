@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 
 export const metadata = { title: 'Hightower & Hightower' };
 
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('practice-car-accident');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -472,7 +474,7 @@ export default function Page() {
       <section className="car-law-services-hero">
         <div className="community-hero-container">
           <div className="community-hero-left">
-            <h1 className="community-hero-title">Ocala Car Accident <br />Lawyer</h1>
+            <h1 className="community-hero-title">{c.hero_title_line1} <br />{c.hero_title_line2}</h1>
           </div>
           <div className="community-hero-right">
             <div className="form-card">
@@ -541,7 +543,7 @@ export default function Page() {
         </div>
         <div className="community-hero-banner">
           <div className="community-hero-banner-content">
-            No Cost Consultation – 100% FREE Until We Win!
+            {c.hero_banner_text}
           </div>
         </div>
       </section>
@@ -565,28 +567,18 @@ export default function Page() {
                 dedicated to protecting your rights, pursuing the justice you deserve, and holding negligent
                 parties accountable.</p>
               <h3 className="premises-section-subtitle"
-                style={{ fontSize: '24px', marginTop: '20px', marginBottom: '10px' }}>Why Choose Hightower &
-                Hightower, P.A.</h3>
-              <p>We’re deeply rooted in our local community and have been serving Marion County and the
-                surrounding areas for nearly five decades. We also know that the aftermath of an accident is
-                overwhelming. Medical bills, lost wages, and the stress of dealing with insurance companies
-                takes its toll. We’re here to alleviate that burden.</p>
-              <p>Every case we handle begins with a consultation where we evaluate your circumstances and
-                discuss your legal options. We work diligently to secure justice for you, negotiate with
-                insurers, and, if necessary, litigate your case in court. Importantly, we operate on a
-                contingency fee basis, meaning you pay nothing unless we make a recovery on your behalf.</p>
+                style={{ fontSize: '24px', marginTop: '20px', marginBottom: '10px' }}>{c.why_choose_title}</h3>
+              <p>{c.why_choose_p1}</p>
+              <p>{c.why_choose_p2}</p>
               <p><strong><a href="/contact-us" className="inline-partner-link">Contact Us For A Free Case
                 Review</a></strong></p>
             </div>
           </div>
 
           <div className="practice-mid-intro">
-            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>What Happens in
-              a Car Accident Case?</h2>
+            <h2 className="premises-section-title" style={{ textAlign: 'center', marginBottom: '10px' }}>{c.mid_intro_title}</h2>
             <p className="contingency-text" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 30px auto' }}>
-              A car accident can turn your life upside down, leaving you with stacks of medical bills and
-              major pain. These difficulties make an already tough situation worse. Speaking with an attorney
-              can be helpful if you’ve been in an auto accident and:</p>
+              {c.mid_intro_text}</p>
           </div>
 
           <div className="claims-cards-row">
@@ -613,11 +605,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: '30px', marginBottom: '60px', textAlign: 'center' }}>
-            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>You don’t need to figure it
-              all out right now, but don’t delay too much in reaching out to an attorney. Time limits exist on
-              claims cases, and insurance companies will want to close your case quickly while offering less
-              than what you’re owed. Starting with expert guidance from a car accident attorney gives you a
-              stronger chance of recovering your losses.</p>
+            <p className="contingency-text" style={{ maxWidth: '900px', margin: '0 auto' }}>{c.mid_intro_followup}</p>
           </div>
         </div>
 
@@ -626,13 +614,10 @@ export default function Page() {
           </div>
           <div className="banner-text-half">
             <div className="banner-text-content">
-              <h2 className="banner-section-title">How Much Is</h2>
-              <h3 className="banner-section-subtitle">A Car Accident Case Worth?</h3>
+              <h2 className="banner-section-title">{c.value_title_line1}</h2>
+              <h3 className="banner-section-subtitle">{c.value_title_line2}</h3>
               <div className="banner-divider"></div>
-              <p>When we talk about how much your case is worth, we mean the total amount you could get as
-                compensation for the harm you’ve experienced. Personal injury law calculates this amount by
-                looking at your damages. Damages, or the total losses you’ve faced because of the accident,
-                cover things like:</p>
+              <p>{c.value_intro}</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}>• Costs for
                 medical care and recovery.</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '8px' }}>• Money lost
@@ -641,12 +626,7 @@ export default function Page() {
                 suffering or physical pain.</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: '#dae1e8', marginBottom: '20px' }}>• Damage to
                 property, like your vehicle.</p>
-              <p>You may also be compensated if your injuries lead to more severe issues like permanent
-                scarring, chronic pain, or paralysis. To determine how much your damages are worth, the
-                insurance companies, courts, and your lawyer will look over how the injuries have changed
-                your daily activities, relationships, and mental/overall health. Collecting as much proof as
-                possible builds a stronger case. Things like medical records, written notes, or official
-                reports can all support your claim. That’s why what you do right after the accident matters.
+              <p>{c.value_conclusion}
               </p>
             </div>
           </div>
@@ -655,20 +635,12 @@ export default function Page() {
         <div className="practice-law-container">
           <div className="premises-row">
             <div className="premises-text-col">
-              <h2 className="premises-section-title">What To Do</h2>
-              <h3 className="premises-section-subtitle">After A Car Accident</h3>
+              <h2 className="premises-section-title">{c.what_to_do_title_line1}</h2>
+              <h3 className="premises-section-subtitle">{c.what_to_do_title_line2}</h3>
               <div className="premises-divider"></div>
-              <p>If you’ve been in a car accident, dial 911. When police arrive, they will collect details
-                about the crash and record the scene. Emergency responders will treat any injuries. Stay at
-                the scene and do not leave, because Florida law requires it, but make sure you do not admit
-                fault to the accident. This could be used against you later.</p>
-              <p>If you can, take photos of your injuries and car damage. Try to note things like the time,
-                weather, and traffic conditions. Also see a doctor, even if you are feeling fine. Some
-                injuries take time to show up, and having a medical record can help your case later.</p>
-              <p>Do tell your insurance company about the crash, however, try not to say yes to a quick payout
-                or give a recorded statement until you talk to a lawyer. A lawyer will explain your rights.
-                They can also figure out if the other driver’s action counts as negligence, and identify the
-                supporting evidence to prove it.</p>
+              <p>{c.what_to_do_p1}</p>
+              <p>{c.what_to_do_p2}</p>
+              <p>{c.what_to_do_p3}</p>
             </div>
             <div className="premises-image-col">
               <img src="../assets/cop.webp" alt="Daniel L. Hightower" className="premises-lawyer-img" />
@@ -680,13 +652,10 @@ export default function Page() {
           <div className="partners-row" style={{ marginBottom: '0' }}>
 
             <div className="partners-text-col">
-              <h2 className="premises-section-title">What Does Negligence Mean</h2>
-              <h3 className="premises-section-subtitle">And How Do You Prove It?</h3>
+              <h2 className="premises-section-title">{c.negligence_title_line1}</h2>
+              <h3 className="premises-section-subtitle">{c.negligence_title_line2}</h3>
               <div className="premises-divider"></div>
-              <p>Negligence is when someone does not use proper or reasonable care. This failure leads to harm
-                for another person. In car crashes, that could mean speeding or texting while driving.
-                Driving under the influence, ignoring a red light, or not yielding when required are also
-                examples. To prove someone’s negligence in Florida, you need to show:</p>
+              <p>{c.negligence_intro}</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>• The
                 person responsible had a duty to drive and follow the rules of the road.</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '8px' }}>• They
@@ -695,13 +664,8 @@ export default function Page() {
                 failure led to the crash and caused your injuries.</p>
               <p style={{ marginLeft: '20px', fontWeight: '500', color: 'var(--button)', marginBottom: '20px' }}>•
                 Because of this, you faced damages like hospital bills, lost income, and other costs.</p>
-              <p>Proof like the police records from the scene, witness accounts, traffic videos, or expert
-                opinions can be used to show negligence. This matters because if you prove the other driver
-                was negligent, you could recover money for your injuries, expenses, and the pain you went
-                through.</p>
-              <p>Proving negligence forms the base of any solid personal injury case. The right legal team
-                plays a big role in showing evidence that proves fault and helps you get the compensation
-                you’re entitled to.</p>
+              <p>{c.negligence_p2}</p>
+              <p>{c.negligence_p3}</p>
             </div>
           </div>
         </div>
@@ -796,7 +760,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -864,7 +828,7 @@ export default function Page() {
       </section>
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

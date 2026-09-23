@@ -111,8 +111,43 @@ label input, label textarea, label select { margin-top: 6px; font-weight: 400; c
 .content { flex: 1; padding: 30px 38px; overflow-y: auto; max-height: 100vh; }
 .content-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
 .content-head h2 { font-size: 1.5rem; }
+.content-sub { font-size: .85rem; color: var(--ink-soft); margin-top: 4px; }
 .filters { display: flex; gap: 10px; align-items: center; }
 .filters select { width: auto; }
+
+/* ---------- Website Content tab ---------- */
+.content-subtabs-wrap { margin-bottom: 22px; }
+.subtab-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.subtab-group-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #9aa3b5;
+    width: 100%;
+    margin-bottom: 2px;
+}
+.content-subtabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.subtab-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .85rem;
+}
+.subtab-item:hover { background: #eef1f7; }
+.subtab-item.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.content-fields-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 28px 6px;
+    max-width: 720px;
+}
+.content-fields-card label:last-of-type { margin-bottom: 0; }
 
 .empty { color: var(--ink-soft); padding: 40px; text-align: center; background: var(--card); border-radius: var(--radius); border: 1px dashed var(--line); }
 

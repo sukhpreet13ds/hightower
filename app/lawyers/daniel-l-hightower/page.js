@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyer-daniel');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -135,31 +137,17 @@ export default function Page() {
             {/* Right Side: Biography and Title */}
             <div className="lawyer-profile-content-col">
               <div className="lawyer-profile-title-area">
-                <h1 className="lawyer-profile-title-main">Daniel L.</h1>
+                <h1 className="lawyer-profile-title-main">{c.title_main}</h1>
                 <div className="lawyer-profile-title-sub-wrapper">
                   <span className="lawyer-profile-title-line"></span>
-                  <h2 className="lawyer-profile-title-sub">Hightower</h2>
+                  <h2 className="lawyer-profile-title-sub">{c.title_sub}</h2>
                 </div>
               </div>
               <div className="lawyer-profile-bio-text">
-                <p>Before making Ocala his home, Daniel L. Hightower was born and raised in Lakeland, Polk
-                  County, Florida. After graduating from Lakeland High School, he attended Stetson
-                  University in DeLand where he earned a B.A. degree in history. He then continued his
-                  education at Stetson Law School in St. Petersburg, where he went on to earn his Juris
-                  Doctorate degree. While there, he was elected as a Justice to the Honor Court and
-                  appointed to the Stetson Law Review Board.</p>
-                <p>After graduating from Stetson University College of Law, Mr. Hightower and his wife moved
-                  to Ocala in 1973. Here, he joined the Green, Simmons, & Green Law Firm, working one year
-                  as a part-time Assistant State Attorney, prosecuting felony crimes. After fourteen years
-                  with the same firm, Mr. Hightower started his own law firm in 1987, Daniel L. Hightower,
-                  P.A., focusing on <a href="/areas-of-practice/personal-injury-law"
-                    className="inline-partner-link">Personal Injury</a>, Wrongful Death and Workers'
-                  Compensation
-                  cases.</p>
-                <p>Mr. Hightower has been fervently fighting for his clients' legal rights and remedies
-                  since his admission as a lawyer in October of 1973. Over the last 50 years, he has
-                  received countless service awards and recognitions for his contributions to the
-                  Ocala/Marion County community and beyond.</p>
+                <p>{c.bio_p1}</p>
+                <p>{c.bio_p2_before}<a href="/areas-of-practice/personal-injury-law"
+                    className="inline-partner-link">Personal Injury</a>{c.bio_p2_after}</p>
+                <p>{c.bio_p3}</p>
               </div>
             </div>
           </div>
@@ -314,11 +302,8 @@ export default function Page() {
             </div>
             <div className="ranch-content-col">
               <p className="ranch-text">
-                In his spare time, Mr. Hightower enjoys spending time with his family and friends. He is
-                also a cattle rancher and owns the HT Ranch near Blitchton, Florida, a working ranch that
-                raises beef cattle and hay. Mr. Hightower takes an active role in the ranch operations
-                including penning and working cattle and cutting and baling hay. Mr. Hightower says, <i
-                  style={{ color: '#0000007c' }}>"I may be a lawyer but I still have calluses on my hands."</i>
+                {c.ranch_text} <i
+                  style={{ color: '#0000007c' }}>"{c.ranch_quote}"</i>
               </p>
             </div>
           </div>
@@ -333,10 +318,7 @@ export default function Page() {
               alt="Daniel L. Hightower receiving Florida Bar Pro Bono Award" className="award-showcase-img" />
           </div>
           <p className="award-showcase-caption">
-            This picture is of Daniel L. Hightower with Florida Bar President, Mayanne Downs (left) and Chief
-            Justice of Florida Supreme Court, Charles Canady (right), at the Florida Supreme Court, receiving
-            the Florida Bar President's Pro Bono Service Award in 2011 for legal services provided to people who
-            are unable to afford a lawyer.
+            {c.award_caption}
           </p>
         </div>
       </section>
@@ -346,7 +328,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -415,7 +397,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

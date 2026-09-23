@@ -1,12 +1,16 @@
 import Script from "next/script";
 import SiteChrome from '@/components/SiteChrome';
+import { getSectionContent } from '@/lib/content';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Hightower & Hightower',
   icons: { icon: '/assets/hh-fav.webp', apple: '/assets/hh-fav.webp' },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const headerContent = await getSectionContent('header');
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -36,7 +40,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image" content="https://hightowerandhightower.netlify.app/assets/thumbnail-hightower.png" />
       </head>
       <body suppressHydrationWarning>
-        <SiteChrome>{children}</SiteChrome>
+        <SiteChrome headerContent={headerContent}>{children}</SiteChrome>
         <script
           dangerouslySetInnerHTML={{
             __html: `

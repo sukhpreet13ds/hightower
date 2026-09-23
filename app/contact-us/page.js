@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('contact-us');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -103,10 +105,8 @@ export default function Page() {
         <div className="contact-card-container">
           {/* Left Side: Get In Touch Form */}
           <div className="contact-card-left">
-            <h2 className="contact-card-title">Get In Touch</h2>
-            <p className="contact-card-subtitle">Thank you for your interest in contacting the Law Office of
-              Hightower & Hightower, P.A. Please fill out the form below and we will get back with you as
-              quickly as possible.</p>
+            <h2 className="contact-card-title">{c.card_title}</h2>
+            <p className="contact-card-subtitle">{c.card_subtitle}</p>
 
             <form className="contact-form" action="#" method="POST">
               <div className="contact-form-row">
@@ -136,7 +136,7 @@ export default function Page() {
                 <textarea id="contact-message" rows="6" placeholder="Message" required></textarea>
               </div>
 
-              <button type="submit" className="contact-submit-btn">SUBMIT &rarr;</button>
+              <button type="submit" className="contact-submit-btn">{c.submit_btn_text}</button>
             </form>
 
             {/* Bottom contact details */}
@@ -144,8 +144,8 @@ export default function Page() {
               <div className="contact-detail-col">
                 <i className="fa-solid fa-location-dot contact-detail-icon"></i>
                 <div>
-                  <strong>Hightower & Hightower, P.A.</strong>
-                  <p>7 East Silver Springs Blvd., Suite 300<br />Ocala, FL 34470</p>
+                  <strong>{c.address_name}</strong>
+                  <p>{c.address_line1}<br />{c.address_line2}</p>
                   <a href="https://maps.google.com/?q=7+East+Silver+Springs+Blvd+Suite+300+Ocala+FL+34470" target="_blank" className="direction-link">Direction</a>
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -246,7 +246,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

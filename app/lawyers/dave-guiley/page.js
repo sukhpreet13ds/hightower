@@ -1,6 +1,8 @@
 import Footer from '@/components/Footer';
+import { getSectionContent } from '@/lib/content';
 export const metadata = { title: 'Hightower & Hightower' };
-export default function Page() {
+export default async function Page() {
+  const c = await getSectionContent('lawyer-dave');
   return (
     <main className="main-content">
       <style dangerouslySetInnerHTML={{
@@ -134,25 +136,15 @@ export default function Page() {
             {/* Right Side: Biography and Title */}
             <div className="lawyer-profile-content-col">
               <div className="lawyer-profile-title-area">
-                <h1 className="lawyer-profile-title-main">David D. </h1>
+                <h1 className="lawyer-profile-title-main">{c.title_main}</h1>
                 <div className="lawyer-profile-title-sub-wrapper">
                   <span className="lawyer-profile-title-line"></span>
-                  <h2 className="lawyer-profile-title-sub">Guiley</h2>
+                  <h2 className="lawyer-profile-title-sub">{c.title_sub}</h2>
                 </div>
               </div>
               <div className="lawyer-profile-bio-text">
-                <p>David D. Guiley is a Board Certified Civil Trial Lawyer by The Florida Bar and the
-                  National Board of Trial Advocacy (NBTA). His legal career has now spanned more than 40
-                  years. Dave has been representing plaintiffs in personal injury and wrongful death cases
-                  throughout Central Florida over 30 years, specializing in auto and truck accidents,
-                  electrical accidents, defective products and defective conditions in premises. His legal
-                  specialties include the law of general negligence, products liability, premises
-                  liability, and insurance. Dave holds an AV® Preeminent™ rating from the
-                  Martindale-Hubbell Peer Review, which is the highest rating available for an attorney.
-                  According to Martindale-Hubbell, the AV® Preeminent™ rating is a <i
-                    style={{ color: '#0000007c' }}>“testament to the fact
-                    that Mr. Guiley’s peers rank him at the highest level of professional
-                    excellence.”</i></p>
+                <p>{c.bio_p1_lead}<i
+                    style={{ color: '#0000007c' }}>{c.bio_p1_quote}</i></p>
                 <p>Dave is a practicing attorney in the areas of <a href="/areas-of-practice/personal-injury-law"
                   style={{ color: '#C2905B', textDecoration: 'none', fontStyle: 'italic' }}>Personal
                   Injury</a> and <a href="/areas-of-practice/wrongful-death-law"
@@ -171,7 +163,7 @@ export default function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -240,7 +232,7 @@ export default function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import { all } from '@/lib/db';
+import { getSectionContent } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'News - Hightower & Hightower' };
@@ -11,10 +12,13 @@ function newsExcerpt(b) {
 }
 
 export default async function Page() {
-  const items = await all(`
-    SELECT id, slug, title, excerpt, content, image FROM news WHERE published = 1
-    ORDER BY created_at DESC, id DESC
-  `);
+  const [items, c] = await Promise.all([
+    all(`
+      SELECT id, slug, title, excerpt, content, image FROM news WHERE published = 1
+      ORDER BY created_at DESC, id DESC
+    `),
+    getSectionContent('news-index'),
+  ]);
 
   return (
     <main className="main-content">
@@ -74,10 +78,10 @@ export default async function Page() {
           </div>
 
           <div className="videos-title-area">
-            <h1 className="videos-title-main">News &</h1>
+            <h1 className="videos-title-main">{c.title_main}</h1>
             <div className="videos-title-sub-wrapper">
               <span className="videos-title-line"></span>
-              <h2 className="videos-title-sub">Updates</h2>
+              <h2 className="videos-title-sub">{c.title_sub}</h2>
             </div>
           </div>
           <section className="blogs-grid-section">
@@ -104,7 +108,7 @@ export default async function Page() {
         <div className="honors-container">
           <div className="honors-title-wrapper">
             <span className="honors-line"></span>
-            <h2 className="honors-title">HONORS & AWARDS</h2>
+            <h2 className="honors-title">{c.honors_title}</h2>
             <span className="honors-line"></span>
           </div>
           <div className="honors-logos-row">
@@ -173,7 +177,7 @@ export default async function Page() {
       {/* CTA Section */}
       <section className="cta-section" id="cta-section">
         <div className="cta-container">
-          <h2 className="cta-text">Fighting for the injured since 1976.</h2>
+          <h2 className="cta-text">{c.cta_text}</h2>
         </div>
       </section>
 
