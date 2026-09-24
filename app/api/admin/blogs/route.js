@@ -30,8 +30,8 @@ export async function POST(req) {
     : ((form.get('logo_url') || '').toString().trim() || null);
 
   const info = await run(`
-    INSERT INTO blogs (slug, title, excerpt, content, image, logo, tags, author, published, created_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO blogs (slug, title, excerpt, content, image, logo, tags, author, meta_title, meta_description, published, created_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `, [
     slug,
     title,
@@ -40,6 +40,8 @@ export async function POST(req) {
     image, logo,
     (form.get('tags') || '').toString().trim() || null,
     (form.get('author') || '').toString().trim() || null,
+    (form.get('meta_title') || '').toString().trim() || null,
+    (form.get('meta_description') || '').toString().trim() || null,
     form.get('published') === '0' ? 0 : 1,
     new Date().toISOString(),
   ]);

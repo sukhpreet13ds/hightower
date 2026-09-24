@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Ocala Wrongful Death Lawyer | Hightower & Hightower Attorney',
+  description: 'Hightower & Hightower for empathetic legal support in wrongful death cases. Our seasoned attorneys handle bereavement compensation, fatal accident lawsuits, and survivorship actions with care and expertise.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('practice-wrongful-death');

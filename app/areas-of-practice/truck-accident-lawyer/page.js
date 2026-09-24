@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Truck Accident Lawyer in Ocala | Hightower & Hightower',
+  description: 'Need a Truck Accident Lawyer Ocala? Hightower & Hightower is a trusted Truck Accident Attorney Ocala helping victims recover compensation after serious crashes.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('practice-truck-accident');

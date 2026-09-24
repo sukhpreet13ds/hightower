@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Privacy Policy - Hightower & Hightower, P.A.',
+  description: 'Read the privacy policy of the Law Office of Daniel L. Hightower, P.A. Learn how we collect, use, and protect your personal information.',
+};
 
 function renderParagraphs(text) {
   return String(text || '').split('\n\n').map((para, i) => (

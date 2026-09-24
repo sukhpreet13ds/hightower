@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import { getSectionContent } from '@/lib/content';
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Notable Trial Results & Settlements - Hightower & Hightower, P.A.',
+  description: 'Explore notable trial results and settlements achieved by the Law Office of Daniel L. Hightower, P.A. Discover how our legal expertise benefits our clients.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('notable-results');

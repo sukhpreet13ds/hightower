@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Ocala Social Security Disability Lawyer | Hightower & Hightower',
+  description: 'Learn about Social Security Disability Law and how to get the benefits you deserve. Our experienced attorneys in Ocala can help you with your claim.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('practice-ssd');

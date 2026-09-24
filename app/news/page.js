@@ -3,7 +3,10 @@ import { all } from '@/lib/db';
 import { getSectionContent } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'News - Hightower & Hightower' };
+export const metadata = {
+  title: 'News - Hightower & Hightower, P.A.',
+  description: 'Stay updated with the latest news and announcements from the Law Office of Daniel L. Hightower, P.A. Discover important legal insights and community involvement.',
+};
 
 function newsExcerpt(b) {
   if (b.excerpt) return b.excerpt;

@@ -26,7 +26,7 @@ export async function PUT(req, { params }) {
     : ((form.get('logo_url') || '').toString().trim() || existing.logo);
 
   await run(`
-    UPDATE blogs SET slug = ?, title = ?, excerpt = ?, content = ?, image = ?, logo = ?, tags = ?, author = ?, published = ?
+    UPDATE blogs SET slug = ?, title = ?, excerpt = ?, content = ?, image = ?, logo = ?, tags = ?, author = ?, meta_title = ?, meta_description = ?, published = ?
     WHERE id = ?
   `, [
     slug,
@@ -36,6 +36,8 @@ export async function PUT(req, { params }) {
     image, logo,
     (form.get('tags') || '').toString().trim() || null,
     (form.get('author') || '').toString().trim() || null,
+    (form.get('meta_title') || '').toString().trim() || null,
+    (form.get('meta_description') || '').toString().trim() || null,
     form.get('published') === '0' ? 0 : 1,
     Number(id),
   ]);

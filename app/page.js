@@ -3,7 +3,10 @@ import { all } from '@/lib/db';
 import { getSectionContent } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Experienced Personal Injury & Accident Lawyers | Hightower & Hightower',
+  description: 'Get compensation for car accidents, work injuries, wrongful death & more. Free consultations. Trusted lawyers fighting for your rights.',
+};
 
 function blogExcerpt(b) {
   if (b.excerpt) return b.excerpt;

@@ -2,7 +2,10 @@ import Footer from '@/components/Footer';
 import ClaimsCarousel from '@/components/ClaimsCarousel';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Personal Injury Lawyers & Law Firm in Ocala, Florida',
+  description: 'Hightower & Hightower is a trusted personal injury law firm in Ocala, providing expert legal representation for injury victims. Contact our experienced personal injury attorneys in Ocala for a consultation.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('practice-personal-injury');

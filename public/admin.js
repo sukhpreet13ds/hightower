@@ -365,6 +365,8 @@ function openBlogModal(blog, type = 'blogs') {
         $('blog-id').value = blog.id;
         $('blog-title').value = blog.title || '';
         $('blog-excerpt').value = blog.excerpt || '';
+        if ($('blog-meta-title')) $('blog-meta-title').value = blog.meta_title || '';
+        if ($('blog-meta-description')) $('blog-meta-description').value = blog.meta_description || '';
         $('blog-tags').value = blog.tags || '';
         editor.innerHTML = contentToHtml(blog.content);
         $('blog-author').value = blog.author || '';
@@ -374,6 +376,8 @@ function openBlogModal(blog, type = 'blogs') {
     } else {
         $('blog-modal-title').textContent = 'New ' + label;
         $('blog-id').value = '';
+        if ($('blog-meta-title')) $('blog-meta-title').value = '';
+        if ($('blog-meta-description')) $('blog-meta-description').value = '';
         editor.innerHTML = '';
         $('blog-current-image').classList.add('hidden');
         $('blog-current-logo').classList.add('hidden');
@@ -418,6 +422,8 @@ $('blog-form').addEventListener('submit', async (e) => {
     const fd = new FormData();
     fd.append('title', $('blog-title').value);
     fd.append('excerpt', $('blog-excerpt').value);
+    if ($('blog-meta-title')) fd.append('meta_title', $('blog-meta-title').value);
+    if ($('blog-meta-description')) fd.append('meta_description', $('blog-meta-description').value);
     fd.append('tags', $('blog-tags').value);
     fd.append('content', cleanBlogContent(editor.innerHTML.trim()));
     fd.append('author', $('blog-author').value);

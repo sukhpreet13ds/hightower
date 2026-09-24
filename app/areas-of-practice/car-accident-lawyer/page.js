@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Car Accident Lawyer & Attorney in Ocala | Hightower & Hightower',
+  description: 'Hurt in a car crash? Hightower & Hightower helps clients in Florida seek compensation after serious auto accidents and injuries.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('practice-car-accident');
@@ -707,7 +710,7 @@ export default async function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    In Florida, the statute of limitations for most personal injury lawsuits is two years from the date of the accident. While that may seem like a long time, evidence like tire marks, witness memories, vehicle data, and footage can disappear quickly. It is always best to reach out to an attorney as soon as possible after the accident to preserve your rights. <a href='https://hightowerandhightower.netlify.app/blogs/what-evidence-strengthens-your-injury-case' style={{ color: 'var(--button)' }} target='_blank'>Learn what evidence can help strengthen your injury case here.</a>
+                    In Florida, the statute of limitations for most personal injury lawsuits is two years from the date of the accident. While that may seem like a long time, evidence like tire marks, witness memories, vehicle data, and footage can disappear quickly. It is always best to reach out to an attorney as soon as possible after the accident to preserve your rights. <a href='https://hightowerandhightower.com/what-evidence-strengthens-your-injury-case' style={{ color: 'var(--button)' }} target='_blank'>Learn what evidence can help strengthen your injury case here.</a>
 
 
                   </p>

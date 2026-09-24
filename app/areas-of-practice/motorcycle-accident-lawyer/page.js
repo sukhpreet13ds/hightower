@@ -1,7 +1,10 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
 
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Motorcycle Accident Lawyer in Ocala | Hightower & Hightower',
+  description: 'Looking for a Motorcycle Accident Lawyer Ocala? Hightower & Hightower is a trusted Motorcycle Accident Attorney Ocala helping injury victims recover compensation.',
+};
 
 export default async function Page() {
   const c = await getSectionContent('practice-motorcycle-accident');

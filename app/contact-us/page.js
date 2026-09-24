@@ -1,6 +1,9 @@
 import Footer from '@/components/Footer';
 import { getSectionContent } from '@/lib/content';
-export const metadata = { title: 'Hightower & Hightower' };
+export const metadata = {
+  title: 'Contact Us - Hightower & Hightower, P.A.',
+  description: 'Get in touch with the Law Office of Daniel L. Hightower, P.A. for legal assistance. We are here to help with your inquiries and provide support for your legal needs.',
+};
 export default async function Page() {
   const c = await getSectionContent('contact-us');
   return (

@@ -160,6 +160,15 @@ export default function AdminPage() {
               <textarea id="blog-excerpt" rows="2" placeholder="One or two sentences shown in the news cards…"></textarea>
             </label>
 
+            <div className="grid-2">
+              <label>Meta Title (SEO)
+                <input type="text" id="blog-meta-title" placeholder="Custom page title for search engines (optional)" />
+              </label>
+              <label>Meta Description (SEO)
+                <input type="text" id="blog-meta-description" placeholder="Custom search description (optional)" />
+              </label>
+            </div>
+
             <label>Tags / Categories
               <input type="text" id="blog-tags" placeholder="e.g. car accident, ocala lawyer, wrongful death claim" />
             </label>

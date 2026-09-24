@@ -1,4 +1,4 @@
-﻿import Footer from '@/components/Footer';
+import Footer from '@/components/Footer';
 import { get } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
@@ -7,18 +7,40 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const isNum = /^\d+$/.test(slug);
 
-  let post = isNum
-    ? await get('SELECT title FROM blogs WHERE (slug = ? OR id = ?) AND published = 1', [slug, Number(slug)])
-    : await get('SELECT title FROM blogs WHERE slug = ? AND published = 1', [slug]);
-
-  if (!post) {
+  let post;
+  try {
     post = isNum
-      ? await get('SELECT title FROM news WHERE (slug = ? OR id = ?) AND published = 1', [slug, Number(slug)])
-      : await get('SELECT title FROM news WHERE slug = ? AND published = 1', [slug]);
+      ? await get('SELECT title, meta_title, meta_description, excerpt, content FROM blogs WHERE (slug = ? OR id = ?) AND published = 1', [slug, Number(slug)])
+      : await get('SELECT title, meta_title, meta_description, excerpt, content FROM blogs WHERE slug = ? AND published = 1', [slug]);
+
+    if (!post) {
+      post = isNum
+        ? await get('SELECT title, meta_title, meta_description, excerpt, content FROM news WHERE (slug = ? OR id = ?) AND published = 1', [slug, Number(slug)])
+        : await get('SELECT title, meta_title, meta_description, excerpt, content FROM news WHERE slug = ? AND published = 1', [slug]);
+    }
+  } catch (e) {
+    post = isNum
+      ? await get('SELECT title, excerpt, content FROM blogs WHERE (slug = ? OR id = ?) AND published = 1', [slug, Number(slug)])
+      : await get('SELECT title, excerpt, content FROM blogs WHERE slug = ? AND published = 1', [slug]);
+
+    if (!post) {
+      post = isNum
+        ? await get('SELECT title, excerpt, content FROM news WHERE (slug = ? OR id = ?) AND published = 1', [slug, Number(slug)])
+        : await get('SELECT title, excerpt, content FROM news WHERE slug = ? AND published = 1', [slug]);
+    }
   }
 
+  const title = post
+    ? (post.meta_title || `${post.title} - Hightower & Hightower`)
+    : 'Article - Hightower & Hightower';
+
+  const description = post
+    ? (post.meta_description || post.excerpt || (post.content || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160))
+    : 'Read articles and legal updates from Hightower & Hightower.';
+
   return {
-    title: post ? `${post.title} - Hightower & Hightower` : 'Article - Hightower & Hightower',
+    title,
+    description,
   };
 }
 
