@@ -771,7 +771,7 @@ export default async function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    Motorcycle accident claims can be difficult because insurance companies will try to minimize injuries or blame the rider. A lawyer can investigate the crash, handle the insurance companies for you, and fight for the compensation you may deserve. <a href='https://hightowerandhightower.netlify.app/blogs/what-to-do-if-youve-been-in-a-motorcycle-accident' style={{ color: 'var(--button)' }} target='_blank'>Read what to do after you have been in a motorcycle accident.</a>
+                    Motorcycle accident claims can be difficult because insurance companies will try to minimize injuries or blame the rider. A lawyer can investigate the crash, handle the insurance companies for you, and fight for the compensation you may deserve. <a href='https://hightowerandhightower.com/what-to-do-if-youve-been-in-a-motorcycle-accident' style={{ color: 'var(--button)' }} target='_blank'>Read what to do after you have been in a motorcycle accident.</a>
 
                   </p>
                 </div>

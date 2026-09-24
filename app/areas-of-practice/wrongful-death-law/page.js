@@ -650,7 +650,7 @@ export default async function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    In Florida, a wrongful death claim is made when someone’s death is caused by another person’s careless or reckless behavior. This can happen in many different situations, <a href='https://hightowerandhightower.netlify.app/blogs/when-a-car-accident-becomes-a-wrongful-death-case' style={{ color: 'var(--button)' }} target='_blank'>like in car or work accidents.</a> It’s a way for the family of the person who died to get justice and compensation for their loss. The claim is separate from any criminal case that may also result from the same incident.
+                    In Florida, a wrongful death claim is made when someone’s death is caused by another person’s careless or reckless behavior. This can happen in many different situations, <a href='https://hightowerandhightower.com/when-a-car-accident-becomes-a-wrongful-death-case' style={{ color: 'var(--button)' }} target='_blank'>like in car or work accidents.</a> It’s a way for the family of the person who died to get justice and compensation for their loss. The claim is separate from any criminal case that may also result from the same incident.
                   </p>
                 </div>
               </div>

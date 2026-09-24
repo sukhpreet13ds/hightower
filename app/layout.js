@@ -29,15 +29,15 @@ export default async function RootLayout({ children }) {
         />
         <meta property="og:title" content="Hightower & Hightower" />
         <meta property="og:description" content="For nearly 50 years, the Hightower family has stood beside injured Floridians, battling insurance companies so you can focus on what matters: healing. Your consultation is free, and you pay nothing unless we make a recovery for you." />
-        <meta property="og:image" content="https://hightowerandhightower.netlify.app/assets/thumbnail-hightower.png" />
-        <meta property="og:url" content="https://hightowerandhightower.netlify.app/" />
+        <meta property="og:image" content="https://hightowerandhightower.com/assets/thumbnail-hightower.png" />
+        <meta property="og:url" content="https://hightowerandhightower.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Hightower & Hightower" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hightower & Hightower" />
         <meta name="twitter:description" content="For nearly 50 years, the Hightower family has stood beside injured Floridians, battling insurance companies so you can focus on what matters: healing. Your consultation is free, and you pay nothing unless we make a recovery for you." />
-        <meta name="twitter:image" content="https://hightowerandhightower.netlify.app/assets/thumbnail-hightower.png" />
+        <meta name="twitter:image" content="https://hightowerandhightower.com/assets/thumbnail-hightower.png" />
       </head>
       <body suppressHydrationWarning>
         <SiteChrome headerContent={headerContent}>{children}</SiteChrome>

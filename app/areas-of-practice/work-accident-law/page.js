@@ -659,7 +659,7 @@ export default async function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                   Don’t rely on the insurance carrier to treat you fairly. The workers’ compensation system is not always as cut and dry as it seems. A skilled attorney is able to ensure your claim is properly filed to receive the benefits you need to recover. If your benefits are suddenly cut off, your attorney can work to have them reinstated. He or she can also determine whether another party is responsible for your injury. <a href='https://hightowerandhightower.netlify.app/blogs/workers-compensation-in-florida' style={{ color: 'var(--button)' }} target='_blank'>You can learn more about workers’ compensation in Florida here.</a>
+                   Don’t rely on the insurance carrier to treat you fairly. The workers’ compensation system is not always as cut and dry as it seems. A skilled attorney is able to ensure your claim is properly filed to receive the benefits you need to recover. If your benefits are suddenly cut off, your attorney can work to have them reinstated. He or she can also determine whether another party is responsible for your injury. <a href='https://hightowerandhightower.com/workers-compensation-in-florida' style={{ color: 'var(--button)' }} target='_blank'>You can learn more about workers’ compensation in Florida here.</a>
                   </p>
                 </div>
               </div>

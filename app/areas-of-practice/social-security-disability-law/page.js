@@ -747,7 +747,7 @@ export default async function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                    The time it takes to process a disability claim can be quite long and varies depending on where you are in the process and how busy your local Social Security office is. Initial applications can take several months, and if your case goes to a hearing, it can take considerably longer. We help you manage that process and keep your claim moving forward. <a href='https://hightowerandhightower.netlify.app/blogs/how-a-social-security-disability-lawyer-can-help-you-avoid-a-long-wait' style={{ color: 'var(--button)' }} target='_blank'>Learn how a Social Security disability lawyer may help you avoid a longer wait.</a>
+                    The time it takes to process a disability claim can be quite long and varies depending on where you are in the process and how busy your local Social Security office is. Initial applications can take several months, and if your case goes to a hearing, it can take considerably longer. We help you manage that process and keep your claim moving forward. <a href='https://hightowerandhightower.com/how-a-social-security-disability-lawyer-can-help-you-avoid-a-long-wait' style={{ color: 'var(--button)' }} target='_blank'>Learn how a Social Security disability lawyer may help you avoid a longer wait.</a>
 
 
                   </p>

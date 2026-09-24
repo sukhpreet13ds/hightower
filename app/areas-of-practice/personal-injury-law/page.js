@@ -772,7 +772,7 @@ export default async function Page() {
                 </button>
                 <div className="faq-accordion-content">
                   <p className="faq-answer-text">
-                   The length of time it takes to resolve a personal injury case can vary greatly, depending on how complicated the case is and how badly you’re hurt. Straightforward claims can settle in a matter of months. If your injuries are really serious or will affect you for a long time, it’s going to take longer. We need to know exactly how much medical care you’ll need before we can settle the case. If we rush into a settlement too quickly, before you’ve fully recovered, you might not get the compensation you deserve. <a href='https://hightowerandhightower.netlify.app/blogs/how-long-do-personal-injury-cases-typically-take' style={{ color: 'var(--button)' }} target='_blank'>Learn more about how long personal injury cases typically take here.</a>
+                   The length of time it takes to resolve a personal injury case can vary greatly, depending on how complicated the case is and how badly you’re hurt. Straightforward claims can settle in a matter of months. If your injuries are really serious or will affect you for a long time, it’s going to take longer. We need to know exactly how much medical care you’ll need before we can settle the case. If we rush into a settlement too quickly, before you’ve fully recovered, you might not get the compensation you deserve. <a href='https://hightowerandhightower.com/how-long-do-personal-injury-cases-typically-take' style={{ color: 'var(--button)' }} target='_blank'>Learn more about how long personal injury cases typically take here.</a>
 
                   </p>
                 </div>
